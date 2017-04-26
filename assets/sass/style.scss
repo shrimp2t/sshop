@@ -1,0 +1,267 @@
+@import "variables";
+
+/*
+Theme Name: sshop
+Theme URI: http://underscores.me/
+Author: Underscores.me
+Author URI: http://underscores.me/
+Description: Description
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: sshop
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+sshop is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
+*/
+
+@import "reset";
+@import "woocommerce";
+@import "slick";
+
+/* WP Theme */
+body {
+	background: #f5f5f5;
+}
+.container {
+	&:after{
+
+	}
+}
+
+.navbar-nav {
+	margin-left: 0px;
+}
+.top-bar-middle {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	@include clearfixAfter();
+	display: flex;
+  	align-items: center;
+	flex-grow: 1;
+}
+.site-branding {
+	flex-grow: 2;
+  	align-items: center;
+	display: flex;
+	.site-title {
+
+		margin: 0px;
+		@include rem( 'font-size', 40px );
+		@include rem( 'line-height', 40px );
+	}
+	.site-description {
+		display: none;
+	}
+}
+.top-search-form {
+
+	width: 600px;
+	margin-left: 30px;
+	margin-right: 30px;
+	.input-group {
+		border: 0px;
+	}
+	.form-control ,.input-group-addon{
+		//border-radius: 0px;
+		border: 0px;
+		padding: 10px;
+		height: 44px;
+	}
+	.input-group-addon {
+		background: $primary;
+		color: #fff;
+	}
+}
+
+.header-shop__icon {
+
+	margin: 0px 15px;
+	a {
+		display: block;
+		position: relative;
+		text-decoration: none;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+	.shop__number {
+		position: absolute;
+		top: 0px;
+		right: -10px;
+		border-radius: 50%;
+		padding: 5px;
+		font-size: 12px;
+		line-height: 12px;
+		background: $primary;
+		min-width: 22px;
+		min-height: 10px;
+		text-align: center;
+	}
+	.shop__icon {
+		font-size: 40px;
+	}
+}
+
+.site-header {
+	background: #262626;
+	.site-title {
+		text-transform: uppercase;
+	}
+	a {
+		color: #f5f5f5;
+	}
+}
+
+/* main-navigation */
+.main-navigation {
+	float: left;
+	li {
+		a {
+			padding: 10px;
+		}
+	}
+}
+.shop-by-departments {
+	float: left;
+	.shop-by-button {
+		width: 300px;
+		display: block;
+		padding: 10px 20px;
+		text-align: left;
+		font-weight: bold;
+		text-transform: uppercase;
+		background: $primary;
+		color: #fff;
+		text-decoration: none !important;
+		.icon {
+			float: right;
+		}
+	}
+}
+
+/* Home sidebar */
+.home-content-sidebar {
+	.widget {
+		margin-bottom: 40px;
+		&:last-child {
+			margin-bottom: 0px;
+		}
+	}
+}
+
+/* Tabs */
+.layout-tabs {
+	$tab_heading_width: 250px;
+	.widget-title {
+		@include clearfixAfter();
+		display: flex;
+		//flex-grow: 1;
+		align-items: center;
+		background: #fff;
+
+		.heading-label {
+			//flex-grow: 2;
+			flex: 0 0 $tab_heading_width;
+			@include rem( 'font-size', 18px );
+			@include rem( 'line-height', 50px );
+			padding: 0px 20px;
+			margin: 0px;
+			background: #000;
+			color: #ffff;
+			text-align: center;
+			text-transform: uppercase;
+		}
+
+		border-bottom: 2px solid $primary;
+	}
+	.tab-item-actions {
+		width: 150px;
+		text-align: right;
+		padding-right: 15px;
+		span {
+			cursor: pointer;
+			padding: 0px 5px;
+		}
+	}
+
+	.nav-tabs-filter {
+		margin: 0px;
+		padding: 0px;
+
+		li {
+			display: inline-block;
+			list-style: none;
+			@include rem( 'line-height', 50px );
+			&.active {
+				background: $primary;
+				a {
+					color: #fff;
+				}
+			}
+		}
+		a {
+			padding: 0px 15px;
+			display: inline-block;
+			color: $text;
+			outline: none !important;
+		}
+		display: inline-block;
+		width: 100%;
+	}
+
+	.tabs-layout-contents {
+		//display: flex;
+		//flex-grow: 1;
+		@include clearfixAfter();
+	}
+	.tabs-content-items, .tabs-item-inside, .type-product {
+		//display: block;
+	//	height: 100%;
+	}
+	.tabs-intro {
+		width: $tab_heading_width;
+		float: left;
+		img {
+			width: 100%;
+			height: auto;
+			max-width: 100%;
+		}
+	}
+
+	.tabs-layout-content {
+		display: block;
+		margin-left: $tab_heading_width;
+		padding: 5px;
+	}
+	.tabs-item-inside {
+		float: left;
+	}
+	.tabs-layout-contents {
+		background: #fff;
+	}
+	.tabs-content-items {
+		display: block;
+		width: 100%;
+	}
+	.tabs-item-inside {
+		padding: 5px;
+		background: #fff;
+	}
+	.woocommerce-loop-product__title {
+		@include rem( 'font-size', 16px );
+	}
+}
+
+
+/* Service icon */
+.services-wrapper {
+	
+}

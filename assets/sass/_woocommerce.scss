@@ -1,0 +1,110 @@
+// main: style.scss
+
+/**
+ * _fonts.scss
+ * Custom WooCommerce fonts.
+ */
+@font-face {
+	font-family: 'star';
+	src: url('../fonts/star.eot');
+	src: url('../fonts/star.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/star.woff') format('woff'),
+		url('../fonts/star.ttf') format('truetype'),
+		url('../fonts/star.svg#star') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'WooCommerce';
+	src: url('../fonts/WooCommerce.eot');
+	src: url('../fonts/WooCommerce.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/WooCommerce.woff') format('woff'),
+		url('../fonts/WooCommerce.ttf') format('truetype'),
+		url('../fonts/WooCommerce.svg#WooCommerce') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/**
+ * Star ratings
+ */
+.star-rating {
+	overflow: hidden;
+	position: relative;
+	height: 1em;
+	line-height: 1;
+	font-size: 1em;
+	width: 5.4em;
+	font-family: 'star';
+
+	&::before {
+		content: '\73\73\73\73\73';
+		color: darken( $secondary, 10% );
+		float: left;
+		top: 0;
+		left: 0;
+		position: absolute;
+	}
+
+	span {
+		overflow: hidden;
+		float: left;
+		top: 0;
+		left: 0;
+		position: absolute;
+		padding-top: 1.5em;
+	}
+
+	span::before {
+		content: '\53\53\53\53\53';
+		top: 0;
+		position: absolute;
+		left: 0;
+	}
+}
+
+
+.type-product {
+	display: block;
+	position: relative;
+	.woocommerce-LoopProduct-link {
+		display: block;
+		position: relative;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+	.onsale {
+		position: absolute;
+		top: 5px;
+		left: 5px;
+		@include rem( 'font-size', 11px );
+		@include rem( 'line-height', 11px );
+		text-transform: uppercase;
+		background: $primary;
+		color: #fff;
+		padding: 5px 10px;;
+	}
+	.woocommerce-loop-product__title {
+		color: $text;
+	}
+	/* Product thumbnail */
+	.product-thumbnail {
+		margin-bottom: 20px;
+	}
+	.star-rating {
+		display: block;
+		color: $primary;
+	}
+	.price {
+		@include rem( 'font-size', 20px );
+		font-weight: bold;
+		text-transform: uppercase;
+		display: block;
+	}
+	.add_to_cart_button {
+		display: block;
+		clear: both;
+	}
+}
