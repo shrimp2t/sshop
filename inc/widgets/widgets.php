@@ -27,7 +27,8 @@ add_action( 'admin_enqueue_scripts', 'sshop_media_scripts' );
 // Register widgets
 function sshop_register_widgets() {
 
-    register_widget( 'SShop_Widget_Products_List1' );
+    register_widget( 'SShop_Widget_Product_Tabs' );
+    register_widget( 'SShop_Widget_Brand_Products' );
     register_widget( 'SShop_Widget_Services' );
 
 }

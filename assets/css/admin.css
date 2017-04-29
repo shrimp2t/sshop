@@ -1,0 +1,10 @@
+#addtag .cmb-td, #addtag .cmb-th {
+    padding: 0px;
+}
+
+#addtag .cmb-row {
+    margin: 1em 0 ;
+}
+#addtag .cmb-row .cmb2-metabox-description {
+    color: #666;
+}

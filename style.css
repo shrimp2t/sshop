@@ -1210,6 +1210,7 @@ body {
 
 .shop-by-departments {
 	float: left;
+	position: relative;
 }
 
 .shop-by-departments .shop-by-button {
@@ -1226,6 +1227,65 @@ body {
 
 .shop-by-departments .shop-by-button .icon {
 	float: right;
+}
+
+.shop-by-departments:hover .list-departments {
+	height: auto;
+	overflow: visible;
+}
+
+.shop-by-departments .list-departments {
+	position: absolute;
+	height: 0px;
+	overflow: hidden;
+	top: 100%;
+	left: 0px;
+	background: #fff;
+	z-index: 99;
+	width: 300px;
+	display: block;
+	margin: 0px;
+	padding: 0px;
+}
+
+.shop-by-departments .list-departments li {
+	list-style: none;
+}
+
+.shop-by-departments .list-departments li a {
+	padding: 10px 15px;
+	display: block;
+}
+
+.shop-by-departments .list-departments li a span {
+	float: right;
+	margin-top: 3px;
+}
+
+.shop-by-departments .list-departments li ul {
+	width: 300px;
+	display: none;
+	position: absolute;
+	top: 0px;
+	left: 100%;
+	min-height: 100%;
+	background: #fff;
+	margin: 0px;
+	padding: 0px;
+	border-left: 1px solid #f5f5f5;
+}
+
+.shop-by-departments .list-departments li:hover > a {
+	background: #ededed;
+	text-decoration: none;
+}
+
+.shop-by-departments .list-departments li:hover > ul {
+	display: block;
+}
+
+.shop-by-departments .list-departments a {
+	color: #777777;
 }
 
 /* Home sidebar */
@@ -1324,8 +1384,11 @@ body {
 
 .layout-tabs .tabs-layout-content {
 	display: block;
-	margin-left: 250px;
 	padding: 5px;
+}
+
+.layout-tabs.has-b .tabs-layout-content {
+	margin-left: 250px;
 }
 
 .layout-tabs .tabs-item-inside {
@@ -1349,6 +1412,18 @@ body {
 .layout-tabs .woocommerce-loop-product__title {
 	font-size: 16px;
 	font-size: 1rem;
+}
+
+/* For brand Tabs */
+.widget_sshop_products_brand .layout-tabs .tabs-intro {
+	width: 40%;
+	float: left;
+}
+
+.widget_sshop_products_brand .layout-tabs .tabs-intro img {
+	width: 100%;
+	height: auto;
+	max-width: 100%;
 }
 
 /* Service icon */

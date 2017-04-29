@@ -98,8 +98,23 @@
 
         <div class="container">
             <div class="shop-by-departments">
-                <a href="#" class="shop-by-button">Departments <span class="icon ti-menu"></span></a>
-
+                <a href="#" class="shop-by-button">Departments <span class="icon ti-angle-down"></span></a>
+                <ul class="list-departments">
+                    <?php wp_list_categories( array(
+                        'hide_empty'          => false,
+                        'hide_title_if_empty' => false,
+                        'hierarchical'        => true,
+                        'order'               => 'ASC',
+                        'orderby'             => 'name',
+                        'show_count'          => 0,
+                        'show_option_all'     => '',
+                        'show_option_none'    => false,
+                        'style'               => 'list',
+                        'taxonomy'            => 'product_cat',
+                        'title_li'            => null,
+                        'use_desc_for_title'  => 1,
+                    ) ); ?>
+                </ul>
             </div>
             <nav id="site-navigation" class="main-navigation" role="navigation">
                 <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'sshop' ); ?></button>

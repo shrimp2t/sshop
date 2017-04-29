@@ -1,14 +1,15 @@
 <?php
 /**
- * Easemag tabs content
+ * SShop Base
  */
-class SShop_Tabs_Content extends WP_Widget {
+class SShop_Widget_Base extends WP_Widget {
 
     public $layout;
     public $tax;
     public $post_type;
     public $layout_class;
-
+    public $viewing;
+    //public $_instance;
 
     public function __construct( $id_base = '', $name = '', $widget_options = array(), $control_options = array() ) {
         parent::__construct( $id_base, $name, $widget_options, $control_options );
@@ -21,6 +22,7 @@ class SShop_Tabs_Content extends WP_Widget {
         $viewing = explode( ',', $viewing);
         $viewing = array_map( 'absint', $viewing );
         $viewing = array_filter( $viewing );
+
 
         if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) {
             $this->layout = isset($instance['_layout']) ? absint( $instance['_layout'] ) : 1;
@@ -38,13 +40,7 @@ class SShop_Tabs_Content extends WP_Widget {
         $instance['category'] = array_filter( $instance['category'] );
 
         if ( ! $viewing || empty( $viewing ) ) {
-
-            if ( isset( $instance['show_all'] ) && $instance['show_all'] == 'on' ) {
-                $viewing = $instance['category'] ;
-            } else {
-                $viewing = current( $instance['category'] );
-            }
-
+            $viewing = current( $instance['category'] );
         }
 
         $no_of_posts = isset( $instance['no_of_posts'] ) ? absint( $instance['no_of_posts'] ) : false;
@@ -102,8 +98,6 @@ class SShop_Tabs_Content extends WP_Widget {
 
         $args = apply_filters( 'sshop_widget_content_args', $args, $instance, $this );
 
-
-
         $query = new WP_Query( $args );
 
         if (!isset($instance['show_paging'])) {
@@ -113,13 +107,13 @@ class SShop_Tabs_Content extends WP_Widget {
         // Get current class
         $instance['wid'] = get_class( $this );
         $query->_instance = $instance;
-
+        $this->viewing = $viewing;
 
         return $query;
     }
 
 
-    function setup_instance( $instance ){
+    function setup_instance( $instance, $keep_keys = array( 'viewing' ) ){
         $r = array();
         foreach ( $this->get_configs() as $f ) {
             if ( isset( $f['name'] ) ) {
@@ -131,99 +125,24 @@ class SShop_Tabs_Content extends WP_Widget {
             }
         }
 
+        if ( is_array( $keep_keys ) ) {
+            foreach ( $keep_keys as $k ) {
+                if ( isset( $instance[ $k ] ) ) {
+                    $r[ $k ] = $instance[ $k ];
+                } else {
+                    $r[ $k ] = null;
+                }
+
+            }
+        }
+
         return $r;
     }
 
     public function widget( $args, $instance )
     {
-
-        if ( ! isset( $instance['__setup_data'] ) || ! $instance['__setup_data'] === false ){
-            $instance = $this->setup_instance( $instance );
-        }
-
-        $title = $instance['title'];
-        unset($instance['title']);
-
-        $category = $instance['category'];
-        $show_all = ( isset( $instance['show_all'] ) ) ? $instance['show_all'] : '';
-
-        if ( ! is_array( $category ) ) {
-            $category = ( array ) $category;
-        }
-
-        $query = $this->query( $instance );
-        $instance['_layout'] = $this->layout;
-        $instance['wid'] = get_class( $this );
-
-        $classes = array( 'widget-tabs', 'widget-tabs-list-' . $this->layout );
-
-        if ( $this->layout_class ) {
-            $classes[] = $this->layout_class;
-        }
-
-        echo $args['before_widget'];
-
-        ?>
-        <div class="<?php echo esc_attr( join( ' ', $classes ) ); ?>">
-            <div class="layout-tabs tabs-layout-wrap" data-ajax="<?php echo esc_url(admin_url('admin-ajax.php')); ?>" data-instance="<?php echo esc_attr(json_encode($instance)); ?>">
-                <?php if ( ! empty( $title ) ) { ?>
-                <div class="widget-title filter-inside">
-                    <h2 class="heading-label"><?php echo esc_html($title) ?></h2>
-
-                    <?php if ( count( $category ) > 1 ){ ?>
-                    <ul class="nav-tabs-filter">
-                        <?php if ( $show_all == 'on') { ?>
-                            <li class="show-all"><a data-term-id="<?php echo esc_attr(join($category, ',')); ?>" href="#"><?php esc_html_e('All', 'sshop'); ?></a></li>
-                        <?php } ?>
-                        <?php foreach ($category as $t) {
-                            $term = get_term($t, $this->tax );
-                            ?>
-                            <li><a data-term-id="<?php echo esc_attr($term->term_id); ?>" href="<?php echo get_term_link($term) ?>"><?php echo esc_html($term->name); ?></a></li>
-                            <?php
-                        } ?>
-                        <li class="subfilter-more"><a href="#"><?php esc_html_e('More', 'sshop'); ?><i class="fa fa-angle-down"></i>
-                            </a>
-                            <ul class="sub-filters"></ul>
-                        </li>
-                    </ul>
-                    <?php } ?>
-
-                    <div class="tab-item-actions">
-                        <span class="slider-prev ti-arrow-left"></span>
-                        <span class="slider-next ti-arrow-right"></span>
-                    </div>
-
-                </div>
-                <?php } ?>
-                <div class="tabs-layout-contents">
-                    <div class="tabs-intro">
-                        <img src="http://kutethemes.net/wordpress/kuteshop/option1/wp-content/uploads/2015/08/f2.jpg" alt="">
-                    </div>
-                    <?php
-                    echo '<div class="tabs-layout-content animate tabs-layout'.$this->layout.'">';
-                        echo '<div class="tabs-content-items-wrapper">';
-                                if ( $query->have_posts() ) {
-                                    if (method_exists($this, 'layout_' . $this->layout)) {
-                                        $this->{'layout_' . $this->layout}($query);
-                                    } else {
-                                        $this->layout_content($query);
-                                    }
-                                } else {
-                                    $this->not_found();
-                                }
-
-                        echo '</div>';
-                    echo '</div>';
-
-                    wp_reset_postdata();
-                    ?>
-                </div>
-            </div>
-        </div>
-        <?php
-        echo $args['after_widget'];
+        esc_html_e('function SShop_Widget_Base::widget() must be over-ridden in a sub-class.', 'sshop' );
     }
-
 
     function layout_content( $query ){
 
@@ -351,7 +270,6 @@ class SShop_Tabs_Content extends WP_Widget {
                     if ( ! is_array( $field['value'] ) ) {
                         $field['value'] = ( array ) $field['value'];
                     }
-
 
                     $field['value'] = array_filter( $field['value'] );
                     ?>
@@ -501,37 +419,27 @@ class SShop_Tabs_Content extends WP_Widget {
 
 
 
-    function sshop_tabs_content_ajax()
-    {
-        $w = null;
-        if ( isset( $_REQUEST['wid'] ) && $_REQUEST['wid'] ) {
-            if ( class_exists( $_REQUEST['wid'] ) ) {
-                $w = new $_REQUEST['wid'];
-                if ( ! is_subclass_of( $w, 'SShop_Tabs_Content')) {
-                    $w = null;
-                }
+function sshop_tabs_content_ajax()
+{
+    $w = null;
+    $class_name = '';
+    if ( isset( $_REQUEST['wid'] ) && $_REQUEST['wid'] ) {
+        if ( class_exists( $_REQUEST['wid'] ) ) {
+            $w = new $_REQUEST['wid'];
+            if ( is_subclass_of( $w, 'SShop_Widget_Base')) {
+                $class_name = $_REQUEST['wid'];
             }
         }
-
-        if ( ! $w ) {
-            $w = new SShop_Tabs_Content();
-        }
-
-        $query = $w->query($_REQUEST);
-
-        if ($query->have_posts()) {
-            if ( method_exists($w, 'layout_' . $w->layout) ) {
-                $w->{'layout_' . $w->layout}($query);
-            } else {
-                $w->layout_content($query);
-            }
-
-        } else {
-            $w->not_found();
-        }
-
-        die();
     }
 
-    add_action('wp_ajax_sshop_tabs_content_ajax', 'sshop_tabs_content_ajax');
-    add_action('wp_ajax_nopriv_sshop_tabs_content_ajax', 'sshop_tabs_content_ajax');
+    if ( ! $class_name ) {
+        $class_name = 'SShop_Widget_Base';
+    }
+
+    the_widget( $class_name, $_REQUEST, array() );
+
+    die();
+}
+
+add_action('wp_ajax_sshop_tabs_content_ajax', 'sshop_tabs_content_ajax');
+add_action('wp_ajax_nopriv_sshop_tabs_content_ajax', 'sshop_tabs_content_ajax');

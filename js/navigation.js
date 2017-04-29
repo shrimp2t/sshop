@@ -109,6 +109,20 @@
 
 
 jQuery( document).ready( function( $ ){
+
+    //departments menu
+    $( '.list-departments li').each( function(){
+        if ( $( '> ul', $( this )).length > 0 ) {
+            $( this ).addClass( 'has-child' );
+            $( this).find( '>a' ).append( '<span class="ti-angle-right"></span>' );
+        }
+    } );
+
+    $( '.shop-by-departments .shop-by-button').on( 'click', function(){
+        $( this).parent().toggleClass( 'active' );
+    } );
+
+
     jQuery( '.layout-tabs').each( function(){
         var tab = $( this );
         var headingLabel = $( '.heading-label', tab );
@@ -200,7 +214,7 @@ jQuery( document).ready( function( $ ){
             }
 
             if ( canSend ) {
-                var contentLayout = $('.tabs-layout-content', tab);
+                var contentLayout = $('.tabs-layout-contents', tab);
                 //var ch = contentLayout.height();
                 //contentLayout.css( 'min-height', ch );
                 var spinner = '<div class="loading-spinner">' +
@@ -234,16 +248,17 @@ jQuery( document).ready( function( $ ){
                         $('.tabs-content-items', tab ).slick('unslick');
                     }
 
-                    html = '<div>' + html + '</div>';
-                    var $html = $(html);
+                    var $html = $( '<div>'+html+'</div>' );
                     $('.tabs-item-inside', $html ).addClass('animate');
                     if (  typeof delay === "undefined" ) {
                         delay = 500;
                     }
                     setTimeout(function () {
                         contentLayout.addClass('animate');
-                        contentLayout.find('.tabs-content-items-wrapper').html($html);
+                        var $content = $( '.tabs-layout-contents', $html );
+                        contentLayout.html( $content );
                         var t = 0;
+                        /*
                         $('.dt-news-post', $html).each(function (index) {
                             var dt = $(this);
                             var _t = ( index + 1 ) * 100;
@@ -252,6 +267,7 @@ jQuery( document).ready( function( $ ){
                                 dt.removeClass('animate');
                             }, _t);
                         });
+                        */
 
                         spinner.animate({
                             opacity: 0,
@@ -261,8 +277,10 @@ jQuery( document).ready( function( $ ){
                             spinner.remove();
                         });
 
+                        if ( $( '.tabs-content-items .tabs-item-inside', tab).length > 0 ) {
+                            $('.tabs-content-items', tab ).slick( slickArgs );
+                        }
 
-                        $('.tabs-content-items', tab ).slick( slickArgs );
 
                     }, delay );
 

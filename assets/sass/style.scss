@@ -130,9 +130,11 @@ body {
 	}
 }
 .shop-by-departments {
+	$departments_width: 300px;
 	float: left;
+	position: relative;
 	.shop-by-button {
-		width: 300px;
+		width: $departments_width;
 		display: block;
 		padding: 10px 20px;
 		text-align: left;
@@ -143,6 +145,63 @@ body {
 		text-decoration: none !important;
 		.icon {
 			float: right;
+		}
+	}
+	&:hover {
+		.list-departments {
+			height: auto;
+			overflow: visible;
+		}
+	}
+	.list-departments {
+		position: absolute;
+		height: 0px;
+		overflow: hidden;
+		top: 100%;
+		left: 0px;
+		background: #fff;
+		z-index: 99;
+		width: $departments_width;
+		display: block;
+		margin: 0px;
+		padding: 0px;
+		li {
+			list-style: none;
+			a {
+				padding: 10px 15px;
+				display: block;
+
+				span {
+					float: right;
+					margin-top: 3px;
+				}
+
+			}
+			ul {
+				width: $departments_width;
+				display: none;
+				position: absolute;
+				top: 0px;
+				left: 100%;
+				min-height: 100%;
+				background: #fff;
+				margin: 0px;
+				padding: 0px;
+				border-left: 1px solid #f5f5f5;
+
+			}
+			&:hover {
+				> a {
+					background: #ededed;
+					text-decoration: none;
+				}
+				 > ul {
+					 display: block;
+				 }
+			}
+		}
+		a {
+			color: $text;
 		}
 	}
 }
@@ -238,9 +297,15 @@ body {
 
 	.tabs-layout-content {
 		display: block;
-		margin-left: $tab_heading_width;
 		padding: 5px;
 	}
+
+	&.has-b {
+		.tabs-layout-content {
+			margin-left: $tab_heading_width;
+		}
+	}
+
 	.tabs-item-inside {
 		float: left;
 	}
@@ -258,10 +323,28 @@ body {
 	.woocommerce-loop-product__title {
 		@include rem( 'font-size', 16px );
 	}
+
+
+
+}
+
+/* For brand Tabs */
+.widget_sshop_products_brand {
+	.layout-tabs {
+		.tabs-intro {
+			width: 40%;
+			float: left;
+			img {
+				width: 100%;
+				height: auto;
+				max-width: 100%;
+			}
+		}
+	}
 }
 
 
 /* Service icon */
 .services-wrapper {
-	
+
 }
