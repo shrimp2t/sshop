@@ -75,7 +75,7 @@
             <form class="top-search-form">
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="Seach..."" aria-describedby="basic-addon2">
-                    <span class="input-group-addon" id="basic-addon2"><span class="ti-search"></span></span>
+                    <span class="input-group-addon" id="basic-addon2"><span class="fa fa-search"></span></span>
                 </div>
             </form>
 
@@ -98,7 +98,7 @@
 
         <div class="container">
             <div class="shop-by-departments">
-                <a href="#" class="shop-by-button">Departments <span class="icon ti-angle-down"></span></a>
+                <a href="#" class="shop-by-button">Departments <span class="icon fa fa-angle-down"></span></a>
                 <ul class="list-departments">
                     <?php wp_list_categories( array(
                         'hide_empty'          => false,

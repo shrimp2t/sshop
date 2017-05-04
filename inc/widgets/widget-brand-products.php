@@ -134,8 +134,8 @@ class SShop_Widget_Brand_Products extends SShop_Widget_Base {
                         <?php } ?>
 
                         <div class="tab-item-actions">
-                            <span class="slider-prev ti-arrow-left"></span>
-                            <span class="slider-next ti-arrow-right"></span>
+                            <span class="slider-prev fa fa-angle-left"></span>
+                            <span class="slider-next fa fa-angle-right"></span>
                         </div>
 
                     </div>

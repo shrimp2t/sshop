@@ -114,7 +114,7 @@ jQuery( document).ready( function( $ ){
     $( '.list-departments li').each( function(){
         if ( $( '> ul', $( this )).length > 0 ) {
             $( this ).addClass( 'has-child' );
-            $( this).find( '>a' ).append( '<span class="ti-angle-right"></span>' );
+            $( this).find( '>a' ).append( '<span class="fa fa-angle-right"></span>' );
         }
     } );
 

@@ -27,7 +27,7 @@ TABLE OF CONTENTS:
 # Normalize
 --------------------------------------------------------------*/
 html {
-	font-family: sans-serif;
+	font-family: $font_text;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust:     100%;
 }
@@ -246,7 +246,7 @@ input,
 select,
 textarea {
 	color: #404040;
-	font-family: sans-serif;
+	font-family: $font_text;
 	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.5;

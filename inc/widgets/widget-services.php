@@ -29,37 +29,40 @@ class SShop_Widget_Services extends WP_Widget {
                 <div class="row">
                     <div class="col-xs-12 com-sm-6 col-md-3 service-item">
                         <div class="icon">
-                            <img src="http://kutethemes.net/wordpress/kuteshop/option1/wp-content/uploads/2015/08/s31.png" class="attachment-40x40 size-40x40 wp-post-image" alt="" srcset="http://kutethemes.net/wordpress/kuteshop/option1/wp-content/uploads/2015/08/s31.png 38w, http://kutethemes.net/wordpress/kuteshop/option1/wp-content/uploads/2015/08/s31-20x20.png 20w" sizes="(max-width: 38px) 100vw, 38px" width="38" height="40">                            </div>
+                            <span class="fa fa-life-ring"></span>
+                        </div>
 
                         <div class="info">
-                            <a href="http://kutethemes.net/wordpress/kuteshop/option1/service/247-support/"><h3>24/7 support</h3></a>
+                            <h3 class="service-title"><a href="#">24/7 support</a></h3>
                             <span>Online consultations</span>
                         </div>
                     </div>
                     <div class="col-xs-12 com-sm-6 col-md-3 service-item">
                         <div class="icon">
-                            <img src="http://kutethemes.net/wordpress/kuteshop/option1/wp-content/uploads/2015/08/s21.png" class="attachment-40x40 size-40x40 wp-post-image" alt="" srcset="http://kutethemes.net/wordpress/kuteshop/option1/wp-content/uploads/2015/08/s21.png 40w, http://kutethemes.net/wordpress/kuteshop/option1/wp-content/uploads/2015/08/s21-20x20.png 20w" sizes="(max-width: 40px) 100vw, 40px" width="40" height="40">                            </div>
+                            <span class="fa fa-clock-o"></span>
+                        </div>
 
                         <div class="info">
-                            <a href="http://kutethemes.net/wordpress/kuteshop/option1/service/30-day-return/"><h3>30-day return</h3></a>
+                            <h3 class="service-title"><a href="#">30-day return</a></h3>
                             <span>Moneyback guarantee</span>
                         </div>
                     </div>
                     <div class="col-xs-12 com-sm-6 col-md-3 service-item">
                         <div class="icon">
-                            <img src="http://kutethemes.net/wordpress/kuteshop/option1/wp-content/uploads/2015/08/s11.png" class="attachment-40x40 size-40x40 wp-post-image" alt="" srcset="http://kutethemes.net/wordpress/kuteshop/option1/wp-content/uploads/2015/08/s11.png 37w, http://kutethemes.net/wordpress/kuteshop/option1/wp-content/uploads/2015/08/s11-20x20.png 20w" sizes="(max-width: 37px) 100vw, 37px" width="37" height="37">                            </div>
+                            <span class="fa fa-truck"></span>
+                        </div>
 
                         <div class="info">
-                            <a href="http://kutethemes.net/wordpress/kuteshop/option1/service/free-shipping/"><h3>Free Shipping</h3></a>
+                            <h3  class="service-title"><a href="http://kutethemes.net/wordpress/kuteshop/option1/service/free-shipping/">Free Shipping</a></h3>
                             <span>On order over $200</span>
                         </div>
                     </div>
                     <div class="col-xs-12 com-sm-6 col-md-3 service-item">
                         <div class="icon">
-                            <img src="http://kutethemes.net/wordpress/kuteshop/option1/wp-content/uploads/2015/08/s41.png" class="attachment-40x40 size-40x40 wp-post-image" alt="" width="37" height="40">                            </div>
-
+                            <span class="fa fa-shield"></span>
+                        </div>
                         <div class="info">
-                            <a href="http://kutethemes.net/wordpress/kuteshop/option1/service/safe-shopping/"><h3>Safe Shopping</h3></a>
+                            <h3  class="service-title"><a href="http://kutethemes.net/wordpress/kuteshop/option1/service/safe-shopping/">Safe Shopping</a></h3>
                             <span>Safe Shopping Guarantee</span>
                         </div>
                     </div>

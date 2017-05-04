@@ -165,7 +165,7 @@ class SShop_Widget_Base extends WP_Widget {
     }
 
     function end_layout( $query ){
-
+        return ;
         if ( $query->_instance['show_paging'] ) {
             $paged = $query->query_vars['paged'];
             if (!$paged) {

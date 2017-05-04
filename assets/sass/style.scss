@@ -23,6 +23,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 */
 
 @import "reset";
+@import "utilities";
 @import "woocommerce";
 @import "slick";
 
@@ -343,8 +344,94 @@ body {
 	}
 }
 
+/* Widget category */
+.widget-shop-categories {
+	a {
+		&:hover {
+			text-decoration: none;
+		}
+	}
+	ul {
+		padding: 0px;
+		margin-top: 0px;
+		margin-bottom: 0px;
+		li {
+			list-style: none;
+		}
+	}
+	ul.list-shop-cats{
+		margin-top: -15px;
+		margin-bottom: -15px;
+		@include clearfixAfter();
+		> li {
+			list-style: none;
+			padding: 15px;
+		}
+	}
+	.child {
+		margin: 0px;
+		padding: 0px;
+		@include rem( margin, 15px 0px 0px 15px );
+		li {
+			> a {
+
+				&::before{
+					@include font-icon( '"\\f105"' );
+					font-size: 80%;
+					@include rem( margin-right, 7px );
+				}
+			}
+		}
+	}
+	.cat-name {
+		display: block;
+		font-weight: bold;
+		@include rem( margin-bottom, 10px );
+	}
+	.cat-link {
+		&::after{
+			@include font-icon( '"\\f105"' );
+			font-size: 80%;
+		}
+	}
+	.top-p-cat {
+		display: block;
+		background: #ededed;
+		@include rem( padding, 15px );
+	}
+}
+
+
 
 /* Service icon */
 .services-wrapper {
+	.service-item {
+		@include clearfixAfter();
+		position: relative;
+	}
+	.icon {
+		@include rem( font-size, 44px );
+		position: absolute;
+		left: 15px;
+	}
+	.info {
+		//float: left;
+		@include rem( padding, 13px 0px 10px );
+		@include rem( margin-left , 50px );
+		.service-title {
+			@include rem( font-size, 16px );
+			color: $text;
+			font-weight: bold;
+			a {
+				color: inherit;
+			}
+			margin: 0px;
+			padding: 0px;
+			text-transform: uppercase;
+		}
+		span {
+			color: $meta;
+		}
 
+	}
 }

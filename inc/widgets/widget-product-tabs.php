@@ -34,6 +34,7 @@ class SShop_Widget_Product_Tabs extends SShop_Widget_Base {
             array(
                 'type' =>'text',
                 'name' => 'no_of_posts',
+                'default' => '10',
                 'label' => esc_html__( 'No. of Posts', 'sshop' ),
             ),
 
@@ -134,8 +135,8 @@ class SShop_Widget_Product_Tabs extends SShop_Widget_Base {
                         <?php } ?>
 
                         <div class="tab-item-actions">
-                            <span class="slider-prev ti-arrow-left"></span>
-                            <span class="slider-next ti-arrow-right"></span>
+                            <span class="slider-prev fa fa-angle-left"></span>
+                            <span class="slider-next fa fa-angle-right"></span>
                         </div>
 
                     </div>
