@@ -1589,6 +1589,10 @@ body {
 	background: #f5f5f5;
 }
 
+a, a:focus, a:active, a:hover {
+	text-decoration: none;
+}
+
 .site-branding {
 	float: left;
 	min-height: 60px;
@@ -1596,6 +1600,7 @@ body {
 	padding: 0px 30px;
 	display: block;
 	position: relative;
+	min-height: 70px;
 }
 
 .site-branding a {
@@ -1666,6 +1671,7 @@ body {
 
 .header-shop__icon a:hover {
 	text-decoration: none;
+	color: #e8500e;
 }
 
 .header-shop__icon .shop__number {
@@ -1722,6 +1728,10 @@ body {
 	line-height: 70px;
 	line-height: 4.375rem;
 	color: #333333;
+}
+
+.main-navigation li a:hover {
+	color: #e8500e;
 }
 
 .main-navigation li ul {
@@ -1804,6 +1814,10 @@ body {
 	padding: 0px;
 }
 
+.shop-by-departments .list-departments a:hover {
+	color: #e8500e;
+}
+
 .shop-by-departments .list-departments li {
 	list-style: none;
 }
@@ -1858,11 +1872,20 @@ body {
 }
 
 /* Tabs */
-.layout-tabs .widget-title {
-	display: flex;
-	align-items: center;
+.layout-tabs {
 	background: #fff;
-	border-bottom: 2px solid #F36F36;
+}
+
+.layout-tabs .widget-title {
+	background: #fff;
+	font-size: 18px;
+	font-size: 1.125rem;
+	line-height: 50px;
+	line-height: 3.125rem;
+	padding: 0px 15px;
+	margin: 0px;
+	text-transform: uppercase;
+	float: left;
 }
 
 .layout-tabs .widget-title::after {
@@ -1871,36 +1894,33 @@ body {
 	clear: both;
 }
 
-.layout-tabs .widget-title .heading-label {
-	flex: 0 0 250px;
-	font-size: 18px;
-	font-size: 1.125rem;
-	line-height: 50px;
-	line-height: 3.125rem;
-	padding: 0px 20px;
-	margin: 0px;
-	background: #000;
-	color: #ffff;
-	text-align: center;
-	text-transform: uppercase;
+.layout-tabs .filter-inside {
+	border-bottom: 2px solid #F36F36;
+}
+
+.layout-tabs .filter-inside::after {
+	content: "";
+	display: table;
+	clear: both;
 }
 
 .layout-tabs .tab-item-actions {
-	width: 150px;
 	text-align: right;
-	padding-right: 15px;
+	float: right;
+	padding-right: 10px;
 }
 
 .layout-tabs .tab-item-actions span {
 	cursor: pointer;
-	padding: 0px 5px;
+	padding: 10px 5px 0px;
+	font-size: 28px;
 }
 
 .layout-tabs .nav-tabs-filter {
 	margin: 0px;
 	padding: 0px;
+	float: left;
 	display: inline-block;
-	width: 100%;
 }
 
 .layout-tabs .nav-tabs-filter li {
@@ -1910,12 +1930,8 @@ body {
 	line-height: 3.125rem;
 }
 
-.layout-tabs .nav-tabs-filter li.active {
-	background: #F36F36;
-}
-
 .layout-tabs .nav-tabs-filter li.active a {
-	color: #fff;
+	color: #e8500e;
 }
 
 .layout-tabs .nav-tabs-filter a {

@@ -11,7 +11,7 @@ $heading:       #333333;
 
 // Active color
 $primary: 		#F36F36;
-$primary_hover: #e86240;
+$primary_hover: darken( $primary, 10% );
 $secondary: 	#00aeef;
 
 // Mics color

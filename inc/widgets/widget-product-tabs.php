@@ -108,14 +108,20 @@ class SShop_Widget_Product_Tabs extends SShop_Widget_Base {
         }
 
         echo $args['before_widget'];
+        $title = apply_filters( 'widget_title', $title );
+
 
         ?>
         <div class="<?php echo esc_attr( join( ' ', $classes ) ); ?>">
+
             <div class="layout-tabs tabs-layout-wrap" data-ajax="<?php echo esc_url(admin_url('admin-ajax.php')); ?>" data-instance="<?php echo esc_attr(json_encode($instance)); ?>">
                 <?php if ( ! empty( $title ) ) { ?>
-                    <div class="widget-title filter-inside">
-                        <h2 class="heading-label"><?php echo esc_html($title) ?></h2>
-
+                    <div class="filter-inside">
+                        <?php
+                        if ( $title ) {
+                            echo $args['before_title'].$title.$args['after_title'];
+                        }
+                        ?>
                         <?php if ( count( $category ) > 1 ){ ?>
                             <ul class="nav-tabs-filter">
                                 <?php if ( $show_all == 'on') { ?>
