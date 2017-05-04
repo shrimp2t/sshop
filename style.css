@@ -1300,22 +1300,22 @@ object {
 	left: 0;
 }
 
-.type-product {
+.product {
 	display: block;
 	position: relative;
 	/* Product thumbnail */
 }
 
-.type-product .woocommerce-LoopProduct-link {
+.product .woocommerce-LoopProduct-link {
 	display: block;
 	position: relative;
 }
 
-.type-product .woocommerce-LoopProduct-link:hover {
+.product .woocommerce-LoopProduct-link:hover {
 	text-decoration: none;
 }
 
-.type-product .onsale {
+.product .onsale {
 	position: absolute;
 	top: 5px;
 	left: 5px;
@@ -1329,30 +1329,61 @@ object {
 	padding: 5px 10px;
 }
 
-.type-product .woocommerce-loop-product__title {
+.product .woocommerce-loop-product__title {
 	color: #333333;
 }
 
-.type-product .product-thumbnail {
+.product .product-thumbnail {
 	margin-bottom: 20px;
 }
 
-.type-product .star-rating {
+.product .star-rating {
 	display: block;
 	color: #F36F36;
 }
 
-.type-product .price {
-	font-size: 20px;
-	font-size: 1.25rem;
-	font-weight: bold;
+.product .price {
+	font-size: 16px;
+	font-size: 1rem;
 	text-transform: uppercase;
 	display: block;
+	color: #333333;
 }
 
-.type-product .add_to_cart_button {
-	display: block;
+.product .add_to_cart_button, .product .add_to_wishlist {
+	display: inline-block;
 	clear: both;
+	position: absolute;
+	top: 50%;
+	text-indent: -999999px;
+	overflow: hidden;
+	min-width: 80px;
+}
+
+.product .add_to_cart_button:before, .product .add_to_wishlist:before {
+	text-indent: 0;
+	float: left;
+	margin: 0;
+	font-family: 'FontAwesome';
+	content: "\f217";
+}
+
+.product .add_to_cart_button {
+	left: 0px;
+}
+
+.product .add_to_cart_button:before {
+	font-family: 'FontAwesome';
+	content: "\f217";
+}
+
+.product .add_to_wishlist {
+	right: 0px;
+}
+
+.product .add_to_wishlist:before {
+	font-family: 'FontAwesome';
+	content: "\f08a";
 }
 
 /*
