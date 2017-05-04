@@ -62,7 +62,7 @@ class SShop_Widget_Product_Categories extends WP_Widget {
         // outputs the content of the widget
 
         $instance = wp_parse_args( $instance, array(
-            'columns'    => 3,
+            'columns'    => 4,
             'num_child' => 2,
         ) );
 

@@ -165,31 +165,6 @@ class SShop_Widget_Base extends WP_Widget {
     }
 
     function end_layout( $query ){
-        return ;
-        if ( $query->_instance['show_paging'] ) {
-            $paged = $query->query_vars['paged'];
-            if (!$paged) {
-                $paged = 1;
-            }
-            $next_page = intval($paged) + 1;
-
-            if ($next_page > $query->max_num_pages) {
-                $next_page = 0;
-            }
-            $prev_page = $paged - 1;
-
-            if ($prev_page || $next_page) {
-                ?>
-                <div class="tab-paging-wrap">
-                    <a href="#" data-paged="<?php echo esc_attr($prev_page); ?>" class="tab-paging back-page <?php echo ($prev_page > 1) ? 'active' : 'disable'; ?>"><i
-                            class="fa fa-angle-left"></i></a>
-                    <a href="#" data-paged="<?php echo esc_attr($next_page); ?>" class="tab-paging next-page <?php echo ($next_page) ? 'active' : 'disable'; ?>"><i
-                            class="fa fa-angle-right"></i></a>
-                </div>
-                <?php
-            }
-        }
-
         wp_reset_postdata();
     }
 

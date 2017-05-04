@@ -44,9 +44,7 @@ function sshop_setup() {
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
     add_theme_support( 'post-thumbnails' );
-    add_image_size( 'shop_catalog_image_size', 300, 366, 1 );
-    add_image_size( 'shop_single_image_size', 600, 600, 1 );
-    add_image_size( 'shop_thumbnail_image_size', 180, 180, 1 );
+    add_image_size( 'sshop_big', 9999, 560, 1 );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -146,11 +144,18 @@ function sshop_scripts() {
 
 	wp_enqueue_script( 'sshop-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
+    wp_dequeue_style( 'owl_theme_css');
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'sshop_scripts' );
+
+function sshop_dequeue_style_footer(){
+    wp_dequeue_style( 'owl_theme_css');
+}
+
+add_action( 'wp_footer', 'sshop_dequeue_style_footer' );
 
 /**
  * Implement the Custom Header feature.
@@ -181,6 +186,13 @@ require get_template_directory() . '/inc/jetpack.php';
 require get_template_directory() . '/inc/woocommerce-functions.php';
 require get_template_directory() . '/inc/woocommerce-template-functions.php';
 require get_template_directory() . '/inc/woocommerce-template-hooks.php';
+require get_template_directory() . '/inc/plugins-hooks.php';
+
+/**
+ * 3rd Party
+ */
+require get_template_directory() . '/inc/3rd-party/meta-slider.php';
+
 
 /**
  * Widgets
@@ -188,6 +200,7 @@ require get_template_directory() . '/inc/woocommerce-template-hooks.php';
 require get_template_directory() . '/inc/widgets/widgets.php';
 require get_template_directory() . '/inc/widgets/widget-base.php';
 require get_template_directory() . '/inc/widgets/widget-services.php';
+require get_template_directory() . '/inc/widgets/widget-slider.php';
 require get_template_directory() . '/inc/widgets/widget-product-tabs.php';
 require get_template_directory() . '/inc/widgets/widget-brand-products.php';
 require get_template_directory() . '/inc/widgets/widget-product-categories.php';

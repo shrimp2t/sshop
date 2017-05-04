@@ -1349,6 +1349,131 @@ object {
 	clear: both;
 }
 
+/*
+##############################################################
+### OWL CAROUSEL THEME (CSS) FOR THE SLIDE ANYTHING PLUGIN ###
+##############################################################
+*/
+/* ### PAGINATION BUTTONS ### */
+.owl-theme .owl-controls .owl-pagination {
+	position: absolute;
+	width: 100%;
+	padding: 10px 0px 0px;
+	bottom: -22px;
+	text-align: center;
+	font-size: 12px;
+	line-height: 12px;
+}
+
+.owl-theme .owl-controls .owl-pagination .owl-page {
+	display: inline-block;
+}
+
+.owl-theme .owl-controls .owl-pagination .owl-page span {
+	display: inline-block;
+	border-style: none;
+	background-color: rgba(255, 255, 255, 0.3);
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	margin: 0px 3px;
+	transition: all .3s ease-in-out;
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+}
+
+.owl-theme .owl-controls .owl-pagination .active span {
+	background-color: white;
+}
+
+.owl-theme .owl-controls .owl-pagination .owl-page span:hover {
+	background-color: white;
+}
+
+.owl-pagination-true {
+	margin-bottom: 22px;
+}
+
+/* ### PREVIOUS AND NEXT ARROW BUTTONS ### */
+.owl-theme .owl-controls .owl-buttons {
+	display: block;
+}
+
+.autohide-arrows .owl-controls .owl-buttons {
+	display: none;
+}
+
+.autohide-arrows:hover .owl-controls .owl-buttons {
+	display: block;
+}
+
+.owl-theme .owl-controls .owl-buttons div {
+	position: absolute;
+	top: 50%;
+	padding: 2px 0px;
+	display: inline-block;
+	transform: translateY(-50%);
+	line-height: 1;
+	transition: all .3s ease-in-out;
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+}
+
+.owl-theme .owl-controls .owl-buttons .owl-prev,
+.owl-theme .owl-controls .owl-buttons .owl-next {
+	font-size: 40px;
+	font-size: 2.5rem;
+}
+
+.owl-theme .owl-controls .owl-buttons .owl-prev:before,
+.owl-theme .owl-controls .owl-buttons .owl-next:before {
+	padding: 10px 15px;
+	display: block;
+	background: rgba(255, 255, 255, 0.4);
+}
+
+.owl-theme .owl-controls .owl-buttons .owl-prev {
+	left: 15px;
+}
+
+.owl-theme .owl-controls .owl-buttons .owl-prev::before {
+	float: left;
+	font-family: 'FontAwesome';
+	content: "\f104";
+}
+
+.owl-theme .owl-controls .owl-buttons .owl-next {
+	right: 15px;
+}
+
+.owl-theme .owl-controls .owl-buttons .owl-next::before {
+	float: left;
+	font-family: 'FontAwesome';
+	content: "\f105";
+}
+
+/* Slider */
+.slider-wrapper {
+	position: relative;
+	color: #fff;
+}
+
+.slider-wrapper .owl-item .overlay {
+	background: rgba(0, 0, 0, 0.5);
+	padding: 15px;
+	display: inline-block;
+	width: auto;
+}
+
+.slider-wrapper .owl-theme .owl-controls .owl-pagination {
+	position: absolute;
+	bottom: 15px !important;
+	right: 15px;
+	width: auto;
+}
+
 /* Slider */
 .slick-slider {
 	position: relative;
@@ -1650,11 +1775,8 @@ body {
 
 /* Home sidebar */
 .home-content-sidebar .widget {
+	margin-top: 40px;
 	margin-bottom: 40px;
-}
-
-.home-content-sidebar .widget:last-child {
-	margin-bottom: 0px;
 }
 
 /* Tabs */

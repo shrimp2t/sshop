@@ -123,6 +123,10 @@ jQuery( document).ready( function( $ ){
     } );
 
 
+    // Slider
+
+
+
     jQuery( '.layout-tabs').each( function(){
         var tab = $( this );
         var headingLabel = $( '.heading-label', tab );
@@ -150,12 +154,11 @@ jQuery( document).ready( function( $ ){
             var headingWidth = headingLabel.outerWidth();
             var tabWidth = tab.innerWidth();
 
-            console.log( 'tabWidth', tabWidth );
 
             var w = 0;
             headingWidth = 0;
             var filterW = tabWidth - headingWidth - 20;
-            console.log( 'filterW', filterW );
+
             $( 'li', filter).not('.subfilter-more').each( function(){
                 var width = $( this ).outerWidth();
 

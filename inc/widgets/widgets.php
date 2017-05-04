@@ -31,6 +31,7 @@ function sshop_register_widgets() {
     register_widget( 'SShop_Widget_Brand_Products' );
     register_widget( 'SShop_Widget_Services' );
     register_widget( 'SShop_Widget_Product_Categories' );
+    register_widget( 'SShop_Widget_Slider' );
 
 }
 add_action( 'widgets_init', 'sshop_register_widgets' );
