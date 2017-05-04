@@ -1,5 +1,9 @@
 // main: style.scss
 
+.container {
+    @include clearfixAfter();
+}
+
 @for $i from 1 through 12 {
     .eq-row-col-#{$i} {
         margin-left: -15px;

@@ -49,6 +49,7 @@ function sshop_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'menu-1' => esc_html__( 'Primary', 'sshop' ),
+		'menu-2' => esc_html__( 'Right Menu', 'sshop' ),
 	) );
 
 
@@ -69,6 +70,16 @@ function sshop_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+
+
+    $defaults = array(
+        'height'      => 50,
+        'width'       => 150,
+        'flex-height' => false,
+        'flex-width'  => true,
+        'header-text' => array( 'site-title' ),
+    );
+    add_theme_support( 'custom-logo', $defaults );
 
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );

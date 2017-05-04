@@ -876,6 +876,12 @@ object {
 	display: block;
 }
 
+.container::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
 .eq-row-col-1 {
 	margin-left: -15px;
 	margin-right: -15px;
@@ -1583,36 +1589,40 @@ body {
 	background: #f5f5f5;
 }
 
-.navbar-nav {
-	margin-left: 0px;
-}
-
-.top-bar-middle {
-	padding-top: 20px;
-	padding-bottom: 20px;
-	display: flex;
-	align-items: center;
-	flex-grow: 1;
-}
-
-.top-bar-middle::after {
-	content: "";
-	display: table;
-	clear: both;
-}
-
 .site-branding {
-	flex-grow: 2;
-	align-items: center;
-	display: flex;
+	float: left;
+	min-height: 60px;
+	background: #222;
+	padding: 0px 30px;
+	display: block;
+	position: relative;
+}
+
+.site-branding a {
+	color: #f5f5f5;
+}
+
+.site-branding a:hover {
+	text-decoration: none;
+}
+
+.site-branding .custom-logo-link {
+	line-height: 70px;
+	line-height: 4.375rem;
 }
 
 .site-branding .site-title {
 	margin: 0px;
+	font-weight: 700;
+	color: #f5f5f5;
 	font-size: 40px;
 	font-size: 2.5rem;
-	line-height: 40px;
-	line-height: 2.5rem;
+	line-height: 70px;
+	line-height: 4.375rem;
+}
+
+.site-branding .site-title a {
+	color: inherit;
 }
 
 .site-branding .site-description {
@@ -1620,7 +1630,9 @@ body {
 }
 
 .top-search-form {
-	width: 600px;
+	flex-grow: 1;
+	width: auto;
+	display: inline-block;
 	margin-left: 30px;
 	margin-right: 30px;
 }
@@ -1641,6 +1653,8 @@ body {
 }
 
 .header-shop__icon {
+	padding: 0px;
+	display: inline-block;
 	margin: 0px 15px;
 }
 
@@ -1656,7 +1670,7 @@ body {
 
 .header-shop__icon .shop__number {
 	position: absolute;
-	top: 0px;
+	top: 10px;
 	right: -10px;
 	border-radius: 50%;
 	padding: 5px;
@@ -1666,14 +1680,17 @@ body {
 	min-width: 22px;
 	min-height: 10px;
 	text-align: center;
+	color: #f5f5f5;
 }
 
 .header-shop__icon .shop__icon {
-	font-size: 40px;
+	font-size: 28px;
+	line-height: 70px;
+	line-height: 4.375rem;
 }
 
 .site-header {
-	background: #262626;
+	background: #222222;
 }
 
 .site-header .site-title {
@@ -1681,7 +1698,18 @@ body {
 }
 
 .site-header a {
-	color: #f5f5f5;
+	color: #333333;
+}
+
+.navigation-wrapper {
+	background-color: #fff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.12);
+}
+
+.navigation-wrapper::after {
+	content: "";
+	display: table;
+	clear: both;
 }
 
 /* main-navigation */
@@ -1690,7 +1718,42 @@ body {
 }
 
 .main-navigation li a {
-	padding: 10px;
+	padding: 0px 18px;
+	line-height: 70px;
+	line-height: 4.375rem;
+	color: #333333;
+}
+
+.main-navigation li ul {
+	top: 100%;
+	background: #fff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.12);
+}
+
+.main-navigation li li {
+	position: relative;
+}
+
+.main-navigation li li a {
+	line-height: 30px;
+	line-height: 1.875rem;
+	padding: 5px 15px;
+	display: block;
+}
+
+.main-navigation li li a:hover {
+	background: #ededed;
+}
+
+.main-navigation li li ul {
+	display: none;
+	position: absolute;
+	left: 100%;
+	top: 0px;
+}
+
+.main-navigation li li:hover > ul {
+	display: block;
 }
 
 .shop-by-departments {
@@ -1699,24 +1762,32 @@ body {
 }
 
 .shop-by-departments .shop-by-button {
-	width: 300px;
+	width: auto;
 	display: block;
-	padding: 10px 20px;
+	padding: 0px 18px;
 	text-align: left;
 	font-weight: bold;
 	text-transform: uppercase;
 	background: #F36F36;
+	line-height: 70px;
+	line-height: 4.375rem;
 	color: #fff;
 	text-decoration: none !important;
 }
 
 .shop-by-departments .shop-by-button .icon {
-	float: right;
+	margin-left: 10px;
+	font-size: 20px;
+	font-size: 1.25rem;
 }
 
 .shop-by-departments:hover .list-departments {
 	height: auto;
 	overflow: visible;
+}
+
+.shop-by-departments ul {
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.12);
 }
 
 .shop-by-departments .list-departments {
@@ -1727,7 +1798,7 @@ body {
 	left: 0px;
 	background: #fff;
 	z-index: 99;
-	width: 300px;
+	width: 250px;
 	display: block;
 	margin: 0px;
 	padding: 0px;
@@ -1738,8 +1809,10 @@ body {
 }
 
 .shop-by-departments .list-departments li a {
-	padding: 10px 15px;
+	padding: 5px 15px;
 	display: block;
+	line-height: 30px;
+	line-height: 1.875rem;
 }
 
 .shop-by-departments .list-departments li a span {
@@ -1748,7 +1821,7 @@ body {
 }
 
 .shop-by-departments .list-departments li ul {
-	width: 300px;
+	width: 250px;
 	display: none;
 	position: absolute;
 	top: 0px;
@@ -1771,6 +1844,11 @@ body {
 
 .shop-by-departments .list-departments a {
 	color: #333333;
+}
+
+.right-navigation {
+	float: right;
+	text-align: right;
 }
 
 /* Home sidebar */

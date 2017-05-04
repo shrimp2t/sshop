@@ -23,80 +23,31 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'sshop' ); ?></a>
 
-
 	<header id="masthead" class="site-header" role="banner">
 
-        <div id="top-bar">
-            <div class="container">
-                <nav class="navbar navbar-toggleable-md">
-                    <div class="collapse navbar-collapse">
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#"><span class="ti-mobile"></span> 0123 456 789</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"><span class="ti-email"></span> Contact us</a>
-                            </li>
-                        </ul>
-                        <ul class="navbar-nav">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#">Login/Register</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Support</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Services</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        </div>
+        <div class="navigation-wrapper">
 
-        <div class="container top-bar-middle">
             <div class="site-branding">
                 <?php
+                if ( function_exists( 'the_custom_logo' ) ) {
+                    the_custom_logo();
+                }
                 if ( is_front_page() && is_home() ) : ?>
                     <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
                 <?php else : ?>
                     <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-                <?php
+                    <?php
                 endif;
 
                 $description = get_bloginfo( 'description', 'display' );
                 if ( $description || is_customize_preview() ) : ?>
                     <p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-                <?php
+                    <?php
                 endif; ?>
             </div><!-- .site-branding -->
 
 
-            <form class="top-search-form">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Seach..."" aria-describedby="basic-addon2">
-                    <span class="input-group-addon" id="basic-addon2"><span class="fa fa-search"></span></span>
-                </div>
-            </form>
 
-            <div class="header-shop__icon">
-                <a href="#">
-                    <span class="shop__number">4</span>
-                    <span class="shop__icon ti-heart"></span>
-                </a>
-            </div>
-
-            <div class="header-shop__icon">
-                <a href="#">
-                    <span class="shop__number">3</span>
-                    <span class="shop__icon ti-shopping-cart"></span>
-                </a>
-            </div>
-
-        </div>
-
-
-        <div class="container">
             <div class="shop-by-departments">
                 <a href="#" class="shop-by-button">Departments <span class="icon fa fa-angle-down"></span></a>
                 <ul class="list-departments">
@@ -120,7 +71,47 @@
                 <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'sshop' ); ?></button>
                 <?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
             </nav><!-- #site-navigation -->
+            <nav id="site-navigation-right" class="right-navigation" role="navigation">
+
+                <form class="top-search-form" style="display: none;" >
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Seach..." aria-describedby="basic-addon2">
+                        <span class="input-group-addon" id="basic-addon2"><?php esc_html_e( 'Search' ,'sshop' ); ?></span>
+                    </div>
+                </form>
+
+                <div class="header-shop__icon">
+                    <a href="#">
+                        <span class="shop__icon fa fa-search"></span>
+                    </a>
+                </div>
+
+                <div class="header-shop__icon">
+                    <a href="#">
+                        <span class="shop__number">4</span>
+                        <span class="shop__icon fa fa-heart-o"></span>
+                    </a>
+                </div>
+
+                <div class="header-shop__icon">
+                    <a href="#">
+                        <span class="shop__number">3</span>
+                        <span class="shop__icon fa fa-shopping-cart"></span>
+                    </a>
+                </div>
+
+                <div class="header-shop__icon">
+                    <a href="#">
+                        <span class="shop__icon fa fa-user-circle-o"></span>
+                    </a>
+                </div>
+            </nav><!-- #site-navigation -->
+
+
+
         </div>
+
+
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
