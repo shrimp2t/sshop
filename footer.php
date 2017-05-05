@@ -13,6 +13,7 @@
 
 	</div><!-- #content -->
 
+<?php if ( is_dynamic_sidebar( 'sidebar-footer' ) ) { ?>
 <div class="footer-widgets">
     <div class="container">
         <div class="row">
@@ -20,14 +21,14 @@
         </div>
     </div>
 </div>
+<?php } ?>
 
 
 <footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="container">
             <div class="site-info">
-                <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'sshop' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'sshop' ), 'WordPress' ); ?></a>
-                <span class="sep"> | </span>
-                <?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'sshop' ), 'sshop', '<a href="https://automattic.com/" rel="designer">Underscores.me</a>' ); ?>
+                <span class="copy"><?php printf( esc_html__( 'Copyright %1$s SShop Theme. All Rights Reserved. ', 'sshop' ), '&copy; '.date_i18n( 'Y' ) ); ?></span>
+                <span class="credit"><?php printf( esc_html__( 'WordPress SShop Theme by %1$s', 'sshop' ), '<a href="https://www.shrimp2t.com">shrimp2t</a>' ) ?></span>
             </div><!-- .site-info -->
         </div>
 	</footer><!-- #colophon -->

@@ -12,7 +12,7 @@
 	position:absolute;
 	width:100%;
 	padding:10px 0px 0px;
-	bottom:-22px;
+	bottom: 0px;
 	text-align:center;
 	font-size:12px;
 	line-height:12px;
@@ -40,7 +40,7 @@
 	background-color:rgba(255,255,255,1);
 }
 .owl-pagination-true {
-	margin-bottom:22px;
+	margin-bottom: 0px;
 }
 
 /* ### PREVIOUS AND NEXT ARROW BUTTONS ### */
@@ -71,7 +71,7 @@
     &:before{
         padding: 10px 15px;
         display: block;
-        background: rgba( 255, 255, 255, .4 );
+        background: rgba( 0, 0, 0, .4 );
     }
 }
 .owl-theme .owl-controls .owl-buttons .owl-prev {

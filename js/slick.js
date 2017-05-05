@@ -1277,6 +1277,7 @@
 
     Slick.prototype.initADA = function() {
         var _ = this;
+        console.log( '_.$slides', _.$slides );
         _.$slides.add(_.$slideTrack.find('.slick-cloned')).attr({
             'aria-hidden': 'true',
             'tabindex': '-1'

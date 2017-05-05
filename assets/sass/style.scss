@@ -30,9 +30,17 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 /* WP Theme */
 body {
 	background: #f5f5f5;
+	color: $text;
+}
+a, a:link, a:visited{
+	color: $primary;
+}
+a:focus, a:active, a:hover {
+	text-decoration: none;
+	color: $primary_hover;
 }
 #page {
-	//overflow-x: hidden;
+	overflow-x: hidden;
 }
 .site-content {
 	max-width: 1350px;
@@ -43,9 +51,7 @@ body {
 	width: 1350px;
 	max-width: 100%;
 }
-a, a:focus, a:active, a:hover {
-	text-decoration: none;
-}
+
 
 .site-branding {
 	float: left;
@@ -288,6 +294,15 @@ a, a:focus, a:active, a:hover {
 		&.container {
 			padding-left: 0px;
 			padding-right: 0px;
+		}
+		&.full-width {
+			margin-left: -99999px;
+			margin-right: -99999px;
+			background: #fff;
+			margin-top: 0px;
+			margin-bottom: 0px;
+			padding-top: 40px;
+			padding-bottom: 40px;
 		}
 		margin-top: 40px;
 		margin-bottom: 40px;
@@ -556,16 +571,15 @@ a, a:focus, a:active, a:hover {
 
 /* Footer */
 .footer-widgets {
-	padding: 50px 0px;
-	background: #333;
-	color: #f5f5f5;
+	padding: 60px 0px;
+	background: #111111;
+	color: #999999;
 	a {
-		color: #f5f5f5;
+		color: #999999;
 	}
 	.widget {
 		margin-bottom: 0px;
 		.widget-title {
-			color: #f5f5f5;
 			@include rem( font-size, 16px );
 			@include rem( margin-bottom , 15px );
 			text-transform: uppercase;
@@ -581,4 +595,14 @@ a, a:focus, a:active, a:hover {
 			}
 		}
 	}
+}
+.site-footer {
+	@include rem( font-size, 14px );
+	padding: 15px 0px;
+	background: #222222;
+	color: #999999;
+	a {
+		color: #999999;
+	}
+
 }

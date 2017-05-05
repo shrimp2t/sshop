@@ -123,10 +123,6 @@ jQuery( document).ready( function( $ ){
     } );
 
 
-    // Slider
-
-
-
     jQuery( '.layout-tabs').each( function(){
         var tab = $( this );
         var headingLabel = $( '.widget-title', tab );
@@ -137,6 +133,7 @@ jQuery( document).ready( function( $ ){
         instance.action = 'sshop_tabs_content_ajax';
 
         var slickArgs = {
+            accessibility: false,
             slidesToShow: 4,
             slidesToScroll: 1,
             autoplay: false,
@@ -148,7 +145,7 @@ jQuery( document).ready( function( $ ){
                 {
                     breakpoint: 1024,
                     settings: {
-                        slidesToShow: 3,
+                        slidesToShow: 4,
                         slidesToScroll: 3
                     }
                 },
@@ -213,6 +210,11 @@ jQuery( document).ready( function( $ ){
                 $( 'li', filter).eq( 0 ).addClass( 'active' );
             }
 
+           try {
+               $('.tabs-content-items', tab ).unslick( );
+           } catch ( e ){
+
+           }
             $('.tabs-content-items', tab ).slick( slickArgs );
 
         };
@@ -276,7 +278,9 @@ jQuery( document).ready( function( $ ){
                 var appendTabContent = function (html, delay ) {
 
                     if ( $('.tabs-content-items', tab).length > 0 ) {
+                        $('.tabs-content-items', tab ).unslick();
                         $('.tabs-content-items', tab ).slick('unslick');
+
                     }
 
                     var $html = $( '<div>'+html+'</div>' );

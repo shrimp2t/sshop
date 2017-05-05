@@ -1470,7 +1470,7 @@ object {
 	position: absolute;
 	width: 100%;
 	padding: 10px 0px 0px;
-	bottom: -22px;
+	bottom: 0px;
 	text-align: center;
 	font-size: 12px;
 	line-height: 12px;
@@ -1503,7 +1503,7 @@ object {
 }
 
 .owl-pagination-true {
-	margin-bottom: 22px;
+	margin-bottom: 0px;
 }
 
 /* ### PREVIOUS AND NEXT ARROW BUTTONS ### */
@@ -1542,7 +1542,7 @@ object {
 .owl-theme .owl-controls .owl-buttons .owl-next:before {
 	padding: 10px 15px;
 	display: block;
-	background: rgba(255, 255, 255, 0.4);
+	background: rgba(0, 0, 0, 0.4);
 }
 
 .owl-theme .owl-controls .owl-buttons .owl-prev {
@@ -1692,6 +1692,20 @@ object {
 /* WP Theme */
 body {
 	background: #f5f5f5;
+	color: #333333;
+}
+
+a, a:link, a:visited {
+	color: #F36F36;
+}
+
+a:focus, a:active, a:hover {
+	text-decoration: none;
+	color: #e8500e;
+}
+
+#page {
+	overflow-x: hidden;
 }
 
 .site-content {
@@ -1703,10 +1717,6 @@ body {
 .container {
 	width: 1350px;
 	max-width: 100%;
-}
-
-a, a:focus, a:active, a:hover {
-	text-decoration: none;
 }
 
 .site-branding {
@@ -1992,6 +2002,16 @@ a, a:focus, a:active, a:hover {
 	padding-right: 0px;
 }
 
+.home-content-sidebar .widget.full-width {
+	margin-left: -99999px;
+	margin-right: -99999px;
+	background: #fff;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
 /* Tabs */
 .layout-tabs {
 	background: #fff;
@@ -2272,13 +2292,13 @@ a, a:focus, a:active, a:hover {
 
 /* Footer */
 .footer-widgets {
-	padding: 50px 0px;
-	background: #333;
-	color: #f5f5f5;
+	padding: 60px 0px;
+	background: #111111;
+	color: #999999;
 }
 
 .footer-widgets a {
-	color: #f5f5f5;
+	color: #999999;
 }
 
 .footer-widgets .widget {
@@ -2286,7 +2306,6 @@ a, a:focus, a:active, a:hover {
 }
 
 .footer-widgets .widget .widget-title {
-	color: #f5f5f5;
 	font-size: 16px;
 	font-size: 1rem;
 	margin-bottom: 15px;
@@ -2305,4 +2324,16 @@ a, a:focus, a:active, a:hover {
 
 .footer-widgets .widget ul li ul {
 	margin-left: 30px;
+}
+
+.site-footer {
+	font-size: 14px;
+	font-size: 0.875rem;
+	padding: 15px 0px;
+	background: #222222;
+	color: #999999;
+}
+
+.site-footer a {
+	color: #999999;
 }

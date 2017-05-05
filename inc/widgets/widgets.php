@@ -105,7 +105,7 @@ class SShop_Widget_Classes{
 
         $settings = $widget_opt[$widget_index];
 
-        if ( isset( $settings['css_id'] ) ) {
+        if ( isset( $settings['css_id'] ) && sanitize_title( $settings['css_id'] ) != '' ) {
             $_id = sanitize_title( $settings['css_id'] );
         } else {
             $_id = $widget_id;
@@ -127,7 +127,13 @@ class SShop_Widget_Classes{
             $classes[] = $_custom_class;
         }
 
-        $params[0]['before_widget'] = sprintf( $sidebar['before_widget'], $_id, join( ' ', $classes ) );
+        $classes = join( ' ', $classes );
+        $params[0]['before_widget'] = sprintf( $sidebar['before_widget'], $_id, $classes );
+        if ( strpos( $classes, 'full-width' ) !== false ) {
+            $params[0]['before_widget'] .= '<div class="container widget-full-width-content">';
+            $params[0]['after_widget'] = '</div>'.$params[0]['after_widget'];
+        }
+
         return $params;
     }
 }
