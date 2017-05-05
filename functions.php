@@ -219,6 +219,9 @@ require get_template_directory() . '/inc/widgets/widget-product-categories.php';
 
 require get_template_directory() . '/inc/admin.php';
 
+require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
+require get_template_directory() . '/inc/config/plugins.php';
+
 
 
 add_action( 'cmb2_admin_init', 'yourprefix_register_taxonomy_metabox' );
