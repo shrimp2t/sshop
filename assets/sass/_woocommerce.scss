@@ -115,35 +115,49 @@
 		position: absolute;
 		top: 15px;
 		right: 15px;
-		//transform: translateY( -50% );
-		//text-align: center;
 
-		.add_to_cart_button, .add_to_wishlist, .yith-wcwl-wishlistexistsbrowse a {
+		.add-cart-wrap {
 			display: block;
-			//clear: both;
-			//position: absolute;
-			//top: 50%;
-			//text-indent: -999999px;
 			overflow: hidden;
-			width: 40px;
-			height: 40px;
-			//left: 50%;
-			//transform: translateY( -50% );
+			width: 35px;
+			height: 35px;
+			position: relative;
+
+			.add_to_cart_button {
+				&.added {
+					opacity: 0;
+					display: none;
+				}
+			}
+			.added_to_cart.wc-forward {
+				&::before {
+					@include font-icon( '"\\f07a"' );
+					background: $primary_hover;
+				}
+			}
+		}
+
+		.add_to_cart_button, .added_to_cart, .add_to_wishlist,
+		.yith-wcwl-wishlistexistsbrowse a,
+		.yith-wcwl-wishlistaddedbrowse a {
+			display: block;
+			overflow: hidden;
+			width: 35px;
+			height: 35px;
+
 			&:before {
 				text-indent: 0;
 				float: left;
-				//position: absolute;
-				//left: 0px;
-				width: 40px;
-				height: 40px;
-
+				width: 35px;
+				height: 35px;
 				background: rgba( 0, 0,0, .6 );
-				@include rem( 'font-size', 30px );
+				@include rem( 'font-size', 20px );
+				@include rem( 'line-height', 35px );
 				display: block;
 				text-align: center;
 				vertical-align: middle;
 				color: #fff;
-				border-radius: 3px;
+				border-radius: 50%;
 			}
 
 		}
@@ -161,6 +175,18 @@
 				@include font-icon( '"\\f08a"' );
 			}
 		}
+		.yith-wcwl-add-to-wishlist {
+			.feedback {
+				display: none;
+			}
+		}
+		.yith-wcwl-add-button {
+			.ajax-loading {
+				display: none;
+			}
+		}
+
+		.yith-wcwl-wishlistaddedbrowse,
 		.yith-wcwl-wishlistexistsbrowse {
 			span {
 				display: none;
@@ -168,9 +194,8 @@
 			a {
 				&:before {
 					@include font-icon( '"\\f004"' );
+					background: $primary_hover;
 				}
-				width: 40px;
-				height: 40px;
 			}
 		}
 	}

@@ -1365,26 +1365,51 @@ object {
 	right: 15px;
 }
 
-.product .product-btns .add_to_cart_button, .product .product-btns .add_to_wishlist, .product .product-btns .yith-wcwl-wishlistexistsbrowse a {
+.product .product-btns .add-cart-wrap {
 	display: block;
 	overflow: hidden;
-	width: 40px;
-	height: 40px;
+	width: 35px;
+	height: 35px;
+	position: relative;
 }
 
-.product .product-btns .add_to_cart_button:before, .product .product-btns .add_to_wishlist:before, .product .product-btns .yith-wcwl-wishlistexistsbrowse a:before {
+.product .product-btns .add-cart-wrap .add_to_cart_button.added {
+	opacity: 0;
+	display: none;
+}
+
+.product .product-btns .add-cart-wrap .added_to_cart.wc-forward::before {
+	font-family: 'FontAwesome';
+	content: "\f07a";
+	background: #e8500e;
+}
+
+.product .product-btns .add_to_cart_button, .product .product-btns .added_to_cart, .product .product-btns .add_to_wishlist,
+.product .product-btns .yith-wcwl-wishlistexistsbrowse a,
+.product .product-btns .yith-wcwl-wishlistaddedbrowse a {
+	display: block;
+	overflow: hidden;
+	width: 35px;
+	height: 35px;
+}
+
+.product .product-btns .add_to_cart_button:before, .product .product-btns .added_to_cart:before, .product .product-btns .add_to_wishlist:before,
+.product .product-btns .yith-wcwl-wishlistexistsbrowse a:before,
+.product .product-btns .yith-wcwl-wishlistaddedbrowse a:before {
 	text-indent: 0;
 	float: left;
-	width: 40px;
-	height: 40px;
+	width: 35px;
+	height: 35px;
 	background: rgba(0, 0, 0, 0.6);
-	font-size: 30px;
-	font-size: 1.875rem;
+	font-size: 20px;
+	font-size: 1.25rem;
+	line-height: 35px;
+	line-height: 2.1875rem;
 	display: block;
 	text-align: center;
 	vertical-align: middle;
 	color: #fff;
-	border-radius: 3px;
+	border-radius: 50%;
 }
 
 .product .product-btns .add_to_cart_button:before {
@@ -1397,18 +1422,24 @@ object {
 	content: "\f08a";
 }
 
+.product .product-btns .yith-wcwl-add-to-wishlist .feedback {
+	display: none;
+}
+
+.product .product-btns .yith-wcwl-add-button .ajax-loading {
+	display: none;
+}
+
+.product .product-btns .yith-wcwl-wishlistaddedbrowse span,
 .product .product-btns .yith-wcwl-wishlistexistsbrowse span {
 	display: none;
 }
 
-.product .product-btns .yith-wcwl-wishlistexistsbrowse a {
-	width: 40px;
-	height: 40px;
-}
-
+.product .product-btns .yith-wcwl-wishlistaddedbrowse a:before,
 .product .product-btns .yith-wcwl-wishlistexistsbrowse a:before {
 	font-family: 'FontAwesome';
 	content: "\f004";
+	background: #e8500e;
 }
 
 /*
