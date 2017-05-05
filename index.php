@@ -20,7 +20,6 @@ get_header(); ?>
         <?php dynamic_sidebar('sidebar-home'); ?>
     </div>
 
-
     <main id="main" class="site-main" role="main">
 
     </main><!-- #main -->

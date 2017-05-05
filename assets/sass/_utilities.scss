@@ -22,8 +22,7 @@
 
             }
         };
-
-        @include for-screen( phone-max ) {
+        @include for-screen( tablet-max ) {
             .eq-col {
                 width: 50%;
                 float: left;
@@ -34,8 +33,14 @@
             }
         };
 
+        @include for-screen( small-phone-max ) {
+            .eq-col {
+                width: 100%;
+                float: none;
+                clear: left;
 
-
+            }
+        };
 
     }
 }

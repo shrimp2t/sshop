@@ -210,11 +210,6 @@ jQuery( document).ready( function( $ ){
                 $( 'li', filter).eq( 0 ).addClass( 'active' );
             }
 
-           try {
-               $('.tabs-content-items', tab ).unslick( );
-           } catch ( e ){
-
-           }
             $('.tabs-content-items', tab ).slick( slickArgs );
 
         };
@@ -278,9 +273,7 @@ jQuery( document).ready( function( $ ){
                 var appendTabContent = function (html, delay ) {
 
                     if ( $('.tabs-content-items', tab).length > 0 ) {
-                        $('.tabs-content-items', tab ).unslick();
                         $('.tabs-content-items', tab ).slick('unslick');
-
                     }
 
                     var $html = $( '<div>'+html+'</div>' );

@@ -63,7 +63,7 @@ class SShop_Widget_Product_Categories extends WP_Widget {
 
         $instance = wp_parse_args( $instance, array(
             'columns'    => 4,
-            'num_child' => 2,
+            'num_child' => 0,
         ) );
 
         echo $args['before_widget'];

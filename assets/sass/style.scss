@@ -31,6 +31,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 body {
 	background: #f5f5f5;
 	color: $text;
+	overflow-x: hidden;
 }
 a, a:link, a:visited{
 	color: $primary;
@@ -40,16 +41,18 @@ a:focus, a:active, a:hover {
 	color: $primary_hover;
 }
 #page {
-	overflow-x: hidden;
+
 }
 .site-content {
 	max-width: 1350px;
 	margin: 0 auto;
-	padding: 0px 30px;
+	padding: 0px 15px;
 }
-.container {
-	width: 1350px;
-	max-width: 100%;
+@include for-screen( desktop-min ) {
+	.container {
+		width: 1350px;
+		max-width: 100%;
+	}
 }
 
 
@@ -296,11 +299,15 @@ a:focus, a:active, a:hover {
 			padding-right: 0px;
 		}
 		&.full-width {
-			margin-left: -99999px;
-			margin-right: -99999px;
 			background: #fff;
-			margin-top: 0px;
+			width: 100vw;
+			position: relative;
+			left: 50%;
+			right: 50%;
+			margin-left: -50vw;
+			margin-right: -50vw;
 			margin-bottom: 0px;
+
 			padding-top: 40px;
 			padding-bottom: 40px;
 		}
