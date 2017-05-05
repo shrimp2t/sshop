@@ -1363,6 +1363,11 @@ object {
 	position: absolute;
 	top: 15px;
 	right: 15px;
+	visibility: hidden;
+	opacity: 0;
+	-webkit-transition: 0.5s ease-in-out;
+	-moz-transition: 0.5s ease-in-out;
+	transition: 0.5s ease-in-out;
 }
 
 .product .product-btns .add-cart-wrap {
@@ -1440,6 +1445,11 @@ object {
 	font-family: 'FontAwesome';
 	content: "\f004";
 	background: #e8500e;
+}
+
+.product:hover .product-btns {
+	opacity: 1;
+	visibility: visible;
 }
 
 /*

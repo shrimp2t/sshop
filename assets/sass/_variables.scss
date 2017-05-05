@@ -134,3 +134,13 @@ $baseline-px: 16px;
     font-family: 'FontAwesome';
     content: #{$code};
 }
+
+@mixin css3 ( $property, $value ){
+    -webkit-#{$property}: #{$value};
+    -moz-#{$property}: #{$value};
+	#{$property}: #{$value};
+}
+
+@mixin transition( $value ){
+    @include css3( 'transition', $value );
+}

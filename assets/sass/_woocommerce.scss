@@ -115,7 +115,9 @@
 		position: absolute;
 		top: 15px;
 		right: 15px;
-
+		visibility: hidden;
+		opacity: 0;
+		@include transition( .5s ease-in-out );
 		.add-cart-wrap {
 			display: block;
 			overflow: hidden;
@@ -197,6 +199,12 @@
 					background: $primary_hover;
 				}
 			}
+		}
+	}
+	&:hover {
+		.product-btns {
+			opacity: 1;
+			visibility: visible;
 		}
 	}
 

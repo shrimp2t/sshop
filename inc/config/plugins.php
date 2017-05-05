@@ -60,6 +60,12 @@ function sshop_register_required_plugins() {
 	$plugins = array(
 
         array(
+            'name'      => 'Slide Anything',
+            'slug'      => 'slide-anything',
+            'required'  => false,
+        ),
+
+        array(
             'name'      => 'WooCommerce',
             'slug'      => 'woocommerce',
             'required'  => false,
