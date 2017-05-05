@@ -1317,16 +1317,16 @@ object {
 
 .product .onsale {
 	position: absolute;
-	top: 5px;
-	left: 5px;
-	font-size: 11px;
-	font-size: 0.6875rem;
-	line-height: 11px;
-	line-height: 0.6875rem;
+	top: 15px;
+	left: 15px;
+	font-size: 16px;
+	font-size: 1rem;
+	line-height: 16px;
+	line-height: 1rem;
 	text-transform: uppercase;
 	background: #F36F36;
 	color: #fff;
-	padding: 5px 10px;
+	padding: 10px 10px;
 }
 
 .product .woocommerce-loop-product__title {
@@ -1350,40 +1350,65 @@ object {
 	color: #333333;
 }
 
-.product .add_to_cart_button, .product .add_to_wishlist {
-	display: inline-block;
-	clear: both;
-	position: absolute;
-	top: 50%;
-	text-indent: -999999px;
-	overflow: hidden;
-	min-width: 80px;
+.product .price del {
+	color: #999;
 }
 
-.product .add_to_cart_button:before, .product .add_to_wishlist:before {
+.product .price del, .product .price ins {
+	display: block;
+	background: none;
+}
+
+.product .product-btns {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+}
+
+.product .product-btns .add_to_cart_button, .product .product-btns .add_to_wishlist, .product .product-btns .yith-wcwl-wishlistexistsbrowse a {
+	display: block;
+	overflow: hidden;
+	width: 40px;
+	height: 40px;
+}
+
+.product .product-btns .add_to_cart_button:before, .product .product-btns .add_to_wishlist:before, .product .product-btns .yith-wcwl-wishlistexistsbrowse a:before {
 	text-indent: 0;
 	float: left;
-	margin: 0;
+	width: 40px;
+	height: 40px;
+	background: rgba(0, 0, 0, 0.6);
+	font-size: 30px;
+	font-size: 1.875rem;
+	display: block;
+	text-align: center;
+	vertical-align: middle;
+	color: #fff;
+	border-radius: 3px;
+}
+
+.product .product-btns .add_to_cart_button:before {
 	font-family: 'FontAwesome';
 	content: "\f217";
 }
 
-.product .add_to_cart_button {
-	left: 0px;
-}
-
-.product .add_to_cart_button:before {
-	font-family: 'FontAwesome';
-	content: "\f217";
-}
-
-.product .add_to_wishlist {
-	right: 0px;
-}
-
-.product .add_to_wishlist:before {
+.product .product-btns .add_to_wishlist:before {
 	font-family: 'FontAwesome';
 	content: "\f08a";
+}
+
+.product .product-btns .yith-wcwl-wishlistexistsbrowse span {
+	display: none;
+}
+
+.product .product-btns .yith-wcwl-wishlistexistsbrowse a {
+	width: 40px;
+	height: 40px;
+}
+
+.product .product-btns .yith-wcwl-wishlistexistsbrowse a:before {
+	font-family: 'FontAwesome';
+	content: "\f004";
 }
 
 /*

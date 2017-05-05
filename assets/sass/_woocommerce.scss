@@ -77,14 +77,14 @@
 	}
 	.onsale {
 		position: absolute;
-		top: 5px;
-		left: 5px;
-		@include rem( 'font-size', 11px );
-		@include rem( 'line-height', 11px );
+		top: 15px;
+		left: 15px;
+		@include rem( 'font-size', 16px );
+		@include rem( 'line-height', 16px );
 		text-transform: uppercase;
 		background: $primary;
 		color: #fff;
-		padding: 5px 10px;;
+		padding: 10px 10px;;
 	}
 	.woocommerce-loop-product__title {
 		color: $text;
@@ -103,37 +103,75 @@
 		text-transform: uppercase;
 		display: block;
 		color: $text;
+		del {
+			color: #999;
+		}
+		del, ins {
+			display: block;
+			background: none;
+		}
 	}
-	.yith-wcwl-add-to-wishlist {
-
-	}
-	.add_to_cart_button, .add_to_wishlist {
-		display: inline-block;
-		clear: both;
+	.product-btns {
 		position: absolute;
-		top: 50%;
-		text-indent: -999999px;
-		 overflow: hidden;
-		 min-width: 80px;
-		&:before {
-			text-indent: 0;
-			float: left;
-			margin: 0;
-			@include font-icon( '"\\f217"' );
+		top: 15px;
+		right: 15px;
+		//transform: translateY( -50% );
+		//text-align: center;
+
+		.add_to_cart_button, .add_to_wishlist, .yith-wcwl-wishlistexistsbrowse a {
+			display: block;
+			//clear: both;
+			//position: absolute;
+			//top: 50%;
+			//text-indent: -999999px;
+			overflow: hidden;
+			width: 40px;
+			height: 40px;
+			//left: 50%;
+			//transform: translateY( -50% );
+			&:before {
+				text-indent: 0;
+				float: left;
+				//position: absolute;
+				//left: 0px;
+				width: 40px;
+				height: 40px;
+
+				background: rgba( 0, 0,0, .6 );
+				@include rem( 'font-size', 30px );
+				display: block;
+				text-align: center;
+				vertical-align: middle;
+				color: #fff;
+				border-radius: 3px;
+			}
+
+		}
+		.add_to_cart_button {
+			//margin-left: -50px;
+			&:before {
+				@include font-icon( '"\\f217"' );
+			}
 		}
 
-	}
-	.add_to_cart_button {
-		left: 0px;
-		&:before {
-			@include font-icon( '"\\f217"' );
+		.add_to_wishlist {
+			//right: 0px;
+			&:before {
+				//margin-right: -30px;
+				@include font-icon( '"\\f08a"' );
+			}
 		}
-	}
-
-	.add_to_wishlist {
-		right: 0px;
-		&:before {
-			@include font-icon( '"\\f08a"' );
+		.yith-wcwl-wishlistexistsbrowse {
+			span {
+				display: none;
+			}
+			a {
+				&:before {
+					@include font-icon( '"\\f004"' );
+				}
+				width: 40px;
+				height: 40px;
+			}
 		}
 	}
 
