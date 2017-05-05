@@ -95,6 +95,12 @@ function sshop_register_required_plugins() {
 			'required'  => false,
 		),
 
+        array(
+			'name'      => 'MailChimp for WordPress',
+			'slug'      => 'mailchimp-for-wp',
+			'required'  => false,
+		),
+
 	);
 
 	/*

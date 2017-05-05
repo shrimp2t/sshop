@@ -92,6 +92,10 @@
 	/* Product thumbnail */
 	.product-thumbnail {
 		margin-bottom: 20px;
+		img {
+			width: 100%;
+			height: auto;
+		}
 	}
 	.star-rating {
 		display: block;
@@ -135,6 +139,7 @@
 				&::before {
 					@include font-icon( '"\\f07a"' );
 					background: $primary_hover;
+					color: #fff;
 				}
 			}
 		}
@@ -152,13 +157,13 @@
 				float: left;
 				width: 35px;
 				height: 35px;
-				background: rgba( 0, 0,0, .6 );
+				background: #fff;
+				color: #666;
 				@include rem( 'font-size', 20px );
 				@include rem( 'line-height', 35px );
 				display: block;
 				text-align: center;
 				vertical-align: middle;
-				color: #fff;
 				border-radius: 50%;
 			}
 
@@ -197,6 +202,7 @@
 				&:before {
 					@include font-icon( '"\\f004"' );
 					background: $primary_hover;
+					color: #fff;
 				}
 			}
 		}

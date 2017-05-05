@@ -13,23 +13,21 @@
  */
 
 get_header(); ?>
-<div class="container">
-	<div id="primary" class="content-area">
 
-        <div class="home-content-sidebar sidebar">
+<div id="primary" class="content-area">
+
+    <div class="home-content-sidebar sidebar">
         <?php dynamic_sidebar('sidebar-home'); ?>
-        </div>
+    </div>
 
 
-        <main id="main" class="site-main" role="main">
+    <main id="main" class="site-main" role="main">
 
-        </main><!-- #main -->
+    </main><!-- #main -->
 
-	</div><!-- #primary -->
-
+</div><!-- #primary -->
 <?php
 //get_sidebar();
 ?>
-</div>
 <?php
 get_footer();

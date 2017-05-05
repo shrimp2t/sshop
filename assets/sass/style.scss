@@ -31,6 +31,18 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 body {
 	background: #f5f5f5;
 }
+#page {
+	//overflow-x: hidden;
+}
+.site-content {
+	max-width: 1350px;
+	margin: 0 auto;
+	padding: 0px 30px;
+}
+.container {
+	width: 1350px;
+	max-width: 100%;
+}
 a, a:focus, a:active, a:hover {
 	text-decoration: none;
 }
@@ -273,6 +285,10 @@ a, a:focus, a:active, a:hover {
 /* Home sidebar */
 .home-content-sidebar {
 	.widget {
+		&.container {
+			padding-left: 0px;
+			padding-right: 0px;
+		}
 		margin-top: 40px;
 		margin-bottom: 40px;
 		&:last-child {
@@ -307,8 +323,9 @@ a, a:focus, a:active, a:hover {
 	}
 	.tab-item-actions {
 		text-align: right;
-		float: right;
-		padding-right: 10px;
+		position: absolute;
+		top: 0px;
+		right: 10px;
 		span {
 			cursor: pointer;
 			padding: 10px 5px 0px;
@@ -323,18 +340,54 @@ a, a:focus, a:active, a:hover {
 		li {
 			display: inline-block;
 			list-style: none;
+			position: relative;
 			@include rem( 'line-height', 50px );
 			&.active {
 				a {
 					color: $primary_hover;
 				}
 			}
+			&.subfilter-more {
+				ul {
+					margin-left: 0px;
+					padding: 0px;
+					position: absolute;
+					top: 100%;
+					right: 0px;
+					@include transition( all .5s ease-in-out );
+					background: #fff;
+					z-index: 3;
+					max-height: 0;
+					visibility: hidden;
+					overflow: hidden;
+					li {
+						width: 100%;
+						display: block;
+						text-align: left;
+						a {
+							display: block;
+						}
+					}
+				}
+
+				&:hover {
+					ul {
+						z-index: 3;
+						max-height: 999999px;
+						visibility: visible;
+					}
+				}
+			}
+
 		}
 		a {
 			padding: 0px 15px;
 			display: inline-block;
 			color: $text;
 			outline: none !important;
+			&:hover {
+				color: $primary_hover;
+			}
 		}
 		display: inline-block;
 
@@ -496,5 +549,36 @@ a, a:focus, a:active, a:hover {
 			color: $meta;
 		}
 
+	}
+}
+
+
+
+/* Footer */
+.footer-widgets {
+	padding: 50px 0px;
+	background: #333;
+	color: #f5f5f5;
+	a {
+		color: #f5f5f5;
+	}
+	.widget {
+		margin-bottom: 0px;
+		.widget-title {
+			color: #f5f5f5;
+			@include rem( font-size, 16px );
+			@include rem( margin-bottom , 15px );
+			text-transform: uppercase;
+		}
+		ul {
+			padding: 0px;
+			margin: 0px;
+			li {
+				list-style: none;
+				ul {
+					margin-left: 30px;
+				}
+			}
+		}
 	}
 }

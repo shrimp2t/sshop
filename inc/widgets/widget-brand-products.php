@@ -129,8 +129,8 @@ class SShop_Widget_Brand_Products extends SShop_Widget_Base {
                                     <li><a data-term-id="<?php echo esc_attr($term->term_id); ?>" href="<?php echo get_term_link($term) ?>"><?php echo esc_html($term->name); ?></a></li>
                                     <?php
                                 } ?>
-                                <li class="subfilter-more"><a href="#"><?php esc_html_e('More', 'sshop'); ?><i class="fa fa-angle-down"></i>
-                                    </a>
+                                <li class="subfilter-more">
+                                    <a class="a-more" href="#"><?php esc_html_e('More', 'sshop'); ?> <i class="fa fa-angle-down"></i></a>
                                     <ul class="sub-filters"></ul>
                                 </li>
                             </ul>

@@ -277,6 +277,7 @@ h4,
 h5,
 h6 {
 	clear: both;
+	font-weight: 700;
 }
 
 p {
@@ -1337,6 +1338,11 @@ object {
 	margin-bottom: 20px;
 }
 
+.product .product-thumbnail img {
+	width: 100%;
+	height: auto;
+}
+
 .product .star-rating {
 	display: block;
 	color: #F36F36;
@@ -1387,6 +1393,7 @@ object {
 	font-family: 'FontAwesome';
 	content: "\f07a";
 	background: #e8500e;
+	color: #fff;
 }
 
 .product .product-btns .add_to_cart_button, .product .product-btns .added_to_cart, .product .product-btns .add_to_wishlist,
@@ -1405,7 +1412,8 @@ object {
 	float: left;
 	width: 35px;
 	height: 35px;
-	background: rgba(0, 0, 0, 0.6);
+	background: #fff;
+	color: #666;
 	font-size: 20px;
 	font-size: 1.25rem;
 	line-height: 35px;
@@ -1413,7 +1421,6 @@ object {
 	display: block;
 	text-align: center;
 	vertical-align: middle;
-	color: #fff;
 	border-radius: 50%;
 }
 
@@ -1445,6 +1452,7 @@ object {
 	font-family: 'FontAwesome';
 	content: "\f004";
 	background: #e8500e;
+	color: #fff;
 }
 
 .product:hover .product-btns {
@@ -1684,6 +1692,17 @@ object {
 /* WP Theme */
 body {
 	background: #f5f5f5;
+}
+
+.site-content {
+	max-width: 1350px;
+	margin: 0 auto;
+	padding: 0px 30px;
+}
+
+.container {
+	width: 1350px;
+	max-width: 100%;
 }
 
 a, a:focus, a:active, a:hover {
@@ -1968,6 +1987,11 @@ a, a:focus, a:active, a:hover {
 	margin-bottom: 40px;
 }
 
+.home-content-sidebar .widget.container {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
 /* Tabs */
 .layout-tabs {
 	background: #fff;
@@ -2003,8 +2027,9 @@ a, a:focus, a:active, a:hover {
 
 .layout-tabs .tab-item-actions {
 	text-align: right;
-	float: right;
-	padding-right: 10px;
+	position: absolute;
+	top: 0px;
+	right: 10px;
 }
 
 .layout-tabs .tab-item-actions span {
@@ -2023,6 +2048,7 @@ a, a:focus, a:active, a:hover {
 .layout-tabs .nav-tabs-filter li {
 	display: inline-block;
 	list-style: none;
+	position: relative;
 	line-height: 50px;
 	line-height: 3.125rem;
 }
@@ -2031,11 +2057,47 @@ a, a:focus, a:active, a:hover {
 	color: #e8500e;
 }
 
+.layout-tabs .nav-tabs-filter li.subfilter-more ul {
+	margin-left: 0px;
+	padding: 0px;
+	position: absolute;
+	top: 100%;
+	right: 0px;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+	background: #fff;
+	z-index: 3;
+	max-height: 0;
+	visibility: hidden;
+	overflow: hidden;
+}
+
+.layout-tabs .nav-tabs-filter li.subfilter-more ul li {
+	width: 100%;
+	display: block;
+	text-align: left;
+}
+
+.layout-tabs .nav-tabs-filter li.subfilter-more ul li a {
+	display: block;
+}
+
+.layout-tabs .nav-tabs-filter li.subfilter-more:hover ul {
+	z-index: 3;
+	max-height: 999999px;
+	visibility: visible;
+}
+
 .layout-tabs .nav-tabs-filter a {
 	padding: 0px 15px;
 	display: inline-block;
 	color: #333333;
 	outline: none !important;
+}
+
+.layout-tabs .nav-tabs-filter a:hover {
+	color: #e8500e;
 }
 
 .layout-tabs .tabs-layout-contents::after {
@@ -2206,4 +2268,41 @@ a, a:focus, a:active, a:hover {
 
 .services-wrapper .info span {
 	color: #777777;
+}
+
+/* Footer */
+.footer-widgets {
+	padding: 50px 0px;
+	background: #333;
+	color: #f5f5f5;
+}
+
+.footer-widgets a {
+	color: #f5f5f5;
+}
+
+.footer-widgets .widget {
+	margin-bottom: 0px;
+}
+
+.footer-widgets .widget .widget-title {
+	color: #f5f5f5;
+	font-size: 16px;
+	font-size: 1rem;
+	margin-bottom: 15px;
+	margin-bottom: 0.9375rem;
+	text-transform: uppercase;
+}
+
+.footer-widgets .widget ul {
+	padding: 0px;
+	margin: 0px;
+}
+
+.footer-widgets .widget ul li {
+	list-style: none;
+}
+
+.footer-widgets .widget ul li ul {
+	margin-left: 30px;
 }

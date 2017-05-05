@@ -129,7 +129,7 @@ jQuery( document).ready( function( $ ){
 
     jQuery( '.layout-tabs').each( function(){
         var tab = $( this );
-        var headingLabel = $( '.heading-label', tab );
+        var headingLabel = $( '.widget-title', tab );
         var filter = $( '.nav-tabs-filter', tab );
         var subLi = $( '.subfilter-more', filter );
         var ajaxUrl = tab.data( 'ajax' );
@@ -144,6 +144,29 @@ jQuery( document).ready( function( $ ){
             autoplaySpeed: 2000,
             prevArrow: $( '.slider-prev', tab ),
             nextArrow: $( '.slider-next', tab ),
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
         };
 
         var setup = function( ){
@@ -151,13 +174,18 @@ jQuery( document).ready( function( $ ){
             $( '.subfilter-more ul li', filter).each( function(){
                 filter.append( $( this ) );
             });
-            var headingWidth = headingLabel.outerWidth();
+            var headingWidth = 0;
+            if ( headingLabel.length > 0 ){
+                headingWidth = headingLabel.outerWidth();
+            }
             var tabWidth = tab.innerWidth();
 
 
             var w = 0;
             headingWidth = 0;
-            var filterW = tabWidth - headingWidth - 20;
+            var filterW = tabWidth - headingWidth - 20 - 65; // slick nav width
+            var more_width = $( '.subfilter-more .a-more', tab).outerWidth();
+            filterW = filterW - more_width;
 
             $( 'li', filter).not('.subfilter-more').each( function(){
                 var width = $( this ).outerWidth();
