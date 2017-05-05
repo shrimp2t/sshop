@@ -134,7 +134,7 @@ jQuery( document).ready( function( $ ){
 
         var slickArgs = {
             accessibility: false,
-            slidesToShow: 4,
+            slidesToShow: 5,
             slidesToScroll: 1,
             autoplay: false,
             infinite: true,
@@ -143,10 +143,17 @@ jQuery( document).ready( function( $ ){
             nextArrow: $( '.slider-next', tab ),
             responsive: [
                 {
+                    breakpoint: 1200,
+                    settings: {
+                        slidesToShow: 5,
+                        slidesToScroll: 1
+                    }
+                },
+                {
                     breakpoint: 1024,
                     settings: {
                         slidesToShow: 4,
-                        slidesToScroll: 3
+                        slidesToScroll: 1
                     }
                 },
                 {

@@ -11,9 +11,9 @@ class SShop_Widget_Product_Tabs extends SShop_Widget_Base {
     public function __construct() {
         parent::__construct(
             'sshop_products_tabs',
-            esc_html__( 'Product Tabs', 'sshop' ),
+            esc_html__( 'FRONT PAGE: Product Tabs', 'sshop' ),
             array(
-                'description'   => esc_html__( 'Posts display layout 1 for recently published post', 'sshop' )
+                'description'   => esc_html__( 'Posts display products as tabs layout, recommended for front page', 'sshop' )
             )
         );
     }

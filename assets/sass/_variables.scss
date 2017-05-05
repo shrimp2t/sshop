@@ -144,3 +144,7 @@ $baseline-px: 16px;
 @mixin transition( $value ){
     @include css3( 'transition', $value );
 }
+
+@mixin box-shadow() {
+    @include css3( 'box-shadow', 0 0 5px rgba(0, 0, 0, 0.12) );
+}

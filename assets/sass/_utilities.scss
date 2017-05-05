@@ -44,3 +44,16 @@
 
     }
 }
+
+.btn {
+    font-weight: bold;
+    &.theme-primary {
+        &:hover {
+            border-color: $primary;
+        }
+        background: $primary;
+        color: #ffffff;
+        text-transform: uppercase;
+
+    }
+}

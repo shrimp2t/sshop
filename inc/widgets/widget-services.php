@@ -8,9 +8,9 @@ class SShop_Widget_Services extends WP_Widget {
     public function __construct() {
         $widget_ops = array(
             'classname' => 'widget-services',
-            'description' => esc_html__( 'Display your services', 'sshop' ),
+            'description' => esc_html__( 'Display your services, recommended for front page', 'sshop' ),
         );
-        parent::__construct( 'sshop_services', esc_html__( 'Services' , 'sshop' ), $widget_ops );
+        parent::__construct( 'sshop_services', esc_html__( 'FRONT PAGE: Services' , 'sshop' ), $widget_ops );
     }
 
     /**

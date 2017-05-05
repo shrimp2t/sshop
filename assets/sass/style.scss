@@ -26,6 +26,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 @import "woocommerce";
 @import "slider";
 @import "slick";
+@import "plugins";
 
 /* WP Theme */
 body {
@@ -307,7 +308,6 @@ a:focus, a:active, a:hover {
 			margin-left: -50vw;
 			margin-right: -50vw;
 			margin-bottom: 0px;
-
 			padding-top: 40px;
 			padding-bottom: 40px;
 		}
@@ -436,7 +436,7 @@ a:focus, a:active, a:hover {
 
 	.tabs-layout-content {
 		display: block;
-		padding: 5px;
+		padding: 10px;
 	}
 
 	&.has-b {
@@ -534,7 +534,7 @@ a:focus, a:active, a:hover {
 	}
 	.top-p-cat {
 		display: block;
-		background: #ededed;
+		background: #fff;
 		@include rem( padding, 15px );
 	}
 }
@@ -546,6 +546,7 @@ a:focus, a:active, a:hover {
 	.service-item {
 		@include clearfixAfter();
 		position: relative;
+
 	}
 	.icon {
 		@include rem( font-size, 44px );
@@ -596,11 +597,34 @@ a:focus, a:active, a:hover {
 			margin: 0px;
 			li {
 				list-style: none;
+				padding: 5px 0px;
 				ul {
 					margin-left: 30px;
 				}
 			}
 		}
+	}
+}
+.address, .email, .phone {
+	margin: 5px 0px;
+	&::before {
+		width: 20px;
+		display: inline-block;
+	}
+}
+.address {
+	&::before {
+		@include font-icon( '"\\f041"' );
+	}
+}
+.email {
+	&::before {
+		@include font-icon( '"\\f003"' );
+	}
+}
+.phone {
+	&::before {
+		@include font-icon( '"\\f095"' );
 	}
 }
 .site-footer {

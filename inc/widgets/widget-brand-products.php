@@ -11,9 +11,9 @@ class SShop_Widget_Brand_Products extends SShop_Widget_Base {
     public function __construct() {
         parent::__construct(
             'sshop_products_brand',
-            esc_html__( 'Product Brands', 'sshop' ),
+            esc_html__( 'FRONT PAGE: Product Brands', 'sshop' ),
             array(
-                'description'   => esc_html__( 'Posts display layout 1 for recently published post', 'sshop' )
+                'description'   => esc_html__( 'Posts product brand, recommended for front page.', 'sshop' )
             )
         );
     }

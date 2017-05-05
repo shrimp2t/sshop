@@ -1339,6 +1339,20 @@ object {
 	}
 }
 
+.btn {
+	font-weight: bold;
+}
+
+.btn.theme-primary {
+	background: #F36F36;
+	color: #ffffff;
+	text-transform: uppercase;
+}
+
+.btn.theme-primary:hover {
+	border-color: #F36F36;
+}
+
 /**
  * _fonts.scss
  * Custom WooCommerce fonts.
@@ -1783,6 +1797,15 @@ object {
 
 .slick-arrow.slick-hidden {
 	display: none;
+}
+
+.mc4wp-form input[name="EMAIL"] {
+	padding: 10px;
+	border: 0px none !important;
+	position: relative;
+	margin-top: 10px;
+	background: rgba(255, 255, 255, 0.15);
+	color: #999999;
 }
 
 /* WP Theme */
@@ -2237,7 +2260,7 @@ a:focus, a:active, a:hover {
 
 .layout-tabs .tabs-layout-content {
 	display: block;
-	padding: 5px;
+	padding: 10px;
 }
 
 .layout-tabs.has-b .tabs-layout-content {
@@ -2340,7 +2363,7 @@ a:focus, a:active, a:hover {
 
 .widget-shop-categories .top-p-cat {
 	display: block;
-	background: #ededed;
+	background: #fff;
 	padding: 15px;
 	padding: 0.9375rem;
 }
@@ -2418,10 +2441,35 @@ a:focus, a:active, a:hover {
 
 .footer-widgets .widget ul li {
 	list-style: none;
+	padding: 5px 0px;
 }
 
 .footer-widgets .widget ul li ul {
 	margin-left: 30px;
+}
+
+.address, .email, .phone {
+	margin: 5px 0px;
+}
+
+.address::before, .email::before, .phone::before {
+	width: 20px;
+	display: inline-block;
+}
+
+.address::before {
+	font-family: 'FontAwesome';
+	content: "\f041";
+}
+
+.email::before {
+	font-family: 'FontAwesome';
+	content: "\f003";
+}
+
+.phone::before {
+	font-family: 'FontAwesome';
+	content: "\f095";
 }
 
 .site-footer {

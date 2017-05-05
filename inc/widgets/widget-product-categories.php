@@ -8,9 +8,9 @@ class SShop_Widget_Product_Categories extends WP_Widget {
     public function __construct() {
         $widget_ops = array(
             'classname' => 'widget-shop-categories',
-            'description' => esc_html__( 'Display your product categories', 'sshop' ),
+            'description' => esc_html__( 'Display your product categories, Recommended for front page.', 'sshop' ),
         );
-        parent::__construct( 'sshop_product_categories', esc_html__( 'Product Categories' , 'sshop' ), $widget_ops );
+        parent::__construct( 'sshop_product_categories', esc_html__( 'FRONT PAGE: Product Categories' , 'sshop' ), $widget_ops );
     }
 
     function maybe_list_child( $parent_id, $terms, $num_child = -1 ){

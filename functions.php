@@ -124,9 +124,9 @@ function sshop_widgets_init() {
 	) );
 
     register_sidebar( array(
-        'name'          => esc_html__( 'Home Page', 'sshop' ),
+        'name'          => esc_html__( 'FRONT PAGE: Content', 'sshop' ),
         'id'            => 'sidebar-home',
-        'description'   => esc_html__( 'Add widgets here.', 'sshop' ),
+        'description'   => esc_html__( 'Display widgets on front page, recommended widgets: FRONT PAGE: Slider, FRONT PAGE: Product tabs, FRONT PAGE: Product Brands, FRONT PAGE: Product Categories, FRONT PAGE: Services.', 'sshop' ),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',
         'after_widget'  => '</section>',
         'before_title'  => '<h2 class="widget-title">',
@@ -136,7 +136,7 @@ function sshop_widgets_init() {
     register_sidebar( array(
         'name'          => esc_html__( 'Footer', 'sshop' ),
         'id'            => 'sidebar-footer',
-        'description'   => esc_html__( 'Add widgets for footer here.', 'sshop' ),
+        'description'   => esc_html__( 'Add widgets for footer. Each widget is a column, you can custom column width by add bootstrap column class name, e.g: col-md-4', 'sshop' ),
         'before_widget' => '<section id="%1$s" class="col widget %2$s">',
         'after_widget'  => '</section>',
         'before_title'  => '<h2 class="widget-title">',

@@ -8,9 +8,9 @@ class SShop_Widget_Slider extends WP_Widget {
     public function __construct() {
         $widget_ops = array(
             'classname' => 'widget-slider',
-            'description' => esc_html__( 'Display your slider', 'sshop' ),
+            'description' => esc_html__( 'Display your slider, recommended for front page', 'sshop' ),
         );
-        parent::__construct( 'sshop_slider', esc_html__( 'Slider' , 'sshop' ), $widget_ops );
+        parent::__construct( 'sshop_slider', esc_html__( 'FRONT PAGE: Slider' , 'sshop' ), $widget_ops );
     }
 
     /**
