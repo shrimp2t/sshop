@@ -156,7 +156,15 @@ a:focus, a:active, a:hover {
 		width: 300px;
 		z-index: 9;
 		background: #fff;
+		max-height: 0px;
+		overflow: hidden;
 		@include box-shadow();
+		@include transition( all 1s ease-in-out );
+	}
+	&:hover {
+		.header-dropdown {
+			max-height: 9999px;
+		}
 	}
 	.widget_shopping_cart_content {
 		//display: none;

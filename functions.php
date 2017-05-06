@@ -167,9 +167,9 @@ function sshop_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-    wp_enqueue_style( 'woocommerce-general' );
-    wp_enqueue_style( 'woocommerce-layout' );
-    wp_enqueue_style( 'woocommerce-smallscreen' );
+    ///wp_enqueue_style( 'woocommerce-general' );
+    //wp_enqueue_style( 'woocommerce-layout' );
+    //wp_enqueue_style( 'woocommerce-smallscreen' );
 
 
 }
