@@ -96,11 +96,13 @@
                 <?php } ?>
                 <?php if ( function_exists( 'wc_get_checkout_url' ) ) { ?>
                 <div class="header-shop__icon">
-                    <div class="widget_shopping_cart_content"></div>
                     <a href="<?php echo esc_url( wc_get_checkout_url() ); ?>">
                         <span class="shop__number cart-number-items">0</span>
                         <span class="shop__icon fa fa-shopping-cart"></span>
                     </a>
+                    <div class="header-dropdown">
+                        <div class=" widget_shopping_cart_content"></div>
+                    </div>
                 </div>
                 <?php } ?>
                 <?php if ( function_exists( 'wc_get_page_permalink' ) ) { ?>

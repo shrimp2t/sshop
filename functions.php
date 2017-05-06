@@ -154,7 +154,6 @@ function sshop_scripts() {
     wp_enqueue_style( 'google-font', 'https://fonts.googleapis.com/css?family=Product+Sans:400,400i,700,700i' );
 
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri().'/assets/css/bootstrap.min.css' );
-	wp_enqueue_style( 'themify-icons', get_template_directory_uri().'/assets/icons/themify-icons.css');
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/assets/css/font-awesome.css');
     wp_enqueue_style( 'sshop-style', get_stylesheet_uri()  );
 
@@ -167,6 +166,12 @@ function sshop_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+    wp_enqueue_style( 'woocommerce-general' );
+    wp_enqueue_style( 'woocommerce-layout' );
+    wp_enqueue_style( 'woocommerce-smallscreen' );
+
+
 }
 add_action( 'wp_enqueue_scripts', 'sshop_scripts' );
 

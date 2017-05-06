@@ -24,6 +24,8 @@ function sshop_body_classes( $classes ) {
 		$classes[] = 'hfeed';
 	}
 
+    $classes[] = 'woocommerce';
+
 	return $classes;
 }
 add_filter( 'body_class', 'sshop_body_classes' );
