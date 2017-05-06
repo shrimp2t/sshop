@@ -86,25 +86,30 @@
                     </a>
                 </div>
 
+                <?php if ( function_exists( 'yith_wcwl_count_all_products' ) ) { ?>
                 <div class="header-shop__icon">
-                    <a href="#">
-                        <span class="shop__number">4</span>
+                    <a href="<?php echo esc_url( YITH_WCWL()->get_wishlist_url() ); ?>">
+                        <span class="shop__number wishlist-number"><?php echo yith_wcwl_count_all_products(); ?></span>
                         <span class="shop__icon fa fa-heart-o"></span>
                     </a>
                 </div>
-
+                <?php } ?>
+                <?php if ( function_exists( 'wc_get_checkout_url' ) ) { ?>
                 <div class="header-shop__icon">
-                    <a href="#">
-                        <span class="shop__number">3</span>
+                    <div class="widget_shopping_cart_content"></div>
+                    <a href="<?php echo esc_url( wc_get_checkout_url() ); ?>">
+                        <span class="shop__number cart-number-items">0</span>
                         <span class="shop__icon fa fa-shopping-cart"></span>
                     </a>
                 </div>
-
+                <?php } ?>
+                <?php if ( function_exists( 'wc_get_page_permalink' ) ) { ?>
                 <div class="header-shop__icon">
-                    <a href="#">
+                    <a href="<?php echo esc_url( wc_get_page_permalink( 'myaccount' ) ); ?>">
                         <span class="shop__icon fa fa-user-circle-o"></span>
                     </a>
                 </div>
+                <?php } ?>
             </nav><!-- #site-navigation -->
 
 

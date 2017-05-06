@@ -41,7 +41,6 @@ class SShop_Widget_Product_Categories extends SShop_Widget_Base {
                 'label' => esc_html__( 'Number columns:', 'sshop' ),
             ),
 
-
         );
 
         return $fields;

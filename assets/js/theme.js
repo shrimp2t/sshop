@@ -184,16 +184,6 @@ jQuery( document).ready( function( $ ){
                         var $content = $( '.tabs-layout-contents', $html );
                         contentLayout.html( $content );
                         var t = 0;
-                        /*
-                        $('.dt-news-post', $html).each(function (index) {
-                            var dt = $(this);
-                            var _t = ( index + 1 ) * 100;
-                            t = _t;
-                            setTimeout(function () {
-                                dt.removeClass('animate');
-                            }, _t);
-                        });
-                        */
 
                         spinner.animate({
                             opacity: 0,
