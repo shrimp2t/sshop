@@ -294,6 +294,12 @@ a:focus, a:active, a:hover {
 
 /* Home sidebar */
 .home-content-sidebar {
+	.widget-title {
+		@include rem( 'font-size', 18px );
+		@include rem( 'line-height', 50px );
+		margin: 0px;
+		text-transform: uppercase;
+	}
 	.widget {
 		&.container {
 			padding-left: 0px;
@@ -342,6 +348,7 @@ a:focus, a:active, a:hover {
 	.filter-inside {
 		@include clearfixAfter();
 		border-bottom: 2px solid $primary;
+		position: relative;
 	}
 	.tab-item-actions {
 		text-align: right;
@@ -378,7 +385,7 @@ a:focus, a:active, a:hover {
 					right: 0px;
 					@include transition( all .5s ease-in-out );
 					background: #fff;
-					z-index: 3;
+					z-index: 8;
 					max-height: 0;
 					visibility: hidden;
 					overflow: hidden;
@@ -471,14 +478,41 @@ a:focus, a:active, a:hover {
 .widget_sshop_products_brand {
 	.layout-tabs {
 		.tabs-intro {
-			width: 40%;
-			float: left;
-			img {
+
+			@include for-screen( phone-min ) {
+				width: 40%;
+			};
+
+			@include for-screen( phone-max ) {
 				width: 100%;
+				.brand-logo {
+					float: left;
+					margin-right: 10px;
+				}
+			};
+
+			@inlcude clearfixAfter();
+			float: left;
+			position: relative;
+			z-index: 6;
+			padding: 15px;
+			img {
+				width: auto;
+				max-width: 150px;
 				height: auto;
 				max-width: 100%;
 			}
 		}
+	}
+	@include for-screen( phone-max ) {
+		.tabs-layout-content  {
+			clear: both;
+		}
+	};
+
+	.btn-shop-brand {
+		display: inline-block;
+		margin-top: 15px;
 	}
 }
 

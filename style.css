@@ -2110,6 +2110,15 @@ a:focus, a:active, a:hover {
 }
 
 /* Home sidebar */
+.home-content-sidebar .widget-title {
+	font-size: 18px;
+	font-size: 1.125rem;
+	line-height: 50px;
+	line-height: 3.125rem;
+	margin: 0px;
+	text-transform: uppercase;
+}
+
 .home-content-sidebar .widget {
 	margin-top: 40px;
 	margin-bottom: 40px;
@@ -2158,6 +2167,7 @@ a:focus, a:active, a:hover {
 
 .layout-tabs .filter-inside {
 	border-bottom: 2px solid #F36F36;
+	position: relative;
 }
 
 .layout-tabs .filter-inside::after {
@@ -2208,7 +2218,7 @@ a:focus, a:active, a:hover {
 	-moz-transition: all 0.5s ease-in-out;
 	transition: all 0.5s ease-in-out;
 	background: #fff;
-	z-index: 3;
+	z-index: 8;
 	max-height: 0;
 	visibility: hidden;
 	overflow: hidden;
@@ -2292,14 +2302,45 @@ a:focus, a:active, a:hover {
 
 /* For brand Tabs */
 .widget_sshop_products_brand .layout-tabs .tabs-intro {
-	width: 40%;
+	@inlcude clearfixAfter();
 	float: left;
+	position: relative;
+	z-index: 6;
+	padding: 15px;
+}
+
+@media screen and (min-width: 720px) {
+	.widget_sshop_products_brand .layout-tabs .tabs-intro {
+		width: 40%;
+	}
+}
+
+@media screen and (max-width: 720px) {
+	.widget_sshop_products_brand .layout-tabs .tabs-intro {
+		width: 100%;
+	}
+	.widget_sshop_products_brand .layout-tabs .tabs-intro .brand-logo {
+		float: left;
+		margin-right: 10px;
+	}
 }
 
 .widget_sshop_products_brand .layout-tabs .tabs-intro img {
-	width: 100%;
+	width: auto;
+	max-width: 150px;
 	height: auto;
 	max-width: 100%;
+}
+
+@media screen and (max-width: 720px) {
+	.widget_sshop_products_brand .tabs-layout-content {
+		clear: both;
+	}
+}
+
+.widget_sshop_products_brand .btn-shop-brand {
+	display: inline-block;
+	margin-top: 15px;
 }
 
 /* Widget category */

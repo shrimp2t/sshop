@@ -121,6 +121,8 @@ class SShop_Widget_Base extends WP_Widget {
                     $r[ $f['name' ] ] = $instance[ $f['name'] ];
                 } else if ( isset( $f['default'] ) && empty( $instance ) ) {
                     $r[ $f['name' ] ] = $f['default'];
+                } else {
+                    $r[ $f['name' ] ] = null;
                 }
             }
         }
@@ -178,8 +180,8 @@ class SShop_Widget_Base extends WP_Widget {
         switch ( $field['type'] ) {
             case 'select_category':
                 ?>
-                <div class="dt-admin-input-wrap">
-                    <label for="<?php echo $this->get_field_id( $field['name'] ); ?>"><strong><?php echo $field['label']; ?></strong></label>
+                <div class="w-admin-input-wrap">
+                    <label for="<?php echo $this->get_field_id( $field['name'] ); ?>"><?php echo $field['label']; ?></label>
                     <?php
                     wp_dropdown_categories(
                         array(
@@ -200,21 +202,21 @@ class SShop_Widget_Base extends WP_Widget {
                         )
                     );
                     ?>
-                </div><!-- .dt-admin-input-wrap -->
+                </div><!-- .w-admin-input-wrap -->
                 <?php
                 break;
             case 'checkbox':
                 ?>
-                <div class="dt-admin-input-wrap">
-                    <label for="<?php echo $this->get_field_id( $field['name'] ); ?>"><strong><?php echo $field['label']; ?></strong></label>
+                <div class="w-admin-input-wrap">
+                    <label for="<?php echo $this->get_field_id( $field['name'] ); ?>"><?php echo $field['label']; ?></label>
                     <input type="checkbox" <?php checked( $field[ 'value' ], 'on' ); ?> id="<?php echo $this->get_field_id( $field['name'] ); ?>" name="<?php echo $this->get_field_name( $field['name'] ); ?>" />
-                </div><!-- .dt-admin-input-wrap -->
+                </div><!-- .w-admin-input-wrap -->
                 <?php
                 break;
             case 'orderby':
             ?>
-            <div class="dt-admin-input-wrap">
-                <label for="<?php echo $this->get_field_id( $field['name'] ); ?>"><strong><?php echo $field['label']; ?></strong></label>
+            <div class="w-admin-input-wrap">
+                <label for="<?php echo $this->get_field_id( $field['name'] ); ?>"><?php echo $field['label']; ?></label>
                 <select id="<?php echo $this->get_field_id( $field['name'] ); ?>" name="<?php echo $this->get_field_name( $field['name'] ); ?>">
                     <option value=""><?php esc_html_e( 'Default', 'sshop' ); ?></option>
                     <option <?php selected( $field[ 'value' ], 'date' ); ?> value="date"><?php esc_html_e( 'Date', 'sshop' ); ?></option>
@@ -222,20 +224,20 @@ class SShop_Widget_Base extends WP_Widget {
                     <option <?php selected( $field[ 'value' ], 'rand' ); ?> value="rand"><?php esc_html_e( 'Random order', 'sshop' ); ?></option>
                     <option <?php selected( $field[ 'value' ], 'comment_count' ); ?> value="comment_count"><?php esc_html_e( 'Number of comments', 'sshop' ); ?></option>
                 </select>
-            </div><!-- .dt-admin-input-wrap -->
+            </div><!-- .w-admin-input-wrap -->
             <?php
             break;
 
             case 'order':
                 ?>
-                <div class="dt-admin-input-wrap">
-                    <label for="<?php echo $this->get_field_id( $field['name'] ); ?>"><strong><?php echo $field['label']; ?></strong></label>
+                <div class="w-admin-input-wrap">
+                    <label for="<?php echo $this->get_field_id( $field['name'] ); ?>"><?php echo $field['label']; ?></label>
                     <select id="<?php echo $this->get_field_id( $field['name'] ); ?>" name="<?php echo $this->get_field_name( $field['name'] ); ?>">
                         <option value=""><?php esc_html_e( 'Default', 'sshop' ); ?></option>
                         <option <?php selected( $field[ 'value' ], 'desc' ); ?> value="desc"><?php esc_html_e( 'Desc', 'sshop' ); ?></option>
                         <option <?php selected( $field[ 'value' ], 'asc' ); ?> value="asc"><?php esc_html_e( 'Asc', 'sshop' ); ?></option>
                     </select>
-                </div><!-- .dt-admin-input-wrap -->
+                </div><!-- .w-admin-input-wrap -->
                 <?php
                 break;
 
@@ -248,8 +250,8 @@ class SShop_Widget_Base extends WP_Widget {
 
                     $field['value'] = array_filter( $field['value'] );
                     ?>
-                    <div class="dt-repeatable">
-                        <label for="<?php echo $this->get_field_id( $field['name']); ?>"><strong><?php echo $field['label']; ?></strong></label>
+                    <div class="w-repeatable">
+                        <label for="<?php echo $this->get_field_id( $field['name']); ?>"><?php echo $field['label']; ?></label>
 
                         <div class="list-filters list-filters-sortable">
                             <?php foreach ( $field['value'] as $k => $t ){
@@ -291,7 +293,7 @@ class SShop_Widget_Base extends WP_Widget {
                             ?>
                             <a href="#" class="add"
                                data-name="<?php echo $this->get_field_name( $field['name'] ); ?>"><?php esc_html_e( 'Add', 'sshop' ); ?></a>
-                        </div><!-- .dt-admin-input-wrap -->
+                        </div><!-- .w-admin-input-wrap -->
 
                     </div>
                     <?php
@@ -299,11 +301,11 @@ class SShop_Widget_Base extends WP_Widget {
                 break;
             default:
                 ?>
-                <div class="dt-admin-input-wrap">
-                    <label for="<?php echo $this->get_field_id($field['name']); ?>"><strong><?php echo $field['label']; ?></strong></label>
-                    <input type="text" id="<?php echo $this->get_field_id($field['name']); ?>" name="<?php echo $this->get_field_name($field['name']); ?>"
+                <div class="w-admin-input-wrap">
+                    <label for="<?php echo $this->get_field_id($field['name']); ?>"><?php echo $field['label']; ?></label>
+                    <input class="widefat" type="text" id="<?php echo $this->get_field_id($field['name']); ?>" name="<?php echo $this->get_field_name($field['name']); ?>"
                            value="<?php echo esc_attr($field['value']); ?>">
-                </div><!-- .dt-admin-input-wrap -->
+                </div><!-- .w-admin-input-wrap -->
                 <?php
                 break;
         }
@@ -364,11 +366,11 @@ class SShop_Widget_Base extends WP_Widget {
     public function form( $instance ) {
 
         ?>
-        <div class="dt-news-list-1">
+        <div class="w-news-list-1">
             <?php
             $this->render_fields( $instance );
             ?>
-        </div><!-- .dt-news-list-1 -->
+        </div><!-- .w-news-list-1 -->
         <?php
     }
 

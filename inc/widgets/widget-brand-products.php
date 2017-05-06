@@ -113,7 +113,7 @@ class SShop_Widget_Brand_Products extends SShop_Widget_Base {
 
         ?>
         <div class="<?php echo esc_attr( join( ' ', $classes ) ); ?>">
-            <div class="layout-tabs tabs-layout-wrap" data-ajax="<?php echo esc_url(admin_url('admin-ajax.php')); ?>" data-instance="<?php echo esc_attr(json_encode($instance)); ?>">
+            <div class="layout-tabs tabs-layout-wrap" data-number="4" data-ajax="<?php echo esc_url(admin_url('admin-ajax.php')); ?>" data-instance="<?php echo esc_attr(json_encode($instance)); ?>">
                 <?php if ( ! empty( $title ) ) { ?>
                     <div class="filter-inside">
                         <?php
@@ -157,12 +157,18 @@ class SShop_Widget_Brand_Products extends SShop_Widget_Base {
 
                             $term = get_term( $brand, $this->tax );
                             if ( $term && ! is_wp_error( $term  ) ) {
-                                $image_id = get_term_meta( $term->term_id, 'pwb_brand_image' );
-                                $image = wp_get_attachment_image_src( $image_id );
-                                echo $image;
+                                $image_id = get_term_meta( $term->term_id, 'pwb_brand_image', true );
+                                //var_dump( $image_id );
+                                $image = wp_get_attachment_url( $image_id );
+
 
                                 ?>
-                                <h3 class="brand-name"><?php echo esc_html( $term->name ); ?></h3>
+
+                                <?php if ( $image ) { ?>
+                                    <div class="brand-logo"><img src="<?php echo esc_attr( $image ) ; ?>" alt="<?php echo esc_attr( $term->name ); ?>"></div>
+                                <?php } else { ?>
+                                    <h3 class="brand-name"><?php echo esc_html( $term->name ); ?></h3>
+                                <?php } ?>
                                 <?php
                                 if ( $term->description ) {
                                     ?>
@@ -170,7 +176,7 @@ class SShop_Widget_Brand_Products extends SShop_Widget_Base {
                                     <?php
                                 }
                                 ?>
-                                <a href="<?php echo get_term_link( $term ) ?>"><?php esc_html_e( 'Shop this brand' ); ?></a>
+                                <a class="btn-shop-brand btn btn-secondary " href="<?php echo get_term_link( $term ) ?>"><?php esc_html_e( 'Shop this brand' ); ?></a>
                                 <?php
 
                             }

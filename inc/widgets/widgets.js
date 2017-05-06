@@ -1,6 +1,6 @@
 // Image Uploader
 jQuery(document).ready( function( $ ) {
-    jQuery( ".dt-img-upload" ).live( "click", function () {
+    jQuery( ".w-img-upload" ).live( "click", function () {
         var jw_attachment_link = wp.media.editor.send.attachment;
         var button = jQuery(this);
         wp.media.editor.send.attachment = function (props, attachment) {
@@ -21,11 +21,11 @@ jQuery(document).ready( function( $ ) {
         handle: '.list-item-title'
     });
 
-    $( 'body').on( 'click', '.dt-repeatable .add', function( e ){
+    $( 'body').on( 'click', '.w-repeatable .add', function( e ){
         e.preventDefault();
         var btn = $( this );
         var p =  $( this).parent();
-        var c =  $( this).closest( '.dt-repeatable' );
+        var c =  $( this).closest( '.w-repeatable' );
         var s = p.find( 'select' );
         var id = s.val();
 
