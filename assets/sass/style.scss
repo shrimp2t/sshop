@@ -91,22 +91,20 @@ a:focus, a:active, a:hover {
 }
 .top-search-form {
 	flex-grow: 1;
-	width: auto;
+	width: 100%;
 	display: inline-block;
-	margin-left: 30px;
-	margin-right: 30px;
 	.input-group {
-		border: 0px;
+		border-radius: 3px;
+		overflow: hidden;
 	}
 	.form-control ,.input-group-addon{
-		//border-radius: 0px;
-		border: 0px;
 		padding: 10px;
 		height: 44px;
 	}
 	.input-group-addon {
 		background: $primary;
 		color: #fff;
+		border-color: $primary;
 	}
 }
 
@@ -139,6 +137,10 @@ a:focus, a:active, a:hover {
 		text-align: center;
 		color: #f5f5f5;
 		z-index: 4;
+		visibility: hidden;
+		&.show {
+			visibility: visible;
+		}
 		&:before{
 			content: "";
 			display: block;
@@ -148,7 +150,11 @@ a:focus, a:active, a:hover {
 		font-size: 28px;
 		@include rem( 'line-height', $header_line_height );
 	}
+	.header-dropdown-inner {
+		padding: 15px;
+	}
 	.header-dropdown {
+
 		display: block;
 		position: absolute;
 		top: 100%;
@@ -158,6 +164,7 @@ a:focus, a:active, a:hover {
 		background: #fff;
 		max-height: 0px;
 		overflow: hidden;
+		text-align: left;
 		@include box-shadow();
 		@include transition( all 1s ease-in-out );
 	}

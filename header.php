@@ -73,23 +73,28 @@
             </nav><!-- #site-navigation -->
             <nav id="site-navigation-right" class="right-navigation" role="navigation">
 
-                <form class="top-search-form" style="display: none;" >
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Seach..." aria-describedby="basic-addon2">
-                        <span class="input-group-addon" id="basic-addon2"><?php esc_html_e( 'Search' ,'sshop' ); ?></span>
-                    </div>
-                </form>
+
 
                 <div class="header-shop__icon">
                     <a href="#">
                         <span class="shop__icon fa fa-search"></span>
                     </a>
+                    <div class="header-dropdown">
+                        <form class="top-search-form header-dropdown-inner" >
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="s" placeholder="<?php esc_attr_e( 'Search...' ,'sshop' ); ?>." aria-describedby="basic-addon2">
+                                <button class="input-group-addon btn" type="submit"><?php echo esc_html_x( 'Search', 'Search form button' ,'sshop' ); ?></button>
+                                <input type="hidden" name="post_type" value="product" />
+                            </div>
+                        </form>
+                    </div>
                 </div>
 
                 <?php if ( function_exists( 'yith_wcwl_count_all_products' ) ) { ?>
                 <div class="header-shop__icon">
                     <a href="<?php echo esc_url( YITH_WCWL()->get_wishlist_url() ); ?>">
-                        <span class="shop__number wishlist-number"><?php echo yith_wcwl_count_all_products(); ?></span>
+                        <?php $n = yith_wcwl_count_all_products(); ?>
+                        <span class="shop__number wishlist-number <?php echo ( $n > 0 ) ? 'show' : '' ?>"><?php echo $n; ?></span>
                         <span class="shop__icon fa fa-heart-o"></span>
                     </a>
                 </div>
@@ -101,7 +106,9 @@
                         <span class="shop__icon fa fa-shopping-cart"></span>
                     </a>
                     <div class="header-dropdown">
-                        <div class=" widget_shopping_cart_content"></div>
+                        <div class="header-dropdown-inner">
+                            <div class=" widget_shopping_cart_content"></div>
+                        </div>
                     </div>
                 </div>
                 <?php } ?>
