@@ -34,9 +34,9 @@ jQuery( document).ready( function( $ ){
         var t_has_label = menu_toggle_icon.outerWidth();
         menu_toggle_icon.addClass( 'hide-label' );
         var t_no_label = menu_toggle_icon.outerWidth();
-
-        if ( ww >= brand_w + rw + t_has_label ) {
+        if ( ww > brand_w + rw + t_has_label ) {
             // Can show nav label
+            if ( menu_toggle_icon )
             menu_toggle_icon.removeClass( 'hide-label' );
             return true;
         }
@@ -48,6 +48,7 @@ jQuery( document).ready( function( $ ){
         }
 
         if ( ww < brand_w + t_no_label + rw  ) {
+            menu_toggle_icon.addClass( 'hide-label' );
             $( '#primary-menu-wrapper' ).prepend( $( '#site-navigation-right' ) );
             $( '#site-branding').css( 'width', ww - t_no_label );
             return true;
@@ -68,6 +69,8 @@ jQuery( document).ready( function( $ ){
             main_nav_more.hide();
             setupMobileHeader();
             return false;
+        } else {
+            setupMobileHeader();
         }
 
         var more_width = main_nav_more.outerWidth();
@@ -102,13 +105,11 @@ jQuery( document).ready( function( $ ){
 
 
     // menu-mobile
-
     menu_toggle_icon.on( 'click', function( e ){
         e.preventDefault();
         $( '#site-navigation #primary-menu-wrapper').toggleClass( 'menu-open' );
     } );
-    $( '.menu-toggle').trigger( 'click' );
-
+    //$( '.menu-toggle').trigger( 'click' );
 
     //-------------------------------------
 

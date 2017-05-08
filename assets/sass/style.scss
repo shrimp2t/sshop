@@ -132,13 +132,16 @@ a:focus, a:active, a:hover {
 
 
 .header-shop__icon {
-	padding: 0px;
+	margin: 0px;
 	display: inline-block;
-	margin: 0px 15px;
+	padding: 0px 15px;
 	@include for-screen( phone-max ) {
-		margin: 0px 8px;
+		padding: 0px 8px;
 	}
-	position: relative;
+	@include for-screen( phone-min ) {
+		position: relative;
+	}
+
 	a {
 		display: block;
 		position: relative;
@@ -194,8 +197,15 @@ a:focus, a:active, a:hover {
 		display: block;
 		position: absolute;
 		top: 100%;
-		right: -15px;
-		width: 300px;
+		@include for-screen( phone-min ) {
+			right: -15px;
+			width: 300px;
+		}
+		@include for-screen( phone-max ) {
+			right: 0px;
+			left: 0px;
+			width: 100%;
+		}
 		z-index: 9;
 		background: #fff;
 		max-height: 0px;
@@ -207,6 +217,7 @@ a:focus, a:active, a:hover {
 	&:hover {
 		.header-dropdown {
 			max-height: 9999px;
+			z-index: 99;
 		}
 	}
 	.widget_shopping_cart_content {
@@ -314,6 +325,13 @@ a:focus, a:active, a:hover {
 	.menu-toggle {
 		padding: 0px 18px;
 		vertical-align: middle;
+		.icon {
+			margin-right: 10px;
+		}
+		.label {
+			text-transform: uppercase;
+			font-weight: bold;
+		}
 		@include rem( 'line-height', $header_line_height );
 		@include for-screen( phone-max ) {
 			@include rem( 'line-height', $header_line_mobile_height );
@@ -327,6 +345,7 @@ a:focus, a:active, a:hover {
 			.label {
 				display: none;
 			}
+
 		}
 		@include rem( 'font-size', 28px );
 		color: $text;
@@ -334,13 +353,7 @@ a:focus, a:active, a:hover {
 		&:hover {
 			color: $primary_hover;
 		}
-		.icon {
-			margin-right: 10px;
-		}
-		.label {
-			text-transform: uppercase;
-			font-weight: bold;
-		}
+
 		&.hide-label {
 			.icon {
 				margin-right: 0px;
@@ -595,8 +608,6 @@ a:focus, a:active, a:hover {
 .right-navigation {
 	float: right;
 	text-align: right;
-	position: absolute;
-	right: 0px;
 }
 .primary-menu-wrapper {
 	.right-navigation {
@@ -604,10 +615,28 @@ a:focus, a:active, a:hover {
 		top: auto;
 		left: auto;
 		float: none;
+		text-align: center;
+		padding: 30px 0px;
+		border-bottom: 1px solid #ededed;
 		a {
 			border-bottom: 0px;
 		}
+		.header-shop__icon {
+			position: initial;
+		}
+		.header-dropdown {
+			max-width: 100%;
+			width: 100%;
+			padding: 0px;
+			right: 0px;
+			left: 0px;
+			.header-dropdown-inner {
+				padding: 15px;
+			}
+		}
 	}
+
+
 }
 
 /* Home sidebar */

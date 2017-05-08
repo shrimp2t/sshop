@@ -1924,15 +1924,20 @@ a:focus, a:active, a:hover {
 }
 
 .header-shop__icon {
-	padding: 0px;
+	margin: 0px;
 	display: inline-block;
-	margin: 0px 15px;
-	position: relative;
+	padding: 0px 15px;
 }
 
 @media screen and (max-width: 720px) {
 	.header-shop__icon {
-		margin: 0px 8px;
+		padding: 0px 8px;
+	}
+}
+
+@media screen and (min-width: 720px) {
+	.header-shop__icon {
+		position: relative;
 	}
 }
 
@@ -2007,8 +2012,6 @@ a:focus, a:active, a:hover {
 	display: block;
 	position: absolute;
 	top: 100%;
-	right: -15px;
-	width: 300px;
 	z-index: 9;
 	background: #fff;
 	max-height: 0px;
@@ -2022,8 +2025,24 @@ a:focus, a:active, a:hover {
 	transition: all 1s ease-in-out;
 }
 
+@media screen and (min-width: 720px) {
+	.header-shop__icon .header-dropdown {
+		right: -15px;
+		width: 300px;
+	}
+}
+
+@media screen and (max-width: 720px) {
+	.header-shop__icon .header-dropdown {
+		right: 0px;
+		left: 0px;
+		width: 100%;
+	}
+}
+
 .header-shop__icon:hover .header-dropdown {
 	max-height: 9999px;
+	z-index: 99;
 }
 
 .site-header {
@@ -2121,6 +2140,15 @@ a:focus, a:active, a:hover {
 	border-right: 1px solid #f1f1f1;
 }
 
+.main-navigation .menu-toggle .icon {
+	margin-right: 10px;
+}
+
+.main-navigation .menu-toggle .label {
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
 @media screen and (max-width: 720px) {
 	.main-navigation .menu-toggle {
 		line-height: 50px;
@@ -2145,15 +2173,6 @@ a:focus, a:active, a:hover {
 
 .main-navigation .menu-toggle:hover {
 	color: #e8500e;
-}
-
-.main-navigation .menu-toggle .icon {
-	margin-right: 10px;
-}
-
-.main-navigation .menu-toggle .label {
-	text-transform: uppercase;
-	font-weight: bold;
 }
 
 .main-navigation .menu-toggle.hide-label .icon {
@@ -2427,8 +2446,6 @@ a:focus, a:active, a:hover {
 .right-navigation {
 	float: right;
 	text-align: right;
-	position: absolute;
-	right: 0px;
 }
 
 .primary-menu-wrapper .right-navigation {
@@ -2436,10 +2453,29 @@ a:focus, a:active, a:hover {
 	top: auto;
 	left: auto;
 	float: none;
+	text-align: center;
+	padding: 30px 0px;
+	border-bottom: 1px solid #ededed;
 }
 
 .primary-menu-wrapper .right-navigation a {
 	border-bottom: 0px;
+}
+
+.primary-menu-wrapper .right-navigation .header-shop__icon {
+	position: initial;
+}
+
+.primary-menu-wrapper .right-navigation .header-dropdown {
+	max-width: 100%;
+	width: 100%;
+	padding: 0px;
+	right: 0px;
+	left: 0px;
+}
+
+.primary-menu-wrapper .right-navigation .header-dropdown .header-dropdown-inner {
+	padding: 15px;
 }
 
 /* Home sidebar */

@@ -47,7 +47,7 @@
 
         <nav id="site-navigation-right" class="right-navigation" role="navigation">
 
-            <div class="header-shop__icon">
+            <div class="header-shop__icon search-icon">
                 <a href="#">
                     <span class="shop__icon fa fa-search"></span>
                 </a>
