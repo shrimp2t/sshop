@@ -378,56 +378,6 @@
 	}
 }
 
-/**
- * Twenty Sixteen specific styles
- */
-.twentysixteen .site-main {
-	margin-right: 7.6923%;
-	margin-left: 7.6923%;
-}
-
-.twentysixteen .entry-summary {
-	margin-right: 0;
-	margin-left: 0;
-}
-
-#content .twentysixteen div.product div.images,
-#content .twentysixteen div.product div.summary {
-	width: 46.42857%;
-}
-
-@media screen and (min-width: 44.375em) {
-	.twentysixteen .site-main {
-		margin-right: 23.0769%;
-	}
-}
-
-@media screen and (min-width: 56.875em) {
-	.twentysixteen .site-main {
-		margin-right: 0;
-		margin-left: 0;
-	}
-	.no-sidebar .twentysixteen .site-main {
-		margin-right: 15%;
-		margin-left: 15%;
-	}
-	.no-sidebar .twentysixteen .entry-summary {
-		margin-right: 0;
-		margin-left: 0;
-	}
-}
-
-/**
- * RTL styles.
- */
-.rtl .woocommerce .col2-set .col-1, .rtl .woocommerce-page .col2-set .col-1 {
-	float: right;
-}
-
-.rtl .woocommerce .col2-set .col-2, .rtl .woocommerce-page .col2-set .col-2 {
-	float: left;
-}
-
 .woocommerce {
 	/* Single product */
 	/* END Single product */
@@ -441,6 +391,14 @@
 	display: block;
 	position: relative;
 	/* Product thumbnail */
+}
+
+.woocommerce #page .product.eq-col {
+	padding: 0px;
+}
+
+.woocommerce #page .product.eq-col .product-inner {
+	padding: 0px 5px;
 }
 
 .woocommerce #page .product .woocommerce-LoopProduct-link {
@@ -465,6 +423,7 @@
 	background: #F36F36;
 	color: #fff;
 	padding: 10px 10px;
+	z-index: 15;
 }
 
 .woocommerce #page .product .woocommerce-loop-product__title {
@@ -708,8 +667,31 @@
 	margin-right: -15px;
 }
 
+.woocommerce .woocommerce-product-gallery__wrapper {
+	margin-top: 0px;
+}
+
+.woocommerce .woocommerce-product-gallery__wrapper::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
 .woocommerce .woocommerce-product-gallery__trigger {
 	margin-top: 15px;
+}
+
+.woocommerce .product .flex-control-nav {
+	margin-left: -5px !important;
+	margin-right: -5px !important;
+}
+
+.woocommerce .product .flex-control-nav li {
+	padding: 0px 5px;
+}
+
+.woocommerce .onsale {
+	top: 15px;
 }
 
 .shop-section-title, .woocommerce-Reviews-title {

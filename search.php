@@ -7,10 +7,13 @@
  * @package sshop
  */
 
-get_header(); ?>
+get_header();
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+$has_sidebar = is_active_sidebar( 'sidebar-1' );
+?>
+
+    <div id="primary" class="content-area <?php echo  ( $has_sidebar ) ? 'has-sidebar' : 'no-sidebar'; ?>">
+		<div id="main" class="site-main" role="main">
 
 		<?php
 		if ( have_posts() ) : ?>
@@ -40,8 +43,8 @@ get_header(); ?>
 
 		endif; ?>
 
-		</main><!-- #main -->
-	</section><!-- #primary -->
+		</div><!-- #main -->
+	</div><!-- #primary -->
 
 <?php
 get_sidebar();

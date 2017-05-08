@@ -830,15 +830,16 @@ object {
 	clear: both;
 }
 
-.content-area.has-sidebar .site-main {
-	width: 70%;
-	float: left;
-}
-
-.content-area.has-sidebar .widget-area {
-	width: 30%;
-	padding-left: 30px;
-	float: right;
+@media screen and (min-width: 720px) {
+	.content-area.has-sidebar .site-main {
+		width: 70%;
+		float: left;
+	}
+	.content-area.has-sidebar .widget-area {
+		width: 30%;
+		padding-left: 30px;
+		float: right;
+	}
 }
 
 .container::after {

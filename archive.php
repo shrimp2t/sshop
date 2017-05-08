@@ -7,9 +7,12 @@
  * @package sshop
  */
 
-get_header(); ?>
+get_header();
 
-	<div id="primary" class="content-area">
+$has_sidebar = is_active_sidebar( 'sidebar-1' );
+?>
+
+    <div id="primary" class="content-area <?php echo  ( $has_sidebar ) ? 'has-sidebar' : 'no-sidebar'; ?>">
 		<main id="main" class="site-main" role="main">
 
 		<?php

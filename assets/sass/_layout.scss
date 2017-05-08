@@ -8,15 +8,18 @@
     }
     @include clearfixAfter();
     &.has-sidebar {
-        .site-main {
-            width: 70%;
-            float: left;
+        @include for-screen( phone-min ) {
+            .site-main {
+                width: 70%;
+                float: left;
+            }
+            .widget-area {
+                width: 30%;
+                padding-left: 30px;
+                float: right;
+            }
         }
-        .widget-area {
-            width: 30%;
-            padding-left: 30px;
-            float: right;
-        }
+
     }
 
 }

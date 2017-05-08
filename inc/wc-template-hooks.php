@@ -44,7 +44,17 @@ function sshop_number_products_to_show(){
 }
 add_filter( 'loop_shop_per_page','sshop_number_products_to_show', 20 );
 
-// Do not show shop title
-add_filter( 'woocommerce_show_page_title', '__return_false' );
+
+function sshop_wc_show_page_title(){
+    if ( is_product() ) {
+        return false;
+    }
+
+    return true;
+}
+add_filter( 'woocommerce_show_page_title', 'sshop_wc_show_page_title' );
+
+// Change sale fash to percent
+add_filter( 'woocommerce_sale_flash', 'sshop_get_wc_sale_flash' );
 
 
