@@ -402,7 +402,8 @@
 
 .woocommerce #page .product .product-btns .add_to_cart_button, .woocommerce #page .product .product-btns .added_to_cart, .woocommerce #page .product .product-btns .add_to_wishlist,
 .woocommerce #page .product .product-btns .yith-wcwl-wishlistexistsbrowse a,
-.woocommerce #page .product .product-btns .yith-wcwl-wishlistaddedbrowse a {
+.woocommerce #page .product .product-btns .yith-wcwl-wishlistaddedbrowse a,
+.woocommerce #page .product .product-btns .product_type_external {
 	display: block;
 	overflow: hidden;
 	width: 35px;
@@ -417,19 +418,22 @@
 
 .woocommerce #page .product .product-btns .add_to_cart_button:hover, .woocommerce #page .product .product-btns .added_to_cart:hover, .woocommerce #page .product .product-btns .add_to_wishlist:hover,
 .woocommerce #page .product .product-btns .yith-wcwl-wishlistexistsbrowse a:hover,
-.woocommerce #page .product .product-btns .yith-wcwl-wishlistaddedbrowse a:hover {
+.woocommerce #page .product .product-btns .yith-wcwl-wishlistaddedbrowse a:hover,
+.woocommerce #page .product .product-btns .product_type_external:hover {
 	background: none;
 }
 
 .woocommerce #page .product .product-btns .add_to_cart_button.loading, .woocommerce #page .product .product-btns .added_to_cart.loading, .woocommerce #page .product .product-btns .add_to_wishlist.loading,
 .woocommerce #page .product .product-btns .yith-wcwl-wishlistexistsbrowse a.loading,
-.woocommerce #page .product .product-btns .yith-wcwl-wishlistaddedbrowse a.loading {
+.woocommerce #page .product .product-btns .yith-wcwl-wishlistaddedbrowse a.loading,
+.woocommerce #page .product .product-btns .product_type_external.loading {
 	opacity: 1 !important;
 }
 
 .woocommerce #page .product .product-btns .add_to_cart_button.loading::after, .woocommerce #page .product .product-btns .added_to_cart.loading::after, .woocommerce #page .product .product-btns .add_to_wishlist.loading::after,
 .woocommerce #page .product .product-btns .yith-wcwl-wishlistexistsbrowse a.loading::after,
-.woocommerce #page .product .product-btns .yith-wcwl-wishlistaddedbrowse a.loading::after {
+.woocommerce #page .product .product-btns .yith-wcwl-wishlistaddedbrowse a.loading::after,
+.woocommerce #page .product .product-btns .product_type_external.loading::after {
 	display: block;
 	border-radius: 50%;
 	top: 0px;
@@ -441,7 +445,8 @@
 
 .woocommerce #page .product .product-btns .add_to_cart_button.loading:before, .woocommerce #page .product .product-btns .added_to_cart.loading:before, .woocommerce #page .product .product-btns .add_to_wishlist.loading:before,
 .woocommerce #page .product .product-btns .yith-wcwl-wishlistexistsbrowse a.loading:before,
-.woocommerce #page .product .product-btns .yith-wcwl-wishlistaddedbrowse a.loading:before {
+.woocommerce #page .product .product-btns .yith-wcwl-wishlistaddedbrowse a.loading:before,
+.woocommerce #page .product .product-btns .product_type_external.loading:before {
 	opacity: 0;
 	visibility: hidden;
 }
@@ -450,7 +455,9 @@
 .woocommerce #page .product .product-btns .yith-wcwl-wishlistexistsbrowse a:before,
 .woocommerce #page .product .product-btns .yith-wcwl-wishlistexistsbrowse a:after,
 .woocommerce #page .product .product-btns .yith-wcwl-wishlistaddedbrowse a:before,
-.woocommerce #page .product .product-btns .yith-wcwl-wishlistaddedbrowse a:after {
+.woocommerce #page .product .product-btns .yith-wcwl-wishlistaddedbrowse a:after,
+.woocommerce #page .product .product-btns .product_type_external:before,
+.woocommerce #page .product .product-btns .product_type_external:after {
 	text-indent: 0;
 	float: left;
 	width: 35px;
@@ -470,17 +477,19 @@
 
 .woocommerce #page .product .product-btns .add_to_cart_button:before, .woocommerce #page .product .product-btns .added_to_cart:before, .woocommerce #page .product .product-btns .add_to_wishlist:before,
 .woocommerce #page .product .product-btns .yith-wcwl-wishlistexistsbrowse a:before,
-.woocommerce #page .product .product-btns .yith-wcwl-wishlistaddedbrowse a:before {
+.woocommerce #page .product .product-btns .yith-wcwl-wishlistaddedbrowse a:before,
+.woocommerce #page .product .product-btns .product_type_external:before {
 	display: block;
 }
 
 .woocommerce #page .product .product-btns .add_to_cart_button:after, .woocommerce #page .product .product-btns .added_to_cart:after, .woocommerce #page .product .product-btns .add_to_wishlist:after,
 .woocommerce #page .product .product-btns .yith-wcwl-wishlistexistsbrowse a:after,
-.woocommerce #page .product .product-btns .yith-wcwl-wishlistaddedbrowse a:after {
+.woocommerce #page .product .product-btns .yith-wcwl-wishlistaddedbrowse a:after,
+.woocommerce #page .product .product-btns .product_type_external:after {
 	display: none;
 }
 
-.woocommerce #page .product .product-btns .add_to_cart_button:before {
+.woocommerce #page .product .product-btns .add_to_cart_button:before, .woocommerce #page .product .product-btns .product_type_external:before {
 	font-family: 'FontAwesome';
 	content: "\f217";
 }
