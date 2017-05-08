@@ -15,7 +15,8 @@
 get_header();
 
 $has_sidebar = is_active_sidebar( 'sidebar-woocommerce' );
-
+global $sshop_shop_layout_colums;
+$sshop_shop_layout_colums = apply_filters( 'sshop_shop_layout_colums', ( $has_sidebar ) ? 4 : 5 );
 ?>
 	<div id="primary" class="content-area <?php echo  ( $has_sidebar ) ? 'has-sidebar' : 'no-sidebar'; ?>">
 		<main id="main" class="site-main" role="main">

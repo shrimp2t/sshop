@@ -428,6 +428,11 @@
 	float: left;
 }
 
+.woocommerce {
+	/* Single product */
+	/* END Single product */
+}
+
 .woocommerce #page {
 	/* Shopping cart */
 }
@@ -698,7 +703,16 @@
 	margin: 0px 10px;
 }
 
-.related h2, .up-sells h2 {
+.woocommerce .products.related .products, .woocommerce .products.upsells .products {
+	margin-left: -15px;
+	margin-right: -15px;
+}
+
+.woocommerce .woocommerce-product-gallery__trigger {
+	margin-top: 15px;
+}
+
+.shop-section-title, .woocommerce-Reviews-title {
 	font-size: 18px;
 	font-size: 1.125rem;
 	line-height: 50px;

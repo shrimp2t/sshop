@@ -15,5 +15,12 @@
  * @package 	WooCommerce/Templates
  * @version     2.0.0
  */
+
+
+
+global $sshop_shop_layout_colums;
+if ( ! $sshop_shop_layout_colums ) {
+    $sshop_shop_layout_colums = 4;
+}
 ?>
-<ul class="products eq-row-col-5">
+<ul class="products eq-row-col-<?php echo esc_attr( $sshop_shop_layout_colums ); ?>">

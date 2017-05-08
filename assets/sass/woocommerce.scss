@@ -717,12 +717,25 @@
 		}
 	}
 
+	.products {
+		&.related, &.upsells {
+			.products {
+				margin-left: -15px;
+				margin-right: -15px;
+			}
+		}
+	}
+
+	/* Single product */
+	.woocommerce-product-gallery__trigger {
+		margin-top: 15px;
+	}
+	/* END Single product */
+
 }
 
-.related, .up-sells {
-	h2 {
-		@include rem( 'font-size', 18px );
-		@include rem( 'line-height', 50px );
-		text-transform: uppercase;
-	}
+.shop-section-title, .woocommerce-Reviews-title {
+	@include rem( 'font-size', 18px );
+	@include rem( 'line-height', 50px );
+	text-transform: uppercase;
 }
