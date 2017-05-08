@@ -1,0 +1,22 @@
+// main: style.scss
+
+.content-area {
+    margin: 35px 0px;
+    .site-main {
+        padding: 15px;
+        background: #fff;
+    }
+    @include clearfixAfter();
+    &.has-sidebar {
+        .site-main {
+            width: 70%;
+            float: left;
+        }
+        .widget-area {
+            width: 30%;
+            padding-left: 30px;
+            float: right;
+        }
+    }
+
+}

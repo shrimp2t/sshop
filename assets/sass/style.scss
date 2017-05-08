@@ -22,8 +22,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 
 @import "variables";
 @import "reset";
+@import "layout";
 @import "utilities";
-@import "woocommerce";
 @import "slider";
 @import "slick";
 @import "plugins";
@@ -955,6 +955,29 @@ a:focus, a:active, a:hover {
 
 	}
 }
+
+
+
+/* Sidebar */
+.widget-area {
+	.widget-title {
+		@include rem( 'font-size', 18px );
+		@include rem( 'line-height', 50px );
+		text-transform: uppercase;
+	}
+	ul, ol {
+		margin: 0px;
+		padding: 0px;
+		ul, ol {
+			padding-left: 30px;
+		}
+		li {
+			list-style: none;
+		}
+	}
+}
+
+
 
 
 

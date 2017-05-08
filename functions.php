@@ -124,6 +124,16 @@ function sshop_widgets_init() {
 	) );
 
     register_sidebar( array(
+		'name'          => esc_html__( 'Sidebar WooCommerce', 'sshop' ),
+		'id'            => 'sidebar-woocommerce',
+		'description'   => esc_html__( 'Add widgets here.', 'sshop' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+    register_sidebar( array(
         'name'          => esc_html__( 'FRONT PAGE: Content', 'sshop' ),
         'id'            => 'sidebar-home',
         'description'   => esc_html__( 'Display widgets on front page, recommended widgets: FRONT PAGE: Slider, FRONT PAGE: Product tabs, FRONT PAGE: Product Brands, FRONT PAGE: Product Categories, FRONT PAGE: Services.', 'sshop' ),
@@ -167,9 +177,9 @@ function sshop_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-    ///wp_enqueue_style( 'woocommerce-general' );
-    //wp_enqueue_style( 'woocommerce-layout' );
-    //wp_enqueue_style( 'woocommerce-smallscreen' );
+    if ( class_exists( 'WooCommerce' ) ) {
+        wp_enqueue_style( 'woocommerce-layout', get_template_directory_uri().'/woocommerce.css'  );
+    }
 
 
 }
@@ -207,9 +217,9 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 
-require get_template_directory() . '/inc/woocommerce-functions.php';
-require get_template_directory() . '/inc/woocommerce-template-functions.php';
-require get_template_directory() . '/inc/woocommerce-template-hooks.php';
+require get_template_directory() . '/inc/wc-functions.php';
+require get_template_directory() . '/inc/wc-template-functions.php';
+require get_template_directory() . '/inc/wc-template-hooks.php';
 require get_template_directory() . '/inc/plugins-hooks.php';
 
 /**

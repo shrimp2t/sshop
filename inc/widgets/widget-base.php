@@ -147,7 +147,7 @@ class SShop_Widget_Base extends WP_Widget {
     }
 
     function layout_content( $query ){
-
+        $GLOBALS['sshop_loop_use_div'] = true;
         ?>
         <div class="tabs-content-items">
         <?php while ($query->have_posts()) : $query->the_post(); ?>
@@ -158,7 +158,7 @@ class SShop_Widget_Base extends WP_Widget {
         </div>
         <?php
         $this->end_layout($query);
-
+        $GLOBALS['sshop_loop_use_div'] = false;
     }
     function not_found(){
         ?>
