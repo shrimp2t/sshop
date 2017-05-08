@@ -3,7 +3,7 @@
 
 .woocommerce {
 
-	.product {
+	div.product {
 		display: block;
 		position: relative;
 		.woocommerce-LoopProduct-link {
@@ -39,8 +39,8 @@
 			display: block;
 			color: $primary;
 		}
-		.price {
-			@include rem( 'font-size', 16px );
+		span.price {
+			//@include rem( 'font-size', 16px );
 			//font-weight: bold;
 			text-transform: uppercase;
 			display: block;

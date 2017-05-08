@@ -51,7 +51,7 @@ a:focus, a:active, a:hover {
 	padding: 0px 15px;
 }
 @include for-screen( desktop-min ) {
-	.container {
+	.container, .container-fluid {
 		width: 1350px;
 		max-width: 100%;
 	}
@@ -63,9 +63,24 @@ a:focus, a:active, a:hover {
 	min-height: 60px;
 	background: #222;
 	padding: 0px 30px;
+	max-width: 50%;
+	overflow: hidden;
+	@include for-screen( phone-max ) {
+		padding: 0px 10px;
+		max-width: 650px;
+	}
+	@include for-screen( samll-phone-max ) {
+		padding: 0px 10px;
+		max-width: 380px;
+	}
 	display: block;
 	position: relative;
 	min-height: $header_line_height;
+	max-height: $header_line_height;
+	@include for-screen( phone-max ) {
+		min-height: $header_line_height - 20;
+		max-height: $header_line_height - 20;
+	}
 	a {
 		color: #f5f5f5;
 		&:hover {
@@ -74,6 +89,9 @@ a:focus, a:active, a:hover {
 	}
 	.custom-logo-link {
 		@include rem( 'line-height', $header_line_height );
+		@include for-screen( phone-max ) {
+			@include rem( 'line-height', $header_line_mobile_height );
+		}
 	}
 	.site-title {
 		margin: 0px;
@@ -84,6 +102,10 @@ a:focus, a:active, a:hover {
 		}
 		@include rem( 'font-size', 40px );
 		@include rem( 'line-height', $header_line_height );
+		@include for-screen( phone-max ) {
+			@include rem( 'font-size', 40px - 20 );
+			@include rem( 'line-height', $header_line_mobile_height );
+		}
 	}
 	.site-description {
 		display: none;
@@ -113,6 +135,9 @@ a:focus, a:active, a:hover {
 	padding: 0px;
 	display: inline-block;
 	margin: 0px 15px;
+	@include for-screen( phone-max ) {
+		margin: 0px 8px;
+	}
 	position: relative;
 	a {
 		display: block;
@@ -145,10 +170,21 @@ a:focus, a:active, a:hover {
 			content: "";
 			display: block;
 		}
+		@include for-screen( phone-max ) {
+			top: 2px;
+			min-width: 18px;
+			min-height: 18px;
+			font-size: 11px;
+			line-height: 8px;
+		}
 	}
 	.shop__icon {
-		font-size: 28px;
+		@include rem( 'font-size', 28px );
 		@include rem( 'line-height', $header_line_height );
+		@include for-screen( phone-max ) {
+			@include rem( 'line-height', $header_line_mobile_height );
+			@include rem( 'font-size', 22px );
+		}
 	}
 	.header-dropdown-inner {
 		padding: 15px;
@@ -187,52 +223,282 @@ a:focus, a:active, a:hover {
 	a {
 		color: $text;
 	}
-}
-.navigation-wrapper {
 	background-color: #fff;
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.12);
 	@include clearfixAfter();
+	position: relative;
+
 }
 
-/* main-navigation */
+
+/*--------------------------------------------------------------
+## Menu navigation
+--------------------------------------------------------------*/
 .main-navigation {
+	display: block;
 	float: left;
-	li {
-		a {
-			padding: 0px 18px;
-			@include rem( 'line-height', $header_line_height );
-			color: $text;
-			&:hover {
-				color: $primary_hover;
+}
+
+.main-navigation ul {
+	display: none;
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+}
+
+.main-navigation li {
+	float: left;
+	position: relative;
+}
+
+.main-navigation a {
+	display: block;
+	text-decoration: none;
+}
+
+
+@include for-screen( phone-min ) {
+	// Apply for desktop only
+	.main-navigation ul ul {
+		float: left;
+		position: absolute;
+		top: 1.5em;
+		left: -999em;
+		z-index: 99999;
+	}
+
+	.main-navigation ul ul ul {
+		left: -999em;
+		top: 0;
+	}
+
+	.main-navigation ul ul a {
+		width: 200px;
+	}
+
+	.main-navigation ul li:hover > ul,
+	.main-navigation ul li.focus > ul {
+		left: auto;
+	}
+
+	.main-navigation ul ul li:hover > ul,
+	.main-navigation ul ul li.focus > ul {
+		left: 100%;
+	}
+}
+
+
+
+.main-navigation .current_page_item > a,
+.main-navigation .current-menu-item > a,
+.main-navigation .current_page_ancestor > a,
+.main-navigation .current-menu-ancestor > a {
+}
+
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+}
+
+.main-navigation ul {
+	display: block;
+}
+
+
+.main-navigation {
+	//float: left;
+	//position: relative;
+	.child-toggle {
+		display: none;
+	}
+	.menu-toggle {
+		padding: 0px 18px;
+		vertical-align: middle;
+		@include rem( 'line-height', $header_line_height );
+		@include for-screen( phone-max ) {
+			@include rem( 'line-height', $header_line_mobile_height );
+			@include rem( 'font-size', 16px );
+		}
+		@include for-screen( small-phone-max ) {
+			@include rem( 'font-size', 22px );
+			.icon {
+				margin-right: 0px;
+			}
+			.label {
+				display: none;
 			}
 		}
-		ul {
-			top: 100%;
-			background: #fff;
-			box-shadow: 0 0 5px rgba(0, 0, 0, 0.12);
+		@include rem( 'font-size', 28px );
+		color: $text;
+		border-right: 1px solid #f1f1f1;
+		&:hover {
+			color: $primary_hover;
 		}
-		li {
-			position: relative;
+		.icon {
+			margin-right: 10px;
+		}
+		.label {
+			text-transform: uppercase;
+			font-weight: bold;
+		}
+		&.hide-label {
+			.icon {
+				margin-right: 0px;
+			}
+			.label {
+				display: none;
+			}
+		}
+		@include for-screen( phone-min ) {
+			display: none;
+		}
+		@include for-screen( phone-max ) {
+			display: block;
+		}
+	}
+	.primary-menu-wrapper {
+		@include for-screen( phone-min ) {
+			display: block;
+		}
+		@include for-screen( phone-max ) {
+			display: none;
+
+			position: absolute;
+			top: 100%;
+			left: 0px;
+			width: 100%;
+			background: #fff;
+			z-index: 35;
+			@include box-shadow();
 			a {
-				@include rem( 'line-height', 30px );
-				padding: 5px 15px;
+				border-bottom: 1px solid #ededed;
+			}
+			li {
 				display: block;
+				float: none;
+				position: relative;
+				a {
+					@include rem( 'line-height', 30px );
+					padding: 5px 15px;
+					display: block;
+					> a {
+						background: #ededed;
+					}
+				}
+				.child-toggle {
+					cursor: pointer;
+					position: absolute;
+					display: block;
+					top: 10px;
+					right: 15px;
+					&::before {
+						@include font-icon('"\\f067"');
+					}
+				}
+				ul {
+					display: block;
+					float: none;
+					max-height: 0px;
+					position: relative;
+					overflow: hidden;
+					@include transition( all .5s ease-in-out );
+					a {
+						padding-left: 30px;
+					}
+					ul {
+						a {
+							padding-left: 60px;
+						}
+						ul {
+							a {
+								padding-left: 90px;
+							}
+						}
+					}
+				}
+				&.child-open {
+					> .child-toggle {
+						&::before {
+							@include font-icon('"\\f068"');
+						}
+					}
+					> ul {
+						max-height: 9999999px;
+						overflow: auto;
+
+					}
+				}
+			}
+
+			&.menu-open {
+				display: block;
+			} // end mobile menu when open
+
+
+
+		}
+
+	}
+	&.no-js {
+		height: $header_line_height;
+		@include for-screen( phone-max ) {
+			@include rem( 'height', $header_line_mobile_height );
+			max-width: 999999px;
+			float: left;
+		}
+		overflow: hidden;
+		display: inline-block;
+		max-width: 30%;
+	}
+
+	@include for-screen( phone-min ) {
+		li {
+			a {
+				padding: 0px 18px;
+				@include rem( 'line-height', $header_line_height );
+				@include for-screen( phone-max ) {
+					@include rem( 'line-height', $header_line_mobile_height );
+				}
+				color: $text;
 				&:hover {
-					background: #ededed;
+					color: $primary_hover;
 				}
 			}
 			ul {
-				display: none;
-				position: absolute;
-				left: 100%;
-				top: 0px;
+				top: 100%;
+				background: #fff;
+				box-shadow: 0 0 5px rgba(0, 0, 0, 0.12);
 			}
-			&:hover {
-				> ul {
+			li {
+				position: relative;
+				a {
+					@include rem( 'line-height', 30px );
+					padding: 5px 15px;
 					display: block;
+					&:hover {
+						background: #ededed;
+					}
+				}
+				ul {
+					display: none;
+					position: absolute;
+					left: 100%;
+					top: 0px;
+				}
+				&:hover {
+					> ul {
+						display: block;
+					}
 				}
 			}
-		}
+
+			&.nav-more {
+				> a {
+					min-width: 50px;
+					display: inline-block;
+				}
+			}
+		} // end mneu li
 	}
 }
 .shop-by-departments {
@@ -249,6 +515,9 @@ a:focus, a:active, a:hover {
 		background: $primary;
 		//@include rem( 'font-size', 40px );
 		@include rem( 'line-height', $header_line_height );
+		@include for-screen( phone-max ) {
+			@include rem( 'line-height', $header_line_mobile_height );
+		}
 		color: #fff;
 		text-decoration: none !important;
 		.icon {
@@ -326,6 +595,19 @@ a:focus, a:active, a:hover {
 .right-navigation {
 	float: right;
 	text-align: right;
+	position: absolute;
+	right: 0px;
+}
+.primary-menu-wrapper {
+	.right-navigation {
+		position: relative;
+		top: auto;
+		left: auto;
+		float: none;
+		a {
+			border-bottom: 0px;
+		}
+	}
 }
 
 /* Home sidebar */
@@ -657,6 +939,9 @@ a:focus, a:active, a:hover {
 	}
 	.widget {
 		margin-bottom: 0px;
+		@include for-screen( phone-max ) {
+			width: 50%;
+		}
 		.widget-title {
 			@include rem( font-size, 16px );
 			@include rem( margin-bottom , 15px );

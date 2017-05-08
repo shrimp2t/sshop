@@ -23,74 +23,46 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'sshop' ); ?></a>
 
-	<header id="masthead" class="site-header" role="banner">
+	<header id="site-header" class="site-header" role="banner">
 
-        <div class="navigation-wrapper">
-
-            <div class="site-branding">
+        <div id="site-branding" class="site-branding">
+            <?php
+            if ( function_exists( 'the_custom_logo' ) ) {
+                the_custom_logo();
+            }
+            if ( is_front_page() && is_home() ) : ?>
+                <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+            <?php else : ?>
+                <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
                 <?php
-                if ( function_exists( 'the_custom_logo' ) ) {
-                    the_custom_logo();
-                }
-                if ( is_front_page() && is_home() ) : ?>
-                    <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-                <?php else : ?>
-                    <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-                    <?php
-                endif;
+            endif;
 
-                $description = get_bloginfo( 'description', 'display' );
-                if ( $description || is_customize_preview() ) : ?>
-                    <p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-                    <?php
-                endif; ?>
-            </div><!-- .site-branding -->
+            $description = get_bloginfo( 'description', 'display' );
+            if ( $description || is_customize_preview() ) : ?>
+                <p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+                <?php
+            endif; ?>
+        </div><!-- .site-branding -->
 
 
+        <nav id="site-navigation-right" class="right-navigation" role="navigation">
 
-            <div class="shop-by-departments">
-                <a href="#" class="shop-by-button">Departments <span class="icon fa fa-angle-down"></span></a>
-                <ul class="list-departments">
-                    <?php wp_list_categories( array(
-                        'hide_empty'          => false,
-                        'hide_title_if_empty' => false,
-                        'hierarchical'        => true,
-                        'order'               => 'ASC',
-                        'orderby'             => 'name',
-                        'show_count'          => 0,
-                        'show_option_all'     => '',
-                        'show_option_none'    => false,
-                        'style'               => 'list',
-                        'taxonomy'            => 'product_cat',
-                        'title_li'            => null,
-                        'use_desc_for_title'  => 1,
-                    ) ); ?>
-                </ul>
-            </div>
-            <nav id="site-navigation" class="main-navigation" role="navigation">
-                <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'sshop' ); ?></button>
-                <?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
-            </nav><!-- #site-navigation -->
-            <nav id="site-navigation-right" class="right-navigation" role="navigation">
-
-
-
-                <div class="header-shop__icon">
-                    <a href="#">
-                        <span class="shop__icon fa fa-search"></span>
-                    </a>
-                    <div class="header-dropdown">
-                        <form class="top-search-form header-dropdown-inner" >
-                            <div class="input-group">
-                                <input type="text" class="form-control" name="s" placeholder="<?php esc_attr_e( 'Search...' ,'sshop' ); ?>." aria-describedby="basic-addon2">
-                                <button class="input-group-addon btn" type="submit"><?php echo esc_html_x( 'Search', 'Search form button' ,'sshop' ); ?></button>
-                                <input type="hidden" name="post_type" value="product" />
-                            </div>
-                        </form>
-                    </div>
+            <div class="header-shop__icon">
+                <a href="#">
+                    <span class="shop__icon fa fa-search"></span>
+                </a>
+                <div class="header-dropdown">
+                    <form class="top-search-form header-dropdown-inner" >
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="s" placeholder="<?php esc_attr_e( 'Search...' ,'sshop' ); ?>." aria-describedby="basic-addon2">
+                            <button class="input-group-addon btn" type="submit"><?php echo esc_html_x( 'Search', 'Search form button' ,'sshop' ); ?></button>
+                            <input type="hidden" name="post_type" value="product" />
+                        </div>
+                    </form>
                 </div>
+            </div>
 
-                <?php if ( function_exists( 'yith_wcwl_count_all_products' ) ) { ?>
+            <?php if ( function_exists( 'yith_wcwl_count_all_products' ) ) { ?>
                 <div class="header-shop__icon">
                     <a href="<?php echo esc_url( YITH_WCWL()->get_wishlist_url() ); ?>">
                         <?php $n = yith_wcwl_count_all_products(); ?>
@@ -98,8 +70,8 @@
                         <span class="shop__icon fa fa-heart-o"></span>
                     </a>
                 </div>
-                <?php } ?>
-                <?php if ( function_exists( 'wc_get_checkout_url' ) ) { ?>
+            <?php } ?>
+            <?php if ( function_exists( 'wc_get_checkout_url' ) ) { ?>
                 <div class="header-shop__icon">
                     <a href="<?php echo esc_url( wc_get_checkout_url() ); ?>">
                         <span class="shop__number cart-number-items">0</span>
@@ -111,21 +83,51 @@
                         </div>
                     </div>
                 </div>
-                <?php } ?>
-                <?php if ( function_exists( 'wc_get_page_permalink' ) ) { ?>
+            <?php } ?>
+            <?php if ( function_exists( 'wc_get_page_permalink' ) ) { ?>
                 <div class="header-shop__icon">
                     <a href="<?php echo esc_url( wc_get_page_permalink( 'myaccount' ) ); ?>">
                         <span class="shop__icon fa fa-user-circle-o"></span>
                     </a>
                 </div>
-                <?php } ?>
-            </nav><!-- #site-navigation -->
+            <?php } ?>
+        </nav><!-- #site-navigation-right -->
 
-
-
+        <?php /*
+        <div id="shop-by-departments" class="shop-by-departments">
+            <a href="#" class="shop-by-button">Departments <span class="icon fa fa-angle-down"></span></a>
+            <ul class="list-departments">
+                <?php wp_list_categories( array(
+                    'hide_empty'          => false,
+                    'hide_title_if_empty' => false,
+                    'hierarchical'        => true,
+                    'order'               => 'ASC',
+                    'orderby'             => 'name',
+                    'show_count'          => 0,
+                    'show_option_all'     => '',
+                    'show_option_none'    => false,
+                    'style'               => 'list',
+                    'taxonomy'            => 'product_cat',
+                    'title_li'            => null,
+                    'use_desc_for_title'  => 1,
+                ) ); ?>
+            </ul>
         </div>
+        */ ?>
 
 
-	</header><!-- #masthead -->
+        <nav id="site-navigation" class="main-navigation no-js" role="navigation">
+            <a href="#" class="menu-toggle"><span class="icon fa fa-bars"></span><span class="label"><?php esc_html_e( 'Navigation', 'sshop' ); ?></span></a>
+            <?php wp_nav_menu( array(
+                'theme_location'    => 'menu-1',
+                'menu_id'           => 'primary-menu',
+                'container_class'   => 'primary-menu-wrapper',
+                'container_id'      => 'primary-menu-wrapper',
+            ) ); ?>
+        </nav><!-- #site-navigation -->
+
+
+
+	</header><!-- #site-header -->
 
 	<div id="content" class="site-content">

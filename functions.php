@@ -137,7 +137,7 @@ function sshop_widgets_init() {
         'name'          => esc_html__( 'Footer', 'sshop' ),
         'id'            => 'sidebar-footer',
         'description'   => esc_html__( 'Add widgets for footer. Each widget is a column, you can custom column width by add bootstrap column class name, e.g: col-md-4', 'sshop' ),
-        'before_widget' => '<section id="%1$s" class="col widget %2$s">',
+        'before_widget' => '<section id="%1$s" class="col col-md-auto widget %2$s">',
         'after_widget'  => '</section>',
         'before_title'  => '<h2 class="widget-title">',
         'after_title'   => '</h2>',

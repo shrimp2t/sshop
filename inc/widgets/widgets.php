@@ -130,7 +130,7 @@ class SShop_Widget_Classes{
         $classes = join( ' ', $classes );
         $params[0]['before_widget'] = sprintf( $sidebar['before_widget'], $_id, $classes );
         if ( strpos( $classes, 'full-width' ) !== false ) {
-            $params[0]['before_widget'] .= '<div class="container widget-full-width-content">';
+            $params[0]['before_widget'] .= '<div class="container-fluid widget-full-width-content">';
             $params[0]['after_widget'] = '</div>'.$params[0]['after_widget'];
         }
 
