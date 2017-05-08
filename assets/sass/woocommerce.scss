@@ -317,10 +317,11 @@
 			}
 			/* Product thumbnail */
 			.product-thumbnail {
-				margin-bottom: 20px;
+				margin-bottom: 10px;
 				img {
 					width: 100%;
 					height: auto;
+					margin-bottom: 0px;
 				}
 			}
 			.star-rating {

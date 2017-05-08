@@ -341,12 +341,13 @@
 }
 
 .woocommerce #page .product .product-thumbnail {
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }
 
 .woocommerce #page .product .product-thumbnail img {
 	width: 100%;
 	height: auto;
+	margin-bottom: 0px;
 }
 
 .woocommerce #page .product .star-rating {
