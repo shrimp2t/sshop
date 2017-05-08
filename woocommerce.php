@@ -22,12 +22,28 @@ $sshop_shop_layout_colums = apply_filters( 'sshop_shop_layout_colums', ( $has_si
         <?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
             <h1 class="page-title"><?php woocommerce_page_title(); ?></h1>
         <?php endif; ?>
+        <?php
+        /**
+         * woocommerce_before_main_content hook.
+         *
+         * @hooked woocommerce_breadcrumb - 20
+         * @hooked WC_Structured_Data::generate_website_data() - 30
+         */
+        do_action( 'woocommerce_before_main_content' );
+        ?>
 		<main id="main" class="site-main" role="main">
 			<?php
             woocommerce_content();
 			?>
 		</main><!-- #main -->
         <?php get_sidebar( 'woocommerce'); ?>
+        <?php
+        /**
+         * woocommerce_after_main_content hook.
+         *
+         */
+        do_action( 'woocommerce_after_main_content' );
+        ?>
 	</div><!-- #primary -->
 
 <?php

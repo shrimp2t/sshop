@@ -57,4 +57,8 @@ add_filter( 'woocommerce_show_page_title', 'sshop_wc_show_page_title' );
 // Change sale fash to percent
 add_filter( 'woocommerce_sale_flash', 'sshop_get_wc_sale_flash', 25, 3 );
 
+// Remove wrapper
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
+
 
