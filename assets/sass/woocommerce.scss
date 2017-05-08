@@ -269,142 +269,25 @@
 	}
 }
 
-/**
- * Twenty Eleven specific styles
- */
-.woocommerce-page {
-	&.left-sidebar {
-		#content.twentyeleven {
-			width: 58.4%;
-			margin: 0 7.6%;
-			float: right;
-		}
-	}
 
-	&.right-sidebar {
-		#content.twentyeleven {
-			margin: 0 7.6%;
-			width: 58.4%;
-			float: left;
-		}
-	}
-}
-
-/**
- * Twenty Fourteen specific styles
- */
-.twentyfourteen {
-	.tfwc {
-		padding: 12px 10px 0;
-		max-width: 474px;
-		margin: 0 auto;
-
-		.product .entry-summary {
-			padding: 0 !important;
-			margin: 0 0 1.618em !important;
-		}
-
-		div.product.hentry.has-post-thumbnail {
-			margin-top: 0;
-		}
-	}
-}
-
-@media screen and (min-width: 673px) {
-	.twentyfourteen {
-		.tfwc {
-			padding-right: 30px;
-			padding-left: 30px;
-		}
-	}
-}
-
-@media screen and (min-width: 1040px) {
-	.twentyfourteen {
-		.tfwc {
-			padding-right: 15px;
-			padding-left: 15px;
-		}
-	}
-}
-
-@media screen and (min-width: 1110px) {
-	.twentyfourteen {
-		.tfwc {
-			padding-right: 30px;
-			padding-left: 30px;
-		}
-	}
-}
-
-@media screen and (min-width: 1218px) {
-	.twentyfourteen {
-		.tfwc {
-			margin-right: 54px;
-		}
-	}
-	.full-width {
-		.twentyfourteen {
-			.tfwc {
-				margin-right: auto;
-			}
-		}
-	}
-}
-
-/**
- * Twenty Fifteen specific styles
- */
-.twentyfifteen {
-	.t15wc {
-		padding-left: 7.6923%;
-		padding-right: 7.6923%;
-		padding-top: 7.6923%;
-		margin-bottom: 7.6923%;
-		background: #fff;
-		box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
-
-		.page-title {
-			margin-left: 0;
-		}
-	}
-}
-
-@media screen and (min-width: 38.75em) {
-	.twentyfifteen {
-		.t15wc {
-			margin-right: 7.6923%;
-			margin-left: 7.6923%;
-			margin-top: 8.3333%;
-		}
-	}
-}
-
-@media screen and (min-width: 59.6875em) {
-	.twentyfifteen {
-		.t15wc {
-			margin-left: 8.3333%;
-			margin-right: 8.3333%;
-			padding: 10%;
-		}
-	}
-
-	.single-product {
-		.twentyfifteen {
-			.entry-summary {
-				padding: 0 !important;
-			}
-		}
-	}
-}
 
 .woocommerce {
+	.woocommerce-main {
+		.products {
+			margin-left: -10px;
+			margin-right: -10px;
+		}
+	}
 	#page {
+
 		.product{
 			&.eq-col {
-				padding: 0px;
+				padding: 10px;
+				margin-top: 10px;
+				margin-bottom: 10px;
 				.product-inner {
-					padding: 0px 5px;
+					padding: 0px;
+					position: relative;
 				}
 			}
 			display: block;
@@ -649,13 +532,31 @@
 			}
 
 		}
-	}
+
+
+
+		// tabs
+		.woocommerce-tabs ul.tabs  {
+			li {
+				@include css3( 'border-radius', 0px !important );
+				&.active {
+					box-shadow: none;
+				}
+				&::before, &::after {
+					box-shadow: none;
+					border-width: 0px !important;
+					left: auto !important;
+				}
+			}
+		}
+
+	} // end #page
 
 	.products {
 		&.related, &.upsells {
 			.products {
-				margin-left: -15px;
-				margin-right: -15px;
+				margin-left: -5px;
+				margin-right: -5px;
 			}
 		}
 	}
@@ -665,9 +566,7 @@
 		@include clearfixAfter();
 		margin-top: 0px;
 	}
-	.woocommerce-product-gallery__trigger {
-		margin-top: 15px;
-	}
+
 	.product {
 		.flex-control-nav {
 			margin-left: -5px !important;

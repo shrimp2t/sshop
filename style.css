@@ -820,7 +820,7 @@ object {
 }
 
 .content-area .site-main {
-	padding: 15px;
+	padding: 20px;
 	background: #fff;
 }
 
@@ -2398,7 +2398,7 @@ a:focus, a:active, a:hover {
 
 .layout-tabs .tabs-layout-content {
 	display: block;
-	padding: 10px;
+	padding: 0 10px;
 }
 
 .layout-tabs.has-b .tabs-layout-content {
@@ -2419,7 +2419,7 @@ a:focus, a:active, a:hover {
 }
 
 .layout-tabs .tabs-item-inside {
-	padding: 5px;
+	padding: 0px;
 	background: #fff;
 }
 

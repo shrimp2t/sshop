@@ -40,8 +40,7 @@ function sshop_wc_image_dimensions() {
 add_action( 'after_switch_theme', 'sshop_wc_image_dimensions', 1 );
 
 
-function sshop_get_wc_sale_flash() {
-    global $product;
+function sshop_get_wc_sale_flash( $html = '', $post, $product ) {
     $s = '';
     if ( $product->get_type() == 'variable') {
         $available_variations = $product->get_available_variations();
@@ -61,7 +60,7 @@ function sshop_get_wc_sale_flash() {
         $s = sprintf( esc_html_x( '-%s%%', 'price save value', 'sshop' ), $max );
     } elseif ( $product->get_type() == 'simple' ) {
         $percentage = round((($product->get_regular_price() - $product->get_sale_price()) / $product->get_regular_price()) * 100);
-        $s = printf( esc_html_x( '-%s%%', 'price save value', 'sshop' ), $percentage );
+        $s = sprintf( esc_html_x( '-%s%%', 'price save value', 'sshop' ), $percentage );
     }
 
     if ( $s ) {

@@ -790,7 +790,7 @@ a:focus, a:active, a:hover {
 
 	.tabs-layout-content {
 		display: block;
-		padding: 10px;
+		padding: 0 10px;
 	}
 
 	&.has-b {
@@ -810,7 +810,7 @@ a:focus, a:active, a:hover {
 		width: 100%;
 	}
 	.tabs-item-inside {
-		padding: 5px;
+		padding: 0px;
 		background: #fff;
 	}
 	.woocommerce-loop-product__title {
