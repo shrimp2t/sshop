@@ -13,18 +13,16 @@ $has_sidebar = is_active_sidebar( 'sidebar-1' );
 ?>
 
     <div id="primary" class="content-area <?php echo  ( $has_sidebar ) ? 'has-sidebar' : 'no-sidebar'; ?>">
+        <?php
+        /**
+         * @hooked sshop_main_content_title - 10
+         */
+        do_action( 'sshop_before_main_content' ) ;
+        ?>
 		<main id="main" class="site-main" role="main">
 
 		<?php
 		if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
-
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
@@ -34,11 +32,14 @@ $has_sidebar = is_active_sidebar( 'sidebar-1' );
 				 * If you want to override this in a child theme, then include a file
 				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 				 */
-				get_template_part( 'template-parts/content', get_post_format() );
+				get_template_part( 'template-parts/loop' );
 
 			endwhile;
 
-			the_posts_navigation();
+            // Previous/next page navigation.
+            the_posts_pagination( array(
+                'before_page_number' => '',
+            ) );
 
 		else :
 
@@ -48,6 +49,7 @@ $has_sidebar = is_active_sidebar( 'sidebar-1' );
 
 		</main><!-- #main -->
         <?php get_sidebar(); ?>
+        <?php do_action( 'sshop_after_main_content' ); ?>
 	</div><!-- #primary -->
 
 <?php

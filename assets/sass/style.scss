@@ -973,9 +973,159 @@ a:focus, a:active, a:hover {
 		}
 		li {
 			list-style: none;
+			margin-bottom: 15px;
+			&:last-child {
+				margin-bottom: 0px;
+			}
+		}
+	}
+
+}
+
+.widget_categories,
+.widget_archive,
+.widget_pages,
+.widget_recent_comments,
+.widget_nav_menu,
+.widget_tag_cloud,
+.widget_meta,
+.widget_recent_entries,
+.widget.woocommerce {
+	a {
+		color: $text;
+		&:hover {
+			color: $primary_hover;
+		}
+
+	}
+	.star-rating {
+		color: $primary;
+	}
+}
+
+
+/* Loop posts */
+
+.loop-post {
+	@include clearfixAfter();
+	&.sticky {
+		background-color: #fcf8e3;
+		border: 1px solid #faf2cc;
+		padding: 15px;
+	}
+
+	.enter-thumbnail {
+		width: 50%;
+		float: left;
+		display: block;
+		padding-right: 20px;
+		img {
+			width: 100%;
+			height: auto;
+			max-width: 100%;
+		}
+	}
+	.enter-content-w {
+		width: 50%;
+		float: left;
+	}
+	&.no-thumbnail {
+		.enter-content-w {
+			width: 100%;
+			float: none;
+		}
+	}
+	.entry-meta {
+		margin: 10px 0px;
+	}
+	.entry-title {
+		color: $text;
+		@include rem( 'font-size', 26px );
+		a {
+			color: $text;
+			&:hover {
+				color: $primary_hover;
+			}
 		}
 	}
 }
+
+
+/* Comment */
+.comment-list {
+	padding: 0px;
+	li {
+		list-style: none;
+		position: relative;
+
+		.comment-body {
+			margin-bottom: 15px;
+		}
+		&:last-child {
+			.comment-body {
+				margin-bottom: 15px;
+			}
+		}
+		&.comment {
+			padding-left: 100px;
+			min-height: 150px;
+			display: block;
+
+			&.depth-2 {
+				//padding-left: 0px;
+				.children {
+					padding-left: 0px;
+				}
+				.comment {
+					padding-left: 0px;
+				}
+			}
+
+			&.depth-3 {
+				.comment-meta {
+					left: -100px;
+				}
+			}
+			.children {
+				margin-left: 0px;
+				margin-top: 15px;
+			}
+		}
+		.fn {
+			font-size: 14px;
+		}
+		.comment-date {
+			font-size: 12px;
+			line-height: 16px;
+		}
+		.avatar {
+			display: block;
+			margin-bottom: 10px;
+		}
+		.comment-meta {
+			width: 80px;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			text-align: center;
+			display: block;
+			float: left;
+		}
+		.comment-content {
+			background: #f5f5f5;
+			padding: 15px;
+			min-height: 130px;
+			display: block;
+		}
+	}
+	ul, ol {
+		padding-left: 0px;
+		ul, ol {
+			padding-left: 30px;
+		}
+	}
+}
+
 
 
 

@@ -2,6 +2,9 @@
 
 .content-area {
     margin: 35px 0px;
+    &.front-page {
+        margin-bottom: 0px;
+    }
     .site-main {
         padding: 20px;
         background: #fff;

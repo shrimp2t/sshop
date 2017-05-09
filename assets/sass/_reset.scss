@@ -356,7 +356,7 @@ hr {
 
 ul,
 ol {
-	margin: 0 0 1.5em 3em;
+	margin: 0;
 }
 
 ul {
@@ -370,7 +370,7 @@ ol {
 li > ul,
 li > ol {
 	margin-bottom: 0;
-	margin-left: 1.5em;
+	margin-left: 30px;
 }
 
 dt {
@@ -647,11 +647,6 @@ a:active {
 
 .hentry {
 	margin: 0 0 1.5em;
-}
-
-.byline,
-.updated:not(.published) {
-	display: none;
 }
 
 .single .byline,

@@ -17,10 +17,13 @@ get_header();
 $has_sidebar = is_active_sidebar( 'sidebar-1' );
 ?>
 
-	<div id="primary" class="content-area <?php echo  ( $has_sidebar ) ? 'has-sidebar' : 'no-sidebar'; ?>">
-        <header class="entry-header">
-            <?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
-        </header><!-- .entry-header -->
+	<div id="primary" class="content-area content-page <?php echo  ( $has_sidebar ) ? 'has-sidebar' : 'no-sidebar'; ?>">
+        <?php
+        /**
+         * @hooked sshop_main_content_title - 10
+         */
+        do_action( 'sshop_before_main_content' ) ;
+        ?>
 		<main id="main" class="site-main" role="main">
 			<?php
 			while ( have_posts() ) : the_post();
@@ -37,8 +40,8 @@ $has_sidebar = is_active_sidebar( 'sidebar-1' );
 
 		</main><!-- #main -->
         <?php get_sidebar(); ?>
+        <?php do_action( 'sshop_after_main_content' ); ?>
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();

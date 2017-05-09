@@ -13,14 +13,16 @@ $has_sidebar = is_active_sidebar( 'sidebar-1' );
 ?>
 
     <div id="primary" class="content-area <?php echo  ( $has_sidebar ) ? 'has-sidebar' : 'no-sidebar'; ?>">
+        <?php
+        /**
+         * @hooked sshop_main_content_title - 10
+         */
+        do_action( 'sshop_before_main_content' );
+        ?>
 		<div id="main" class="site-main" role="main">
 
 		<?php
 		if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'sshop' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-			</header><!-- .page-header -->
 
 			<?php
 			/* Start the Loop */
@@ -35,7 +37,10 @@ $has_sidebar = is_active_sidebar( 'sidebar-1' );
 
 			endwhile;
 
-			the_posts_navigation();
+            // Previous/next page navigation.
+            the_posts_pagination( array(
+                'before_page_number' => '',
+            ) );
 
 		else :
 
@@ -44,8 +49,10 @@ $has_sidebar = is_active_sidebar( 'sidebar-1' );
 		endif; ?>
 
 		</div><!-- #main -->
+        <?php get_sidebar(); ?>
+        <?php do_action( 'sshop_after_main_content' ); ?>
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
+
 get_footer();

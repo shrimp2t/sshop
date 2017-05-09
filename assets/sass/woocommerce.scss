@@ -100,15 +100,6 @@
 		.woocommerce-tabs {
 			clear: both;
 
-			ul.tabs {
-
-			}
-		}
-
-		#reviews {
-			.comment {
-
-			}
 		}
 	}
 
@@ -280,7 +271,7 @@
 	}
 	#page {
 
-		.product{
+		.product, li.product, div.product {
 			&.eq-col {
 				padding: 10px;
 				margin-top: 10px;
@@ -328,21 +319,34 @@
 				display: block;
 				color: $primary;
 			}
-			span.price {
-				//@include rem( 'font-size', 16px );
+			span.price, p.price, .price {
+
 				//font-weight: bold;
 				text-transform: uppercase;
 				display: block;
 				color: $text;
+
 				del {
 					color: #999;
 				}
 				del, ins {
-					display: block;
 					background: none;
+					///font-weight: normal;
 				}
 
 			}
+			span.price {
+				@include rem( 'font-size', 18px );
+				del, ins {
+					display: block;
+					font-weight: normal;
+				}
+			}
+			p.price {
+				@include rem( 'font-size', 22px );
+				font-weight: bold;
+			}
+
 			.product-btns {
 				position: absolute;
 				top: 15px;
@@ -587,6 +591,24 @@
 		top: 15px;
 	}
 	/* END Single product */
+
+	/* Buttons */
+	#respond input#submit.alt,
+	a.button.alt,
+	button.button.alt,
+	input.button.alt {
+		background-color: $primary;
+		&:hover {
+			background-color: $primary_hover;
+		}
+	}
+	.quantity .qty {
+		@include rem ( line-height, 29px );
+		font-weight: bold;
+	}
+
+	/* END Buttons */
+
 
 }
 

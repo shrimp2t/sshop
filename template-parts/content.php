@@ -26,6 +26,12 @@
 		endif; ?>
 	</header><!-- .entry-header -->
 
+    <?php
+    if ( has_post_thumbnail() ) {
+        the_post_thumbnail( 'large' );
+    }
+    ?>
+
 	<div class="entry-content">
 		<?php
 			the_content( sprintf(

@@ -50,8 +50,10 @@ if ( post_password_required() ) {
 		<ol class="comment-list">
 			<?php
 				wp_list_comments( array(
-					'style'      => 'ol',
-					'short_ping' => true,
+					'style'         => 'ol',
+					'avatar_size'   => '80',
+					'short_ping'    => true,
+					'callback'      => 'sshop_comment',
 				) );
 			?>
 		</ol><!-- .comment-list -->

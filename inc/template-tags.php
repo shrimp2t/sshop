@@ -34,7 +34,7 @@ function sshop_posted_on() {
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
-	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline published"> ' . $byline . '</span>'; // WPCS: XSS OK.
 
 }
 endif;
@@ -120,3 +120,72 @@ function sshop_category_transient_flusher() {
 }
 add_action( 'edit_category', 'sshop_category_transient_flusher' );
 add_action( 'save_post',     'sshop_category_transient_flusher' );
+
+
+function sshop_display_main_title( $title = '', $desc = '' ){
+    if ( $title || $desc ) {
+        echo '<header class="page-header">';
+        if ( $title ) {
+            echo '<h1 class="page-title">'.$title.'</h1>';
+        }
+        if ( $desc ) {
+            echo '<div class="page-description">'.$desc.'</div>';
+        }
+        echo '</header>';
+    }
+}
+
+function sshop_main_content_title()
+{
+    if ( is_search() ) {
+        sshop_display_main_title( sprintf( esc_html__( 'Search Results for: %s', 'sshop' ), '<span>' . get_search_query() . '</span>' ) );
+        return;
+    }
+
+    if ( is_front_page() && is_home() ) {
+        // Default show latest post, not-front-page setup
+        return ;
+    }
+    if ( is_home() ) {
+        // Front page displays, Posts page selected
+        sshop_display_main_title( get_the_title( get_option('page_for_posts') ) );
+        return ;
+    }
+
+    if ( is_page() ) {
+        sshop_display_main_title( get_the_title( ) );
+    }
+
+    if ( is_category() || is_search() || is_archive() || is_tag() ) {
+        sshop_display_main_title( get_the_archive_title(), get_the_archive_description() );
+        return;
+    }
+
+
+
+}
+add_action( 'sshop_before_main_content', 'sshop_main_content_title', 10 );
+
+
+/**
+ * Filter the except length to 20 words.
+ *
+ * @param int $length Excerpt length.
+ * @return int (Maybe) modified excerpt length.
+ */
+function sshop_custom_excerpt_length( $length ) {
+    return 40;
+}
+add_filter( 'excerpt_length', 'sshop_custom_excerpt_length', 20 );
+
+
+/**
+ * Filter the excerpt "read more" string.
+ *
+ * @param string $more "Read more" excerpt string.
+ * @return string (Maybe) modified "read more" excerpt string.
+ */
+function sshop_excerpt_more( $more ) {
+    return '&hellip;';
+}
+add_filter( 'excerpt_more', 'sshop_excerpt_more' );
