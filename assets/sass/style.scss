@@ -1049,9 +1049,19 @@ a:focus, a:active, a:hover {
 
 	.enter-thumbnail {
 		width: 50%;
-		float: left;
+		@include for-screen( phone-min ) {
+			width: 50%;
+			float: left;
+			padding-right: 20px;
+		}
+
+		@include for-screen( phone-max ) {
+			width: 100%;
+			margin-bottom: 15px;
+		}
+
 		display: block;
-		padding-right: 20px;
+
 		img {
 			width: 100%;
 			height: auto;
@@ -1059,8 +1069,12 @@ a:focus, a:active, a:hover {
 		}
 	}
 	.enter-content-w {
-		width: 50%;
-		float: left;
+		@include for-screen( phone-min ) {
+			width: 50%;
+			float: left;
+		}
+
+
 	}
 	&.no-thumbnail {
 		.enter-content-w {
@@ -1244,6 +1258,11 @@ a:focus, a:active, a:hover {
 	color: #999999;
 	a {
 		color: #999999;
+	}
+	@include for-screen( phone-max ) {
+		.row {
+			display: block;
+		}
 	}
 	.widget {
 		margin-bottom: 0px;

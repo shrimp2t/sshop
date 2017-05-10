@@ -11,7 +11,7 @@
     }
     @include clearfixAfter();
     &.has-sidebar {
-        @include for-screen( phone-min ) {
+        @include for-screen( tablet-min ) {
             .site-main {
                 width: 70%;
                 float: left;

@@ -825,7 +825,7 @@ object {
 	clear: both;
 }
 
-@media screen and (min-width: 720px) {
+@media screen and (min-width: 940px) {
 	.content-area.has-sidebar .site-main {
 		width: 70%;
 		float: left;
@@ -2695,9 +2695,22 @@ a:focus, a:active, a:hover {
 
 .loop-post .enter-thumbnail {
 	width: 50%;
-	float: left;
 	display: block;
-	padding-right: 20px;
+}
+
+@media screen and (min-width: 720px) {
+	.loop-post .enter-thumbnail {
+		width: 50%;
+		float: left;
+		padding-right: 20px;
+	}
+}
+
+@media screen and (max-width: 720px) {
+	.loop-post .enter-thumbnail {
+		width: 100%;
+		margin-bottom: 15px;
+	}
 }
 
 .loop-post .enter-thumbnail img {
@@ -2706,9 +2719,11 @@ a:focus, a:active, a:hover {
 	max-width: 100%;
 }
 
-.loop-post .enter-content-w {
-	width: 50%;
-	float: left;
+@media screen and (min-width: 720px) {
+	.loop-post .enter-content-w {
+		width: 50%;
+		float: left;
+	}
 }
 
 .loop-post.no-thumbnail .enter-content-w {
@@ -2905,6 +2920,12 @@ a:focus, a:active, a:hover {
 
 .footer-widgets a {
 	color: #999999;
+}
+
+@media screen and (max-width: 720px) {
+	.footer-widgets .row {
+		display: block;
+	}
 }
 
 .footer-widgets .widget {
