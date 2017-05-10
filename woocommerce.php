@@ -15,6 +15,7 @@
 get_header();
 
 $has_sidebar = is_active_sidebar( 'sidebar-woocommerce' );
+$has_sidebar = apply_filters( 'sshop_layout_has_sidebar', $has_sidebar );
 global $sshop_shop_layout_colums;
 $sshop_shop_layout_colums = apply_filters( 'sshop_shop_layout_colums', ( $has_sidebar ) ? 4 : 5 );
 ?>
@@ -36,7 +37,11 @@ $sshop_shop_layout_colums = apply_filters( 'sshop_shop_layout_colums', ( $has_si
             woocommerce_content();
 			?>
 		</main><!-- #main -->
-        <?php get_sidebar( 'woocommerce'); ?>
+        <?php
+        if ( $has_sidebar ) {
+            get_sidebar( 'woocommerce');
+        }
+        ?>
         <?php
         /**
          * woocommerce_after_main_content hook.

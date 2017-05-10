@@ -10,6 +10,7 @@
 get_header();
 
 $has_sidebar = is_active_sidebar( 'sidebar-1' );
+$has_sidebar = apply_filters( 'sshop_layout_has_sidebar', $has_sidebar );
 ?>
 
     <div id="primary" class="content-area <?php echo  ( $has_sidebar ) ? 'has-sidebar' : 'no-sidebar'; ?>">
@@ -49,7 +50,12 @@ $has_sidebar = is_active_sidebar( 'sidebar-1' );
 		endif; ?>
 
 		</div><!-- #main -->
-        <?php get_sidebar(); ?>
+        <?php
+        if ( $has_sidebar ) {
+            get_sidebar();
+        }
+
+        ?>
         <?php do_action( 'sshop_after_main_content' ); ?>
 	</div><!-- #primary -->
 

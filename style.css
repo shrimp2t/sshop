@@ -473,10 +473,11 @@ textarea {
 	color: #666;
 	border: 1px solid #ccc;
 	border-radius: 3px;
-	padding: 3px;
+	padding: 10px 10px;
 }
 
 select {
+	padding: 10px 10px;
 	border: 1px solid #ccc;
 }
 
@@ -667,24 +668,9 @@ a:active {
 	display: block;
 }
 
-.hentry {
-	margin: 0 0 1.5em;
-}
-
 .single .byline,
 .group-blog .byline {
 	display: inline;
-}
-
-.page-content,
-.entry-content,
-.entry-summary {
-	margin: 1.5em 0 0;
-}
-
-.page-links {
-	clear: both;
-	margin: 0 0 1.5em;
 }
 
 /*--------------------------------------------------------------
@@ -2688,6 +2674,7 @@ a:focus, a:active, a:hover {
 .loop-post {
 	border-bottom: 1px solid #ededed;
 	padding-bottom: 15px;
+	margin-bottom: 20px;
 }
 
 .loop-post::after {

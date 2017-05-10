@@ -216,11 +216,15 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
+// Support WooCommerce
+if ( class_exists( 'WooCommerce' ) ) {
+    require get_template_directory() . '/inc/wc-functions.php';
+    require get_template_directory() . '/inc/wc-template-functions.php';
+    require get_template_directory() . '/inc/wc-template-hooks.php';
+}
 
-require get_template_directory() . '/inc/wc-functions.php';
-require get_template_directory() . '/inc/wc-template-functions.php';
-require get_template_directory() . '/inc/wc-template-hooks.php';
 require get_template_directory() . '/inc/plugins-hooks.php';
+
 
 /**
  * 3rd Party

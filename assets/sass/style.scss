@@ -1035,6 +1035,7 @@ a:focus, a:active, a:hover {
 	@include clearfixAfter();
 	border-bottom: 1px solid #ededed;
 	padding-bottom: 15px;
+	margin-bottom: 20px;
 	.entry-excerpt {
 		p {
 			margin-bottom: 0px;

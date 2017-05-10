@@ -61,4 +61,27 @@ add_filter( 'woocommerce_sale_flash', 'sshop_get_wc_sale_flash', 25, 3 );
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
 
+// Do not show sidebar on cart and checkout page
+function sshop_wc_hide_sidebar( $has_sidebar = false ){
+    if ( is_cart() || is_checkout() || is_account_page() || is_wc_endpoint_url() ) {
+        $has_sidebar = false;
+    }
+
+    if ( $has_sidebar ) {
+        if ( function_exists( 'yith_wcwl_is_wishlist_page' ) ) {
+            if ( yith_wcwl_is_wishlist_page() ){
+                $has_sidebar = false;
+            }
+
+        }
+    }
+    return $has_sidebar;
+}
+add_filter( 'sshop_layout_has_sidebar', 'sshop_wc_hide_sidebar' );
+
+// Remove cross sell and up-sell in page page
+
+remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
+//remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cart_totals', 10 );
+
 
