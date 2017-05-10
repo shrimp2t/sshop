@@ -29,7 +29,6 @@ $has_sidebar = is_active_sidebar( 'sidebar-1' );
 
 		endwhile; // End of the loop.
 		?>
-
 		</main><!-- #main -->
         <?php get_sidebar(); ?>
 	</div><!-- #primary -->

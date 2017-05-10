@@ -2616,6 +2616,38 @@ a:focus, a:active, a:hover {
 	margin-bottom: 0px;
 }
 
+.widget-area .widget_search .search-form {
+	position: relative;
+	border-radius: 5px;
+}
+
+.widget-area .widget_search .search-form .search-field {
+	width: 100%;
+	max-width: 100%;
+	line-height: 40px;
+	line-height: 2.5rem;
+	padding: 0px 0px 0px 40px;
+}
+
+.widget-area .widget_search .search-form:before {
+	font-family: 'FontAwesome';
+	content: "\f002";
+	position: absolute;
+	top: 2px;
+	left: 10px;
+	color: #ccc;
+	font-size: 24px;
+	font-size: 1.5rem;
+}
+
+.widget-area .widget_search .search-form label {
+	display: block;
+}
+
+.widget-area .widget_search .search-form .search-submit {
+	display: none;
+}
+
 .widget_categories a,
 .widget_archive a,
 .widget_pages a,
@@ -2724,6 +2756,7 @@ a:focus, a:active, a:hover {
 	text-align: center;
 	border: 1px solid #ededed;
 	color: #333333;
+	margin-right: 5px;
 }
 
 .pagination .nav-links a {

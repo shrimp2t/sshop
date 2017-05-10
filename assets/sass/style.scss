@@ -980,6 +980,33 @@ a:focus, a:active, a:hover {
 		}
 	}
 
+	.widget_search {
+		.search-form {
+			position: relative;
+			border-radius: 5px;
+			.search-field {
+				width: 100%;
+				max-width: 100%;
+				@include rem(line-height, 40px );
+				padding: 0px 0px 0px 40px;
+			}
+			&:before {
+				@include font-icon( '"\\f002"' );
+				position: absolute;
+				top: 2px;
+				left: 10px;
+				color: #ccc;
+				@include rem(font-size, 24px );
+			}
+			label {
+				display: block;
+			}
+			.search-submit {
+				display: none;
+			}
+		}
+	}
+
 }
 
 .widget_categories,
@@ -1067,6 +1094,7 @@ a:focus, a:active, a:hover {
 			text-align: center;
 			border: 1px solid #ededed;
 			color: $text;
+			margin-right: 5px;
 		}
 		a {
 			background: #fff;
