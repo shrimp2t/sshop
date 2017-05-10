@@ -736,6 +736,8 @@ object {
 --------------------------------------------------------------*/
 .gallery {
 	margin-bottom: 1.5em;
+	margin-left: -10px;
+	margin-right: -10px;
 }
 
 .gallery-item {
@@ -743,6 +745,11 @@ object {
 	text-align: center;
 	vertical-align: top;
 	width: 100%;
+	padding: 0px 5px;
+	img {
+		width: 100%;
+		height: auto;
+	}
 }
 
 .gallery-columns-2 .gallery-item {
@@ -779,6 +786,8 @@ object {
 
 .gallery-caption {
 	display: block;
+	font-size: 11px;
+	font-style: italic;
 }
 
 .container-fluid {

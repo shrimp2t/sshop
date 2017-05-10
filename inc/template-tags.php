@@ -174,7 +174,7 @@ add_action( 'sshop_before_main_content', 'sshop_main_content_title', 10 );
  * @return int (Maybe) modified excerpt length.
  */
 function sshop_custom_excerpt_length( $length ) {
-    return 40;
+    return 30;
 }
 add_filter( 'excerpt_length', 'sshop_custom_excerpt_length', 20 );
 

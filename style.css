@@ -759,6 +759,8 @@ object {
 --------------------------------------------------------------*/
 .gallery {
 	margin-bottom: 1.5em;
+	margin-left: -10px;
+	margin-right: -10px;
 }
 
 .gallery-item {
@@ -766,6 +768,12 @@ object {
 	text-align: center;
 	vertical-align: top;
 	width: 100%;
+	padding: 0px 5px;
+}
+
+.gallery-item img {
+	width: 100%;
+	height: auto;
 }
 
 .gallery-columns-2 .gallery-item {
@@ -802,6 +810,8 @@ object {
 
 .gallery-caption {
 	display: block;
+	font-size: 11px;
+	font-style: italic;
 }
 
 .container-fluid::after {
@@ -2643,10 +2653,19 @@ a:focus, a:active, a:hover {
 }
 
 /* Loop posts */
+.loop-post {
+	border-bottom: 1px solid #ededed;
+	padding-bottom: 15px;
+}
+
 .loop-post::after {
 	content: "";
 	display: table;
 	clear: both;
+}
+
+.loop-post .entry-excerpt p {
+	margin-bottom: 0px;
 }
 
 .loop-post.sticky {
@@ -2694,6 +2713,25 @@ a:focus, a:active, a:hover {
 
 .loop-post .entry-title a:hover {
 	color: #e8500e;
+}
+
+/* Paging */
+.pagination .nav-links span, .pagination .nav-links a {
+	display: inline-block;
+	padding: 5px 15px;
+	font-size: 18px;
+	font-size: 1.125rem;
+	text-align: center;
+	border: 1px solid #ededed;
+	color: #333333;
+}
+
+.pagination .nav-links a {
+	background: #fff;
+}
+
+.pagination .nav-links span {
+	background: #ededed;
 }
 
 /* Single Post */

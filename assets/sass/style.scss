@@ -1008,6 +1008,13 @@ a:focus, a:active, a:hover {
 
 .loop-post {
 	@include clearfixAfter();
+	border-bottom: 1px solid #ededed;
+	padding-bottom: 15px;
+	.entry-excerpt {
+		p {
+			margin-bottom: 0px;
+		}
+	}
 	&.sticky {
 		background-color: #fcf8e3;
 		border: 1px solid #faf2cc;
@@ -1046,6 +1053,26 @@ a:focus, a:active, a:hover {
 			&:hover {
 				color: $primary_hover;
 			}
+		}
+	}
+}
+
+/* Paging */
+.pagination  {
+	.nav-links {
+		span, a {
+			display: inline-block;
+			padding: 5px 15px;
+			@include rem( font-size, 18px );
+			text-align: center;
+			border: 1px solid #ededed;
+			color: $text;
+		}
+		a {
+			background: #fff;
+		}
+		span {
+			background: #ededed;
 		}
 	}
 }
