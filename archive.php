@@ -38,9 +38,7 @@ $has_sidebar = apply_filters( 'sshop_layout_has_sidebar', $has_sidebar );
 			endwhile;
 
             // Previous/next page navigation.
-            the_posts_pagination( array(
-                'before_page_number' => '',
-            ) );
+            sshop_paging();
 
 		else :
 

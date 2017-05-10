@@ -285,3 +285,12 @@ function sshop_nav(){
 add_action( 'sshop_header', 'sshop_site_brand', 10 );
 add_action( 'sshop_header', 'sshop_nav_right', 15 );
 add_action( 'sshop_header', 'sshop_nav', 20 );
+
+
+function sshop_paging(){
+    the_posts_pagination( array(
+        'before_page_number' => '',
+        'prev_text'    => '&larr;',
+        'next_text'    => '&rarr;',
+    ) );
+}
