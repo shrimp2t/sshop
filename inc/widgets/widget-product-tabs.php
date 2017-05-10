@@ -50,29 +50,13 @@ class SShop_Widget_Product_Tabs extends SShop_Widget_Base {
                 'label' => esc_html__( 'Order', 'sshop' ),
             ),
 
-        );
+            array(
+                'type' =>'checkbox',
+                'name' => 'show_all',
+                'default' => 'on',
+                'label' => esc_html__( 'Show All Filter', 'sshop' ),
+            )
 
-
-        $fields[] = array(
-            'type' =>'checkbox',
-            'name' => 'show_all',
-            'default' => 'on',
-            'label' => esc_html__( 'Show All Filter', 'sshop' ),
-        );
-
-        $fields[] =  array(
-            'type' =>'checkbox',
-            'name' => 'show_paging',
-            'label' => esc_html__( 'Show Ajax Paging', 'sshop' ),
-            'default' => 'on'
-        );
-
-
-        $fields[] =  array(
-            'type' =>'checkbox',
-            'name' => 'show_banner',
-            'label' => esc_html__( 'Show banner', 'sshop' ),
-            'default' => 'off'
         );
 
 
@@ -147,13 +131,8 @@ class SShop_Widget_Product_Tabs extends SShop_Widget_Base {
 
                     </div>
                 <?php } ?>
-                <div class="tabs-layout-contents <?php echo ( $instance['show_banner'] == 'on' ) ? 'has-b' : 'no-b'; ?>">
-                    <?php if ( $instance['show_banner'] == 'on' ) { ?>
-                        <div class="tabs-intro">
-                            <img src="http://kutethemes.net/wordpress/kuteshop/option1/wp-content/uploads/2015/08/f2.jpg" alt="">
-                        </div>
-                        <?php
-                    }
+                <div class="tabs-layout-contents no-b>">
+                    <?php
                     echo '<div class="tabs-layout-content animate tabs-layout'.$this->layout.'">';
                     echo '<div class="tabs-content-items-wrapper">';
                     if ( $query->have_posts() ) {

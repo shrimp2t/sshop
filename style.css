@@ -2519,15 +2519,26 @@ a:focus, a:active, a:hover {
 	margin-bottom: 0.625rem;
 }
 
+.widget-shop-categories .cat-link {
+	font-weight: normal;
+}
+
 .widget-shop-categories .cat-link::after {
 	font-family: 'FontAwesome';
 	content: "\f105";
 	font-size: 80%;
+	margin-left: 5px;
 }
 
 .widget-shop-categories .top-p-cat {
 	display: block;
-	background: #fff;
+	background-color: #fff;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
 	padding: 15px;
 	padding: 0.9375rem;
 }
@@ -2576,6 +2587,10 @@ a:focus, a:active, a:hover {
 }
 
 /* Sidebar */
+.widget-area {
+	color: #999999;
+}
+
 .widget-area ul, .widget-area ol {
 	margin: 0px;
 	padding: 0px;
@@ -2611,7 +2626,7 @@ a:focus, a:active, a:hover {
 .widget_meta a,
 .widget_recent_entries a,
 .widget.woocommerce a {
-	color: #333333;
+	color: #666;
 }
 
 .widget_categories a:hover,
