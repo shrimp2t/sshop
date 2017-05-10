@@ -176,7 +176,7 @@ class SShop_Widget_Brand_Products extends SShop_Widget_Base {
                                     <?php
                                 }
                                 ?>
-                                <a class="btn-shop-brand btn btn-secondary " href="<?php echo get_term_link( $term ) ?>"><?php esc_html_e( 'Shop this brand' ); ?></a>
+                                <a class="btn-shop-brand btn btn-secondary " href="<?php echo get_term_link( $term ) ?>"><?php esc_html_e( 'Shop this brand', 'sshop' ); ?></a>
                                 <?php
 
                             }

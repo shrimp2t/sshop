@@ -732,7 +732,7 @@ a:focus, a:active, a:hover {
 					right: 0px;
 					@include transition( all .5s ease-in-out );
 					background: #fff;
-					z-index: 8;
+					z-index: 55;
 					max-height: 0;
 					visibility: hidden;
 					overflow: hidden;
@@ -748,7 +748,7 @@ a:focus, a:active, a:hover {
 
 				&:hover {
 					ul {
-						z-index: 3;
+						z-index: 55;
 						max-height: 999999px;
 						visibility: visible;
 					}
@@ -909,6 +909,7 @@ a:focus, a:active, a:hover {
 	}
 	.cat-link {
 		font-weight: normal;
+		color: $text;
 		&::after{
 			@include font-icon( '"\\f105"' );
 			font-size: 80%;
@@ -924,6 +925,22 @@ a:focus, a:active, a:hover {
 		background-size: cover;
 		background-position: center center;
 		background-repeat: no-repeat;
+		position: relative;
+		a, span {
+			position: relative;
+			z-index: 3;
+		}
+		&:after {
+			background-color: rgba( 255, 255, 255, .4 );
+			content: "";
+			display: block;
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			z-index: 1;
+		}
 		@include rem( padding, 15px );
 	}
 }

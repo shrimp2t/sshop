@@ -90,7 +90,7 @@ class SShop_Widget_Product_Categories extends SShop_Widget_Base {
                 $image = wp_get_attachment_url( $image_id, 'medium' );
                 ?>
                 <li class="eq-col top-lv-1">
-                    <span class="top-p-cat"<?php echo ( $image ) ? ' style="background-image: url('.esc_url( $image ).')"' : ''; ?>>
+                    <span class="top-p-cat" <?php echo ( $image ) ? ' style="background-image: url('.esc_url( $image ).')"' : ''; ?>>
                         <span class="cat-name"><?php echo esc_html( $t->name ); ?></span>
                         <a class="cat-link btn btn-secondary btn-sm" href="<?php echo get_term_link( $t ); ?>"><?php esc_html_e( 'Shop now', 'sshop' ); ?></a>
                     </span>
