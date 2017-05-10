@@ -1050,6 +1050,28 @@ a:focus, a:active, a:hover {
 	}
 }
 
+/* Single Post */
+.single {
+	.entry-title {
+		margin-top: 0px;
+		@include rem( font-size, 28px );
+	}
+	.entry-thumbnail {
+		img {
+			width: 100%;
+			height: auto;
+		}
+		margin-top: 15px;
+	}
+}
+.entry-footer {
+	display: block;
+	margin-top: 15px;
+	.cat-links, .tags-links {
+		display: block;
+	}
+}
+
 
 /* Comment */
 .comment-list {
@@ -1070,7 +1092,9 @@ a:focus, a:active, a:hover {
 			padding-left: 100px;
 			min-height: 150px;
 			display: block;
-
+			#respond {
+				margin-top: 15px;
+			}
 			&.depth-2 {
 				//padding-left: 0px;
 				.children {
@@ -1100,7 +1124,7 @@ a:focus, a:active, a:hover {
 		}
 		.avatar {
 			display: block;
-			margin-bottom: 10px;
+			margin-bottom: 5px;
 		}
 		.comment-meta {
 			width: 80px;
@@ -1110,6 +1134,10 @@ a:focus, a:active, a:hover {
 			text-align: center;
 			display: block;
 			float: left;
+			color: $text;
+			a {
+				color: inherit;
+			}
 		}
 		.comment-content {
 			background: #f5f5f5;
@@ -1124,8 +1152,32 @@ a:focus, a:active, a:hover {
 			padding-left: 30px;
 		}
 	}
+	.comment-edit-link {
+		margin-left: 15px;
+	}
 }
 
+/* Commment form */
+#reply-title, .comments-title {
+	@include rem( font-size, 22px );
+	//text-transform: uppercase;
+}
+.comments-title {
+	margin-bottom: 15px;
+}
+#commentform {
+	.logged-in-as {
+		padding: 10px 15px;
+		background: #FCF8E3;
+		margin: 5px 0px;
+	}
+	.required {
+		color: red;
+	}
+	label {
+		display: block;
+	}
+}
 
 
 

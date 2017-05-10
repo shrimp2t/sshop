@@ -2696,6 +2696,31 @@ a:focus, a:active, a:hover {
 	color: #e8500e;
 }
 
+/* Single Post */
+.single .entry-title {
+	margin-top: 0px;
+	font-size: 28px;
+	font-size: 1.75rem;
+}
+
+.single .entry-thumbnail {
+	margin-top: 15px;
+}
+
+.single .entry-thumbnail img {
+	width: 100%;
+	height: auto;
+}
+
+.entry-footer {
+	display: block;
+	margin-top: 15px;
+}
+
+.entry-footer .cat-links, .entry-footer .tags-links {
+	display: block;
+}
+
 /* Comment */
 .comment-list {
 	padding: 0px;
@@ -2718,6 +2743,10 @@ a:focus, a:active, a:hover {
 	padding-left: 100px;
 	min-height: 150px;
 	display: block;
+}
+
+.comment-list li.comment #respond {
+	margin-top: 15px;
 }
 
 .comment-list li.comment.depth-2 .children {
@@ -2748,7 +2777,7 @@ a:focus, a:active, a:hover {
 
 .comment-list li .avatar {
 	display: block;
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 }
 
 .comment-list li .comment-meta {
@@ -2759,6 +2788,11 @@ a:focus, a:active, a:hover {
 	text-align: center;
 	display: block;
 	float: left;
+	color: #333333;
+}
+
+.comment-list li .comment-meta a {
+	color: inherit;
 }
 
 .comment-list li .comment-content {
@@ -2774,6 +2808,34 @@ a:focus, a:active, a:hover {
 
 .comment-list ul ul, .comment-list ul ol, .comment-list ol ul, .comment-list ol ol {
 	padding-left: 30px;
+}
+
+.comment-list .comment-edit-link {
+	margin-left: 15px;
+}
+
+/* Commment form */
+#reply-title, .comments-title {
+	font-size: 22px;
+	font-size: 1.375rem;
+}
+
+.comments-title {
+	margin-bottom: 15px;
+}
+
+#commentform .logged-in-as {
+	padding: 10px 15px;
+	background: #FCF8E3;
+	margin: 5px 0px;
+}
+
+#commentform .required {
+	color: red;
+}
+
+#commentform label {
+	display: block;
 }
 
 /* Footer */

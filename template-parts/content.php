@@ -28,7 +28,9 @@
 
     <?php
     if ( has_post_thumbnail() ) {
+        echo '<div class="entry-thumbnail">';
         the_post_thumbnail( 'large' );
+        echo '</div>';
     }
     ?>
 
