@@ -2590,14 +2590,6 @@ a:focus, a:active, a:hover {
 }
 
 /* Sidebar */
-.widget-area .widget-title {
-	font-size: 18px;
-	font-size: 1.125rem;
-	line-height: 50px;
-	line-height: 3.125rem;
-	text-transform: uppercase;
-}
-
 .widget-area ul, .widget-area ol {
 	margin: 0px;
 	padding: 0px;
@@ -2616,36 +2608,12 @@ a:focus, a:active, a:hover {
 	margin-bottom: 0px;
 }
 
-.widget-area .widget_search .search-form {
-	position: relative;
-	border-radius: 5px;
-}
-
-.widget-area .widget_search .search-form .search-field {
-	width: 100%;
-	max-width: 100%;
-	line-height: 40px;
-	line-height: 2.5rem;
-	padding: 0px 0px 0px 40px;
-}
-
-.widget-area .widget_search .search-form:before {
-	font-family: 'FontAwesome';
-	content: "\f002";
-	position: absolute;
-	top: 2px;
-	left: 10px;
-	color: #ccc;
-	font-size: 24px;
-	font-size: 1.5rem;
-}
-
-.widget-area .widget_search .search-form label {
-	display: block;
-}
-
-.widget-area .widget_search .search-form .search-submit {
-	display: none;
+.widgettitle, .widget-title {
+	font-size: 18px;
+	font-size: 1.125rem;
+	line-height: 50px;
+	line-height: 3.125rem;
+	text-transform: uppercase;
 }
 
 .widget_categories a,
@@ -2682,6 +2650,38 @@ a:focus, a:active, a:hover {
 .widget_recent_entries .star-rating,
 .widget.woocommerce .star-rating {
 	color: #F36F36;
+}
+
+.search-form {
+	position: relative;
+	border-radius: 5px;
+}
+
+.search-form .search-field {
+	width: 100%;
+	max-width: 100%;
+	line-height: 40px;
+	line-height: 2.5rem;
+	padding: 0px 0px 0px 40px;
+}
+
+.search-form:before {
+	font-family: 'FontAwesome';
+	content: "\f002";
+	position: absolute;
+	top: 2px;
+	left: 10px;
+	color: #ccc;
+	font-size: 24px;
+	font-size: 1.5rem;
+}
+
+.search-form label {
+	display: block;
+}
+
+.search-form .search-submit {
+	display: none;
 }
 
 /* Loop posts */

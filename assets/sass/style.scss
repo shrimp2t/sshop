@@ -960,11 +960,7 @@ a:focus, a:active, a:hover {
 
 /* Sidebar */
 .widget-area {
-	.widget-title {
-		@include rem( 'font-size', 18px );
-		@include rem( 'line-height', 50px );
-		text-transform: uppercase;
-	}
+
 	ul, ol {
 		margin: 0px;
 		padding: 0px;
@@ -979,34 +975,11 @@ a:focus, a:active, a:hover {
 			}
 		}
 	}
-
-	.widget_search {
-		.search-form {
-			position: relative;
-			border-radius: 5px;
-			.search-field {
-				width: 100%;
-				max-width: 100%;
-				@include rem(line-height, 40px );
-				padding: 0px 0px 0px 40px;
-			}
-			&:before {
-				@include font-icon( '"\\f002"' );
-				position: absolute;
-				top: 2px;
-				left: 10px;
-				color: #ccc;
-				@include rem(font-size, 24px );
-			}
-			label {
-				display: block;
-			}
-			.search-submit {
-				display: none;
-			}
-		}
-	}
-
+}
+.widgettitle, .widget-title {
+	@include rem( 'font-size', 18px );
+	@include rem( 'line-height', 50px );
+	text-transform: uppercase;
 }
 
 .widget_categories,
@@ -1030,6 +1003,31 @@ a:focus, a:active, a:hover {
 	}
 }
 
+
+.search-form {
+	position: relative;
+	border-radius: 5px;
+	.search-field {
+		width: 100%;
+		max-width: 100%;
+		@include rem(line-height, 40px );
+		padding: 0px 0px 0px 40px;
+	}
+	&:before {
+		@include font-icon( '"\\f002"' );
+		position: absolute;
+		top: 2px;
+		left: 10px;
+		color: #ccc;
+		@include rem(font-size, 24px );
+	}
+	label {
+		display: block;
+	}
+	.search-submit {
+		display: none;
+	}
+}
 
 /* Loop posts */
 
