@@ -15,10 +15,6 @@ jQuery( document).ready( function( $ ){
 
     } );
 
-    //setInterval( function(){
-     //   $( document.body ).trigger( 'wc_fragments_loaded' );
-    //} , 2000);
-
     $( document.body ).trigger( 'wc_fragments_loaded' );
 
 
