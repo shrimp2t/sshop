@@ -221,15 +221,14 @@ if ( class_exists( 'WooCommerce' ) ) {
     require get_template_directory() . '/inc/wc-functions.php';
     require get_template_directory() . '/inc/wc-template-functions.php';
     require get_template_directory() . '/inc/wc-template-hooks.php';
+
+    /**
+     * 3rd Party
+     */
+    require get_template_directory() . '/inc/3rd-party/yith-wishlist.php';
 }
 
 require get_template_directory() . '/inc/plugins-hooks.php';
-
-
-/**
- * 3rd Party
- */
-require get_template_directory() . '/inc/3rd-party/yith-wishlist.php';
 
 
 /**

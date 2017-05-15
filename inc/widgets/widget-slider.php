@@ -20,6 +20,11 @@ class SShop_Widget_Slider extends WP_Widget {
      * @param array $instance
      */
     public function widget( $args, $instance ) {
+
+        if ( ! function_exists( 'slide_anything_shortcode' ) ) {
+            return ;
+        }
+
         // outputs the content of the widget
         $instance = wp_parse_args( $instance, array(
             'slider_id' => ''

@@ -23,17 +23,18 @@ add_action( 'admin_enqueue_scripts', 'sshop_media_scripts' );
 
 
 
-
 // Register widgets
 function sshop_register_widgets() {
-
-    register_widget( 'SShop_Widget_Product_Tabs' );
-    register_widget( 'SShop_Widget_Brand_Products' );
-    register_widget( 'SShop_Widget_Services' );
-    register_widget( 'SShop_Widget_Product_Categories' );
     register_widget( 'SShop_Widget_Slider' );
-    register_widget( 'SShop_Widget_Products' );
     register_widget( 'SShop_Widget_Blog' );
+    register_widget( 'SShop_Widget_Services' );
+
+    if ( class_exists( 'WooCommerce' ) ) {
+        register_widget('SShop_Widget_Product_Tabs');
+        register_widget('SShop_Widget_Brand_Products');
+        register_widget('SShop_Widget_Product_Categories');
+        register_widget('SShop_Widget_Products');
+    }
 
 }
 add_action( 'widgets_init', 'sshop_register_widgets' );
