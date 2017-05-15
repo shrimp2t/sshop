@@ -30,9 +30,10 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 global $sshop_loop_use_div;
 
 $tag = $sshop_loop_use_div  ? 'div' : 'li';
+$class = $tag == 'div' ? '' : 'eq-col';
 
 ?>
-<<?php echo esc_html( $tag ); ?> <?php post_class('eq-col'); ?>>
+<<?php echo esc_html( $tag ); ?> <?php post_class( $class );  ?>>
     <div class="product-inner">
         <?php
         /**

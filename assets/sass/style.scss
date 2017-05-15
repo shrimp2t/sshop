@@ -677,13 +677,44 @@ a:focus, a:active, a:hover {
 }
 
 
+/* Grid Products */
+.grid-products {
+	background: #fff;
+	padding-left: 5px;
+	padding-right: 5px;
+	.products {
 
+	}
+}
 
 
 /* Tabs */
 .layout-tabs {
 	$tab_heading_width: 250px;
 	background: #fff;
+	&.loading {
+		overflow: hidden;
+		display: block;
+		position: relative;
+		.tabs-layout-content {
+			opacity: .5;
+		}
+		.tabs-layout-contents {
+			position: relative;
+			float: left;
+			overflow: hidden;
+			width: 100%;
+		}
+		.tab-loading {
+			position: absolute;
+			top: 0px; left: 0px;
+			right: 0px; bottom: 0px;
+			text-align: center;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	}
 	.widget-title {
 		@include clearfixAfter();
 		background: #fff;
@@ -794,7 +825,7 @@ a:focus, a:active, a:hover {
 
 	.tabs-layout-content {
 		display: block;
-		padding: 0 10px;
+
 	}
 
 	&.has-b {
@@ -808,14 +839,19 @@ a:focus, a:active, a:hover {
 	}
 	.tabs-layout-contents {
 		background: #fff;
+		padding: 15px 10px;
 	}
 	.tabs-content-items {
 		display: block;
 		width: 100%;
+
+		margin-left: 0px;
+		margin-right: 0px;
 	}
 	.tabs-item-inside {
 		padding: 0px;
 		background: #fff;
+		margin: 0px 5px;
 	}
 	.woocommerce-loop-product__title {
 		@include rem( 'font-size', 16px );

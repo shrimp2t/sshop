@@ -13,7 +13,7 @@ class SShop_Widget_Product_Tabs extends SShop_Widget_Base {
             'sshop_products_tabs',
             esc_html__( 'FRONT PAGE: Product Tabs', 'sshop' ),
             array(
-                'description'   => esc_html__( 'Posts display products as tabs layout, recommended for front page', 'sshop' )
+                'description'   => esc_html__( 'Display products as tabs layout, recommended for front page', 'sshop' )
             )
         );
     }
@@ -131,7 +131,7 @@ class SShop_Widget_Product_Tabs extends SShop_Widget_Base {
 
                     </div>
                 <?php } ?>
-                <div class="tabs-layout-contents no-b>">
+                <div class="tabs-layout-contents no-b">
                     <?php
                     echo '<div class="tabs-layout-content animate tabs-layout'.$this->layout.'">';
                     echo '<div class="tabs-content-items-wrapper">';

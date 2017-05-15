@@ -262,20 +262,15 @@ jQuery( document).ready( function( $ ){
                 var contentLayout = $('.tabs-layout-contents', tab);
                 //var ch = contentLayout.height();
                 //contentLayout.css( 'min-height', ch );
-                var spinner = '<div class="loading-spinner">' +
-                    '<div class="loading-bg"></div>' +
-                    '<div class="loading-spinner-icon">' +
-                    '<div class="spinner">'
-                    + '<div class="rect1"></div>'
-                    + '<div class="rect2"></div>'
-                    + '<div class="rect3"></div>'
-                    + '<div class="rect4"></div>'
-                    + '<div class="rect5"></div>'
-                    + '</div>' +
-                    '</div>' +
-                    '</div>';
+                var spinner = '<div class="tab-loading"><i class="fa fa-spinner fa-spin fa-3x fa-fw"></i></div>';
 
+                $( '.tab-loading', contentLayout).remove();
                 spinner = $(spinner);
+                contentLayout.css( 'height', contentLayout.outerHeight() );
+                tab.addClass('loading');
+                contentLayout.append(spinner);
+
+                //return  false;
 
                 tab._lastSent = instance;
                 if (id) {
@@ -286,6 +281,7 @@ jQuery( document).ready( function( $ ){
                 if (tab._jqxhr) {
                     tab._jqxhr.abort();
                 }
+
 
                 var appendTabContent = function (html, delay ) {
 
@@ -302,24 +298,25 @@ jQuery( document).ready( function( $ ){
                     if (  typeof delay === "undefined" ) {
                         delay = 500;
                     }
+                    spinner.remove();
                     setTimeout(function () {
                         contentLayout.addClass('animate');
-                        var $content = $( '.tabs-layout-contents', $html );
+                        var $content = $( '.tabs-layout-contents', $html).html();
                         contentLayout.html( $content );
                         var t = 0;
+
+                        if ( $( '.tabs-content-items .tabs-item-inside', tab).length > 0 ) {
+                            $('.tabs-content-items', tab ).slick( slickArgs );
+                        }
 
                         spinner.animate({
                             opacity: 0,
                         }, t - 100, function () {
                             // Animation complete.
                             tab.removeClass('loading');
-                            spinner.remove();
+
+                            contentLayout.css( 'height', '' );
                         });
-
-                        if ( $( '.tabs-content-items .tabs-item-inside', tab).length > 0 ) {
-                            $('.tabs-content-items', tab ).slick( slickArgs );
-                        }
-
 
                     }, delay );
 
@@ -333,9 +330,6 @@ jQuery( document).ready( function( $ ){
                     appendTabContent( cacheData, 0 );
                     tab._jqxhr = false;
                 } else {
-
-                    tab.addClass('loading');
-                    contentLayout.append(spinner);
 
                     tab._jqxhr = $.get(ajaxUrl, tab._lastSent, function (html) {
                         //contentLayout.html('');

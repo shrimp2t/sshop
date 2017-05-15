@@ -149,9 +149,9 @@ class SShop_Widget_Base extends WP_Widget {
     function layout_content( $query ){
         $GLOBALS['sshop_loop_use_div'] = true;
         ?>
-        <div class="tabs-content-items">
+        <div class="tabs-content-items eq-row-col-no-f-5">
         <?php while ($query->have_posts()) : $query->the_post(); ?>
-            <div class="tabs-item-inside">
+            <div class="tabs-item-inside eq-col">
                 <?php wc_get_template_part( 'content', 'product' ); ?>
             </div>
         <?php endwhile; ?>
@@ -202,6 +202,21 @@ class SShop_Widget_Base extends WP_Widget {
                         )
                     );
                     ?>
+                </div><!-- .w-admin-input-wrap -->
+                <?php
+                break;
+            case 'select':
+
+                ?>
+                <div class="w-admin-input-wrap">
+                    <label for="<?php echo $this->get_field_id( $field['name'] ); ?>"><?php echo $field['label']; ?></label>
+
+                    <select id="<?php echo $this->get_field_id( $field['name'] ); ?>" name="<?php echo $this->get_field_name( $field['name'] ); ?>">
+                        <?php foreach ( ( array ) $field['options'] as $k => $v ) { ?>
+                        <option  <?php selected( $field[ 'value' ], $k ); ?> value="<?php echo esc_attr( $k ); ?>"><?php echo esc_html( $v ); ?></option>
+                        <?php } ?>
+                    </select>
+
                 </div><!-- .w-admin-input-wrap -->
                 <?php
                 break;
