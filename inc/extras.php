@@ -79,10 +79,10 @@ if ( ! function_exists( 'sshop_comment' ) ) {
         <div class="comment-meta commentmetadata">
             <div class="comment-author vcard">
                 <?php echo get_avatar( $comment, $args['avatar_size'] ); ?>
-                <?php printf( wp_kses_post( '<cite class="fn">%s</cite>', 'storefront' ), get_comment_author_link() ); ?>
+                <?php printf( wp_kses_post( '<cite class="fn">%s</cite>', 'sshop' ), get_comment_author_link() ); ?>
             </div>
             <?php if ( '0' == $comment->comment_approved ) : ?>
-                <em class="comment-awaiting-moderation"><?php esc_attr_e( 'Your comment is awaiting moderation.', 'storefront' ); ?></em>
+                <em class="comment-awaiting-moderation"><?php esc_attr_e( 'Your comment is awaiting moderation.', 'sshop' ); ?></em>
                 <br />
             <?php endif; ?>
 

@@ -24,7 +24,7 @@ if ( $upsells ) : ?>
 
     <section class="up-sells upsells wc-upsells">
 
-        <h2 class="shop-section-title"><?php esc_html_e( 'You may also like&hellip;', 'woocommerce' ) ?></h2>
+        <h2 class="shop-section-title"><?php esc_html_e( 'You may also like&hellip;', 'sshop' ) ?></h2>
 
         <?php woocommerce_product_loop_start(); ?>
 
