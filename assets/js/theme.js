@@ -95,7 +95,12 @@ jQuery( document).ready( function( $ ){
 
         main_nav_ul.append( main_nav_more );
         main_nav.removeClass( 'no-js' );
-        main_nav_more.show();
+        if (  $( '> ul > li', main_nav_more).length > 0 ) {
+            main_nav_more.show();
+        } else {
+            main_nav_more.hide();
+        }
+
     };
 
     setupHeader();
@@ -109,7 +114,6 @@ jQuery( document).ready( function( $ ){
         e.preventDefault();
         $( '#site-navigation #primary-menu-wrapper').toggleClass( 'menu-open' );
     } );
-    //$( '.menu-toggle').trigger( 'click' );
 
     //-------------------------------------
 
