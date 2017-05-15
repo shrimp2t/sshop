@@ -239,6 +239,7 @@ require get_template_directory() . '/inc/widgets/widgets.php';
 require get_template_directory() . '/inc/widgets/widget-base.php';
 require get_template_directory() . '/inc/widgets/widget-services.php';
 require get_template_directory() . '/inc/widgets/widget-slider.php';
+require get_template_directory() . '/inc/widgets/widget-blog.php';
 require get_template_directory() . '/inc/widgets/widget-products.php';
 require get_template_directory() . '/inc/widgets/widget-product-tabs.php';
 require get_template_directory() . '/inc/widgets/widget-brand-products.php';

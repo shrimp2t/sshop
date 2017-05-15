@@ -8,6 +8,7 @@
     .eq-row-col-#{$i} {
         margin-left: -15px;
         margin-right: -15px;
+        @include clearfixAfter();
         .eq-col {
             padding-left: 15px;
             padding-right: 15px;

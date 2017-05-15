@@ -34,6 +34,13 @@ class SShop_Widget_Products extends SShop_Widget_Base {
             ),
 
             array(
+                'type' =>'text',
+                'name' => 'layout',
+                'default' => 5,
+                'label' => esc_html__( 'Items per row', 'sshop' ),
+            ),
+
+            array(
                 'type' =>'select',
                 'name' => 'show',
                 'options' => array(
@@ -76,10 +83,10 @@ class SShop_Widget_Products extends SShop_Widget_Base {
      * @return WP_Query
      */
     public function get_products( $instance ) {
-        $number                      = ! empty( $instance['number'] ) ? absint( $instance['number'] )           : $this->settings['number']['std'];
-        $show                        = ! empty( $instance['show'] ) ? sanitize_title( $instance['show'] )       : $this->settings['show']['std'];
-        $orderby                     = ! empty( $instance['orderby'] ) ? sanitize_title( $instance['orderby'] ) : $this->settings['orderby']['std'];
-        $order                       = ! empty( $instance['order'] ) ? sanitize_title( $instance['order'] )     : $this->settings['order']['std'];
+        $number                      = ! empty( $instance['number'] ) ? absint( $instance['number'] )           : 5;
+        $show                        = ! empty( $instance['show'] ) ? sanitize_title( $instance['show'] )       : 'all';
+        $orderby                     = ! empty( $instance['orderby'] ) ? sanitize_title( $instance['orderby'] ) : 'date';
+        $order                       = ! empty( $instance['order'] ) ? sanitize_title( $instance['order'] )     : 'desc';
         $product_visibility_term_ids = wc_get_product_visibility_term_ids();
 
         $query_args = array(
@@ -177,7 +184,7 @@ class SShop_Widget_Products extends SShop_Widget_Base {
             echo $args['before_title'].$title.$args['after_title'];
         }
 
-        $col = $instance['number'];
+        $col = $instance['layout'];
         if ( ! $col || $col > 12 ) {
             $col = 5;
         }

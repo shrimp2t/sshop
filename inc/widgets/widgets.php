@@ -33,6 +33,7 @@ function sshop_register_widgets() {
     register_widget( 'SShop_Widget_Product_Categories' );
     register_widget( 'SShop_Widget_Slider' );
     register_widget( 'SShop_Widget_Products' );
+    register_widget( 'SShop_Widget_Blog' );
 
 }
 add_action( 'widgets_init', 'sshop_register_widgets' );

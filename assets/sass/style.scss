@@ -687,6 +687,37 @@ a:focus, a:active, a:hover {
 	}
 }
 
+/* Blog Widget */
+.blog-posts {
+	margin-left: -10px;
+	margin-right: -10px;
+	.eq-col {
+		padding: 0px 10px;
+	}
+	.loop-post {
+		padding-bottom: 0px;
+		border-bottom: 0px;
+		.enter-thumbnail {
+			width: 100%;
+			float: none;
+			padding-right: 0px;
+			margin-bottom: 20px;
+		}
+		.enter-content-w {
+			width: 100%;
+			float: none;
+			padding-right: 0px;
+		}
+		.entry-title {
+			@include rem ( font-size, 18px );
+			@include rem ( height, 40px );
+			display: block;
+		}
+	}
+
+}
+
+
 
 /* Tabs */
 .layout-tabs {
@@ -851,7 +882,7 @@ a:focus, a:active, a:hover {
 	.tabs-item-inside {
 		padding: 0px;
 		background: #fff;
-		margin: 0px 5px;
+		margin: 0px 10px;
 	}
 	.woocommerce-loop-product__title {
 		@include rem( 'font-size', 16px );

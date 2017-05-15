@@ -852,6 +852,12 @@ object {
 	margin-right: -15px;
 }
 
+.eq-row-col-1::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
 .eq-row-col-1 .eq-col {
 	padding-left: 15px;
 	padding-right: 15px;
@@ -916,6 +922,12 @@ object {
 .eq-row-col-2 {
 	margin-left: -15px;
 	margin-right: -15px;
+}
+
+.eq-row-col-2::after {
+	content: "";
+	display: table;
+	clear: both;
 }
 
 .eq-row-col-2 .eq-col {
@@ -984,6 +996,12 @@ object {
 	margin-right: -15px;
 }
 
+.eq-row-col-3::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
 .eq-row-col-3 .eq-col {
 	padding-left: 15px;
 	padding-right: 15px;
@@ -1048,6 +1066,12 @@ object {
 .eq-row-col-4 {
 	margin-left: -15px;
 	margin-right: -15px;
+}
+
+.eq-row-col-4::after {
+	content: "";
+	display: table;
+	clear: both;
 }
 
 .eq-row-col-4 .eq-col {
@@ -1116,6 +1140,12 @@ object {
 	margin-right: -15px;
 }
 
+.eq-row-col-5::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
 .eq-row-col-5 .eq-col {
 	padding-left: 15px;
 	padding-right: 15px;
@@ -1180,6 +1210,12 @@ object {
 .eq-row-col-6 {
 	margin-left: -15px;
 	margin-right: -15px;
+}
+
+.eq-row-col-6::after {
+	content: "";
+	display: table;
+	clear: both;
 }
 
 .eq-row-col-6 .eq-col {
@@ -1248,6 +1284,12 @@ object {
 	margin-right: -15px;
 }
 
+.eq-row-col-7::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
 .eq-row-col-7 .eq-col {
 	padding-left: 15px;
 	padding-right: 15px;
@@ -1312,6 +1354,12 @@ object {
 .eq-row-col-8 {
 	margin-left: -15px;
 	margin-right: -15px;
+}
+
+.eq-row-col-8::after {
+	content: "";
+	display: table;
+	clear: both;
 }
 
 .eq-row-col-8 .eq-col {
@@ -1380,6 +1428,12 @@ object {
 	margin-right: -15px;
 }
 
+.eq-row-col-9::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
 .eq-row-col-9 .eq-col {
 	padding-left: 15px;
 	padding-right: 15px;
@@ -1444,6 +1498,12 @@ object {
 .eq-row-col-10 {
 	margin-left: -15px;
 	margin-right: -15px;
+}
+
+.eq-row-col-10::after {
+	content: "";
+	display: table;
+	clear: both;
 }
 
 .eq-row-col-10 .eq-col {
@@ -1512,6 +1572,12 @@ object {
 	margin-right: -15px;
 }
 
+.eq-row-col-11::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
 .eq-row-col-11 .eq-col {
 	padding-left: 15px;
 	padding-right: 15px;
@@ -1576,6 +1642,12 @@ object {
 .eq-row-col-12 {
 	margin-left: -15px;
 	margin-right: -15px;
+}
+
+.eq-row-col-12::after {
+	content: "";
+	display: table;
+	clear: both;
 }
 
 .eq-row-col-12 .eq-col {
@@ -2612,6 +2684,42 @@ a:focus, a:active, a:hover {
 	padding-right: 5px;
 }
 
+/* Blog Widget */
+.blog-posts {
+	margin-left: -10px;
+	margin-right: -10px;
+}
+
+.blog-posts .eq-col {
+	padding: 0px 10px;
+}
+
+.blog-posts .loop-post {
+	padding-bottom: 0px;
+	border-bottom: 0px;
+}
+
+.blog-posts .loop-post .enter-thumbnail {
+	width: 100%;
+	float: none;
+	padding-right: 0px;
+	margin-bottom: 20px;
+}
+
+.blog-posts .loop-post .enter-content-w {
+	width: 100%;
+	float: none;
+	padding-right: 0px;
+}
+
+.blog-posts .loop-post .entry-title {
+	font-size: 18px;
+	font-size: 1.125rem;
+	height: 40px;
+	height: 2.5rem;
+	display: block;
+}
+
 /* Tabs */
 .layout-tabs {
 	background: #fff;
@@ -2794,7 +2902,7 @@ a:focus, a:active, a:hover {
 .layout-tabs .tabs-item-inside {
 	padding: 0px;
 	background: #fff;
-	margin: 0px 5px;
+	margin: 0px 10px;
 }
 
 .layout-tabs .woocommerce-loop-product__title {
