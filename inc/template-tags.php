@@ -264,13 +264,17 @@ function sshop_nav_right(){
 
                 <div class="header-dropdown account-menu">
                     <div class="header-dropdown-inner">
+                        <?php if ( is_user_logged_in() ) { ?>
                         <ul class="menu">
-                            <?php foreach ( wc_get_account_menu_items() as $endpoint => $label ) : ?>
+                            <?php foreach ( wc_get_account_menu_items() as $endpoint => $label ) { ?>
                                 <li class="<?php echo wc_get_account_menu_item_classes( $endpoint ); ?>">
                                     <a href="<?php echo esc_url( wc_get_account_endpoint_url( $endpoint ) ); ?>"><?php echo esc_html( $label ); ?></a>
                                 </li>
-                            <?php endforeach; ?>
+                            <?php } ?>
                         </ul>
+                        <?php } else { ?>
+                            <a class="btn btn-secondary" href="<?php echo esc_url( wc_get_page_permalink( 'myaccount' ) ); ?>"><?php esc_html_e( 'Login', 'sshop' ); ?></a>
+                        <?php } ?>
                     </div>
                 </div>
 
