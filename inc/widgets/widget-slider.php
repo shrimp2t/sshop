@@ -49,7 +49,7 @@ class SShop_Widget_Slider extends WP_Widget {
             ?>
             <div class="slider-wrapper">
                 <?php
-                echo do_shortcode("[slide-anything id='{$slider->ID}']");
+                echo slide_anything_shortcode( array( 'id' => $slider->ID ) );
                 ?>
             </div>
             <?php

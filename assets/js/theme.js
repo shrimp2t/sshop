@@ -8,7 +8,7 @@ jQuery( document).ready( function( $ ){
     var main_nav = $( '#site-navigation', header );
     var main_nav_ul = $( '.menu', main_nav );
     var menu_toggle_icon = $( '.menu-toggle', header );
-    var main_nav_more = $( '<li class="nav-more"><a href="#"><i class="fa fa-ellipsis-h"></i></a><ul style="max-height: 99999px; visibility: visible" class="sub-filters"></ul></li>' );
+    var main_nav_more = $( '<li class="nav-more menu-item-has-children"><a href="#"><i class="fa fa-ellipsis-h"></i></a><ul style="max-height: 99999px; visibility: visible" class="sub-filters"></ul></li>' );
     main_nav.find( '.menu').append( main_nav_more );
 
     main_nav_ul.find( 'li').each( function(  ){

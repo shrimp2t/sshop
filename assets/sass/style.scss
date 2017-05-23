@@ -1,6 +1,6 @@
 /*
 Theme Name:     SShop
-Theme URI:    	https://shrimp2t.com/sshop
+Theme URI:    	http://sshopwp.com/
 Author:         shrimp2t
 Author URI:     https://shrimp2t.com/
 Description:  	SShop is the perfect theme for your next WooCommerce project. Designed and developed by WooCommerce Core developers, it features a bespoke integration with WooCommerce itself plus many of the most popular customer facing WooCommerce extensions. There are several layout & color options to personalise your shop, multiple widget regions, a responsive design and much more. Developers will love it's lean and extensible codebase making it a joy to customise and extend. Looking for a WooCommerce theme? Look no further!
@@ -146,6 +146,25 @@ a:focus, a:active, a:hover {
 		position: relative;
 	}
 
+	&:after {
+		content: "";
+		width: 16px;
+		height: 16px;
+		display: block;
+		border: 1px solid #ededed;
+		border-bottom: 0px none;
+		border-right: 0px none;
+		background: #fff;
+		position: absolute;
+		bottom: -8px;
+		left: 50%;
+		margin-left: -8px;
+		transform: rotate(45deg);
+		z-index: 999;
+		visibility: hidden;
+		@include transition( all .5 ease-in-out );
+	}
+
 	a {
 		display: block;
 		position: relative;
@@ -204,6 +223,9 @@ a:focus, a:active, a:hover {
 		@include for-screen( phone-min ) {
 			right: -15px;
 			width: 300px;
+			&.account-menu {
+				width: $submmenu_nav_width;
+			}
 		}
 		@include for-screen( phone-max ) {
 			right: 0px;
@@ -215,10 +237,27 @@ a:focus, a:active, a:hover {
 		max-height: 0px;
 		overflow: hidden;
 		text-align: left;
-		@include box-shadow();
-		@include transition( all 1s ease-in-out );
+		border: 1px solid #ededed;
+		@include transition( all .5 ease-in-out );
+		.menu {
+			list-style: none;
+			margin: 0px;
+			padding: 0px;
+			li {
+
+			}
+			a {
+				padding: 5px 10px;
+			}
+		}
 	}
 	&:hover {
+		&.has-dropdown {
+			&:after {
+				visibility: visible;
+			}
+		}
+
 		.header-dropdown {
 			max-height: 9999px;
 			z-index: 99;
@@ -236,7 +275,7 @@ a:focus, a:active, a:hover {
 		text-transform: uppercase;
 	}
 	a {
-		color: $text;
+		color: $header_link_color;
 	}
 	background-color: #fff;
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.12);
@@ -253,7 +292,10 @@ a:focus, a:active, a:hover {
 	display: block;
 	float: left;
 }
-
+.main-navigation > ul {
+	position: relative;
+	@include clearfixAfter();
+}
 .main-navigation ul {
 	display: none;
 	list-style: none;
@@ -279,7 +321,7 @@ a:focus, a:active, a:hover {
 		position: absolute;
 		top: 1.5em;
 		left: -999em;
-		z-index: 99999;
+		z-index: 999;
 	}
 
 	.main-navigation ul ul ul {
@@ -288,7 +330,7 @@ a:focus, a:active, a:hover {
 	}
 
 	.main-navigation ul ul a {
-		width: 200px;
+		width: $submmenu_nav_width;
 	}
 
 	.main-navigation ul li:hover > ul,
@@ -308,6 +350,7 @@ a:focus, a:active, a:hover {
 .main-navigation .current-menu-item > a,
 .main-navigation .current_page_ancestor > a,
 .main-navigation .current-menu-ancestor > a {
+	color: $primary_hover;
 }
 
 .menu-toggle,
@@ -352,7 +395,7 @@ a:focus, a:active, a:hover {
 
 		}
 		@include rem( 'font-size', 28px );
-		color: $text;
+		color: $header_link_color;
 		border-right: 1px solid #f1f1f1;
 		&:hover {
 			color: $primary_hover;
@@ -451,8 +494,6 @@ a:focus, a:active, a:hover {
 				display: block;
 			} // end mobile menu when open
 
-
-
 		}
 
 	}
@@ -469,6 +510,91 @@ a:focus, a:active, a:hover {
 	}
 
 	@include for-screen( phone-min ) {
+		#primary-menu {
+			> li {
+				&.menu-item-has-children {
+					&:after {
+						content: "";
+						width: 16px;
+						height: 16px;
+						display: block;
+						border: 1px solid #ededed;
+						border-bottom: 0px none;
+						border-right: 0px none;
+						background: #fff;
+						position: absolute;
+						bottom: -8px;
+						left: 50%;
+						margin-left: -8px;
+						transform: rotate(45deg);
+						z-index: 999;
+						visibility: hidden;
+					}
+					&:hover {
+						&::after {
+							visibility: visible;
+						}
+					}
+				}
+				li {
+					z-index: 9999;
+					position: relative;
+				}
+
+
+				/* Simple Mega Menu Support */
+
+				@for $i from 2 through 4 {
+				    &.mega-#{$i} {
+				        > ul {
+				            @include clearfixAfter();
+							width: $submmenu_nav_width * 2;
+							> li {
+								width: percentage( ( 12 /$i ) / 12  );
+								> a {
+									font-weight: bold;
+								}
+								&.menu-item-has-children {
+									//border: 1px solid #ededed;
+								}
+
+								&:nth-child(#{$i}n+1) {
+				                	clear: left;
+				                }
+
+								li {
+									width: 100%;
+								}
+
+							}
+							a {
+								border: 0px none;
+								width: 100%;
+								display: block;
+							}
+							ul {
+								//margin-left: 15px;
+								border: 0px none;
+								display: block;
+								position: relative;
+								left: auto;
+								right: auto;
+								top: auto;
+							}
+
+				            /*
+				            &:nth-child(#{$i}n+1) {
+				                clear: left;
+				            }
+				            */
+				        }
+				    }
+				}
+
+				// ENd mega menu
+
+			}
+		}
 		li {
 			a {
 				padding: 0px 18px;
@@ -476,7 +602,7 @@ a:focus, a:active, a:hover {
 				@include for-screen( phone-max ) {
 					@include rem( 'line-height', $header_line_mobile_height );
 				}
-				color: $text;
+				color: $header_link_color;
 				&:hover {
 					color: $primary_hover;
 				}
@@ -484,23 +610,29 @@ a:focus, a:active, a:hover {
 			ul {
 				top: 100%;
 				background: #fff;
-				box-shadow: 0 0 5px rgba(0, 0, 0, 0.12);
+				border: 1px solid #ededed;
 			}
+
 			li {
 				position: relative;
 				a {
 					@include rem( 'line-height', 30px );
 					padding: 5px 15px;
 					display: block;
-					&:hover {
-						background: #ededed;
+					border-bottom: 1px solid #ededed;
+				}
+
+				&:last-child {
+					> a {
+						border-bottom: 0px none;
 					}
 				}
+
 				ul {
 					display: none;
 					position: absolute;
 					left: 100%;
-					top: 0px;
+					top: -1px;
 				}
 				&:hover {
 					> ul {
@@ -510,6 +642,13 @@ a:focus, a:active, a:hover {
 			}
 
 			&.nav-more {
+				&:hover {
+					> ul {
+						left: auto;
+						right: 0px;
+					}
+				}
+
 				> a {
 					min-width: 50px;
 					display: inline-block;
@@ -518,96 +657,10 @@ a:focus, a:active, a:hover {
 		} // end mneu li
 	}
 }
-.shop-by-departments {
-	$departments_width: 250px;
-	float: left;
-	position: relative;
-	.shop-by-button {
-		width: auto;
-		display: block;
-		padding: 0px 18px;
-		text-align: left;
-		font-weight: bold;
-		text-transform: uppercase;
-		background: $primary;
-		//@include rem( 'font-size', 40px );
-		@include rem( 'line-height', $header_line_height );
-		@include for-screen( phone-max ) {
-			@include rem( 'line-height', $header_line_mobile_height );
-		}
-		color: #fff;
-		text-decoration: none !important;
-		.icon {
-			//float: right;
-			margin-left: 10px;
-			@include rem( 'font-size', 20px );
-		}
-	}
-	&:hover {
-		.list-departments {
-			height: auto;
-			overflow: visible;
-		}
-	}
-	ul {
-		box-shadow: 0 0 5px rgba(0, 0, 0, 0.12);
-	}
 
-	.list-departments {
-		position: absolute;
-		height: 0px;
-		overflow: hidden;
-		top: 100%;
-		left: 0px;
-		background: #fff;
-		z-index: 99;
-		width: $departments_width;
-		display: block;
-		margin: 0px;
-		padding: 0px;
-		a:hover {
-			color: $primary_hover;
-		}
-		li {
-			list-style: none;
-			a {
-				padding: 5px 15px;
-				display: block;
-				@include rem( 'line-height', 30px );
-				span {
-					float: right;
-					margin-top: 3px;
-				}
 
-			}
-			ul {
-				width: $departments_width;
-				display: none;
-				position: absolute;
-				top: 0px;
-				left: 100%;
-				min-height: 100%;
-				background: #fff;
-				margin: 0px;
-				padding: 0px;
-				border-left: 1px solid #f5f5f5;
 
-			}
-			&:hover {
-				> a {
-					background: #ededed;
-					text-decoration: none;
-				}
-				 > ul {
-					 display: block;
-				 }
-			}
-		}
-		a {
-			color: $text;
-		}
-	}
-}
+
 
 .right-navigation {
 	float: right;

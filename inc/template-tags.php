@@ -220,7 +220,7 @@ function sshop_nav_right(){
     ?>
     <nav id="site-navigation-right" class="right-navigation" role="navigation">
 
-        <div class="header-shop__icon search-icon">
+        <div class="header-shop__icon search-icon has-dropdown">
             <a href="#">
                 <span class="shop__icon fa fa-search"></span>
             </a>
@@ -229,7 +229,6 @@ function sshop_nav_right(){
                     <div class="input-group">
                         <input type="text" class="form-control" name="s" placeholder="<?php esc_attr_e( 'Search...' ,'sshop' ); ?>." aria-describedby="basic-addon2">
                         <button class="input-group-addon btn" type="submit"><?php echo esc_html_x( 'Search', 'Search form button' ,'sshop' ); ?></button>
-                        <input type="hidden" name="post_type" value="product" />
                     </div>
                 </form>
             </div>
@@ -245,23 +244,37 @@ function sshop_nav_right(){
             </div>
         <?php } ?>
         <?php if ( function_exists( 'wc_get_checkout_url' ) ) { ?>
-            <div class="header-shop__icon">
+            <div class="header-shop__icon has-dropdown">
                 <a href="<?php echo esc_url( wc_get_checkout_url() ); ?>">
                     <span class="shop__number cart-number-items">0</span>
                     <span class="shop__icon fa fa-shopping-cart"></span>
                 </a>
                 <div class="header-dropdown">
                     <div class="header-dropdown-inner">
-                        <div class=" widget_shopping_cart_content"></div>
+                        <div class="widget_shopping_cart_content"></div>
                     </div>
                 </div>
             </div>
         <?php } ?>
         <?php if ( function_exists( 'wc_get_page_permalink' ) ) { ?>
-            <div class="header-shop__icon">
+            <div class="header-shop__icon has-dropdown">
                 <a href="<?php echo esc_url( wc_get_page_permalink( 'myaccount' ) ); ?>">
                     <span class="shop__icon fa fa-user-circle-o"></span>
                 </a>
+
+                <div class="header-dropdown account-menu">
+                    <div class="header-dropdown-inner">
+                        <ul class="menu">
+                            <?php foreach ( wc_get_account_menu_items() as $endpoint => $label ) : ?>
+                                <li class="<?php echo wc_get_account_menu_item_classes( $endpoint ); ?>">
+                                    <a href="<?php echo esc_url( wc_get_account_endpoint_url( $endpoint ) ); ?>"><?php echo esc_html( $label ); ?></a>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                </div>
+
+
             </div>
         <?php } ?>
     </nav><!-- #site-navigation-right -->

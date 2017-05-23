@@ -6,8 +6,12 @@
 //--------------------------------------------------------
 
 // Text colors
-$text: 			#333333;
-$heading:       #333333;
+$text: 			#333;
+$heading:       #333;
+
+
+$header_link_color: lighten( $text, 15% );
+
 
 // Active color
 $primary: 		#F36F36;
@@ -42,6 +46,7 @@ $header_line_mobile_height: $header_line_height - 20;
 
 //Baseline
 $base: 			20px;
+$submmenu_nav_width: 200px;
 
 // Mixins
 //--------------------------------------------------------
