@@ -348,25 +348,20 @@
 
 				//font-weight: bold;
 				text-transform: uppercase;
-				display: block;
+				display: inline-block;
 				color: $text;
-
+				@include rem( font-size, 14px );
 				del {
-					color: #999;
+					color: #777;
 				}
 				del, ins {
+					display: inline-block;
 					background: none;
 					///font-weight: normal;
 				}
 
 			}
-			span.price {
-				@include rem( 'font-size', 18px );
-				del, ins {
-					display: block;
-					font-weight: normal;
-				}
-			}
+
 			p.price {
 				@include rem( 'font-size', 22px );
 				font-weight: bold;

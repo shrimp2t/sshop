@@ -375,26 +375,19 @@
 
 .woocommerce #page .product span.price, .woocommerce #page .product p.price, .woocommerce #page .product .price, .woocommerce #page li.product span.price, .woocommerce #page li.product p.price, .woocommerce #page li.product .price, .woocommerce #page div.product span.price, .woocommerce #page div.product p.price, .woocommerce #page div.product .price {
 	text-transform: uppercase;
-	display: block;
+	display: inline-block;
 	color: #595959;
+	font-size: 14px;
+	font-size: 0.875rem;
 }
 
 .woocommerce #page .product span.price del, .woocommerce #page .product p.price del, .woocommerce #page .product .price del, .woocommerce #page li.product span.price del, .woocommerce #page li.product p.price del, .woocommerce #page li.product .price del, .woocommerce #page div.product span.price del, .woocommerce #page div.product p.price del, .woocommerce #page div.product .price del {
-	color: #999;
+	color: #777;
 }
 
 .woocommerce #page .product span.price del, .woocommerce #page .product span.price ins, .woocommerce #page .product p.price del, .woocommerce #page .product p.price ins, .woocommerce #page .product .price del, .woocommerce #page .product .price ins, .woocommerce #page li.product span.price del, .woocommerce #page li.product span.price ins, .woocommerce #page li.product p.price del, .woocommerce #page li.product p.price ins, .woocommerce #page li.product .price del, .woocommerce #page li.product .price ins, .woocommerce #page div.product span.price del, .woocommerce #page div.product span.price ins, .woocommerce #page div.product p.price del, .woocommerce #page div.product p.price ins, .woocommerce #page div.product .price del, .woocommerce #page div.product .price ins {
+	display: inline-block;
 	background: none;
-}
-
-.woocommerce #page .product span.price, .woocommerce #page li.product span.price, .woocommerce #page div.product span.price {
-	font-size: 18px;
-	font-size: 1.125rem;
-}
-
-.woocommerce #page .product span.price del, .woocommerce #page .product span.price ins, .woocommerce #page li.product span.price del, .woocommerce #page li.product span.price ins, .woocommerce #page div.product span.price del, .woocommerce #page div.product span.price ins {
-	display: block;
-	font-weight: normal;
 }
 
 .woocommerce #page .product p.price, .woocommerce #page li.product p.price, .woocommerce #page div.product p.price {
