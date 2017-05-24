@@ -17,7 +17,7 @@ get_header();
 $has_sidebar = is_active_sidebar( 'sidebar-woocommerce' );
 $has_sidebar = apply_filters( 'sshop_layout_has_sidebar', $has_sidebar );
 global $sshop_shop_layout_colums;
-$sshop_shop_layout_colums = apply_filters( 'sshop_shop_layout_colums', ( $has_sidebar ) ? 4 : 5 );
+$sshop_shop_layout_colums = apply_filters( 'sshop_shop_layout_colums', 4, $has_sidebar );
 ?>
 	<div id="primary" class="woocommerce-main content-area <?php echo  ( $has_sidebar ) ? 'has-sidebar' : 'no-sidebar'; ?>">
         <?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>

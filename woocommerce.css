@@ -386,6 +386,7 @@
 	text-transform: uppercase;
 	display: inline-block;
 	color: #595959;
+	font-weight: bold;
 	font-size: 14px;
 	font-size: 0.875rem;
 }

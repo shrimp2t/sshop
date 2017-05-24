@@ -45,7 +45,7 @@ add_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loo
 
 // Change number product to show
 function sshop_number_products_to_show(){
-    return 25;
+    return 24;
 }
 add_filter( 'loop_shop_per_page','sshop_number_products_to_show', 20 );
 

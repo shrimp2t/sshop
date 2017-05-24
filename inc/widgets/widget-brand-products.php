@@ -33,8 +33,22 @@ class SShop_Widget_Brand_Products extends SShop_Widget_Base {
 
             array(
                 'type' =>'text',
-                'name' => 'no_of_posts',
+                'name' => 'number',
                 'label' => esc_html__( 'No. of Posts', 'sshop' ),
+            ),
+
+            array(
+                'type' =>'select',
+                'name' => 'layout',
+                'default' => '3',
+                'label' => esc_html__( 'Number products visible', 'sshop' ),
+                'options' => array(
+                    '2'   => 2,
+                    '3'   => 3,
+                    '4'   => 4,
+                    '5'   => 5,
+                    '6'   => 6,
+                ),
             ),
 
             array(
@@ -105,6 +119,10 @@ class SShop_Widget_Brand_Products extends SShop_Widget_Base {
             $category = ( array ) $category;
         }
 
+        if ( ! $instance['layout'] ) {
+            $instance['layout'] = 3;
+        }
+
         $query = $this->get_products( $instance );
         $instance['_layout'] = $this->layout;
         $instance['wid'] = get_class( $this );
@@ -119,7 +137,7 @@ class SShop_Widget_Brand_Products extends SShop_Widget_Base {
 
         ?>
         <div class="<?php echo esc_attr( join( ' ', $classes ) ); ?>">
-            <div class="layout-tabs tabs-layout-wrap" data-number="4" data-ajax="<?php echo esc_url(admin_url('admin-ajax.php')); ?>" data-instance="<?php echo esc_attr(json_encode($instance)); ?>">
+            <div class="layout-tabs tabs-layout-wrap" data-number="<?php echo esc_attr( $instance['layout'] ); ?>" data-ajax="<?php echo esc_url(admin_url('admin-ajax.php')); ?>" data-instance="<?php echo esc_attr(json_encode($instance)); ?>">
                 <?php if ( ! empty( $title ) ) { ?>
                     <div class="filter-inside">
                         <?php

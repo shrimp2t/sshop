@@ -50,6 +50,15 @@ class SShop_Widget_Base extends WP_Widget {
             }
         }
 
+        if ( ! $no_of_posts ) {
+            $no_of_posts = isset($instance['number']) ? absint($instance['number']) : false;
+            if (!$no_of_posts) {
+                if (isset($instance['number'])) {
+                    $no_of_posts = absint($instance['number']);
+                }
+            }
+        }
+
         $max_posts =  apply_filters( 'sshop_tabs_content_max_posts', 30 );
 
         if ( $no_of_posts > $max_posts ) {
@@ -148,8 +157,11 @@ class SShop_Widget_Base extends WP_Widget {
 
     function layout_content( $query ){
         $GLOBALS['sshop_loop_use_div'] = true;
+        if ( ! $query->_instance['layout'] ) {
+            $query->_instance['layout'] = 4;
+        }
         ?>
-        <div class="tabs-content-items eq-row-col-no-f-5">
+        <div class="tabs-content-items eq-row-col-no-f-<?php echo esc_attr( $query->_instance['layout'] ); ?>">
         <?php while ($query->have_posts()) : $query->the_post(); ?>
             <div class="tabs-item-inside eq-col">
                 <?php wc_get_template_part( 'content', 'product' ); ?>

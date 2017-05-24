@@ -29,14 +29,14 @@ class SShop_Widget_Sale_Countdown_Products extends SShop_Widget_Base {
             array(
                 'type' =>'text',
                 'name' => 'number',
-                'default' => 5,
+                'default' => 4,
                 'label' => esc_html__( 'No. of products', 'sshop' ),
             ),
 
             array(
                 'type' =>'text',
                 'name' => 'layout',
-                'default' => 5,
+                'default' => 4,
                 'label' => esc_html__( 'Items per row', 'sshop' ),
             ),
 
@@ -71,7 +71,10 @@ class SShop_Widget_Sale_Countdown_Products extends SShop_Widget_Base {
         unset($instance['title']);
         echo $args['before_widget'];
         $title = apply_filters( 'widget_title', $title );
-
+        $number = absint( $instance['number'] );
+        if ( ! $number ) {
+            return ;
+        }
         global $wpdb;
         $current = current_time( 'timestamp' );
         $sql = "
@@ -86,7 +89,7 @@ class SShop_Widget_Sale_Countdown_Products extends SShop_Widget_Base {
           AND pm.meta_key = '_sale_price_dates_to'
           AND CAST(pm.meta_value AS UNSIGNED)  > $current
         ORDER BY end_time ASC
-        ";
+        LIMIT 0, 50";
         $rows = $wpdb->get_results( $sql );
 
         if ( ! $rows || empty ( $rows ) ) {
@@ -108,7 +111,8 @@ class SShop_Widget_Sale_Countdown_Products extends SShop_Widget_Base {
         $query = new WP_Query( array(
             'post_type' => 'product',
             'post__in'  => $product_ids,
-            'orderby'   => 'post__in'
+            'orderby'   => 'post__in',
+            'posts_per_page'   => $number
         ) );
 
         if ( $query->have_posts() ) {

@@ -361,6 +361,7 @@
 				text-transform: uppercase;
 				display: inline-block;
 				color: $text;
+				font-weight: bold;
 				@include rem( font-size, 14px );
 				del {
 					color: #777;
