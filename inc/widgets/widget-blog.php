@@ -70,6 +70,12 @@ class SShop_Widget_Blog extends WP_Widget {
                                     ?>
                                 </div><!-- .entry-content -->
 
+                                <div class="entry-meta">
+                                    <?php
+                                    sshop_posted_on();
+                                    ?>
+                                </div><!-- .entry-content -->
+
                             </div>
                         </article><!-- #post-## -->
 

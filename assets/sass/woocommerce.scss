@@ -452,6 +452,7 @@
 						border-radius: 50%;
 						color: $text;
 						border: 0px none;
+						border: 1px solid #ededed;
 
 					}
 					&:before {
@@ -509,7 +510,31 @@
 				}
 			}
 
+			.wc-thumbnail-wrapper {
+				display: block;
+				position: relative;
+			}
 
+			// Countdown
+			.wc-countdown {
+				display: block;
+				color: $text;
+				text-transform: uppercase;
+				background: #fff;
+				border: 1px solid #ededed;
+				padding: 5px;
+				margin: 0px 0px;
+				text-align: center;
+				@include rem( font-size, 14px );
+				position: absolute;
+				bottom: 10px;
+				left: 10px;
+				right: 10px;
+				font-weight: bold;
+			}
+
+
+			// END Countdown
 		}
 
 		/* Shopping cart */
@@ -646,7 +671,8 @@
 .woocommerce-billing-fields h3,
 .woocommerce-additional-fields h3,
 #order_review_heading,
-.woocommerce-Address h3 {
+.woocommerce-Address h3,
+#customer_login h2 {
 	@include rem( 'font-size', 18px );
 	@include rem( 'line-height', 50px );
 	text-transform: uppercase;

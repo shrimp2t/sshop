@@ -659,9 +659,6 @@ a:focus, a:active, a:hover {
 }
 
 
-
-
-
 .right-navigation {
 	float: right;
 	text-align: right;
@@ -1232,16 +1229,43 @@ a:focus, a:active, a:hover {
 		}
 	}
 	.entry-meta {
-		margin: 10px 0px;
+		margin: 12px 0px;
 	}
 	.entry-title {
 		color: $text;
-		@include rem( 'font-size', 26px );
+		@include rem( 'font-size', 18px );
 		a {
 			color: $text;
 			&:hover {
 				color: $primary_hover;
 			}
+		}
+	}
+	.entry-more-btn {
+		display: inline-block;
+		margin-top: 15px;
+		text-transform: uppercase;
+		@include rem( font-size, 12px );
+		font-weight: bold;
+	}
+}
+.entry-meta {
+	@include rem( font-size, 12px );
+	a {
+		color: $text;
+		&:hover {
+			color: $primary_hover;
+		}
+	}
+	> span {
+		.fa {
+			margin-right: 5px;
+		}
+		text-transform: uppercase;
+		font-weight: bold;
+		margin-right: 10px;
+		&:last-child {
+			margin-right: 0px;
 		}
 	}
 }
@@ -1279,6 +1303,7 @@ a:focus, a:active, a:hover {
 			height: auto;
 		}
 		margin-top: 15px;
+		margin-bottom: 15px;
 	}
 }
 .entry-footer {

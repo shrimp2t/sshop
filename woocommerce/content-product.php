@@ -43,6 +43,8 @@ $class = $tag == 'div' ? '' : 'eq-col';
          */
         do_action( 'woocommerce_before_shop_loop_item' );
 
+
+        echo '<div class="wc-thumbnail-wrapper">';
         /**
          * woocommerce_before_shop_loop_item_title hook.
          *
@@ -50,6 +52,8 @@ $class = $tag == 'div' ? '' : 'eq-col';
          * @hooked woocommerce_template_loop_product_thumbnail - 10
          */
         do_action( 'woocommerce_before_shop_loop_item_title' );
+
+        echo '</div>';
 
         /**
          * woocommerce_shop_loop_item_title hook.

@@ -44,4 +44,19 @@ jQuery( document).ready( function( $ ){
     } );
 
 
+    // Count down
+    // .wc-countdown
+
+    $('.wc-countdown').each( function(){
+        var c = $( this );
+        var date = c.data( 'final-date' );
+        c.countdown( date, function(event) {
+            $( this ).text(
+                event.strftime( SShop_WC_Config.countdown_format )
+            );
+        });
+
+    } );
+
+
 } );

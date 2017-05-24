@@ -21,7 +21,7 @@
 
 	<div class="enter-content-w">
         <?php
-        the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+        the_title( '<h2 class="entry-title"><a title="'. the_title_attribute( array( 'echo' => false ) ).'" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
         ?>
         <div class="entry-meta">
             <?php
@@ -34,6 +34,8 @@
             the_excerpt( );
             ?>
         </div><!-- .entry-content -->
+
+        <a title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>" type="button" class="entry-more-btn "><?php esc_html_e( 'Read more', 'sshop' ); ?> <i class="fa fa-long-arrow-right"></i></a>
 
     </div>
 </article><!-- #post-## -->

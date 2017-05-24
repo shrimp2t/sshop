@@ -39,9 +39,15 @@ class SShop_Widget_Product_Tabs extends SShop_Widget_Base {
             ),
 
             array(
-                'type' =>'orderby',
+                'type' =>'select',
                 'name' => 'orderby',
                 'label' => esc_html__( 'Orderby', 'sshop' ),
+                'options' => array(
+                    'date'   => esc_html__( 'Date', 'sshop' ),
+                    'price'  => esc_html__( 'Price', 'sshop' ),
+                    'rand'   => esc_html__( 'Random', 'sshop' ),
+                    'sales'  => esc_html__( 'Sales', 'sshop' ),
+                ),
             ),
 
             array(
@@ -81,7 +87,7 @@ class SShop_Widget_Product_Tabs extends SShop_Widget_Base {
             $category = ( array ) $category;
         }
 
-        $query = $this->query( $instance );
+        $query = $this->get_products( $instance );
         $instance['_layout'] = $this->layout;
         $instance['wid'] = get_class( $this );
 

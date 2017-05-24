@@ -77,6 +77,17 @@
 
 .btn {
     font-weight: bold;
+    &.btn-primary {
+        background: $primary;
+        color: #fff;
+        border-color: $primary;
+        &:hover {
+            background: $primary_hover;
+        }
+    }
+    &.btn-outline-primary {
+        border-color: $primary;
+    }
     &.theme-primary {
         &:hover {
             border-color: $primary;

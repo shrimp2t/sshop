@@ -6,11 +6,12 @@
 //--------------------------------------------------------
 
 // Text colors
-$text: 			#333;
-$heading:       #333;
+$text: 			#595959;
+$heading:       #595959;
 
 
-$header_link_color: lighten( $text, 15% );
+$header_link_color: $text;
+//$header_link_color: lighten( $text, 15% );
 
 
 // Active color

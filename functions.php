@@ -177,9 +177,15 @@ function sshop_scripts() {
 	}
 
     if ( class_exists( 'WooCommerce' ) ) {
+        wp_enqueue_script( 'jquery-countdown', get_template_directory_uri() . '/assets/js/jquery.countdown.js', array( 'jquery' ), '20151215', true );
         wp_enqueue_script( 'sshop-woocommerce', get_template_directory_uri() . '/assets/js/wc.js', array( 'jquery' ), '20151215', true );
         wp_enqueue_style( 'woocommerce-layout', get_template_directory_uri().'/woocommerce.css'  );
+        wp_localize_script( 'sshop-woocommerce', 'SShop_WC_Config', array(
+            'countdown_format' => esc_html__( '%D Days %H:%M:%S', 'sshop' ),
+        ) );
     }
+
+
 
 
 }
@@ -240,6 +246,7 @@ require get_template_directory() . '/inc/widgets/widget-services.php';
 require get_template_directory() . '/inc/widgets/widget-slider.php';
 require get_template_directory() . '/inc/widgets/widget-blog.php';
 require get_template_directory() . '/inc/widgets/widget-products.php';
+require get_template_directory() . '/inc/widgets/widget-sales-countdown-products.php';
 require get_template_directory() . '/inc/widgets/widget-product-tabs.php';
 require get_template_directory() . '/inc/widgets/widget-brand-products.php';
 require get_template_directory() . '/inc/widgets/widget-product-categories.php';

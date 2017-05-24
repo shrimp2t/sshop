@@ -31,5 +31,28 @@ if ( ! function_exists( 'woocommerce_get_product_thumbnail' ) ) {
     }
 }
 
+if ( ! function_exists( 'wc_sale_countdown' ) ) {
+    function wc_sale_countdown()
+    {
+        global $sshop_sales_countdown_product;
+        if ( ! isset( $sshop_sales_countdown_product ) || ! $sshop_sales_countdown_product ) {
+            return ;
+        }
+        global $post, $sshop_wc_product_sale_end;
+
+        if ( isset( $sshop_wc_product_sale_end ) && $sshop_wc_product_sale_end > 0 ) {
+            $date_to = $sshop_wc_product_sale_end;
+        } else {
+            $date_to = absint( get_post_meta( $post->ID, '_sale_price_dates_to', true ) );
+        }
+
+        if ( $date_to > 0 ) {
+            ?>
+            <div class="wc-countdown" data-final-date="<?php echo esc_attr(date('Y/m/d H:i:s', $date_to)); ?>"><?php esc_html_e('0 Days 00:00:00', 'sshop'); ?></div>
+            <?php
+        }
+    }
+}
+add_action( 'woocommerce_before_shop_loop_item_title', 'wc_sale_countdown' );
 
 

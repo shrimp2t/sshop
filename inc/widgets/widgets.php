@@ -34,6 +34,7 @@ function sshop_register_widgets() {
         register_widget('SShop_Widget_Brand_Products');
         register_widget('SShop_Widget_Product_Categories');
         register_widget('SShop_Widget_Products');
+        register_widget('SShop_Widget_Sale_Countdown_Products');
     }
 
 }
