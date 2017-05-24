@@ -340,17 +340,17 @@
 
 .woocommerce #page .product .onsale, .woocommerce #page li.product .onsale, .woocommerce #page div.product .onsale {
 	position: absolute;
-	top: 15px;
+	top: 20px;
 	left: 15px;
 	right: auto;
-	font-size: 16px;
-	font-size: 1rem;
-	line-height: 16px;
-	line-height: 1rem;
+	font-size: 14px;
+	font-size: 0.875rem;
+	line-height: 14px;
+	line-height: 0.875rem;
 	text-transform: uppercase;
 	background: #F36F36;
 	color: #fff;
-	padding: 10px 10px;
+	padding: 5px;
 	z-index: 15;
 }
 
@@ -360,12 +360,21 @@
 
 .woocommerce #page .product .product-thumbnail, .woocommerce #page li.product .product-thumbnail, .woocommerce #page div.product .product-thumbnail {
 	margin-bottom: 10px;
+	display: block;
+	overflow: hidden;
 }
 
 .woocommerce #page .product .product-thumbnail img, .woocommerce #page li.product .product-thumbnail img, .woocommerce #page div.product .product-thumbnail img {
 	width: 100%;
 	height: auto;
 	margin-bottom: 0px;
+	-webkit-transition: all 0.6s ease-in-out;
+	-moz-transition: all 0.6s ease-in-out;
+	transition: all 0.6s ease-in-out;
+}
+
+.woocommerce #page .product .product-inner:hover .product-thumbnail img, .woocommerce #page li.product .product-inner:hover .product-thumbnail img, .woocommerce #page div.product .product-inner:hover .product-thumbnail img {
+	transform: scale(1.2);
 }
 
 .woocommerce #page .product .star-rating, .woocommerce #page li.product .star-rating, .woocommerce #page div.product .star-rating {
@@ -396,12 +405,46 @@
 	font-weight: bold;
 }
 
+.woocommerce #page .product .add-cart-wrap, .woocommerce #page li.product .add-cart-wrap, .woocommerce #page div.product .add-cart-wrap {
+	top: 50%;
+	position: absolute;
+	transform: translateY(-50%);
+	width: 100%;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: normal;
+	-webkit-transition: all 0.6s ease-in-out;
+	-moz-transition: all 0.6s ease-in-out;
+	transition: all 0.6s ease-in-out;
+	opacity: 0;
+	z-index: 6;
+}
+
+.woocommerce #page .product .add-cart-wrap .add_to_cart_button, .woocommerce #page li.product .add-cart-wrap .add_to_cart_button, .woocommerce #page div.product .add-cart-wrap .add_to_cart_button {
+	margin-top: 0px;
+	background: #F36F36;
+	color: #fff;
+	border-radius: 0px;
+	padding: 15px;
+}
+
+.woocommerce #page .product .add-cart-wrap .added_to_cart.wc-forward, .woocommerce #page li.product .add-cart-wrap .added_to_cart.wc-forward, .woocommerce #page div.product .add-cart-wrap .added_to_cart.wc-forward {
+	display: block;
+}
+
+.woocommerce #page .product .product-inner:hover .add-cart-wrap, .woocommerce #page li.product .product-inner:hover .add-cart-wrap, .woocommerce #page div.product .product-inner:hover .add-cart-wrap {
+	opacity: 1;
+}
+
 .woocommerce #page .product .product-btns, .woocommerce #page li.product .product-btns, .woocommerce #page div.product .product-btns {
 	position: absolute;
 	top: 15px;
 	right: 15px;
-	visibility: hidden;
-	opacity: 0;
+	visibility: visible;
+	opacity: 1;
+	z-index: 6;
 	-webkit-transition: all 0.6s ease-in-out;
 	-moz-transition: all 0.6s ease-in-out;
 	transition: all 0.6s ease-in-out;
@@ -413,6 +456,7 @@
 	width: 35px;
 	height: 35px;
 	position: relative;
+	text-transform: uppercase;
 }
 
 .woocommerce #page .product .product-btns .add-cart-wrap .add_to_cart_button.added, .woocommerce #page li.product .product-btns .add-cart-wrap .add_to_cart_button.added, .woocommerce #page div.product .product-btns .add-cart-wrap .add_to_cart_button.added {
@@ -420,27 +464,17 @@
 	display: none;
 }
 
-.woocommerce #page .product .product-btns .add-cart-wrap .added_to_cart.wc-forward::before, .woocommerce #page li.product .product-btns .add-cart-wrap .added_to_cart.wc-forward::before, .woocommerce #page div.product .product-btns .add-cart-wrap .added_to_cart.wc-forward::before {
-	font-family: 'FontAwesome';
-	content: "\f00c";
-	background: #e8500e;
-	color: #fff;
-}
-
-.woocommerce #page .product .product-btns .add_to_cart_button, .woocommerce #page .product .product-btns .added_to_cart, .woocommerce #page .product .product-btns .add_to_wishlist,
+.woocommerce #page .product .product-btns .add_to_wishlist,
 .woocommerce #page .product .product-btns .yith-wcwl-wishlistexistsbrowse a,
-.woocommerce #page .product .product-btns .yith-wcwl-wishlistaddedbrowse a,
-.woocommerce #page .product .product-btns .product_type_external, .woocommerce #page li.product .product-btns .add_to_cart_button, .woocommerce #page li.product .product-btns .added_to_cart, .woocommerce #page li.product .product-btns .add_to_wishlist,
+.woocommerce #page .product .product-btns .yith-wcwl-wishlistaddedbrowse a, .woocommerce #page li.product .product-btns .add_to_wishlist,
 .woocommerce #page li.product .product-btns .yith-wcwl-wishlistexistsbrowse a,
-.woocommerce #page li.product .product-btns .yith-wcwl-wishlistaddedbrowse a,
-.woocommerce #page li.product .product-btns .product_type_external, .woocommerce #page div.product .product-btns .add_to_cart_button, .woocommerce #page div.product .product-btns .added_to_cart, .woocommerce #page div.product .product-btns .add_to_wishlist,
+.woocommerce #page li.product .product-btns .yith-wcwl-wishlistaddedbrowse a, .woocommerce #page div.product .product-btns .add_to_wishlist,
 .woocommerce #page div.product .product-btns .yith-wcwl-wishlistexistsbrowse a,
-.woocommerce #page div.product .product-btns .yith-wcwl-wishlistaddedbrowse a,
-.woocommerce #page div.product .product-btns .product_type_external {
+.woocommerce #page div.product .product-btns .yith-wcwl-wishlistaddedbrowse a {
 	display: block;
 	overflow: hidden;
-	width: 35px;
-	height: 35px;
+	width: 25px;
+	height: 25px;
 	padding: 0px;
 	margin: 0px;
 	background: none;
@@ -449,42 +483,33 @@
 	position: relative;
 }
 
-.woocommerce #page .product .product-btns .add_to_cart_button:hover, .woocommerce #page .product .product-btns .added_to_cart:hover, .woocommerce #page .product .product-btns .add_to_wishlist:hover,
+.woocommerce #page .product .product-btns .add_to_wishlist:hover,
 .woocommerce #page .product .product-btns .yith-wcwl-wishlistexistsbrowse a:hover,
-.woocommerce #page .product .product-btns .yith-wcwl-wishlistaddedbrowse a:hover,
-.woocommerce #page .product .product-btns .product_type_external:hover, .woocommerce #page li.product .product-btns .add_to_cart_button:hover, .woocommerce #page li.product .product-btns .added_to_cart:hover, .woocommerce #page li.product .product-btns .add_to_wishlist:hover,
+.woocommerce #page .product .product-btns .yith-wcwl-wishlistaddedbrowse a:hover, .woocommerce #page li.product .product-btns .add_to_wishlist:hover,
 .woocommerce #page li.product .product-btns .yith-wcwl-wishlistexistsbrowse a:hover,
-.woocommerce #page li.product .product-btns .yith-wcwl-wishlistaddedbrowse a:hover,
-.woocommerce #page li.product .product-btns .product_type_external:hover, .woocommerce #page div.product .product-btns .add_to_cart_button:hover, .woocommerce #page div.product .product-btns .added_to_cart:hover, .woocommerce #page div.product .product-btns .add_to_wishlist:hover,
+.woocommerce #page li.product .product-btns .yith-wcwl-wishlistaddedbrowse a:hover, .woocommerce #page div.product .product-btns .add_to_wishlist:hover,
 .woocommerce #page div.product .product-btns .yith-wcwl-wishlistexistsbrowse a:hover,
-.woocommerce #page div.product .product-btns .yith-wcwl-wishlistaddedbrowse a:hover,
-.woocommerce #page div.product .product-btns .product_type_external:hover {
+.woocommerce #page div.product .product-btns .yith-wcwl-wishlistaddedbrowse a:hover {
 	background: none;
 }
 
-.woocommerce #page .product .product-btns .add_to_cart_button.loading, .woocommerce #page .product .product-btns .added_to_cart.loading, .woocommerce #page .product .product-btns .add_to_wishlist.loading,
+.woocommerce #page .product .product-btns .add_to_wishlist.loading,
 .woocommerce #page .product .product-btns .yith-wcwl-wishlistexistsbrowse a.loading,
-.woocommerce #page .product .product-btns .yith-wcwl-wishlistaddedbrowse a.loading,
-.woocommerce #page .product .product-btns .product_type_external.loading, .woocommerce #page li.product .product-btns .add_to_cart_button.loading, .woocommerce #page li.product .product-btns .added_to_cart.loading, .woocommerce #page li.product .product-btns .add_to_wishlist.loading,
+.woocommerce #page .product .product-btns .yith-wcwl-wishlistaddedbrowse a.loading, .woocommerce #page li.product .product-btns .add_to_wishlist.loading,
 .woocommerce #page li.product .product-btns .yith-wcwl-wishlistexistsbrowse a.loading,
-.woocommerce #page li.product .product-btns .yith-wcwl-wishlistaddedbrowse a.loading,
-.woocommerce #page li.product .product-btns .product_type_external.loading, .woocommerce #page div.product .product-btns .add_to_cart_button.loading, .woocommerce #page div.product .product-btns .added_to_cart.loading, .woocommerce #page div.product .product-btns .add_to_wishlist.loading,
+.woocommerce #page li.product .product-btns .yith-wcwl-wishlistaddedbrowse a.loading, .woocommerce #page div.product .product-btns .add_to_wishlist.loading,
 .woocommerce #page div.product .product-btns .yith-wcwl-wishlistexistsbrowse a.loading,
-.woocommerce #page div.product .product-btns .yith-wcwl-wishlistaddedbrowse a.loading,
-.woocommerce #page div.product .product-btns .product_type_external.loading {
+.woocommerce #page div.product .product-btns .yith-wcwl-wishlistaddedbrowse a.loading {
 	opacity: 1 !important;
 }
 
-.woocommerce #page .product .product-btns .add_to_cart_button.loading::after, .woocommerce #page .product .product-btns .added_to_cart.loading::after, .woocommerce #page .product .product-btns .add_to_wishlist.loading::after,
+.woocommerce #page .product .product-btns .add_to_wishlist.loading::after,
 .woocommerce #page .product .product-btns .yith-wcwl-wishlistexistsbrowse a.loading::after,
-.woocommerce #page .product .product-btns .yith-wcwl-wishlistaddedbrowse a.loading::after,
-.woocommerce #page .product .product-btns .product_type_external.loading::after, .woocommerce #page li.product .product-btns .add_to_cart_button.loading::after, .woocommerce #page li.product .product-btns .added_to_cart.loading::after, .woocommerce #page li.product .product-btns .add_to_wishlist.loading::after,
+.woocommerce #page .product .product-btns .yith-wcwl-wishlistaddedbrowse a.loading::after, .woocommerce #page li.product .product-btns .add_to_wishlist.loading::after,
 .woocommerce #page li.product .product-btns .yith-wcwl-wishlistexistsbrowse a.loading::after,
-.woocommerce #page li.product .product-btns .yith-wcwl-wishlistaddedbrowse a.loading::after,
-.woocommerce #page li.product .product-btns .product_type_external.loading::after, .woocommerce #page div.product .product-btns .add_to_cart_button.loading::after, .woocommerce #page div.product .product-btns .added_to_cart.loading::after, .woocommerce #page div.product .product-btns .add_to_wishlist.loading::after,
+.woocommerce #page li.product .product-btns .yith-wcwl-wishlistaddedbrowse a.loading::after, .woocommerce #page div.product .product-btns .add_to_wishlist.loading::after,
 .woocommerce #page div.product .product-btns .yith-wcwl-wishlistexistsbrowse a.loading::after,
-.woocommerce #page div.product .product-btns .yith-wcwl-wishlistaddedbrowse a.loading::after,
-.woocommerce #page div.product .product-btns .product_type_external.loading::after {
+.woocommerce #page div.product .product-btns .yith-wcwl-wishlistaddedbrowse a.loading::after {
 	display: block;
 	border-radius: 50%;
 	top: 0px;
@@ -494,80 +519,64 @@
 	opacity: 1 !important;
 }
 
-.woocommerce #page .product .product-btns .add_to_cart_button.loading:before, .woocommerce #page .product .product-btns .added_to_cart.loading:before, .woocommerce #page .product .product-btns .add_to_wishlist.loading:before,
+.woocommerce #page .product .product-btns .add_to_wishlist.loading:before,
 .woocommerce #page .product .product-btns .yith-wcwl-wishlistexistsbrowse a.loading:before,
-.woocommerce #page .product .product-btns .yith-wcwl-wishlistaddedbrowse a.loading:before,
-.woocommerce #page .product .product-btns .product_type_external.loading:before, .woocommerce #page li.product .product-btns .add_to_cart_button.loading:before, .woocommerce #page li.product .product-btns .added_to_cart.loading:before, .woocommerce #page li.product .product-btns .add_to_wishlist.loading:before,
+.woocommerce #page .product .product-btns .yith-wcwl-wishlistaddedbrowse a.loading:before, .woocommerce #page li.product .product-btns .add_to_wishlist.loading:before,
 .woocommerce #page li.product .product-btns .yith-wcwl-wishlistexistsbrowse a.loading:before,
-.woocommerce #page li.product .product-btns .yith-wcwl-wishlistaddedbrowse a.loading:before,
-.woocommerce #page li.product .product-btns .product_type_external.loading:before, .woocommerce #page div.product .product-btns .add_to_cart_button.loading:before, .woocommerce #page div.product .product-btns .added_to_cart.loading:before, .woocommerce #page div.product .product-btns .add_to_wishlist.loading:before,
+.woocommerce #page li.product .product-btns .yith-wcwl-wishlistaddedbrowse a.loading:before, .woocommerce #page div.product .product-btns .add_to_wishlist.loading:before,
 .woocommerce #page div.product .product-btns .yith-wcwl-wishlistexistsbrowse a.loading:before,
-.woocommerce #page div.product .product-btns .yith-wcwl-wishlistaddedbrowse a.loading:before,
-.woocommerce #page div.product .product-btns .product_type_external.loading:before {
+.woocommerce #page div.product .product-btns .yith-wcwl-wishlistaddedbrowse a.loading:before {
 	opacity: 0;
 	visibility: hidden;
 }
 
-.woocommerce #page .product .product-btns .add_to_cart_button:before, .woocommerce #page .product .product-btns .add_to_cart_button:after, .woocommerce #page .product .product-btns .added_to_cart:before, .woocommerce #page .product .product-btns .added_to_cart:after, .woocommerce #page .product .product-btns .add_to_wishlist:before, .woocommerce #page .product .product-btns .add_to_wishlist:after,
+.woocommerce #page .product .product-btns .add_to_wishlist:before, .woocommerce #page .product .product-btns .add_to_wishlist:after,
 .woocommerce #page .product .product-btns .yith-wcwl-wishlistexistsbrowse a:before,
 .woocommerce #page .product .product-btns .yith-wcwl-wishlistexistsbrowse a:after,
 .woocommerce #page .product .product-btns .yith-wcwl-wishlistaddedbrowse a:before,
-.woocommerce #page .product .product-btns .yith-wcwl-wishlistaddedbrowse a:after,
-.woocommerce #page .product .product-btns .product_type_external:before,
-.woocommerce #page .product .product-btns .product_type_external:after, .woocommerce #page li.product .product-btns .add_to_cart_button:before, .woocommerce #page li.product .product-btns .add_to_cart_button:after, .woocommerce #page li.product .product-btns .added_to_cart:before, .woocommerce #page li.product .product-btns .added_to_cart:after, .woocommerce #page li.product .product-btns .add_to_wishlist:before, .woocommerce #page li.product .product-btns .add_to_wishlist:after,
+.woocommerce #page .product .product-btns .yith-wcwl-wishlistaddedbrowse a:after, .woocommerce #page li.product .product-btns .add_to_wishlist:before, .woocommerce #page li.product .product-btns .add_to_wishlist:after,
 .woocommerce #page li.product .product-btns .yith-wcwl-wishlistexistsbrowse a:before,
 .woocommerce #page li.product .product-btns .yith-wcwl-wishlistexistsbrowse a:after,
 .woocommerce #page li.product .product-btns .yith-wcwl-wishlistaddedbrowse a:before,
-.woocommerce #page li.product .product-btns .yith-wcwl-wishlistaddedbrowse a:after,
-.woocommerce #page li.product .product-btns .product_type_external:before,
-.woocommerce #page li.product .product-btns .product_type_external:after, .woocommerce #page div.product .product-btns .add_to_cart_button:before, .woocommerce #page div.product .product-btns .add_to_cart_button:after, .woocommerce #page div.product .product-btns .added_to_cart:before, .woocommerce #page div.product .product-btns .added_to_cart:after, .woocommerce #page div.product .product-btns .add_to_wishlist:before, .woocommerce #page div.product .product-btns .add_to_wishlist:after,
+.woocommerce #page li.product .product-btns .yith-wcwl-wishlistaddedbrowse a:after, .woocommerce #page div.product .product-btns .add_to_wishlist:before, .woocommerce #page div.product .product-btns .add_to_wishlist:after,
 .woocommerce #page div.product .product-btns .yith-wcwl-wishlistexistsbrowse a:before,
 .woocommerce #page div.product .product-btns .yith-wcwl-wishlistexistsbrowse a:after,
 .woocommerce #page div.product .product-btns .yith-wcwl-wishlistaddedbrowse a:before,
-.woocommerce #page div.product .product-btns .yith-wcwl-wishlistaddedbrowse a:after,
-.woocommerce #page div.product .product-btns .product_type_external:before,
-.woocommerce #page div.product .product-btns .product_type_external:after {
+.woocommerce #page div.product .product-btns .yith-wcwl-wishlistaddedbrowse a:after {
 	text-indent: 0;
 	float: left;
-	width: 35px;
-	height: 35px;
+	width: 25px;
+	height: 25px;
 	background: #fff;
 	color: #666;
-	font-size: 20px;
-	font-size: 1.25rem;
-	line-height: 35px;
-	line-height: 2.1875rem;
+	font-size: 14px;
+	font-size: 0.875rem;
+	line-height: 25px;
+	line-height: 1.5625rem;
 	text-align: center;
 	vertical-align: middle;
 	border-radius: 50%;
 	color: #595959;
 	border: 0px none;
-	border: 1px solid #ededed;
 }
 
-.woocommerce #page .product .product-btns .add_to_cart_button:before, .woocommerce #page .product .product-btns .added_to_cart:before, .woocommerce #page .product .product-btns .add_to_wishlist:before,
+.woocommerce #page .product .product-btns .add_to_wishlist:before,
 .woocommerce #page .product .product-btns .yith-wcwl-wishlistexistsbrowse a:before,
-.woocommerce #page .product .product-btns .yith-wcwl-wishlistaddedbrowse a:before,
-.woocommerce #page .product .product-btns .product_type_external:before, .woocommerce #page li.product .product-btns .add_to_cart_button:before, .woocommerce #page li.product .product-btns .added_to_cart:before, .woocommerce #page li.product .product-btns .add_to_wishlist:before,
+.woocommerce #page .product .product-btns .yith-wcwl-wishlistaddedbrowse a:before, .woocommerce #page li.product .product-btns .add_to_wishlist:before,
 .woocommerce #page li.product .product-btns .yith-wcwl-wishlistexistsbrowse a:before,
-.woocommerce #page li.product .product-btns .yith-wcwl-wishlistaddedbrowse a:before,
-.woocommerce #page li.product .product-btns .product_type_external:before, .woocommerce #page div.product .product-btns .add_to_cart_button:before, .woocommerce #page div.product .product-btns .added_to_cart:before, .woocommerce #page div.product .product-btns .add_to_wishlist:before,
+.woocommerce #page li.product .product-btns .yith-wcwl-wishlistaddedbrowse a:before, .woocommerce #page div.product .product-btns .add_to_wishlist:before,
 .woocommerce #page div.product .product-btns .yith-wcwl-wishlistexistsbrowse a:before,
-.woocommerce #page div.product .product-btns .yith-wcwl-wishlistaddedbrowse a:before,
-.woocommerce #page div.product .product-btns .product_type_external:before {
+.woocommerce #page div.product .product-btns .yith-wcwl-wishlistaddedbrowse a:before {
 	display: block;
 }
 
-.woocommerce #page .product .product-btns .add_to_cart_button:after, .woocommerce #page .product .product-btns .added_to_cart:after, .woocommerce #page .product .product-btns .add_to_wishlist:after,
+.woocommerce #page .product .product-btns .add_to_wishlist:after,
 .woocommerce #page .product .product-btns .yith-wcwl-wishlistexistsbrowse a:after,
-.woocommerce #page .product .product-btns .yith-wcwl-wishlistaddedbrowse a:after,
-.woocommerce #page .product .product-btns .product_type_external:after, .woocommerce #page li.product .product-btns .add_to_cart_button:after, .woocommerce #page li.product .product-btns .added_to_cart:after, .woocommerce #page li.product .product-btns .add_to_wishlist:after,
+.woocommerce #page .product .product-btns .yith-wcwl-wishlistaddedbrowse a:after, .woocommerce #page li.product .product-btns .add_to_wishlist:after,
 .woocommerce #page li.product .product-btns .yith-wcwl-wishlistexistsbrowse a:after,
-.woocommerce #page li.product .product-btns .yith-wcwl-wishlistaddedbrowse a:after,
-.woocommerce #page li.product .product-btns .product_type_external:after, .woocommerce #page div.product .product-btns .add_to_cart_button:after, .woocommerce #page div.product .product-btns .added_to_cart:after, .woocommerce #page div.product .product-btns .add_to_wishlist:after,
+.woocommerce #page li.product .product-btns .yith-wcwl-wishlistaddedbrowse a:after, .woocommerce #page div.product .product-btns .add_to_wishlist:after,
 .woocommerce #page div.product .product-btns .yith-wcwl-wishlistexistsbrowse a:after,
-.woocommerce #page div.product .product-btns .yith-wcwl-wishlistaddedbrowse a:after,
-.woocommerce #page div.product .product-btns .product_type_external:after {
+.woocommerce #page div.product .product-btns .yith-wcwl-wishlistaddedbrowse a:after {
 	display: none;
 }
 
@@ -579,6 +588,10 @@
 .woocommerce #page .product .product-btns .add_to_wishlist:before, .woocommerce #page li.product .product-btns .add_to_wishlist:before, .woocommerce #page div.product .product-btns .add_to_wishlist:before {
 	font-family: 'FontAwesome';
 	content: "\f08a";
+}
+
+.woocommerce #page .product .product-btns .yith-wcwl-add-to-wishlist, .woocommerce #page li.product .product-btns .yith-wcwl-add-to-wishlist, .woocommerce #page div.product .product-btns .yith-wcwl-add-to-wishlist {
+	margin-top: 0px;
 }
 
 .woocommerce #page .product .product-btns .yith-wcwl-add-to-wishlist .feedback, .woocommerce #page li.product .product-btns .yith-wcwl-add-to-wishlist .feedback, .woocommerce #page div.product .product-btns .yith-wcwl-add-to-wishlist .feedback {
@@ -606,7 +619,7 @@
 	color: #fff;
 }
 
-.woocommerce #page .product:hover .product-btns, .woocommerce #page li.product:hover .product-btns, .woocommerce #page div.product:hover .product-btns {
+.woocommerce #page .product .product-inner:hover .product-btns, .woocommerce #page li.product .product-inner:hover .product-btns, .woocommerce #page div.product .product-inner:hover .product-btns {
 	opacity: 1;
 	visibility: visible;
 }
@@ -614,6 +627,29 @@
 .woocommerce #page .product .wc-thumbnail-wrapper, .woocommerce #page li.product .wc-thumbnail-wrapper, .woocommerce #page div.product .wc-thumbnail-wrapper {
 	display: block;
 	position: relative;
+}
+
+.woocommerce #page .product .wc-thumbnail-wrapper .woocommerce-LoopProduct-link:before, .woocommerce #page li.product .wc-thumbnail-wrapper .woocommerce-LoopProduct-link:before, .woocommerce #page div.product .wc-thumbnail-wrapper .woocommerce-LoopProduct-link:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	background: rgba(0, 0, 0, 0.4);
+	opacity: 0;
+	z-index: 4;
+	-webkit-transition: all 0.6s ease-in-out;
+	-moz-transition: all 0.6s ease-in-out;
+	transition: all 0.6s ease-in-out;
+}
+
+.woocommerce #page .product .product-inner:hover .wc-thumbnail-wrapper .woocommerce-LoopProduct-link:before, .woocommerce #page li.product .product-inner:hover .wc-thumbnail-wrapper .woocommerce-LoopProduct-link:before, .woocommerce #page div.product .product-inner:hover .wc-thumbnail-wrapper .woocommerce-LoopProduct-link:before {
+	opacity: 1;
+	-webkit-transition: all 0.6s ease-in-out;
+	-moz-transition: all 0.6s ease-in-out;
+	transition: all 0.6s ease-in-out;
 }
 
 .woocommerce #page .product .wc-countdown, .woocommerce #page li.product .wc-countdown, .woocommerce #page div.product .wc-countdown {
@@ -631,6 +667,7 @@
 	bottom: 10px;
 	left: 10px;
 	right: 10px;
+	z-index: 6;
 	font-weight: bold;
 }
 
