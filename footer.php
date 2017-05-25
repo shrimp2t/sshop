@@ -13,7 +13,7 @@
 
 	</div><!-- #content -->
 
-<?php if ( is_dynamic_sidebar( 'sidebar-footer' ) ) { ?>
+<?php if ( is_active_sidebar( 'sidebar-footer' ) ) { ?>
 <div class="footer-widgets">
     <div class="container-fluid">
         <div class="row">

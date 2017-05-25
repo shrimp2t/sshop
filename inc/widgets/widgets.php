@@ -4,9 +4,6 @@
  * Enqueue Admin Scripts
  */
 function sshop_media_scripts( $hook ) {
-    if ( 'widgets.php' != $hook ) {
-        return;
-    }
 
     // Color picker Style
     wp_enqueue_style( 'wp-color-picker' );

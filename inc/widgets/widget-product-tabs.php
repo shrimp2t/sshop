@@ -100,6 +100,8 @@ class SShop_Widget_Product_Tabs extends SShop_Widget_Base {
         if ( ! is_array( $category ) ) {
             $category = ( array ) $category;
         }
+        $category = array_filter( $category );
+
         if ( ! $instance['layout'] ) {
             $instance['layout'] = 4;
         }
@@ -116,7 +118,6 @@ class SShop_Widget_Product_Tabs extends SShop_Widget_Base {
 
         echo $args['before_widget'];
         $title = apply_filters( 'widget_title', $title );
-
 
         ?>
         <div class="<?php echo esc_attr( join( ' ', $classes ) ); ?>">
@@ -135,10 +136,12 @@ class SShop_Widget_Product_Tabs extends SShop_Widget_Base {
                                     <li class="show-all"><a data-term-id="<?php echo esc_attr(join($category, ',')); ?>" href="#"><?php esc_html_e('All', 'sshop'); ?></a></li>
                                 <?php } ?>
                                 <?php foreach ($category as $t) {
-                                    $term = get_term($t, $this->tax );
-                                    ?>
-                                    <li><a data-term-id="<?php echo esc_attr($term->term_id); ?>" href="<?php echo get_term_link($term) ?>"><?php echo esc_html($term->name); ?></a></li>
-                                    <?php
+                                    $term = get_term( $t, $this->tax );
+                                    if ( $term ) {
+                                        ?>
+                                        <li><a data-term-id="<?php echo esc_attr($term->term_id); ?>" href="<?php echo get_term_link($term) ?>"><?php echo esc_html($term->name); ?></a></li>
+                                        <?php
+                                    }
                                 } ?>
                                 <li class="subfilter-more">
                                     <a class="a-more" href="#"><?php esc_html_e('More', 'sshop'); ?> <i class="fa fa-angle-down"></i></a>

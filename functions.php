@@ -203,6 +203,11 @@ add_action( 'wp_footer', 'sshop_dequeue_style_footer' );
 require get_template_directory() . '/inc/custom-header.php';
 
 /**
+ * Support Meta box CMB2
+ */
+
+require get_template_directory() . '/inc/config/meta-box.php';
+/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
@@ -251,9 +256,7 @@ require get_template_directory() . '/inc/widgets/widget-product-tabs.php';
 require get_template_directory() . '/inc/widgets/widget-brand-products.php';
 require get_template_directory() . '/inc/widgets/widget-product-categories.php';
 
-
 require get_template_directory() . '/inc/admin.php';
-
 require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
 require get_template_directory() . '/inc/config/plugins.php';
 

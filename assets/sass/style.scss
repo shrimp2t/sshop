@@ -104,7 +104,7 @@ a:focus, a:active, a:hover {
 		a {
 			color: inherit;
 		}
-		@include rem( 'font-size', 40px );
+		@include rem( 'font-size', 28px );
 		@include rem( 'line-height', $header_line_height );
 		@include for-screen( phone-max ) {
 			@include rem( 'font-size', 40px - 20 );
@@ -146,23 +146,26 @@ a:focus, a:active, a:hover {
 		position: relative;
 	}
 
-	&:after {
-		content: "";
-		width: 16px;
-		height: 16px;
-		display: block;
-		border: 1px solid #ededed;
-		border-bottom: 0px none;
-		border-right: 0px none;
-		background: #fff;
-		position: absolute;
-		bottom: -8px;
-		left: 50%;
-		margin-left: -8px;
-		transform: rotate(45deg);
-		z-index: 999;
-		visibility: hidden;
-		@include transition( all .5 ease-in-out );
+	> a {
+		//z-index: 60;
+		&:after {
+			content: "";
+			width: 16px;
+			height: 16px;
+			display: block;
+			border: 1px solid #ededed;
+			border-bottom: 0px none;
+			border-right: 0px none;
+			background: #fff;
+			position: absolute;
+			bottom: -8px;
+			left: 50%;
+			margin-left: -8px;
+			transform: rotate(45deg);
+			z-index: 999;
+			visibility: hidden;
+			@include transition( all .5 ease-in-out );
+		}
 	}
 
 	a {
@@ -205,21 +208,25 @@ a:focus, a:active, a:hover {
 		}
 	}
 	.shop__icon {
-		@include rem( 'font-size', 28px );
+		@include rem( 'font-size', 20px );
 		@include rem( 'line-height', $header_line_height );
 		@include for-screen( phone-max ) {
 			@include rem( 'line-height', $header_line_mobile_height );
-			@include rem( 'font-size', 22px );
+			@include rem( 'font-size', 18px );
 		}
 	}
 	.header-dropdown-inner {
 		padding: 15px;
+		border: 1px solid #ededed;
+		margin-top: 1px;
+		background: #fff;
 	}
 	.header-dropdown {
 
 		display: block;
 		position: absolute;
 		top: 100%;
+		margin-top: -2px;
 		@include for-screen( phone-min ) {
 			right: -15px;
 			width: 300px;
@@ -233,11 +240,10 @@ a:focus, a:active, a:hover {
 			width: 100%;
 		}
 		z-index: 9;
-		background: #fff;
+
 		max-height: 0px;
 		overflow: hidden;
 		text-align: left;
-		border: 1px solid #ededed;
 		@include transition( all .5 ease-in-out );
 		.menu {
 			list-style: none;
@@ -253,8 +259,10 @@ a:focus, a:active, a:hover {
 	}
 	&:hover {
 		&.has-dropdown {
-			&:after {
-				visibility: visible;
+			>a{
+				&:after {
+					visibility: visible;
+				}
 			}
 		}
 

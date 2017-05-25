@@ -134,7 +134,7 @@ function sshop_main_content_title()
         return;
     }
 
-    if ( is_front_page() && is_home() ) {
+    if ( is_front_page() ) {
         // Default show latest post, not-front-page setup
         return ;
     }
@@ -145,6 +145,9 @@ function sshop_main_content_title()
     }
 
     if ( is_page() ) {
+        if ( get_post_meta( get_the_ID(), '_sshop_page_title', true ) == 'hide' ) {
+            return ;
+        }
         sshop_display_main_title( get_the_title( ) );
     }
 
@@ -197,12 +200,7 @@ function sshop_site_brand(){
             <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
             <?php
         endif;
-
-        $description = get_bloginfo( 'description', 'display' );
-        if ( $description || is_customize_preview() ) : ?>
-            <p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-            <?php
-        endif; ?>
+       ?>
     </div><!-- .site-branding -->
     <?php
 }

@@ -59,6 +59,14 @@ jQuery(document).ready( function( $ ) {
         });
     } );
 
+    // When siteorigin page builder added widget
+    $document.on( 'panelsopen', function( e ) {
+        var widget = $(e.target);
+        $( '.list-filters-sortable', widget ).sortable({
+            handle: '.list-item-title'
+        });
+    } );
+
     // When update widget
     $document.on( 'widget-updated', function( e, widget ) {
         $( '.list-filters-sortable', widget ).sortable({

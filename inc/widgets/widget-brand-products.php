@@ -119,6 +119,8 @@ class SShop_Widget_Brand_Products extends SShop_Widget_Base {
             $category = ( array ) $category;
         }
 
+        $category = array_filter( $category );
+
         if ( ! $instance['layout'] ) {
             $instance['layout'] = 3;
         }
@@ -135,6 +137,15 @@ class SShop_Widget_Brand_Products extends SShop_Widget_Base {
 
         echo $args['before_widget'];
 
+        $terms = get_terms( array(
+            'taxonomy' => $this->tax,
+            'include' => empty( $category ) ? null: $category,
+            'orderby' =>  empty( $category ) ? null: 'include',
+        ) );
+
+        $first_term = current( $terms );
+        reset( $terms );
+
         ?>
         <div class="<?php echo esc_attr( join( ' ', $classes ) ); ?>">
             <div class="layout-tabs tabs-layout-wrap" data-number="<?php echo esc_attr( $instance['layout'] ); ?>" data-ajax="<?php echo esc_url(admin_url('admin-ajax.php')); ?>" data-instance="<?php echo esc_attr(json_encode($instance)); ?>">
@@ -145,13 +156,14 @@ class SShop_Widget_Brand_Products extends SShop_Widget_Base {
                             echo $args['before_title'].$title.$args['after_title'];
                         }
                         ?>
-                        <?php if ( count( $category ) > 1 ){ ?>
+                        <?php if ( count( $terms ) > 1 ){ ?>
                             <ul class="nav-tabs-filter">
-                                <?php foreach ($category as $t) {
-                                    $term = get_term($t, $this->tax );
-                                    ?>
-                                    <li><a data-term-id="<?php echo esc_attr($term->term_id); ?>" href="<?php echo get_term_link($term) ?>"><?php echo esc_html($term->name); ?></a></li>
-                                    <?php
+                                <?php foreach ($terms as $term) {
+                                    if ( $term ) {
+                                        ?>
+                                        <li><a data-term-id="<?php echo esc_attr($term->term_id); ?>" href="<?php echo get_term_link($term) ?>"><?php echo esc_html($term->name); ?></a></li>
+                                        <?php
+                                    }
                                 } ?>
                                 <li class="subfilter-more">
                                     <a class="a-more" href="#"><?php esc_html_e('More', 'sshop'); ?> <i class="fa fa-angle-down"></i></a>
@@ -179,15 +191,15 @@ class SShop_Widget_Brand_Products extends SShop_Widget_Base {
                                 $brand = $this->viewing;
                             }
 
-                            $term = get_term( $brand, $this->tax );
+                            if ( ! $brand ) {
+                                $brand = $first_term;
+                            }
+
+                            $term = get_term( $brand , $this->tax );
                             if ( $term && ! is_wp_error( $term  ) ) {
                                 $image_id = get_term_meta( $term->term_id, 'pwb_brand_image', true );
-                                //var_dump( $image_id );
                                 $image = wp_get_attachment_url( $image_id );
-
-
                                 ?>
-
                                 <?php if ( $image ) { ?>
                                     <div class="brand-logo"><img src="<?php echo esc_attr( $image ) ; ?>" alt="<?php echo esc_attr( $term->name ); ?>"></div>
                                 <?php } else { ?>

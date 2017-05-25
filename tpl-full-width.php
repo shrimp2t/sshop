@@ -20,10 +20,11 @@ get_header();
 $has_sidebar = false;
 ?>
 
-	<div id="primary" class="content-area content-page <?php echo  ( $has_sidebar ) ? 'has-sidebar' : 'no-sidebar'; ?>">
+	<div id="primary" class="content-page <?php echo  ( $has_sidebar ) ? 'has-sidebar' : 'no-sidebar'; ?>">
         <?php
         /**
          * @hooked sshop_main_content_title - 10
+         * @see sshop_main_content_title
          */
         do_action( 'sshop_before_main_content' ) ;
         ?>

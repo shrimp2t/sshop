@@ -105,5 +105,11 @@ function sshop_reoder_plugins_menus(){
 
     //remove_submenu_page( 'metaslider', 'metaslider-go-pro' );
 }
-
 add_action( 'admin_menu', 'sshop_reoder_plugins_menus', 100 );
+
+sshop_remove_class_action( 'admin_notices', 'Perfect_Woocommerce_Brands', 'review_notice'  );
+
+/*
+ * Don't show notice
+ */
+add_filter( 'pre_option_wc_pwb_notice_plugin_review', '__return_null' );
