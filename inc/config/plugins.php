@@ -58,7 +58,7 @@ function sshop_register_required_plugins() {
 	 * If the source is NOT from the .org repo, then source is also required.
 	 */
 	$plugins = array(
-        
+
         array(
             'name'      => 'WooCommerce',
             'slug'      => 'woocommerce',

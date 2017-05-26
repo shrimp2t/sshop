@@ -30,7 +30,7 @@ class SShop_Custom_Meta_Box {
     public function add_metabox() {
         add_meta_box(
             'sshop_page_settings',
-            esc_html__( 'Page Settings', 'textdomain' ),
+            esc_html__( 'Page Settings', 'sshop' ),
             array( $this, 'render_metabox' ),
             'page',
             'side',
@@ -52,7 +52,7 @@ class SShop_Custom_Meta_Box {
             'show' => esc_html__( 'Show', 'sshop' ),
         );
         ?>
-        <p class="post-attributes-label-wrapper"><label class="post-attributes-label" for="_sshop_page_title"><?php esc_html_e( 'Show page title' ) ?></label></p>
+        <p class="post-attributes-label-wrapper"><label class="post-attributes-label" for="_sshop_page_title"><?php esc_html_e( 'Show page title', 'sshop' ); ?></label></p>
         <select name="_sshop_page_title" id="_sshop_page_title">
             <?php foreach ( $show_options as $k => $v ) { ?>
                 <option <?php selected( get_post_meta( $post->ID, '_sshop_page_title', true ), $k ); ?> value="<?php echo esc_attr( $k ); ?>"><?php echo $v; ?></option>
