@@ -58,13 +58,7 @@ function sshop_register_required_plugins() {
 	 * If the source is NOT from the .org repo, then source is also required.
 	 */
 	$plugins = array(
-
-        array(
-            'name'      => 'Slide Anything',
-            'slug'      => 'slide-anything',
-            'required'  => false,
-        ),
-
+        
         array(
             'name'      => 'WooCommerce',
             'slug'      => 'woocommerce',
@@ -74,12 +68,6 @@ function sshop_register_required_plugins() {
         array(
             'name'      => 'Perfect WooCommerce Brands',
             'slug'      => 'perfect-woocommerce-brands',
-            'required'  => false,
-        ),
-
-        array(
-            'name'      => 'CMB2',
-            'slug'      => 'cmb2',
             'required'  => false,
         ),
 
@@ -100,6 +88,12 @@ function sshop_register_required_plugins() {
 			'slug'      => 'mailchimp-for-wp',
 			'required'  => false,
 		),
+
+        array(
+            'name'      => 'Slide Anything',
+            'slug'      => 'slide-anything',
+            'required'  => false,
+        ),
 
 	);
 

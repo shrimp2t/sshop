@@ -41,7 +41,7 @@ class SShop_Widget_Product_Tabs extends SShop_Widget_Base {
             array(
                 'type' =>'select',
                 'name' => 'layout',
-                'default' => '3',
+                'default' => '4',
                 'label' => esc_html__( 'Number products visible', 'sshop' ),
                 'options' => array(
                     '2'   => 2,

@@ -55,6 +55,7 @@ class SShop_Widget_Slider extends WP_Widget {
             <?php
             echo $args['after_widget'];
         }
+
     }
 
     /**
@@ -64,7 +65,6 @@ class SShop_Widget_Slider extends WP_Widget {
      */
     public function form( $instance ) {
         // outputs the options form on admin
-        // sa_slider
 
         $sliders = get_posts( array(
             'post_type' => 'sa_slider',

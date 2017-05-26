@@ -26,6 +26,14 @@ function sshop_body_classes( $classes ) {
 
     $classes[] = 'woocommerce';
 
+    if ( is_page() ) {
+        global $post;
+        $m = get_post_meta( $post->ID, '_sshop_page_margin', true );
+        if ( $m == 'no' ) {
+            $classes[] = 'page-no-margin';
+        }
+    }
+
 	return $classes;
 }
 add_filter( 'body_class', 'sshop_body_classes' );

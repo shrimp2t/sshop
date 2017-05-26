@@ -32,7 +32,7 @@ class SShop_Widget_Services extends WP_Widget {
             $id_title = 'service_' . $i . '_title';
             $id_tagline = 'service_' . $i . '_tagline';
             $id_icon = 'service_' . $i . '_icon';
-            $id_link = 'service_' . $i . '_icon';
+            $id_link = 'service_' . $i . '_link';
 
             if (!isset($instance[$id_title])) {
                 $instance[$id_title] = '';
@@ -124,7 +124,7 @@ class SShop_Widget_Services extends WP_Widget {
             $id_title = 'service_'.$i.'_title';
             $id_tagline = 'service_'.$i.'_tagline';
             $id_icon = 'service_'.$i.'_icon';
-            $id_link = 'service_'.$i.'_icon';
+            $id_link = 'service_'.$i.'_link';
 
             if ( ! isset( $instance[ $id_title ] ) ) {
                 $instance[ $id_title ] = '';
@@ -178,7 +178,7 @@ class SShop_Widget_Services extends WP_Widget {
             $id_title = 'service_' . $i . '_title';
             $id_tagline = 'service_' . $i . '_tagline';
             $id_icon = 'service_' . $i . '_icon';
-            $id_link = 'service_' . $i . '_icon';
+            $id_link = 'service_' . $i . '_link';
 
             $new_instance[$id_title]    = wp_kses_post( $new_instance[ $id_title ] );
             $new_instance[$id_tagline]  = wp_kses_post( $new_instance[ $id_tagline ] );

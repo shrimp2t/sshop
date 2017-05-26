@@ -20,7 +20,7 @@ get_header();
 $has_sidebar = false;
 ?>
 
-	<div id="primary" class="content-page <?php echo  ( $has_sidebar ) ? 'has-sidebar' : 'no-sidebar'; ?>">
+	<div id="primary" class="content-area front-page <?php echo  ( $has_sidebar ) ? 'has-sidebar' : 'no-sidebar'; ?>">
         <?php
         /**
          * @hooked sshop_main_content_title - 10
@@ -28,21 +28,17 @@ $has_sidebar = false;
          */
         do_action( 'sshop_before_main_content' ) ;
         ?>
-		<main id="main" class="site-main" role="main">
-			<?php
-			while ( have_posts() ) : the_post();
+        <?php
+        while ( have_posts() ) : the_post();
 
-				get_template_part( 'template-parts/content', 'page' );
+            get_template_part( 'template-parts/content', 'page' );
+            // If comments are open or we have at least one comment, load up the comment template.
+            if ( comments_open() || get_comments_number() ) :
+                comments_template();
+            endif;
 
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
-
-			endwhile; // End of the loop.
-			?>
-
-		</main><!-- #main -->
+        endwhile; // End of the loop.
+        ?>
         <?php do_action( 'sshop_after_main_content' ); ?>
 	</div><!-- #primary -->
 
