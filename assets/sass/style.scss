@@ -1324,6 +1324,9 @@ a:focus, a:active, a:hover {
 
 
 /* Comment */
+#comments {
+	margin-top: 30px;
+}
 .comment-list {
 	padding: 0px;
 	li {
@@ -1339,62 +1342,103 @@ a:focus, a:active, a:hover {
 			}
 		}
 		&.comment {
-			padding-left: 100px;
-			min-height: 150px;
 			display: block;
+			border: 1px solid #ededed;
+			&.parent.depth-1 {
+				border-left-width: 2px;
+			}
+			margin-bottom: 15px;
 			#respond {
 				margin-top: 15px;
 			}
 			&.depth-2 {
-				//padding-left: 0px;
-				.children {
-					padding-left: 0px;
-				}
-				.comment {
-					padding-left: 0px;
-				}
+
 			}
 
 			&.depth-3 {
-				.comment-meta {
-					left: -100px;
-				}
+
 			}
 			.children {
+				li {
+					border: 0px none;
+				}
 				margin-left: 0px;
 				margin-top: 15px;
+				margin-left: 50px;
+				padding-left: 10px;
+				border-left: 2px solid #ededed;
+				.comment-body {
+					margin-left: -1px;
+					border: 0px none;
+					//padding-top: 0px;
+					//border-bottom: 1px solid #ededed;
+				}
 			}
 		}
-		.fn {
-			font-size: 14px;
-		}
-		.comment-date {
-			font-size: 12px;
-			line-height: 16px;
-		}
-		.avatar {
-			display: block;
-			margin-bottom: 5px;
-		}
+
 		.comment-meta {
-			width: 80px;
-			position: absolute;
-			top: 0px;
-			left: 0px;
-			text-align: center;
 			display: block;
-			float: left;
+			//float: left;
+			width: 100%;
 			color: $text;
 			a {
 				color: inherit;
 			}
+			.avatar {
+				display: block;
+				float: left;
+				width: 50px;
+				height: auto;
+				margin-right: 15px;
+			}
+			.commentmetadata {
+				padding-top: 0px;
+				display: block;
+				a {
+					display: block;
+				}
+			}
+
+			.comment-date {
+				display: inline-block;
+				font-style: italic;
+				color: #666;
+			}
+			.fn {
+				font-weight: bold;
+			}
+			@include clearfixAfter();
+			border-bottom: 1px solid #ededed;
+			padding-bottom: 10px;
+
+		}
+		.comment-body {
+			padding: 10px;
+			margin-bottom: 0px;
+		}
+
+		.comment-text {
+			padding-top: 15px;
+		}
+
+		&.parent {
+			.comment-text {
+				border-bottom: 1px solid #ededed;
+			}
+		}
+		.reply {
+			margin-bottom: 10px;
+			a {
+				color: $text;
+			}
 		}
 		.comment-content {
-			background: #f5f5f5;
-			padding: 15px;
-			min-height: 130px;
 			display: block;
 		}
+
+
+
+
 	}
 	ul, ol {
 		padding-left: 0px;

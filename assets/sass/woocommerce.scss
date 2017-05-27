@@ -755,3 +755,23 @@
 .woocommerce table.wishlist_table {
 	font-size: 100%;
 }
+
+/* Review */
+#reviews {
+	#comments {
+		margin-top: 0px;
+	}
+}
+.woocommerce #reviews #comments ol.commentlist {
+		padding-left: 0px;
+		li img.avatar {
+			width:  50px;
+			height: auto;
+			padding: 0px;
+			background: 0px;
+		}
+		li .comment-text {
+			margin-left: 60px;
+			border-radius: 0px;
+		}
+}

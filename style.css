@@ -3477,6 +3477,10 @@ a:focus, a:active, a:hover {
 }
 
 /* Comment */
+#comments {
+	margin-top: 30px;
+}
+
 .comment-list {
 	padding: 0px;
 }
@@ -3495,65 +3499,103 @@ a:focus, a:active, a:hover {
 }
 
 .comment-list li.comment {
-	padding-left: 100px;
-	min-height: 150px;
 	display: block;
+	border: 1px solid #ededed;
+	margin-bottom: 15px;
+}
+
+.comment-list li.comment.parent.depth-1 {
+	border-left-width: 2px;
 }
 
 .comment-list li.comment #respond {
 	margin-top: 15px;
 }
 
-.comment-list li.comment.depth-2 .children {
-	padding-left: 0px;
-}
-
-.comment-list li.comment.depth-2 .comment {
-	padding-left: 0px;
-}
-
-.comment-list li.comment.depth-3 .comment-meta {
-	left: -100px;
-}
-
 .comment-list li.comment .children {
 	margin-left: 0px;
 	margin-top: 15px;
+	margin-left: 50px;
+	padding-left: 10px;
+	border-left: 2px solid #ededed;
 }
 
-.comment-list li .fn {
-	font-size: 14px;
+.comment-list li.comment .children li {
+	border: 0px none;
 }
 
-.comment-list li .comment-date {
-	font-size: 12px;
-	line-height: 16px;
-}
-
-.comment-list li .avatar {
-	display: block;
-	margin-bottom: 5px;
+.comment-list li.comment .children .comment-body {
+	margin-left: -1px;
+	border: 0px none;
 }
 
 .comment-list li .comment-meta {
-	width: 80px;
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	text-align: center;
 	display: block;
-	float: left;
+	width: 100%;
 	color: #595959;
+	border-bottom: 1px solid #ededed;
+	padding-bottom: 10px;
 }
 
 .comment-list li .comment-meta a {
 	color: inherit;
 }
 
+.comment-list li .comment-meta .avatar {
+	display: block;
+	float: left;
+	width: 50px;
+	height: auto;
+	margin-right: 15px;
+}
+
+.comment-list li .comment-meta .commentmetadata {
+	padding-top: 0px;
+	display: block;
+}
+
+.comment-list li .comment-meta .commentmetadata a {
+	display: block;
+}
+
+.comment-list li .comment-meta .comment-date {
+	display: inline-block;
+	font-style: italic;
+	color: #666;
+}
+
+.comment-list li .comment-meta .fn {
+	font-weight: bold;
+}
+
+.comment-list li .comment-meta::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.comment-list li .comment-body {
+	padding: 10px;
+	margin-bottom: 0px;
+}
+
+.comment-list li .comment-text {
+	padding-top: 15px;
+}
+
+.comment-list li.parent .comment-text {
+	border-bottom: 1px solid #ededed;
+}
+
+.comment-list li .reply {
+	margin-bottom: 10px;
+}
+
+.comment-list li .reply a {
+	color: #595959;
+}
+
 .comment-list li .comment-content {
-	background: #f5f5f5;
-	padding: 15px;
-	min-height: 130px;
 	display: block;
 }
 

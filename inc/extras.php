@@ -84,30 +84,39 @@ if ( ! function_exists( 'sshop_comment' ) ) {
         ?>
         <<?php echo esc_attr( $tag ); ?> <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ) ?> id="comment-<?php comment_ID() ?>">
         <div class="comment-body">
-        <div class="comment-meta commentmetadata">
+
+        <div class="comment-meta">
             <div class="comment-author vcard">
                 <?php echo get_avatar( $comment, $args['avatar_size'] ); ?>
-                <?php printf( wp_kses_post( '<cite class="fn">%s</cite>', 'sshop' ), get_comment_author_link() ); ?>
+                <div class="commentmetadata">
+                    <?php printf( wp_kses_post( '<cite class="fn">%s</cite>', 'sshop' ), get_comment_author_link() ); ?>
+                    <a class="comment-date" href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time pubdate datetime="<?php comment_time( 'c' ); ?>">
+                            <?php
+                            /* translators: 1: date, 2: time */
+                            printf( __( '%1$s at %2$s', 'sshop' ), get_comment_date(), get_comment_time() ); ?>
+                        </time>
+                    </a>
+                </div>
             </div>
-            <?php if ( '0' == $comment->comment_approved ) : ?>
-                <em class="comment-awaiting-moderation"><?php esc_attr_e( 'Your comment is awaiting moderation.', 'sshop' ); ?></em>
-                <br />
-            <?php endif; ?>
 
-            <a href="<?php echo esc_url( htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ); ?>" class="comment-date">
-                <?php echo '<time datetime="' . get_comment_date( 'c' ) . '">' . get_comment_date() . '</time>'; ?>
-            </a>
         </div>
+
+        <?php if ( '0' == $comment->comment_approved ) : ?>
+            <em class="comment-awaiting-moderation"><?php esc_attr_e( 'Your comment is awaiting moderation.', 'sshop' ); ?></em>
+            <br />
+        <?php endif; ?>
+
         <?php if ( 'div' != $args['style'] ) : ?>
         <div id="div-comment-<?php comment_ID() ?>" class="comment-content">
     <?php endif; ?>
         <div class="comment-text">
             <?php comment_text(); ?>
+            <div class="reply">
+                <?php comment_reply_link( array_merge( $args, array( 'add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth'], 'after' => ' <i class="fa fa-reply"></i>' ) ) ); ?>
+                <?php edit_comment_link( __( 'Edit', 'sshop' ), '  ', '' ); ?>
+            </div>
         </div>
-        <div class="reply">
-            <?php comment_reply_link( array_merge( $args, array( 'add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-            <?php edit_comment_link( __( 'Edit', 'sshop' ), '  ', '' ); ?>
-        </div>
+
         </div>
         <?php if ( 'div' != $args['style'] ) : ?>
             </div>
