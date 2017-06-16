@@ -35,6 +35,13 @@ class SShop_Widget_Product_Categories extends SShop_Widget_Base {
             ),
 
             array(
+                'type' =>'checkbox',
+                'name' => 'show_desc',
+                'default' => '1',
+                'label' => esc_html__( 'Show category description', 'sshop' ),
+            ),
+
+            array(
                 'type' =>'text',
                 'name' => 'columns',
                 'default' => 4,
@@ -92,6 +99,11 @@ class SShop_Widget_Product_Categories extends SShop_Widget_Base {
                 <li class="eq-col top-lv-1">
                     <span class="top-p-cat" <?php echo ( $image ) ? ' style="background-image: url('.esc_url( $image ).')"' : ''; ?>>
                         <span class="cat-name"><?php echo esc_html( $t->name ); ?></span>
+                        <?php if ( isset( $instance['show_desc'] ) && $instance['show_desc'] ) {
+                            echo '<div class="cat-desc">';
+                            echo do_shortcode( $t->description );
+                            echo '</div>';
+                        } ?>
                         <a class="cat-link btn btn-secondary btn-sm" href="<?php echo get_term_link( $t ); ?>"><?php esc_html_e( 'Shop now', 'sshop' ); ?></a>
                     </span>
                 </li>

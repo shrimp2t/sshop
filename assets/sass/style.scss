@@ -1055,6 +1055,12 @@ a:focus, a:active, a:hover {
 			margin-left: 5px;
 		}
 	}
+	.cat-desc {
+		margin-bottom: 15px;
+		display: block;
+		font-style: italic;
+		@include rem( font-size, 14px );
+	}
 	.top-p-cat {
 		display: block;
 		background-color: #fff;

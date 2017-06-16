@@ -3153,6 +3153,14 @@ a:focus, a:active, a:hover {
 	margin-left: 5px;
 }
 
+.widget-shop-categories .cat-desc {
+	margin-bottom: 15px;
+	display: block;
+	font-style: italic;
+	font-size: 14px;
+	font-size: 0.875rem;
+}
+
 .widget-shop-categories .top-p-cat {
 	display: block;
 	background-color: #fff;
