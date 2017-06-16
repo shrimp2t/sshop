@@ -1,19 +1,21 @@
 === sshop ===
 
-Contributors: automattic
-Tags: translation-ready, custom-background, theme-options, custom-menu, post-formats, threaded-comments
+Contributors: shrimp2t
+Tags: translation-ready, custom-background, theme-options, custom-menu, threaded-comments
 
 Requires at least: 4.0
-Tested up to: 4.7
+Tested up to: 4.8
 Stable tag: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
-A starter theme called sshop, or underscores.
+=== OnePress ===
+
+OnePress Theme, Copyright 2017 FameThemes
+OnePress is distributed under the terms of the GNU GPL
 
 == Description ==
-
-Hi. I'm a starter theme called sshop, or underscores, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+SShop is the best free WooCommerce theme. It features a bespoke integration with WooCommerce itself plus many widgets like Sales countdown, Product tabs, Blog posts, Services, Sliders. SShop is responsive mobile optimized and using bootstrap framework and FontAwesome icons. There are several layout & color options to personalise your shop, multiple widget regions, a responsive design and much more. Developers will love it's lean and extensible codebase making it a joy to customise and extend. Looking for a WooCommerce theme? Look no further!
 
 == Installation ==
 
@@ -21,18 +23,17 @@ Hi. I'm a starter theme called sshop, or underscores, if you like. I'm a theme m
 2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
 
-== Frequently Asked Questions ==
-
-= Does this theme support any plugins? =
-
-sshop includes support for Infinite Scroll in Jetpack.
-
-== Changelog ==
-
-= 1.0 - May 12 2015 =
-* Initial release
 
 == Credits ==
 
-* Based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
-* normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
+- jQuery Countdown - The MIT License (MIT)
+	http://hilios.github.io/jQuery.countdown/
+	License: https://github.com/hilios/jQuery.countdown/blob/master/LICENSE.md
+
+- Slick - The MIT License (MIT)
+	http://github.com/kenwheeler/slick
+	License: https://github.com/kenwheeler/slick/blob/master/LICENSE
+
+- Based on Underscores
+	Based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+	normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
