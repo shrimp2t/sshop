@@ -64,20 +64,20 @@ class SShop_Widget_Products extends SShop_Widget_Base {
 
             array(
                 'type' =>'select',
-                'name' => 'order',
+                'name' => 'orderby',
                 'options' => array(
                     'date'   => esc_html__( 'Date', 'sshop' ),
                     'price'  => esc_html__( 'Price', 'sshop' ),
                     'rand'   => esc_html__( 'Random', 'sshop' ),
                     'sales'  => esc_html__( 'Sales', 'sshop' ),
                 ),
-                'label' => esc_html__( 'Order', 'sshop' ),
+                'label' => esc_html__( 'Order by', 'sshop' ),
             ),
 
             array(
-                'type' =>'orderby',
-                'name' => 'orderby',
-                'label' => esc_html__( 'Order by', 'sshop' ),
+                'type' =>'order',
+                'name' => 'order',
+                'label' => esc_html__( 'Order', 'sshop' ),
             ),
 
         );
