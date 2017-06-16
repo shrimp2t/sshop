@@ -427,8 +427,9 @@
 	margin-top: 0px;
 	background: #F36F36;
 	color: #fff;
-	border-radius: 0px;
-	padding: 15px;
+	border-radius: 3px;
+	line-height: 28px;
+	line-height: 1.75rem;
 }
 
 .woocommerce #page .product .add-cart-wrap .added_to_cart.wc-forward, .woocommerce #page li.product .add-cart-wrap .added_to_cart.wc-forward, .woocommerce #page div.product .add-cart-wrap .added_to_cart.wc-forward {

@@ -2,6 +2,13 @@
 /*--------------------------------------------------------------
 # Admin input
 --------------------------------------------------------------*/
+
+.widgets-holder-wrap .widget .custom-css-build-in{
+    display: none;
+}
+.widgets-holder-wrap #sidebar-home .widget .custom-css-build-in{
+    display: block;
+}
 .w-admin-input-wrap::after {
     clear: both;
     content: "";

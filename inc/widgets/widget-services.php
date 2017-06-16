@@ -22,6 +22,8 @@ class SShop_Widget_Services extends WP_Widget {
     public function widget( $args, $instance ) {
         // outputs the content of the widget
 
+        //var_dump( $args );
+
         echo $args['before_widget'];
 
         $instance = wp_parse_args( $instance, $this->default_data() );

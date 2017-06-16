@@ -121,6 +121,16 @@ class SShop_Widget_Brand_Products extends SShop_Widget_Base {
 
         $category = array_filter( $category );
 
+        $terms = get_terms( array(
+            'taxonomy' => $this->tax,
+            'include' => empty( $category ) ? null: $category,
+            'orderby' =>  empty( $category ) ? null: 'include',
+        ) );
+
+        if ( empty( $terms ) ) {
+            return ;
+        }
+
         if ( ! $instance['layout'] ) {
             $instance['layout'] = 3;
         }
@@ -137,11 +147,7 @@ class SShop_Widget_Brand_Products extends SShop_Widget_Base {
 
         echo $args['before_widget'];
 
-        $terms = get_terms( array(
-            'taxonomy' => $this->tax,
-            'include' => empty( $category ) ? null: $category,
-            'orderby' =>  empty( $category ) ? null: 'include',
-        ) );
+
 
         $first_term = current( $terms );
         reset( $terms );

@@ -70,7 +70,22 @@ class SShop_Widget_Classes{
             'css_classes' => '',
             'css_id' => ''
         ) );
+
+        $build_in_style = apply_filters( 'sshop_widget_build_in_style', array(
+            'none' => esc_html__( 'Default', 'sshop' ),
+            'white-bg' => esc_html__( 'White Background', 'sshop' ),
+        ) );
         ?>
+        <?php if ( ! empty( $build_in_style ) && is_array( $build_in_style ) ) { ?>
+        <p class="custom-css-build-in">
+            <label for="<?php echo $widget->get_field_id( 'css_style' ); ?>"><?php esc_html_e( 'Widget Style:', 'sshop' ); ?></label><br/>
+            <select id="<?php echo $widget->get_field_id( 'css_style' ); ?>" name="<?php echo $widget->get_field_name( 'css_style' ); ?>">
+                <?php foreach ( $build_in_style as $k => $v ) { ?>
+                <option <?php selected( $k, 'white-bg' ); ?> value="<?php echo esc_attr( $k ); ?>"><?php echo $v; ?></option>
+                <?php } ?>
+            </select>
+        </p>
+        <?php } ?>
         <p class="custom-css-classes">
             <label for="<?php echo $widget->get_field_id( 'css_classes' ); ?>"><?php esc_html_e( 'CSS Classes:', 'sshop' ); ?></label><br/>
             <input class="widefat" type="text" id="<?php echo $widget->get_field_id( 'css_classes' ); ?>" value="<?php echo esc_attr( $instance['css_classes'] ); ?>" name="<?php echo $widget->get_field_name( 'css_classes' ); ?>" />
@@ -86,6 +101,12 @@ class SShop_Widget_Classes{
         if ( is_admin() ) {
 
         }
+
+        /*
+        if ( $params['id'] != 'sidebar-home' ) {
+            return $params;
+        }
+        */
 
         global $wp_registered_widgets, $wp_registered_sidebars , $widget_number;
 

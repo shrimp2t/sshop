@@ -29,14 +29,14 @@ class SShop_Widget_Products extends SShop_Widget_Base {
             array(
                 'type' =>'text',
                 'name' => 'number',
-                'default' => 5,
+                'default' => 4,
                 'label' => esc_html__( 'No. of products', 'sshop' ),
             ),
 
             array(
                 'type' =>'text',
                 'name' => 'layout',
-                'default' => 5,
+                'default' => 4,
                 'label' => esc_html__( 'Items per row', 'sshop' ),
             ),
 

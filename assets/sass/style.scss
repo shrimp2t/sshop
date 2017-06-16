@@ -781,6 +781,7 @@ a:focus, a:active, a:hover {
 .layout-tabs {
 	$tab_heading_width: 250px;
 	background: #fff;
+	//border: 1px solid $border;
 	&.loading {
 		overflow: hidden;
 		display: block;
@@ -818,7 +819,7 @@ a:focus, a:active, a:hover {
 	}
 	.filter-inside {
 		@include clearfixAfter();
-		border-bottom: 2px solid $primary;
+		border-bottom: 1px solid $border;
 		position: relative;
 	}
 	.tab-item-actions {

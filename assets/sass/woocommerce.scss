@@ -161,10 +161,6 @@
 	.cart-collaterals {
 		@include clearfix();
 		width: 100%;
-
-
-
-
 	}
 
 
@@ -393,8 +389,8 @@
 					margin-top: 0px;
 					background: $primary;
 					color: #fff;
-					border-radius: 0px;
-					padding: 15px;
+					border-radius: 3px;
+					@include rem( 'line-height', 28px );
 				}
 				.added_to_cart.wc-forward {
 					display: block;
