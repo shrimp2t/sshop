@@ -104,7 +104,7 @@ class SShop_Widget_Product_Categories extends SShop_Widget_Base {
                             echo do_shortcode( $t->description );
                             echo '</div>';
                         } ?>
-                        <a class="cat-link btn btn-secondary btn-sm" href="<?php echo get_term_link( $t ); ?>"><?php esc_html_e( 'Shop now', 'sshop' ); ?></a>
+                        <a class="cat-link" href="<?php echo get_term_link( $t ); ?>"><?php esc_html_e( 'Shop now', 'sshop' ); ?></a>
                     </span>
                 </li>
             <?php } ?>

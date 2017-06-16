@@ -625,7 +625,7 @@ a:focus, a:active, a:hover {
 				position: relative;
 				a {
 					@include rem( 'line-height', 30px );
-					padding: 5px 15px;
+					padding: 10px 15px;
 					display: block;
 					border-bottom: 1px solid #ededed;
 				}
@@ -1049,11 +1049,12 @@ a:focus, a:active, a:hover {
 	.cat-link {
 		font-weight: normal;
 		color: $text;
-		&::after{
-			@include font-icon( '"\\f105"' );
-			font-size: 80%;
-			margin-left: 5px;
-		}
+		text-transform: uppercase;
+		@include rem( font-size, 12px );
+		border-bottom: 2px solid $border;
+		padding: 5px 0px;
+		display: inline-block;
+		margin-bottom: 10px;
 	}
 	.cat-desc {
 		margin-bottom: 15px;
