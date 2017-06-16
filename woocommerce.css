@@ -16,6 +16,27 @@
 	 */
 }
 
+@media screen and (max-width: 940px) {
+	.woocommerce #div.product div.images,
+	.woocommerce #content div.product div.images,
+	.woocommerce div.product div.images,
+	.woocommerce #content div.product div.images,
+	.woocommerce div.product div.summary,
+	.woocommerce #content div.product div.summary,
+	.woocommerce div.product div.summary,
+	.woocommerce #content div.product div.summary, .woocommerce-page #div.product div.images,
+	.woocommerce-page #content div.product div.images,
+	.woocommerce-page div.product div.images,
+	.woocommerce-page #content div.product div.images,
+	.woocommerce-page div.product div.summary,
+	.woocommerce-page #content div.product div.summary,
+	.woocommerce-page div.product div.summary,
+	.woocommerce-page #content div.product div.summary {
+		width: 100% !important;
+		float: none !important;
+	}
+}
+
 .woocommerce.woocommerce-wishlist .page-title, .woocommerce.woocommerce-checkout .page-title, .woocommerce.woocommerce-cart .page-title, .woocommerce-page.woocommerce-wishlist .page-title, .woocommerce-page.woocommerce-checkout .page-title, .woocommerce-page.woocommerce-cart .page-title {
 	text-align: center;
 }

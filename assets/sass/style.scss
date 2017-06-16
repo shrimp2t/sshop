@@ -1510,7 +1510,7 @@ a:focus, a:active, a:hover {
 	.widget {
 		margin-bottom: 0px;
 		@include for-screen( phone-max ) {
-			width: 50%;
+			width: 100%;
 		}
 		.widget-title {
 			@include rem( font-size, 16px );

@@ -177,6 +177,7 @@ function sshop_scripts() {
 	}
 
     if ( class_exists( 'WooCommerce' ) ) {
+		wp_dequeue_style( 'woocommerce-smallscreen' );
         wp_enqueue_script( 'jquery-countdown', get_template_directory_uri() . '/assets/js/jquery.countdown.js', array( 'jquery' ), '20151215', true );
         wp_enqueue_script( 'sshop-woocommerce', get_template_directory_uri() . '/assets/js/wc.js', array( 'jquery' ), '20151215', true );
         wp_enqueue_style( 'woocommerce-layout', get_template_directory_uri().'/woocommerce.css'  );
@@ -259,4 +260,3 @@ require get_template_directory() . '/inc/widgets/widget-product-categories.php';
 require get_template_directory() . '/inc/admin.php';
 require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
 require get_template_directory() . '/inc/config/plugins.php';
-

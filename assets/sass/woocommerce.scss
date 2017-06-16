@@ -7,6 +7,22 @@
  */
 .woocommerce, .woocommerce-page {
 
+	#div.product div.images,
+	#content div.product div.images,
+	div.product div.images,
+	#content div.product div.images,
+
+	div.product div.summary,
+	#content div.product div.summary,
+	div.product div.summary,
+	#content div.product div.summary
+	 {
+		@include for-screen( tablet-max ) {
+			width: 100% !important;
+			float: none !important;
+		}
+	}
+
 	// pages
 	&.woocommerce-wishlist,
 	&.woocommerce-checkout,

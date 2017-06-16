@@ -3677,7 +3677,7 @@ a:focus, a:active, a:hover {
 
 @media screen and (max-width: 720px) {
 	.footer-widgets .widget {
-		width: 50%;
+		width: 100%;
 	}
 }
 
