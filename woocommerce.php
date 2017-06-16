@@ -24,6 +24,7 @@ $sshop_shop_layout_colums = apply_filters( 'sshop_shop_layout_colums', 4, $has_s
             <h1 class="page-title"><?php woocommerce_page_title(); ?></h1>
         <?php endif; ?>
         <?php
+
         /**
          * woocommerce_before_main_content hook.
          *
@@ -31,6 +32,10 @@ $sshop_shop_layout_colums = apply_filters( 'sshop_shop_layout_colums', 4, $has_s
          * @hooked WC_Structured_Data::generate_website_data() - 30
          */
         do_action( 'woocommerce_before_main_content' );
+
+        if ( ! is_singular( 'product' ) ) {
+            do_action('woocommerce_archive_description');
+        }
         ?>
 		<main id="main" class="site-main" role="main">
 			<?php

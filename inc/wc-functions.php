@@ -94,8 +94,6 @@ if ( ! function_exists( 'woocommerce_content' ) ) {
 
         } else { ?>
 
-            <?php do_action( 'woocommerce_archive_description' ); ?>
-
             <?php if ( have_posts() ) : ?>
 
                 <?php do_action( 'woocommerce_before_shop_loop' ); ?>
