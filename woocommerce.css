@@ -21,7 +21,13 @@
 }
 
 .woocommerce.woocommerce-wishlist .site-content, .woocommerce.woocommerce-checkout .site-content, .woocommerce.woocommerce-cart .site-content, .woocommerce-page.woocommerce-wishlist .site-content, .woocommerce-page.woocommerce-checkout .site-content, .woocommerce-page.woocommerce-cart .site-content {
-	max-width: 740px;
+	max-width: 860px;
+}
+
+@media screen and (min-width: 940px) {
+	.woocommerce.woocommerce-wishlist .site-content .site-main, .woocommerce.woocommerce-checkout .site-content .site-main, .woocommerce.woocommerce-cart .site-content .site-main, .woocommerce-page.woocommerce-wishlist .site-content .site-main, .woocommerce-page.woocommerce-checkout .site-content .site-main, .woocommerce-page.woocommerce-cart .site-content .site-main {
+		padding: 45px;
+	}
 }
 
 .woocommerce.woocommerce-account .page-title, .woocommerce-page.woocommerce-account .page-title {
@@ -780,6 +786,7 @@
 .woocommerce button.button.alt,
 .woocommerce input.button.alt {
 	background-color: #F36F36;
+	margin-bottom: 0px;
 }
 
 .woocommerce #respond input#submit.alt:hover,

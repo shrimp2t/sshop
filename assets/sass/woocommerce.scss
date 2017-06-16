@@ -15,7 +15,12 @@
 			text-align: center;
 		}
 		.site-content {
-			max-width: 740px;
+			max-width: 860px;
+			@include for-screen( tablet-min ) {
+				.site-main {
+					padding: 45px;
+				}
+			}
 		}
 	}
 
@@ -704,6 +709,7 @@
 	button.button.alt,
 	input.button.alt {
 		background-color: $primary;
+		margin-bottom: 0px;
 		&:hover {
 			background-color: $primary_hover;
 		}
