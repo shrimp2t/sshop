@@ -68,9 +68,11 @@ class SShop_Widget_Classes{
     function add_settings( $widget, $return, $instance ){
         $instance = wp_parse_args( $instance, array(
             'css_classes' => '',
+            'css_style' => '',
             'css_id' => ''
         ) );
 
+        /*
         $build_in_style = apply_filters( 'sshop_widget_build_in_style', array(
             'none' => esc_html__( 'Default', 'sshop' ),
             'white-bg' => esc_html__( 'White Background', 'sshop' ),
@@ -81,11 +83,13 @@ class SShop_Widget_Classes{
             <label for="<?php echo $widget->get_field_id( 'css_style' ); ?>"><?php esc_html_e( 'Widget Style:', 'sshop' ); ?></label><br/>
             <select id="<?php echo $widget->get_field_id( 'css_style' ); ?>" name="<?php echo $widget->get_field_name( 'css_style' ); ?>">
                 <?php foreach ( $build_in_style as $k => $v ) { ?>
-                <option <?php selected( $k, 'white-bg' ); ?> value="<?php echo esc_attr( $k ); ?>"><?php echo $v; ?></option>
+                <option <?php selected( $instance['css_style'], 'white-bg' ); ?> value="<?php echo esc_attr( $k ); ?>"><?php echo $v; ?></option>
                 <?php } ?>
             </select>
         </p>
-        <?php } ?>
+        <?php }
+        */
+        ?>
         <p class="custom-css-classes">
             <label for="<?php echo $widget->get_field_id( 'css_classes' ); ?>"><?php esc_html_e( 'CSS Classes:', 'sshop' ); ?></label><br/>
             <input class="widefat" type="text" id="<?php echo $widget->get_field_id( 'css_classes' ); ?>" value="<?php echo esc_attr( $instance['css_classes'] ); ?>" name="<?php echo $widget->get_field_name( 'css_classes' ); ?>" />
@@ -140,6 +144,14 @@ class SShop_Widget_Classes{
         }
 
         $classes = array();
+
+        if ( isset( $settings['css_style'] ) ) {
+            $d = sanitize_text_field( $settings['css_style'] );
+            if ( $d ) {
+                $classes[] = $d;
+            }
+        }
+
         if ( isset( $widget_obj['classname'] ) ) {
             $classes[] = $widget_obj['classname'];
         }
@@ -148,6 +160,7 @@ class SShop_Widget_Classes{
         if ( $_custom_class ) {
             $classes[] = $_custom_class;
         }
+
 
         $classes = join( ' ', $classes );
         $params[0]['before_widget'] = sprintf( $sidebar['before_widget'], $_id, $classes );

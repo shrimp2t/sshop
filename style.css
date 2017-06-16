@@ -2804,8 +2804,19 @@ a:focus, a:active, a:hover {
 /* Grid Products */
 .grid-products {
 	background: #fff;
-	padding-left: 5px;
-	padding-right: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.grid-products.style-no-bg {
+	background: none;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.grid-products.style-no-bg .products {
+	margin-left: -10px;
+	margin-right: -10px;
 }
 
 /* Blog Widget */

@@ -27,6 +27,17 @@ class SShop_Widget_Products extends SShop_Widget_Base {
             ),
 
             array(
+                'type' =>'select',
+                'name' => 'style',
+                'default' => 'default',
+                'options' => array(
+                    'default'    => esc_html__( 'Default', 'sshop' ),
+                    'no-bg'      => esc_html__( 'No Background', 'sshop' )
+                ),
+                'label' => esc_html__( 'Style', 'sshop' ),
+            ),
+
+            array(
                 'type' =>'text',
                 'name' => 'number',
                 'default' => 4,
@@ -100,7 +111,7 @@ class SShop_Widget_Products extends SShop_Widget_Base {
             $col = 5;
         }
         ?>
-        <div class="grid-products">
+        <div class="grid-products style-<?php echo esc_attr( $instance['style'] ); ?>">
             <ul class="products eq-row-col-<?php echo esc_attr( $col ); ?>">
                 <?php
                 while ($query->have_posts()) {
