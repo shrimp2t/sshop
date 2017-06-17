@@ -3199,17 +3199,12 @@ a:focus, a:active, a:hover {
 	padding: 5px 0px;
 	display: inline-block;
 	margin-bottom: 10px;
-}
-
-.widget-shop-categories .cat-desc {
-	margin-bottom: 15px;
-	display: block;
-	font-style: italic;
-	font-size: 14px;
-	font-size: 0.875rem;
+	z-index: 4;
+	position: relative;
 }
 
 .widget-shop-categories .top-p-cat {
+	padding-top: 60%;
 	display: block;
 	background-color: #fff;
 	-webkit-background-size: cover;
@@ -3219,8 +3214,45 @@ a:focus, a:active, a:hover {
 	background-position: center center;
 	background-repeat: no-repeat;
 	position: relative;
+	-webkit-transition: all 1s ease-in-out;
+	-moz-transition: all 1s ease-in-out;
+	transition: all 1s ease-in-out;
+}
+
+.widget-shop-categories .top-p-cat .inner {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	display: block;
 	padding: 15px;
 	padding: 0.9375rem;
+	max-height: 100%;
+	overflow: hidden;
+}
+
+.widget-shop-categories .top-p-cat.has-image {
+	color: #fff;
+}
+
+.widget-shop-categories .top-p-cat.has-image:hover::before {
+	background: rgba(0, 0, 0, 0.6);
+}
+
+.widget-shop-categories .top-p-cat.has-image .cat-link {
+	color: #fff;
+}
+
+.widget-shop-categories .top-p-cat.has-image::before {
+	background: rgba(0, 0, 0, 0.5);
+	content: " ";
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 1;
 }
 
 .widget-shop-categories .top-p-cat a, .widget-shop-categories .top-p-cat span {

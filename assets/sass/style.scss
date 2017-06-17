@@ -1090,14 +1090,11 @@ a:focus, a:active, a:hover {
 		padding: 5px 0px;
 		display: inline-block;
 		margin-bottom: 10px;
-	}
-	.cat-desc {
-		margin-bottom: 15px;
-		display: block;
-		font-style: italic;
-		@include rem( font-size, 14px );
+		z-index: 4;
+		position: relative;
 	}
 	.top-p-cat {
+		padding-top: 60%;
 		display: block;
 		background-color: #fff;
 		-webkit-background-size: cover;
@@ -1107,6 +1104,40 @@ a:focus, a:active, a:hover {
 		background-position: center center;
 		background-repeat: no-repeat;
 		position: relative;
+		@include transition( all 1s ease-in-out );
+		.inner {
+			position: absolute;
+			bottom: 0px;
+			left: 0px;
+			width: 100%;
+			display: block;
+			@include rem( padding, 15px );
+			max-height: 100%;
+			overflow: hidden;
+		}
+
+		&.has-image {
+			color: #fff;
+			&:hover {
+				&::before {
+					background: rgba( 0, 0, 0, .6 );
+				}
+			}
+			.cat-link {
+				color: #fff;
+			}
+			&::before {
+				background: rgba( 0, 0, 0, .5 );
+				content: " ";
+				display: block;
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				z-index: 1;
+			}
+		}
 		a, span {
 			position: relative;
 			z-index: 3;
@@ -1122,7 +1153,7 @@ a:focus, a:active, a:hover {
 			left: 0px;
 			z-index: 1;
 		}
-		@include rem( padding, 15px );
+
 	}
 }
 
