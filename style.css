@@ -3195,7 +3195,7 @@ a:focus, a:active, a:hover {
 	text-transform: uppercase;
 	font-size: 12px;
 	font-size: 0.75rem;
-	border-bottom: 2px solid #e9e9e9;
+	border-bottom: 2px solid #595959;
 	padding: 5px 0px;
 	display: inline-block;
 	margin-bottom: 10px;
@@ -3231,20 +3231,8 @@ a:focus, a:active, a:hover {
 	overflow: hidden;
 }
 
-.widget-shop-categories .top-p-cat.has-image {
-	color: #fff;
-}
-
-.widget-shop-categories .top-p-cat.has-image:hover::before {
-	background: rgba(0, 0, 0, 0.6);
-}
-
-.widget-shop-categories .top-p-cat.has-image .cat-link {
-	color: #fff;
-}
-
 .widget-shop-categories .top-p-cat.has-image::before {
-	background: rgba(0, 0, 0, 0.5);
+	background: rgba(0, 0, 0, 0.25);
 	content: " ";
 	display: block;
 	width: 100%;
