@@ -8,7 +8,7 @@
 */
 
 /* ### PAGINATION BUTTONS ### */
-.owl-theme .owl-controls .owl-pagination {
+.owl-carousel .owl-dots  {
 	position:absolute;
 	width:100%;
 	padding:10px 0px 0px;
@@ -17,10 +17,10 @@
 	font-size:12px;
 	line-height:12px;
 }
-.owl-theme .owl-controls .owl-pagination .owl-page {
+.owl-carousel .owl-dots div {
 	display: inline-block;
 }
-.owl-theme .owl-controls .owl-pagination .owl-page span {
+.owl-carousel .owl-dots span {
 	display:inline-block;
 	border-style:none;
 	background-color:rgba(255,255,255,0.3);
@@ -33,10 +33,10 @@
 	-moz-transition:all .3s ease-in-out;
 	-o-transition:all .3s ease-in-out;
 }
-.owl-theme .owl-controls .owl-pagination .active span {
+.owl-carousel .owl-dots .active span {
 	background-color: rgba(255,255,255,1);
 }
-.owl-theme .owl-controls .owl-pagination .owl-page span:hover {
+.owl-carousel .owl-dots span:hover {
 	background-color:rgba(255,255,255,1);
 }
 .owl-pagination-true {
@@ -44,16 +44,16 @@
 }
 
 /* ### PREVIOUS AND NEXT ARROW BUTTONS ### */
-.owl-theme .owl-controls .owl-buttons {
+.owl-carousel .owl-nav div {
 	display:block;
 }
-.autohide-arrows .owl-controls .owl-buttons {
+.owl-carousel.autohide-arrows .owl-nav div {
 	display:none;
 }
-.autohide-arrows:hover .owl-controls .owl-buttons {
+.owl-carousel.autohide-arrows:hover .owl-nav div{
 	display:block;
 }
-.owl-theme .owl-controls .owl-buttons div {
+.owl-carousel .owl-nav div {
 	position:absolute;
 	top:50%;
 	padding:2px 0px;
@@ -65,8 +65,8 @@
 	-moz-transition:all .3s ease-in-out;
 	-o-transition:all .3s ease-in-out ;
 }
-.owl-theme .owl-controls .owl-buttons .owl-prev,
-.owl-theme .owl-controls .owl-buttons .owl-next  {
+.owl-carousel .owl-nav .owl-prev,
+.owl-carousel .owl-nav .owl-next  {
     @include rem( font-size, 40px );
     &:before{
         padding: 10px 15px;
@@ -74,14 +74,14 @@
         background: rgba( 0, 0, 0, .4 );
     }
 }
-.owl-theme .owl-controls .owl-buttons .owl-prev {
+.owl-carousel .owl-nav .owl-prev {
 	left:15px;
     &::before {
         float: left;
         @include font-icon( '"\\f104"' );
     }
 }
-.owl-theme .owl-controls .owl-buttons .owl-next {
+.owl-carousel .owl-nav .owl-next {
 	right:15px;
 	&::before {
         float: left;
@@ -107,14 +107,14 @@
 			width: auto;
 		}
 	}
-	.owl-theme {
-		.owl-controls {
-			.owl-pagination {
-				position: absolute;
-				bottom: 15px !important;
-				right: 15px;
-				width: auto;
-			}
+	.owl-carousel {
+		.owl-dots {
+
+			position: absolute;
+			bottom: 15px !important;
+			right: 15px;
+			width: auto;
+
 		}
 	}
 
