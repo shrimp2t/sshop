@@ -331,8 +331,13 @@
 }
 
 .woocommerce .woocommerce-main .products {
-	margin-left: -10px;
-	margin-right: -10px;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+.woocommerce .woocommerce-main .products .products {
+	margin-left: -8px;
+	margin-right: -8px;
 }
 
 .woocommerce #page {
@@ -774,11 +779,6 @@
 	left: auto !important;
 }
 
-.woocommerce .products.related .products, .woocommerce .products.upsells .products {
-	margin-left: -5px;
-	margin-right: -5px;
-}
-
 .woocommerce .woocommerce-product-gallery__wrapper {
 	margin-top: 0px;
 }
@@ -833,7 +833,8 @@
 .woocommerce-additional-fields h3,
 #order_review_heading,
 .woocommerce-Address h3,
-#customer_login h2 {
+#customer_login h2,
+.related.products > h2, .up-sells.products > h2 {
 	font-size: 18px;
 	font-size: 1.125rem;
 	line-height: 50px;

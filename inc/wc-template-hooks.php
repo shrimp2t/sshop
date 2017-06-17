@@ -89,4 +89,6 @@ add_filter( 'sshop_layout_has_sidebar', 'sshop_wc_hide_sidebar' );
 remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
 //remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cart_totals', 10 );
 
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
+
 
