@@ -27,11 +27,17 @@ if ( post_password_required() ) {
 	if ( have_comments() ) : ?>
 		<h2 class="comments-title">
 			<?php
-				printf( // WPCS: XSS OK.
-					esc_html( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'sshop' ) ),
-					number_format_i18n( get_comments_number() ),
-					'<span>' . get_the_title() . '</span>'
-				);
+            $comments_number = get_comments_number();
+            if ( $comments_number == 1 ) {
+                /* translators: %s: post title */
+                printf( esc_html_x( 'One thought on &ldquo;%s&rdquo;', 'comments title', 'sshop'  ), get_the_title() );
+            } else {
+                printf( // WPCS: XSS OK.
+                    esc_html(_nx('One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $comments_number, 'comments title', 'sshop')),
+                    number_format_i18n($comments_number),
+                    '<span>' . get_the_title() . '</span>'
+                );
+            }
 			?>
 		</h2><!-- .comments-title -->
 

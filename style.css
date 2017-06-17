@@ -2709,7 +2709,7 @@ a:focus, a:active, a:hover {
 		top: auto;
 	}
 	.main-navigation li a {
-		padding: 0px 18px;
+		padding: 0px 15px;
 		line-height: 68px;
 		line-height: 4.25rem;
 		color: #595959;
@@ -2734,16 +2734,24 @@ a:focus, a:active, a:hover {
 	}
 	.main-navigation li li {
 		position: relative;
+		margin-bottom: -1px;
 	}
 	.main-navigation li li a {
 		line-height: 30px;
 		line-height: 1.875rem;
-		padding: 10px 15px;
+		padding: 8px 15px;
 		display: block;
-		border-bottom: 1px solid #ededed;
+		border-top: 1px solid transparent;
+		border-bottom: 1px solid transparent;
+	}
+	.main-navigation li li a:hover {
+		border-color: #ededed;
 	}
 	.main-navigation li li:last-child > a {
 		border-bottom: 0px none;
+	}
+	.main-navigation li li:first-child > a {
+		border-top: 0px none;
 	}
 	.main-navigation li li ul {
 		display: none;
