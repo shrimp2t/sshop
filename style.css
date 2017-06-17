@@ -814,6 +814,12 @@ object {
 	margin: 35px 0px;
 }
 
+@media screen and (max-width: 940px) {
+	.content-area {
+		margin: 0px 0px;
+	}
+}
+
 .content-area.front-page {
 	margin-bottom: 0px;
 }
@@ -821,6 +827,14 @@ object {
 .content-area .site-main {
 	padding: 20px;
 	background: #fff;
+}
+
+@media screen and (max-width: 720px) {
+	.content-area .site-main {
+		padding: 30px 15px 20px;
+		margin-left: -15px;
+		margin-right: -15px;
+	}
 }
 
 .content-area::after {
@@ -838,6 +852,12 @@ object {
 		width: 30%;
 		padding-left: 30px;
 		float: right;
+	}
+}
+
+@media screen and (max-width: 940px) {
+	.content-area.has-sidebar .widget-area {
+		padding-top: 30px;
 	}
 }
 
@@ -2806,6 +2826,15 @@ a:focus, a:active, a:hover {
 	background: #fff;
 	padding-left: 10px;
 	padding-right: 10px;
+}
+
+@media screen and (max-width: 720px) {
+	.grid-products {
+		margin-left: -15px;
+		margin-right: -15px;
+		padding-left: 5px;
+		padding-right: 5px;
+	}
 }
 
 .grid-products.style-no-bg {
