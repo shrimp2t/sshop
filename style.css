@@ -2190,10 +2190,10 @@ a:focus, a:active, a:hover {
 	border-radius: 50%;
 	padding: 5px;
 	font-size: 12px;
-	line-height: 12px;
+	line-height: 8px;
 	background: #F36F36;
-	min-width: 22px;
-	min-height: 22px;
+	min-width: 18px;
+	min-height: 18px;
 	text-align: center;
 	color: #f5f5f5;
 	z-index: 4;
@@ -2298,6 +2298,7 @@ a:focus, a:active, a:hover {
 	background-color: #fff;
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.12);
 	position: relative;
+	z-index: 65;
 }
 
 .site-header .site-title {
@@ -2312,6 +2313,12 @@ a:focus, a:active, a:hover {
 	content: "";
 	display: table;
 	clear: both;
+}
+
+/* Sticky header */
+.header-sticky #site-header {
+	position: fixed;
+	width: 100%;
 }
 
 /*--------------------------------------------------------------
@@ -2350,6 +2357,10 @@ a:focus, a:active, a:hover {
 }
 
 @media screen and (min-width: 720px) {
+	#primary-menu > li > a {
+		font-weight: bold;
+		text-transform: uppercase;
+	}
 	.main-navigation ul ul {
 		float: left;
 		position: absolute;

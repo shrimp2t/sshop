@@ -1,7 +1,8 @@
 
 jQuery( document).ready( function( $ ){
     // Main navigation
-
+    var $window = $(window);
+    var $body = $( 'body' );
     var menu_break_point = 720;
     var header_elements = [ '#site-branding', '#site-navigation-right' ];
     var header = $( '#site-header' );
@@ -107,6 +108,40 @@ jQuery( document).ready( function( $ ){
     $( window).on( 'resize', function(){
         setupHeader();
     } );
+
+    // Sticky Header
+    if ( SShop.header_sticky ) {
+        header.wrap('<div id="site-header-wrap"></div>');
+        var headerP = header.parent();
+        headerP.css({'height': header.height(), 'display': 'block'});
+        $window.on('resize', function () {
+            headerP.removeAttr('style');
+            headerP.css({'height': header.height(), 'display': 'block'});
+        });
+        $window.on("scroll", function () {
+            var t = $window.scrollTop();
+            var headerPos = 0;
+            var barFixed = false;
+            if ($('#wpadminbar').length > 0) {
+                headerPos += $('#wpadminbar').height();
+                barFixed = ( $('#wpadminbar').css('position') === 'fixed' ) ? true : false;
+            }
+            if (t > 0) {
+                $body.addClass('header-sticky');
+                if (!barFixed) {
+                    if (headerPos >= t) {
+                        headerPos = headerPos - t;
+                    } else {
+                        headerPos = 0;
+                    }
+                }
+                header.css({top: headerPos});
+            } else {
+                $body.removeClass('header-sticky');
+                header.css({top: ''});
+            }
+        });
+    }
 
 
     // menu-mobile

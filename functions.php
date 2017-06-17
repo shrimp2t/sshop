@@ -103,7 +103,7 @@ add_action( 'after_setup_theme', 'sshop_setup' );
  * @global int $content_width
  */
 function sshop_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'sshop_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'sshop_content_width', 840 );
 }
 add_action( 'after_setup_theme', 'sshop_content_width', 0 );
 
@@ -176,6 +176,10 @@ function sshop_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
+    wp_localize_script( 'sshop-theme', 'SShop', array(
+        'header_sticky' => get_theme_mod( 'header_sticky', 1 ) ?  1 : ''
+    ) );
+
     if ( class_exists( 'WooCommerce' ) ) {
 		wp_dequeue_style( 'woocommerce-smallscreen' );
         wp_enqueue_script( 'jquery-countdown', get_template_directory_uri() . '/assets/js/jquery.countdown.js', array( 'jquery' ), '20151215', true );
@@ -186,9 +190,6 @@ function sshop_scripts() {
         ) );
     }
 
-
-
-
 }
 add_action( 'wp_enqueue_scripts', 'sshop_scripts' );
 
@@ -198,13 +199,9 @@ function sshop_dequeue_style_footer(){
 
 add_action( 'wp_footer', 'sshop_dequeue_style_footer' );
 
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
 
 /**
- * Support Meta box CMB2
+ * MetaBox settings pages
  */
 
 require get_template_directory() . '/inc/config/meta-box.php';

@@ -13,8 +13,6 @@ jQuery(document).ready( function( $ ) {
     });
 
 
-    /* <fs_premium_only> */
-
     var $document = $( document );
 
     $( '.list-filters-sortable').sortable({
@@ -74,6 +72,5 @@ jQuery(document).ready( function( $ ) {
         });
     } );
 
-    /* </fs_premium_only> */
 
 });
