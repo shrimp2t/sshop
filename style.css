@@ -818,6 +818,9 @@ object {
 	.content-area {
 		margin: 0px 0px;
 	}
+	.content-area.woocommerce-main {
+		margin-top: 35px;
+	}
 }
 
 .content-area.front-page {

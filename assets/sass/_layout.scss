@@ -4,10 +4,14 @@
     margin: 35px 0px;
     @include for-screen( tablet-max ) {
         margin: 0px 0px;
+        &.woocommerce-main {
+            margin-top: 35px;
+        }
     }
     &.front-page {
         margin-bottom: 0px;
     }
+
     .site-main {
         padding: 20px;
         background: #fff;
