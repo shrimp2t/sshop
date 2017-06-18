@@ -239,6 +239,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 }
 
 require get_template_directory() . '/inc/plugins-hooks.php';
+require get_template_directory() . '/inc/dashboard.php';
 
 
 /**
