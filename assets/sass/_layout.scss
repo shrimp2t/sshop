@@ -28,15 +28,42 @@
                 width: 30%;
                 padding-left: 30px;
                 float: right;
+
             }
         }
 
         @include for-screen( tablet-max ) {
             .widget-area {
                 padding-top: 30px;
+                margin-bottom: 30px;
             }
         }
 
+        @include for-screen( phone-max ) {
+            .widget-area {
+                .boxed-widget {
+                    margin-left: -15px;
+                    margin-right: -15px;
+                 }
+            }
+        }
+
+    }
+}
+
+.site-layout-left-sidebar {
+    .content-area.has-sidebar {
+        @include for-screen( tablet-min ) {
+            .site-main {
+                float: right;
+            }
+            .widget-area {
+                padding-right: 30px;
+                padding-left: 0px;
+                float: left;
+
+            }
+        }
     }
 }
 
@@ -44,4 +71,9 @@
     .content-area {
         margin: 0px;
     }
+}
+
+.boxed-widget {
+    background: #fff;
+    padding: 15px;
 }

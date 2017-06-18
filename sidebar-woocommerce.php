@@ -7,11 +7,13 @@
  * @package sshop
  */
 
-if ( ! is_active_sidebar( 'sidebar-woocommerce' ) ) {
+if ( ! is_active_sidebar( 'sidebar-woocommerce' ) || get_theme_mod( 'layout', 'right-sidebar' ) == 'none' ) {
 	return;
 }
 ?>
 
 <aside id="secondary" class="widget-area" role="complementary">
-	<?php dynamic_sidebar( 'sidebar-woocommerce' ); ?>
+    <div class="boxed-widget">
+        <?php dynamic_sidebar( 'sidebar-woocommerce' ); ?>
+    </div>
 </aside><!-- #secondary -->

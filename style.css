@@ -858,11 +858,35 @@ object {
 @media screen and (max-width: 940px) {
 	.content-area.has-sidebar .widget-area {
 		padding-top: 30px;
+		margin-bottom: 30px;
+	}
+}
+
+@media screen and (max-width: 720px) {
+	.content-area.has-sidebar .widget-area .boxed-widget {
+		margin-left: -15px;
+		margin-right: -15px;
+	}
+}
+
+@media screen and (min-width: 940px) {
+	.site-layout-left-sidebar .content-area.has-sidebar .site-main {
+		float: right;
+	}
+	.site-layout-left-sidebar .content-area.has-sidebar .widget-area {
+		padding-right: 30px;
+		padding-left: 0px;
+		float: left;
 	}
 }
 
 .page-no-margin .content-area {
 	margin: 0px;
+}
+
+.boxed-widget {
+	background: #fff;
+	padding: 15px;
 }
 
 .container::after {
@@ -3232,7 +3256,7 @@ a:focus, a:active, a:hover {
 }
 
 .widget-shop-categories .top-p-cat.has-image::before {
-	background: rgba(0, 0, 0, 0.25);
+	background: rgba(0, 0, 0, 0.2);
 	content: " ";
 	display: block;
 	width: 100%;
@@ -3518,6 +3542,34 @@ a:focus, a:active, a:hover {
 }
 
 /* Paging */
+.post-navigation {
+	padding-top: 20px;
+	display: block;
+}
+
+.post-navigation .nav-links::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.post-navigation .nav-links span, .post-navigation .nav-links a {
+	display: inline-block;
+	padding: 5px 15px;
+	font-size: 18px;
+	font-size: 1.125rem;
+	border: 1px solid #ededed;
+	color: #595959;
+}
+
+.post-navigation .nav-links .nav-previous {
+	padding-right: 10px;
+}
+
+.post-navigation .nav-links .nav-next {
+	padding-left: 15px;
+}
+
 .pagination .nav-links span, .pagination .nav-links a {
 	display: inline-block;
 	padding: 5px 15px;

@@ -152,17 +152,9 @@ jQuery( document).ready( function( $ ){
 
     //-------------------------------------
 
-    //departments menu
-    $( '.list-departments li').each( function(){
-        if ( $( '> ul', $( this )).length > 0 ) {
-            $( this ).addClass( 'has-child' );
-            $( this).find( '>a' ).append( '<span class="fa fa-angle-right"></span>' );
-        }
-    } );
 
-    $( '.shop-by-departments .shop-by-button').on( 'click', function(){
-        $( this).parent().toggleClass( 'active' );
-    } );
+    $("#secondary").stick_in_parent();
+
 
     // Layout tabs widget
     jQuery( '.layout-tabs').each( function(){
@@ -400,8 +392,6 @@ jQuery( document).ready( function( $ ){
 
 
         } );
-
-
 
     } );
 

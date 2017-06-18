@@ -34,6 +34,8 @@ function sshop_body_classes( $classes ) {
         }
     }
 
+    $classes[] = 'site-layout-'.get_theme_mod( 'layout', 'right-sidebar' );
+
 	return $classes;
 }
 add_filter( 'body_class', 'sshop_body_classes' );
@@ -49,6 +51,14 @@ function sshop_pingback_header() {
 add_action( 'wp_head', 'sshop_pingback_header' );
 
 
+add_filter( 'sshop_layout_has_sidebar', 'sshop_layout_sidebar' );
+
+function sshop_layout_sidebar(  $active_sidebar ){
+    if ( get_theme_mod( 'layout', 'right-sidebar' ) == 'none' ) {
+        return false;
+    }
+    return $active_sidebar;
+}
 
 if ( ! function_exists( 'storefront_display_comments' ) ) {
     /**

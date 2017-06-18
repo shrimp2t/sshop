@@ -168,6 +168,7 @@ function sshop_scripts() {
     wp_enqueue_style( 'sshop-style', get_stylesheet_uri()  );
 
 	wp_enqueue_script( 'slick', get_template_directory_uri() . '/assets/js/slick.js', array( 'jquery' ), '', true );
+	wp_enqueue_script( 'sticky-kit', get_template_directory_uri() . '/assets/js/sticky-kit.js', array( 'jquery' ), '', true );
     wp_enqueue_script( 'sshop-theme', get_template_directory_uri() . '/assets/js/theme.js', array( 'jquery' , 'slick' ), '20151215', true );
 	wp_enqueue_script( 'sshop-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20151215', true );
 

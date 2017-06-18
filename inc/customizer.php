@@ -44,6 +44,32 @@ function sshop_customize_register( $wp_customize ) {
         )
     );
 
+    $wp_customize->add_section( 'layout', array(
+        'priority'       => 36,
+        'title'          => esc_html__( 'Layout', 'sshop' ),
+        'description'    => '',
+        'panel'          => 'theme_options',
+    ) );
+
+    $wp_customize->add_setting( 'layout',
+        array(
+            'default'           => 'right-sidebar',
+            'sanitize_callback'	=> 'sshop_sanitize_select',
+        )
+    );
+    $wp_customize->add_control( 'layout',
+        array(
+            'label' 		=> esc_html__( 'Site layout', 'sshop' ),
+            'type'			=> 'select',
+            'choices' 		=> array(
+                'right-sidebar' => esc_html__( 'Right Sidebar', 'sshop' ),
+                'left-sidebar'  => esc_html__( 'Left Sidebar', 'sshop' ),
+                'none'          => esc_html__( 'No Sidebar', 'sshop' ),
+            ),
+            'section' 		=> 'layout',
+        )
+    );
+
 }
 add_action( 'customize_register', 'sshop_customize_register' );
 
