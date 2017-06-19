@@ -392,6 +392,10 @@
 	font-size: 0.875rem;
 }
 
+.woocommerce #page .product .woocommerce-loop-product__title a, .woocommerce #page li.product .woocommerce-loop-product__title a, .woocommerce #page div.product .woocommerce-loop-product__title a {
+	color: inherit;
+}
+
 .woocommerce #page .product .product-thumbnail, .woocommerce #page li.product .product-thumbnail, .woocommerce #page div.product .product-thumbnail {
 	margin-bottom: 10px;
 	display: block;

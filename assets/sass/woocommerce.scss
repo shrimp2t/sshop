@@ -351,6 +351,9 @@
 			}
 			.woocommerce-loop-product__title {
 				color: $text;
+				a {
+					color: inherit;
+				}
 				@include rem( 'font-size', 14px );
 				//text-transform: uppercase;
 				//font-weight: normal;
@@ -567,6 +570,7 @@
 				display: block;
 				position: relative;
 				.woocommerce-LoopProduct-link {
+
 					&:before {
 						content: "";
 						display: block;

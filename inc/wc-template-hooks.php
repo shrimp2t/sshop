@@ -85,10 +85,16 @@ function sshop_wc_hide_sidebar( $has_sidebar = false ){
 add_filter( 'sshop_layout_has_sidebar', 'sshop_wc_hide_sidebar' );
 
 // Remove cross sell and up-sell in page page
-
 remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
 //remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cart_totals', 10 );
 
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
+
+
+
+remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10 );
+remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_product_link_close', 5 );
+
+
 
 

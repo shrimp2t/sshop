@@ -30,7 +30,7 @@ if ( ! function_exists( 'woocommerce_get_product_thumbnail' ) ) {
             $html = wc_placeholder_img($image_size);
         }
 
-        return '<div class="product-thumbnail">' . $html . '</div>';
+        return '<a class="product-thumbnail" href="'.esc_url( get_permalink() ).'">' . $html . '</a>';
     }
 }
 
@@ -57,5 +57,16 @@ if ( ! function_exists( 'wc_sale_countdown' ) ) {
     }
 }
 add_action( 'woocommerce_before_shop_loop_item_title', 'wc_sale_countdown' );
+
+
+if ( ! function_exists( 'woocommerce_template_loop_product_title' ) ) {
+    /**
+     * Show the product title in the product loop. By default this is an H2.
+     */
+    function woocommerce_template_loop_product_title()
+    {
+        echo '<h2 class="woocommerce-loop-product__title"><a href="'.esc_url( get_permalink() ).'">' . get_the_title() . '</a></h2>';
+    }
+}
 
 
