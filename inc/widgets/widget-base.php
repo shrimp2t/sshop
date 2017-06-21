@@ -400,6 +400,17 @@ class SShop_Widget_Base extends WP_Widget {
         <?php
     }
 
+    function sanitize_deep( $var ){
+        if ( ! is_array( $var ) ) {
+            return wp_kses_post( $var );
+        } else {
+            foreach ( $var as $k => $v ) {
+                $var[ $k ] = $this->sanitize_deep( $var );
+            }
+            return $var;
+        }
+    }
+
     public function update( $new_instance, $old_instance ) {
         $instance = array();
         foreach ( $this->get_configs() as $field ) {
@@ -409,7 +420,7 @@ class SShop_Widget_Base extends WP_Widget {
 
             if (  $field['name'] ) {
                 if (isset($new_instance[$field['name']])) {
-                    $instance[$field['name']] = $new_instance[$field['name']];
+                    $instance[$field['name']] = $this->sanitize_deep( $new_instance[$field['name']] );
                 } else {
                     $instance[$field['name']] = '';
                 }
