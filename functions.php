@@ -161,8 +161,12 @@ add_action( 'widgets_init', 'sshop_widgets_init' );
  */
 function sshop_scripts() {
 
-    wp_enqueue_style( 'google-font', 'https://fonts.googleapis.com/css?family=Product+Sans:400,400i,700,700i' );
+    $on_google_font = _x( 'on', 'Product Sans: on or off', 'sshop' );
 
+    if ( 'off' !== $on_google_font ) {
+        wp_enqueue_style( 'google-font', 'https://fonts.googleapis.com/css?family=Product+Sans:400,400i,700,700i' );
+    }
+    
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri().'/assets/css/bootstrap.min.css' );
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/assets/css/font-awesome.css');
     wp_enqueue_style( 'sshop-style', get_stylesheet_uri()  );
