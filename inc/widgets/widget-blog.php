@@ -105,7 +105,7 @@ class SShop_Widget_Blog extends WP_Widget {
 
         ?>
         <p>
-            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php esc_html_e( 'Number posts to show', 'sshop' ); ?></label><br/>
+            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php esc_html_e( 'Title', 'sshop' ); ?></label><br/>
             <input class="widefat" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>">
         </p>
         <p>

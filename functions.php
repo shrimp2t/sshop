@@ -166,7 +166,7 @@ function sshop_scripts() {
     if ( 'off' !== $on_google_font ) {
         wp_enqueue_style( 'google-font', 'https://fonts.googleapis.com/css?family=Product+Sans:400,400i,700,700i' );
     }
-    
+
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri().'/assets/css/bootstrap.min.css' );
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/assets/css/font-awesome.css');
     wp_enqueue_style( 'sshop-style', get_stylesheet_uri()  );
