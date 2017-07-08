@@ -22,7 +22,7 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'sshop' ); ?></a>
 
-	<header id="site-header" class="site-header" role="banner">
+	<header id="site-header" class="site-header header-full" role="banner">
         <?php
         /**
          * Header
@@ -32,7 +32,6 @@
          * @hooked sshop_nav - 20
          */
         do_action('sshop_header');
-
         ?>
 	</header><!-- #site-header -->
 

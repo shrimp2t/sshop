@@ -8,8 +8,6 @@
  */
 
 
-define('WOOCOMMERCE_USE_CSS', true );
-
 if ( ! function_exists( 'sshop_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -232,6 +230,9 @@ require get_template_directory() . '/inc/jetpack.php';
 
 // Support WooCommerce
 if ( class_exists( 'WooCommerce' ) ) {
+
+    define('WOOCOMMERCE_USE_CSS', true );
+
     require get_template_directory() . '/inc/wc-functions.php';
     require get_template_directory() . '/inc/wc-template-functions.php';
     require get_template_directory() . '/inc/wc-template-hooks.php';

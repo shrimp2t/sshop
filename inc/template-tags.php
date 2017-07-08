@@ -136,6 +136,10 @@ function sshop_main_content_title()
 
     if ( is_front_page() ) {
         // Default show latest post, not-front-page setup
+
+       if ( ! is_active_sidebar( 'sidebar-home' ) ) {
+           sshop_display_main_title( get_the_title() );
+       }
         return ;
     }
     if ( is_home() ) {
@@ -282,11 +286,23 @@ function sshop_nav(){
         <?php wp_nav_menu( array(
             'theme_location'    => 'menu-1',
             'menu_id'           => 'primary-menu',
+            'fallback_cb'       => 'sshop_nav_fallback_cb',
             'container_class'   => 'primary-menu-wrapper',
             'container_id'      => 'primary-menu-wrapper',
         ) ); ?>
     </nav><!-- #site-navigation -->
     <?php
+}
+function sshop_nav_fallback_cb(){
+    if ( current_user_can( 'edit_theme_options' ) ) {
+        ?>
+        <div id="primary-menu-wrapper" class="primary-menu-wrapper">
+            <ul id="primary-menu" class="menu">
+                <li><a href="<?php echo esc_url( admin_url( 'nav-menus.php' ) ); ?>"><?php esc_html_e( 'Add Menu', 'sshop' ); ?></a></li>
+            </ul>
+        </div>
+        <?php
+    }
 }
 
 add_action( 'sshop_header', 'sshop_site_brand', 10 );

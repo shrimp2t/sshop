@@ -65,8 +65,9 @@ a:focus, a:active, a:hover {
 .site-branding {
 	float: left;
 	min-height: 60px;
-	background: #222;
-	padding: 0px 30px;
+
+	padding: 0px 0px;
+	margin-right: 30px;
 	max-width: 50%;
 	overflow: hidden;
 	@include for-screen( phone-max ) {
@@ -85,12 +86,7 @@ a:focus, a:active, a:hover {
 		min-height: $header_line_height - 20;
 		max-height: $header_line_height - 20;
 	}
-	a {
-		color: #f5f5f5;
-		&:hover {
-			text-decoration: none;
-		}
-	}
+
 	.custom-logo-link {
 		@include rem( 'line-height', $header_line_height );
 		@include for-screen( phone-max ) {
@@ -102,7 +98,10 @@ a:focus, a:active, a:hover {
 		font-weight: 700;
 		color: #f5f5f5;
 		a {
-			color: inherit;
+			color: $text;
+			&:hover {
+				text-decoration: none;
+			}
 		}
 		@include rem( 'font-size', 28px );
 		@include rem( 'line-height', $header_line_height );
@@ -115,6 +114,25 @@ a:focus, a:active, a:hover {
 		display: none;
 	}
 }
+.header-full {
+	#site-header-inner {
+		width: 100%;
+		max-width: 100%;
+		padding: 0px;
+	}
+	.site-branding {
+		padding: 0px 30px;
+		background: #222;
+		a {
+			color: #f5f5f5;
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	 }
+}
+
+
 .top-search-form {
 	flex-grow: 1;
 	width: 100%;

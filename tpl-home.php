@@ -19,7 +19,19 @@ get_header(); ?>
 <div id="primary" class="content-area front-page">
 
     <div class="home-content-sidebar sidebar">
-        <?php dynamic_sidebar('sidebar-home'); ?>
+        <?php
+        if ( dynamic_sidebar('sidebar-home') ) {
+            dynamic_sidebar('sidebar-home');
+        } else {
+            ?>
+            <div class="alert alert-info" role="alert">
+                <?php
+                _e( "<strong>Almost Done!</strong> just add some widget to sidebar Front Page: Content", 'sshop' );
+                ?>
+            </div>
+            <?php
+        }
+        ?>
     </div>
 
 </div><!-- #primary -->
