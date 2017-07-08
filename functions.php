@@ -252,8 +252,16 @@ require get_template_directory() . '/inc/dashboard.php';
  */
 require get_template_directory() . '/inc/widgets/widgets.php';
 require get_template_directory() . '/inc/widgets/widget-base.php';
-require get_template_directory() . '/inc/widgets/widget-services.php';
-require get_template_directory() . '/inc/widgets/widget-slider.php';
+/**
+ *
+ * Support Slide Plugin: Slide Anything - Responsive Content / HTML Slider and Carousel
+ * @see https://wordpress.org/plugins/slide-anything/
+ *
+ */
+if ( defined( 'SA_PLUGIN_PATH' ) ) {
+    require get_template_directory() . '/inc/widgets/widget-slider.php';
+}
+
 require get_template_directory() . '/inc/widgets/widget-blog.php';
 require get_template_directory() . '/inc/widgets/widget-products.php';
 require get_template_directory() . '/inc/widgets/widget-sales-countdown-products.php';
