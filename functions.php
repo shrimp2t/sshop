@@ -228,20 +228,6 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
-// Support WooCommerce
-if ( class_exists( 'WooCommerce' ) ) {
-
-    define('WOOCOMMERCE_USE_CSS', true );
-
-    require get_template_directory() . '/inc/wc-functions.php';
-    require get_template_directory() . '/inc/wc-template-functions.php';
-    require get_template_directory() . '/inc/wc-template-hooks.php';
-
-    /**
-     * 3rd Party
-     */
-    require get_template_directory() . '/inc/3rd-party/yith-wishlist.php';
-}
 
 require get_template_directory() . '/inc/plugins-hooks.php';
 require get_template_directory() . '/inc/dashboard.php';
@@ -263,12 +249,36 @@ if ( defined( 'SA_PLUGIN_PATH' ) ) {
 }
 
 require get_template_directory() . '/inc/widgets/widget-blog.php';
-require get_template_directory() . '/inc/widgets/widget-products.php';
-require get_template_directory() . '/inc/widgets/widget-sales-countdown-products.php';
-require get_template_directory() . '/inc/widgets/widget-product-tabs.php';
-require get_template_directory() . '/inc/widgets/widget-brand-products.php';
-require get_template_directory() . '/inc/widgets/widget-product-categories.php';
+
 
 require get_template_directory() . '/inc/admin.php';
 require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
 require get_template_directory() . '/inc/config/plugins.php';
+
+/**
+ * Support WooCommerce
+ * Just call when plugin activated
+ */
+if ( class_exists( 'WooCommerce' ) ) {
+
+    define('WOOCOMMERCE_USE_CSS', true );
+
+    require get_template_directory() . '/inc/wc-functions.php';
+    require get_template_directory() . '/inc/wc-template-functions.php';
+    require get_template_directory() . '/inc/wc-template-hooks.php';
+
+    /**
+     * 3rd Party
+     */
+    require get_template_directory() . '/inc/3rd-party/yith-wishlist.php';
+
+    /**
+     * Widgets
+     */
+    require get_template_directory() . '/inc/widgets/widget-products.php';
+    require get_template_directory() . '/inc/widgets/widget-sales-countdown-products.php';
+    require get_template_directory() . '/inc/widgets/widget-product-tabs.php';
+    require get_template_directory() . '/inc/widgets/widget-brand-products.php';
+    require get_template_directory() . '/inc/widgets/widget-product-categories.php';
+}
+
