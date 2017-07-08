@@ -24,7 +24,6 @@ add_action( 'admin_enqueue_scripts', 'sshop_media_scripts' );
 function sshop_register_widgets() {
     register_widget( 'SShop_Widget_Slider' );
     register_widget( 'SShop_Widget_Blog' );
-    register_widget( 'SShop_Widget_Services' );
 
     if ( class_exists( 'WooCommerce' ) ) {
         register_widget('SShop_Widget_Product_Tabs');
