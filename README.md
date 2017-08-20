@@ -5,7 +5,7 @@ Tags: e-commerce, two-columns, left-sidebar, right-sidebar, custom-background, c
 
 Requires at least: 4.0
 Tested up to: 4.8
-Stable tag: 1.0.0
+Stable tag: 1.0.7
 License: GNU General Public License v2 or later
 License URI: LICENSE
 

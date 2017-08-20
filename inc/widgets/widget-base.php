@@ -9,7 +9,6 @@ class SShop_Widget_Base extends WP_Widget {
     public $post_type;
     public $layout_class;
     public $viewing;
-    //public $_instance;
 
     public function __construct( $id_base = '', $name = '', $widget_options = array(), $control_options = array() ) {
         parent::__construct( $id_base, $name, $widget_options, $control_options );
@@ -22,7 +21,6 @@ class SShop_Widget_Base extends WP_Widget {
         $viewing = explode( ',', $viewing);
         $viewing = array_map( 'absint', $viewing );
         $viewing = array_filter( $viewing );
-
 
         if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) {
             $this->layout = isset($instance['_layout']) ? absint( $instance['_layout'] ) : 1;

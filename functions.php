@@ -17,13 +17,6 @@ if ( ! function_exists( 'sshop_setup' ) ) :
  * as indicating support for post thumbnails.
  */
 function sshop_setup() {
-	/*
-	 * Make theme available for translation.
-	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on sshop, use a find and replace
-	 * to change 'sshop' to the name of your theme in all the template files.
-	 */
-	load_theme_textdomain( 'sshop', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -162,7 +155,7 @@ function sshop_scripts() {
     $on_google_font = _x( 'on', 'Product Sans: on or off', 'sshop' );
 
     if ( 'off' !== $on_google_font ) {
-        wp_enqueue_style( 'google-font', 'https://fonts.googleapis.com/css?family=Product+Sans:400,400i,700,700i' );
+        wp_enqueue_style( 'sshop-google-font', 'https://fonts.googleapis.com/css?family=Product+Sans:400,400i,700,700i' );
     }
 
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri().'/assets/css/bootstrap.min.css' );
