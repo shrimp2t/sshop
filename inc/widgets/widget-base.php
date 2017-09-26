@@ -571,16 +571,28 @@ class SShop_Widget_Base extends WP_Widget {
 }
 
 
+function sshop_sanitize_request( $data ) {
+    if ( is_string( $data ) ) {
+        return wp_kses_post( $data );
+    } else {
+        foreach( ( array ) $data as $k => $v ) {
+            $data[ $k ] = sshop_sanitize_request( $v );
+        }
+    }
+    return $data;
+}
+
 
 function sshop_tabs_content_ajax()
 {
     $w = null;
     $class_name = '';
     if ( isset( $_REQUEST['wid'] ) && $_REQUEST['wid'] ) {
-        if ( class_exists( $_REQUEST['wid'] ) ) {
-            $w = new $_REQUEST['wid'];
+        $_class_name = sanitize_text_field( $_REQUEST['wid'] );
+        if ( class_exists( $_class_name ) ) {
+            $w = new $_class_name;
             if ( is_subclass_of( $w, 'SShop_Widget_Base')) {
-                $class_name = $_REQUEST['wid'];
+                $class_name = $_class_name;
             }
         }
     }
@@ -589,7 +601,7 @@ function sshop_tabs_content_ajax()
         $class_name = 'SShop_Widget_Base';
     }
 
-    the_widget( $class_name, $_REQUEST, array() );
+    the_widget( $class_name, sshop_sanitize_request( wp_unslash( $_REQUEST ) ), array() );
 
     die();
 }

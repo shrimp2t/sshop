@@ -117,7 +117,7 @@ class SShop_Widget_Product_Tabs extends SShop_Widget_Base {
         }
 
         echo $args['before_widget'];
-        $title = apply_filters( 'widget_title', $title );
+        $title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
 
         ?>
         <div class="<?php echo esc_attr( join( ' ', $classes ) ); ?>">

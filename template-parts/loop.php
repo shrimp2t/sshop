@@ -13,7 +13,7 @@
 
     <?php
     if ( has_post_thumbnail() ) {
-        echo '<a href="'.get_permalink().'" class="enter-thumbnail">';
+        echo '<a href="'.esc_url( get_permalink() ).'" class="enter-thumbnail">';
         the_post_thumbnail( 'large' );
         echo '</a>';
     }

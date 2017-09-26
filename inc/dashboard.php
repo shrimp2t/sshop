@@ -36,7 +36,7 @@ function sshop_theme_info_page() {
     // Check for current viewing tab
     $tab = null;
     if ( isset( $_GET['tab'] ) ) {
-        $tab = $_GET['tab'];
+        $tab = sanitize_text_field( $_GET['tab'] );
     } else {
         $tab = null;
     }
@@ -46,7 +46,6 @@ function sshop_theme_info_page() {
         <div class="about-text"><?php esc_html_e( 'SShop is a flexible, clean, simple responsive WordPress theme, perfect for any store website.', 'sshop' ); ?></div>
         <h2 class="nav-tab-wrapper">
             <a href="?page=sshop" class="nav-tab<?php echo is_null($tab) ? ' nav-tab-active' : null; ?>"><?php echo $theme_data->Name; ?></a>
-            <a href="?page=sshop&tab=changelog" class="nav-tab<?php echo $tab == 'changelog' ? ' nav-tab-active' : null; ?>"><?php esc_html_e( 'Changelog', 'sshop' ); ?></span></a>
             <?php do_action( 'sshop_admin_more_tabs' ); ?>
         </h2>
 
@@ -86,15 +85,6 @@ function sshop_theme_info_page() {
             </div>
         <?php } ?>
 
-        <?php if ( $tab == 'changelog' ) { ?>
-            <div class="changelog info-tab-content">
-<pre>
-<?php if ( file_exists( get_template_directory().'/changelog.txt' ) ) {
-include get_template_directory().'/changelog.txt';
-} ?>
-</pre>
-            </div>
-        <?php } ?>
 
         <?php do_action( 'sshop_more_tabs_details' ); ?>
 

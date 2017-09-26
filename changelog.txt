@@ -1,4 +1,7 @@
 == Changelog ==
+== 1.0.8 ==
+ * Fix theme review issues.
+ 
 == 1.0.7 ==
  * Fix theme review issues.
  

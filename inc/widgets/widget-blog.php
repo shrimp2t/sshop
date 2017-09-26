@@ -32,7 +32,7 @@ class SShop_Widget_Blog extends WP_Widget {
 
         $title = $instance['title'];
         unset($instance['title']);
-        $title = apply_filters( 'widget_title', $title );
+        $title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
 
         if ( $title ) {
             echo $args['before_title'].$title.$args['after_title'];
@@ -53,7 +53,7 @@ class SShop_Widget_Blog extends WP_Widget {
 
                             <?php
                             if ( has_post_thumbnail() ) {
-                                echo '<a href="'.get_permalink().'" class="enter-thumbnail">';
+                                echo '<a href="'.esc_url( get_permalink() ).'" class="enter-thumbnail">';
                                 the_post_thumbnail( 'large' );
                                 echo '</a>';
                             }

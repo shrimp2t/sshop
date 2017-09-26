@@ -53,7 +53,7 @@ class SShop_Widget_Product_Categories extends SShop_Widget_Base {
      * @param array $args
      * @param array $instance
      */
-    public function widget( $args, $settings ) {
+    public function widget( $args, $settings = array() ) {
 
         $instance = $this->setup_instance( $settings );
 
@@ -66,7 +66,7 @@ class SShop_Widget_Product_Categories extends SShop_Widget_Base {
             $instance['columns'] = 4;
         }
         echo $args['before_widget'];
-        $instance['title'] = apply_filters( 'widget_title', $instance['title'] );
+        $instance['title'] = apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base );
         if ( $instance['title'] ) {
             echo $args['before_title'].$instance['title'].$args['after_title'];
         }

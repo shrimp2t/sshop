@@ -98,7 +98,7 @@ class SShop_Widget_Products extends SShop_Widget_Base {
         unset($instance['title']);
 
         echo $args['before_widget'];
-        $title = apply_filters( 'widget_title', $title );
+        $title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
 
         $query = $this->get_products( $instance );
 

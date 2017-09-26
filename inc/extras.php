@@ -34,7 +34,7 @@ function sshop_body_classes( $classes ) {
         }
     }
 
-    $classes[] = 'site-layout-'.get_theme_mod( 'layout', 'right-sidebar' );
+    $classes[] = 'site-layout-'.esc_attr( get_theme_mod( 'layout', 'right-sidebar' ) );
 
 	return $classes;
 }

@@ -27,8 +27,8 @@
 <footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="container-fluid">
             <div class="site-info">
-                <span class="copy"><?php printf( esc_html__( 'Copyright %1$s SShop. All Rights Reserved. ', 'sshop' ), '&copy; '.date_i18n( 'Y' ) ); ?></span>
-                <span class="credit"><?php printf( esc_html__( 'WordPress SShop Theme by %1$s', 'sshop' ), '<a href="http://sshopwp.com/">SShopWP</a>' ) ?></span>
+                <span class="copy"><?php printf( esc_html__( 'Copyright %1$s %2$s. All Rights Reserved. ', 'sshop' ), '&copy; '.date_i18n( 'Y' ), get_bloginfo('name' ) ); ?></span>
+                <span class="credit"><?php printf( esc_html__( 'Theme by %1$s', 'sshop' ), '<a href="http://sshopwp.com/">SShopWP</a>' ) ?></span>
             </div><!-- .site-info -->
         </div>
 	</footer><!-- #colophon -->

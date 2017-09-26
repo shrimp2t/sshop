@@ -70,7 +70,7 @@ class SShop_Widget_Sale_Countdown_Products extends SShop_Widget_Base {
         $title = $instance['title'];
         unset($instance['title']);
         echo $args['before_widget'];
-        $title = apply_filters( 'widget_title', $title );
+        $title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
         $number = absint( $instance['number'] );
         if ( ! $number ) {
             return ;

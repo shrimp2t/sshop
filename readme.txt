@@ -25,6 +25,21 @@ SShop is the best free WooCommerce theme. It features a bespoke integration with
 
 
 == Credits ==
+- WooCommerce - WooCommerce is released under the GPL
+	https://woocommerce.com/
+	License: http://www.opensource.org/licenses/GPL-2.0
+	
+- Bootstrap - The MIT License (MIT)
+	http://getbootstrap.com/
+	License: https://github.com/twbs/bootstrap/blob/master/LICENSE
+	
+- TGM-Plugin-Activation - GPL-2.0 or later license
+	http://tgmpluginactivation.com/
+	License: http://www.opensource.org/licenses/GPL-2.0
+
+- FontAwesome - Font Awesome CSS, LESS, and Sass files are licensed under the MIT License.
+	http://fontawesome.io/
+	License: https://opensource.org/licenses/mit-license.html
 
 - jQuery Countdown - The MIT License (MIT)
 	http://hilios.github.io/jQuery.countdown/

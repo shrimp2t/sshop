@@ -83,7 +83,7 @@ class SShop_Custom_Meta_Box {
      */
     public function save_metabox( $post_id, $post ) {
         // Add nonce for security and authentication.
-        $nonce_name   = isset( $_POST['sshop_metabox_nonce'] ) ? $_POST['sshop_metabox_nonce'] : '';
+        $nonce_name   = isset( $_POST['sshop_metabox_nonce'] ) ? sanitize_text_field( $_POST['sshop_metabox_nonce'] ) : '';
         $nonce_action = 'sshop_metabox_nonce';
 
         // Check if nonce is set.
