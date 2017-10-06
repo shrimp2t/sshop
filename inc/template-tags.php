@@ -136,13 +136,15 @@ function sshop_main_content_title()
 
     if ( is_front_page() ) {
         // Default show latest post, not-front-page setup
-
        if ( ! is_active_sidebar( 'sidebar-home' ) ) {
-           sshop_display_main_title( get_the_title() );
+           $title = __( 'Blog', 'sshop' );
+           sshop_display_main_title( $title );
        }
         return ;
     }
+
     if ( is_home() ) {
+
         // Front page displays, Posts page selected
         sshop_display_main_title( get_the_title( get_option('page_for_posts') ) );
         return ;

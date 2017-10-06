@@ -21,6 +21,7 @@ $has_sidebar = apply_filters( 'sshop_layout_has_sidebar', $has_sidebar );
         <?php
         /**
          * @hooked sshop_main_content_title - 10
+         * @see sshop_main_content_title
          */
         do_action( 'sshop_before_main_content' );
         ?>
