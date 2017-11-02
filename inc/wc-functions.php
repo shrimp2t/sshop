@@ -47,7 +47,7 @@ function sshop_get_wc_sale_flash( $html = '', $post, $product ) {
         $max = 0;
         $min = 0;
         foreach( $available_variations as $vr ) {
-            if ( isset( $vr['regular_price'] ) && isset( vr['sale_price'] ) ) {
+            if ( isset( $vr['regular_price'] ) && isset( $vr['sale_price'] ) ) {
                 if ($vr['regular_price'] > 0 && $vr['sale_price'] > 0) {
                     $percentage = round(((($vr['regular_price'] - $vr['sale_price']) / $vr['regular_price']) * 100), 1);
                     if ($min > $percentage) {
@@ -123,6 +123,3 @@ if ( ! function_exists( 'woocommerce_content' ) ) {
         }
     }
 }
-
-
-
